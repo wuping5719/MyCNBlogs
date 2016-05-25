@@ -1,0 +1,106 @@
+<!-- 返回顶部小火箭 -->
+<style type="text/css">
+#rocket-to-top { 
+    background: url("http://images.cnblogs.com/cnblogs_com/wp5719/831982/t_rocket.png") no-repeat scroll 0 0 transparent; 
+    cursor: default; 
+    display: none; 
+    height: 100px; 
+    margin: -125px 0 0; 
+    overflow: hidden; 
+    padding: 0; 
+    position: fixed; 
+    right: 0; 
+    top: 90%; 
+    width: 100px; 
+    z-index: 10; 
+}
+#rocket-to-top div { 
+   left: 0; 
+   margin: 0; 
+   overflow: hidden; 
+   padding: 0; 
+   position: absolute; 
+   top: 0; 
+   width: 100px; 
+}
+#rocket-to-top .level-2 { 
+   background: url("http://images.cnblogs.com/cnblogs_com/wp5719/831982/t_rocket2.png") no-repeat scroll -100px 0 transparent; 
+   display: none; 
+   height: 100px; 
+   opacity: 0; 
+   z-index: 11; 
+}
+#rocket-to-top .level-3 { 
+    background: none repeat scroll 0 0 transparent; 
+    cursor: pointer; 
+    display: block; 
+    height: 100px; 
+    z-index: 12; 
+}
+</style>
+
+<div id="rocket-to-top">
+    <div class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		var e = $("#rocket-to-top"),
+		i = true;
+		$(window).scroll(function() {
+			var t = $(document).scrollTop();
+			t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(40).animate({
+				marginTop: "-1000px"
+			},
+			"normal",
+			function() {
+				e.css({
+					"margin-top": "-125px",
+					display: "none"
+				}),
+				i = !0
+			})) : e.fadeIn("slow")
+		}),
+		e.hover(function() {
+			$(".level-2").css("display","block").stop().animate({
+				opacity: 1
+			});
+		},
+		function() {
+			$(".level-2").css("display","none").stop().animate({
+				opacity: 0
+			});
+		}),
+		$(".level-3").click(function() {
+			function t() {
+				var t = e.css("background-position");
+				if (e.css("display") == "none" || i == false) {
+					clearInterval(n),
+					e.css("background-position", "0px 0px");
+					return
+				}
+				switch (t){
+				case "0px 0px":
+					e.css("background-position", "-298px 0px");
+					break;
+				case "-298px 0px":
+					e.css("background-position", "-447px 0px");
+					break;
+				case "-447px 0px":
+					e.css("background-position", "-596px 0px");
+					break;
+				case "-596px 0px":
+					e.css("background-position", "-745px 0px");
+					break;
+				case "-745px 0px":
+					e.css("background-position", "-298px 0px");
+				}
+			}
+			if (!i) return;
+			n = setInterval(t, 50),
+			$("html,body").animate({scrollTop: 0},"slow");
+		});
+	});
+</script>
+<!-- /返回顶部小火箭 -->
