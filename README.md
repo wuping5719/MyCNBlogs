@@ -104,47 +104,12 @@ Top Level Project: <br/>
 <div>&nbsp; <span style="font-family: 宋体; font-size: 18px;">13.国内各大互联网公司相关技术站点2.0版：<a href="http://www.cnblogs.com/IT-Bear/p/3191423.html" target="_blank">http://www.cnblogs.com/IT-Bear/p/3191423.html</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;14.程序员技术成长秘籍:&nbsp;<a href="http://www.phpxs.com/post/5090" target="_blank">http://www.phpxs.com/post/5090</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;15.淘宝阿里巴巴开源软件大全(下):&nbsp;<a href="http://www.xttblog.com/?a=b&amp;p=564" target="_blank">http://www.xttblog.com/?a=b&amp;p=564</a></span></div>
-
-
-
-
-
-
+  </div>
 </div>
-<div>&nbsp;</div>
-
-
-
-
-
-
-</div>
+ 
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;"><span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">WebStorm:&nbsp;<a href="http://www.jetbrains.com/webstorm/" target="_blank">http://www.jetbrains.com/webstorm/</a></span></span></span></div>
 <div>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;">&nbsp;2.<span style="font-family: 宋体; font-size: 13.5pt;">神级命令行软件</span><span style="font-family: Georgia,serif; font-size: 13.5pt;" lang="EN-US">Tmux: &nbsp;</span><a href="http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html" target="_blank">http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html</a></span></span></p>
@@ -319,61 +284,9 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 &nbsp;&nbsp;
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -383,59 +296,7 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;</span></div>
 <div style="display: inline !important;">&nbsp;</div>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #993366;">阿里中间件团队博客</span>：</strong><a href="http://jm.taobao.org/" target="_blank">http://jm.taobao.org/</a></span></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <div>&nbsp;</div>
 <div>
@@ -528,65 +389,6 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">1.<span lang="EN-US">2016</span>年最火的<span lang="EN-US">15</span>款<span lang="EN-US">HTML5</span>游戏引擎：<a href="http://diycode.cc/topics/16" target="_blank">http://diycode.cc/topics/16</a></span></span>
 <p align="left">
 		<span><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">2.阿里自主研发的互动游戏引擎<span lang="EN-US">Hilo</span>：<a href="http://www.html5cn.org/article-9409-1.html" target="_blank">http://www.html5cn.org/article-9409-1.html</a></span></span></span>
