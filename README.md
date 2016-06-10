@@ -290,12 +290,8 @@ Top Level Project: <br/>
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
-<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;</span><span style="font-family: 宋体; font-size: 18px;">4.</span>
-<div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
-<div style="display: inline !important;">&nbsp;</div>
-<div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;</span></div>
-<div style="display: inline !important;">&nbsp;</div>
-<div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #993366;">阿里中间件团队博客</span>：</strong><a href="http://jm.taobao.org/" target="_blank">http://jm.taobao.org/</a></span></div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;4.Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #993366;">阿里中间件团队博客</span>：</strong><a href="http://jm.taobao.org/" target="_blank">http://jm.taobao.org/</a></span></div>
 </div>
 </div>
 <div>&nbsp;</div>
