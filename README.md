@@ -27,6 +27,8 @@ Top Level Project: <br/>
 <h2><strong><span style="font-family: SimSun; font-size: 18px;">程序猿学习资料集邮：</span></strong></h2>
 <p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;编程学习中经常要访问一些网站找资料，为了以后便于查找，在这里做下整理。</span></p>
 <p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</span></p>
+<p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;我的Github地址：<a href="https://github.com/wuping5719" target="_blank">https://github.com/wuping5719</a></span></p>
+<p>&nbsp;</p>
 <h2><strong><span style="font-family: SimSun; font-size: 18px;">A.面试：</span></strong></h2>
 <p align="left"> <span style="font-size: 18px;">&nbsp; &nbsp;</span><span style="font-weight: normal;"><span style="font-size: 18px;"><span style="font-family: 宋体;">1.前端开发面试题1：</span><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank"><span style="font-family: 宋体;">点击打开链接</span></a><br />
 		<span style="font-family: 宋体;">&nbsp; 2.前端开发面试题2：</span><a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank"><span style="font-family: 宋体;">https://github.com/hawx1993/Front-end-Interview-questions</span></a><br />
@@ -104,9 +106,9 @@ Top Level Project: <br/>
 <div>&nbsp; <span style="font-family: 宋体; font-size: 18px;">13.国内各大互联网公司相关技术站点2.0版：<a href="http://www.cnblogs.com/IT-Bear/p/3191423.html" target="_blank">http://www.cnblogs.com/IT-Bear/p/3191423.html</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;14.程序员技术成长秘籍:&nbsp;<a href="http://www.phpxs.com/post/5090" target="_blank">http://www.phpxs.com/post/5090</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;15.淘宝阿里巴巴开源软件大全(下):&nbsp;<a href="http://www.xttblog.com/?a=b&amp;p=564" target="_blank">http://www.xttblog.com/?a=b&amp;p=564</a></span></div>
-  </div>
 </div>
- 
+<div>&nbsp;</div>
+</div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
@@ -283,13 +285,19 @@ Top Level Project: <br/>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">9.<strong><span style="color: #800080;">lightSky&lsquo;Blog</span>:&nbsp;</strong><a href="http://www.lightskystreet.com/" target="_blank">http://www.lightskystreet.com/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
-<p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
+<p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
+&nbsp;&nbsp;
+<div style="display: inline !important;">
+<p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
-<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;4.Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
-<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #993366;">阿里中间件团队博客</span>：</strong><a href="http://jm.taobao.org/" target="_blank">http://jm.taobao.org/</a></span></div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;4.<strong><span style="color: #ff6600;">阿里中间件团队博客</span></strong>：http://jm.taobao.org/</span></div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;</span><span style="font-family: 宋体; font-size: 18px;">5.</span>
+<div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
+<div style="display: inline !important;">&nbsp;</div>
+<div style="display: inline !important;"><span>&nbsp;&nbsp;</span></div>
+
 </div>
 </div>
 <div>&nbsp;</div>
@@ -369,7 +377,6 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;5.渗透测试工具实战技巧合集:&nbsp;<a href="http://www.freebuf.com/sectool/105524.html" target="_blank">http://www.freebuf.com/sectool/105524.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;6.Web服务器在外网能裸奔多久？:&nbsp;<a href="http://rdcqii.hundsun.com/portal/article/447.html" target="_blank">http://rdcqii.hundsun.com/portal/article/447.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;7.在调试器里看百度云管家:&nbsp;<a href="http://geek.csdn.net/news/detail/79743" target="_blank">http://geek.csdn.net/news/detail/79743</a></span></p>
-<p align="left">&nbsp;</p>
 <p align="left">&nbsp;</p>
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">L.网络</span></span></strong>
