@@ -1,6 +1,6 @@
 <h1>59条搞笑但却真实无比的编程语录</h1>
   
-  英文原文：<a> 59 Hilarious but True Programming Quotes for Software Developers </a>
+  英文原文：59 Hilarious but True Programming Quotes for Software Developers 
   
   收集了很多编程语录，这些语录涉及软件开发，代码维护，调试纠错，软件bug，系统设计、文档，代码质量，测试和软件开发团队管理等方面。
  
