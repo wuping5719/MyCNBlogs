@@ -71,6 +71,11 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;25.5个经典的前端面试问题：<a href="http://ourjs.com/detail/542152eb91e3afe823000004" target="_blank">http://ourjs.com/detail/542152eb91e3afe823000004</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;26.Java线程面试题Top 50：<a href="http://www.importnew.com/12773.html" target="_blank">http://www.importnew.com/12773.html</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;27.你有必要知道的25个JavaScript面试题:&nbsp;<a href="http://www.open-open.com/lib/view/open1451796617120.html" target="_blank">http://www.open-open.com/lib/view/open1451796617120.html</a></span></p>
+<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">28.44个Javascript变态题解析(上):&nbsp;<a href="https://segmentfault.com/a/1190000005681454" target="_blank">https://segmentfault.com/a/1190000005681454</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;29.44个Javascript变态题解析(下)：<a href="https://segmentfault.com/a/1190000005682214" target="_blank">https://segmentfault.com/a/1190000005682214</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;30.iOS面试宝典:&nbsp;<a href="http://www.henishuo.com/ios-interview-entrance/://" target="_blank">http://www.henishuo.com/ios-interview-entrance/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;31.5道JavaScript练习题:&nbsp;<a href="http://www.spotty.com.cn/archives/99/" target="_blank">http://www.spotty.com.cn/archives/99/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;32.115题Java面试问题和答案之JSP:&nbsp;<a href="http://www.zicheng.net/article/68.htm" target="_blank">http://www.zicheng.net/article/68.htm</a></span></p>
 <p align="left">&nbsp;</p>
 <h2>
 	<span style="font-family: SimSun; font-size: 18px;"><strong>B.开源源码：</strong></span>
@@ -125,7 +130,11 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;12.阿里巴巴开源技术汇总:115个软件:&nbsp;<a href="https://yq.aliyun.com/articles/48972?spm=5176.100239.topwz.1.q4Ri21" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;13.推荐21个最近很流行的优秀PHP框架:&nbsp;<a href="http://u.cxyblog.com/2/article-aid-119.html" target="_blank">http://u.cxyblog.com/2/article-aid-119.html</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;14.程序员福利：各大平台免费接口:&nbsp;<a href="http://mp.weixin.qq.com/s?__biz=MjM5NzA1MTcyMA==&amp;mid=2651160706&amp;idx=3&amp;sn=938783b677089f38abe51acebfaf3de0&amp;scene=0#wechat_redirect" target="_blank">点击打开链接</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 16px;">&nbsp;</span></p>
+<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">15.The Fuck：<a href="http://t.ioreq.com/gh/nvbn/thefuck" target="_blank">http://t.ioreq.com/gh/nvbn/thefuck</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;16.最牛程序员必备软件大比拼：<a href="http://www.58maisui.com/2016/06/11/a-145/" target="_blank">http://www.58maisui.com/2016/06/11/a-145/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;17.程序员必备十个神器：<a href="http://www.58maisui.com/2016/06/11/a-144/" target="_blank">http://www.58maisui.com/2016/06/11/a-144/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;18.Markdown语法说明(简体中文版)：<a href="http://www.appinn.com/markdown/" target="_blank">http://www.appinn.com/markdown/</a></span></p>
+<p align="left">&nbsp;</p>
 <h2 align="left"><span style="font-size: 18px;"><strong>D.Java:</strong></span></h2>
 <p align="left"><span style="font-size: 18px;">&nbsp; <span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">1.Java</span><span style="font-family: 宋体; font-size: 13.5pt;">开源大全：<a href="http://www.open-open.com/" target="_blank">http://www.open-open.com/</a></span></span></p>
 <p align="left"><span style="font-size: 18px;">&nbsp; <span style="font-family: SimSun;">2.</span><span style="font-family: SimSun;" lang="EN-US">LTS</span><span><span style="font-family: SimSun;">轻量级分布式任务调度框架</span><span style="font-family: SimSun;" lang="EN-US">(Light Task Scheduler)</span><span style="font-family: SimSun;">：<a href="http://www.open-open.com/lib/view/open1434375729020.html" target="_blank">点击打开链接</a></span></span></span></p>
@@ -164,6 +173,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;33.<strong>Java开发常用的在线工具</strong>:&nbsp;<a href="http://www.hollischuang.com/archives/1459" target="_blank">http://www.hollischuang.com/archives/1459</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;34.Java基础知识:&nbsp;<a href="http://bedoing.org/" target="_blank">http://bedoing.org/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;35.Maven学习笔记-常用命令和设置：<a href="http://blog.csdn.net/fw0124/article/details/48368695" target="_blank">http://blog.csdn.net/fw0124/article/details/48368695</a></span></p>
+<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">36.程序中减少使用if语句的方法集锦：<a href="http://geek.csdn.net/news/detail/81154" target="_blank">http://geek.csdn.net/news/detail/81154</a></span></p>
 <p align="left">&nbsp;</p>
 <h2 align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><strong><span style="font-size: 18px;">E.C++:</span></strong></span></span></h2>
 <p align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;1.<span style="color: #808000;"><strong>最全面的C++资源、框架大全</strong></span>: <a href="http://www.codeceo.com/article/cpp-resource-framework.html" target="_blank">http://www.codeceo.com/article/cpp-resource-framework.html</a></span></span></span></p>
@@ -233,6 +243,10 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;61.RESTful API编写指南:&nbsp;<a href="http://blog.igevin.info/posts/restful-api-get-started-to-write/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></p>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">62.不可错过的JavaScript迷你库:&nbsp;<a href="http://yanhaijing.com/javascript/2015/12/29/mini-js-lib/" target="_blank">http://yanhaijing.com/javascript/2015/12/29/mini-js-lib/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;63.使用CSS完成元素居中的七种方法:&nbsp;<a href="http://www.spotty.com.cn/archives/61/" target="_blank">http://www.spotty.com.cn/archives/61/</a></span></p>
+<p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">64.跟着9张思维导图学习JavaScript:&nbsp;<a href="http://www.spotty.com.cn/archives/98/" target="_blank">http://www.spotty.com.cn/archives/98/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;65.<span style="color: #ff0000;"><strong>JavaScript标准参考教程（alpha）</strong></span>：<a href="http://javascript.ruanyifeng.com/#introduction" target="_blank">http://javascript.ruanyifeng.com/#introduction</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;66.前端e路：<a href="http://www.36zhen.com/t?id=3751" target="_blank">http://www.36zhen.com/t?id=3751</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;67.你不需要jQuery：<a href="http://www.webhek.com/you-do-not-need-jquery?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1466151028284" target="_blank">点击打开链接</a></span></p>
 <p align="left">&nbsp;</p>
 <h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>G.Web插件</strong></span></h2>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;</strong>1.<span style="font-family: 宋体; font-size: 13.5pt;">图表插件-<span lang="EN-US">ECharts</span>：<a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion" target="_blank">http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion</a></span></span></p>
@@ -284,9 +298,11 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
+
 &nbsp;&nbsp;
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
+
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -295,7 +311,9 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
 <div style="display: inline !important;">&nbsp;</div>
 <div style="display: inline !important;"><span>&nbsp;&nbsp;</span></div>
+
 </div>
+
 </div>
 <div>&nbsp;</div>
 <div>
@@ -387,6 +405,7 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
+
 	<span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">1.<span lang="EN-US">2016</span>年最火的<span lang="EN-US">15</span>款<span lang="EN-US">HTML5</span>游戏引擎：<a href="http://diycode.cc/topics/16" target="_blank">http://diycode.cc/topics/16</a></span></span>
 <p align="left">
 		<span><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">2.阿里自主研发的互动游戏引擎<span lang="EN-US">Hilo</span>：<a href="http://www.html5cn.org/article-9409-1.html" target="_blank">http://www.html5cn.org/article-9409-1.html</a></span></span></span>
