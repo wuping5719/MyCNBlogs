@@ -307,8 +307,7 @@ Top Level Project: <br/>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;4.<strong><span style="color: #ff6600;">阿里中间件团队博客</span></strong>：http://jm.taobao.org/</span></div>
-<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #ff6600;">Whatbeg's blog：</span></strong>：http://whatbeg.com/</span></div>
-<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;</span><span style="font-family: 宋体; font-size: 18px;">5.</span></div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.<strong><span style="color: #ff6600;">Whatbeg's blog：</span></strong>http://whatbeg.com/</span></div>
 </div>
 <div>&nbsp;</div>
 <div>
