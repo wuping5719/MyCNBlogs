@@ -110,6 +110,8 @@ Top Level Project: <br/>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;14.程序员技术成长秘籍:&nbsp;<a href="http://www.phpxs.com/post/5090" target="_blank">http://www.phpxs.com/post/5090</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;15.淘宝阿里巴巴开源软件大全(下):&nbsp;<a href="http://www.xttblog.com/?a=b&amp;p=564" target="_blank">http://www.xttblog.com/?a=b&amp;p=564</a></span></div>
 </div>
+<div><span style="font-family: 宋体; font-size: 18px;">&nbsp;16.谷歌推荐的计算机科学学习路线:&nbsp;<a href="http://www.52cs.org/?p=902" target="_blank">http://www.52cs.org/?p=902</a></span></div>
+</div>
 <div>&nbsp;</div>
 </div>
 <div>
@@ -349,6 +351,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 10.Android通用流行框架大全:&nbsp;<a href="http://www.phpxs.com/post/5067" target="_blank">http://www.phpxs.com/post/5067</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 11.<strong>Android开发书籍推荐:从入门到精通系列学习路线书籍介绍</strong>:&nbsp;<a href="http://diycode.cc/wiki/androidbook?hmsr=toutiao.io&amp;amp;utm_medium=toutiao.io&amp;amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;12.加载动画：LoadingDrawable：<a href="https://github.com/dinuscxj/LoadingDrawable" target="_blank">https://github.com/dinuscxj/LoadingDrawable</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;13.Android学习资料收集：LoadingDrawable：<a href="https://github.com/Freelander/Android_Data" target="_blank">https://github.com/Freelander/Android_Data</a></span></p>
 <p align="left">&nbsp;</p>
 <p>&nbsp; &nbsp;<strong><span style="font-family: 宋体; font-size: 18px;">㈡ iOS</span></strong></p>
 <p><span style="font-family: 宋体; font-size: 18px;">&nbsp;1.Swift中10个震惊小伙伴的单行代码:&nbsp;<a href="http://swift.gg/2016/04/18/10-Swift-One-Liners-To-Impress-Your-Friends/" target="_blank">http://swift.gg/2016/04/18/10-Swift-One-Liners-To-Impress-Your-Friends/</a></span></p>
