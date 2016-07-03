@@ -76,6 +76,8 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;30.iOS面试宝典:&nbsp;<a href="http://www.henishuo.com/ios-interview-entrance/://" target="_blank">http://www.henishuo.com/ios-interview-entrance/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;31.5道JavaScript练习题:&nbsp;<a href="http://www.spotty.com.cn/archives/99/" target="_blank">http://www.spotty.com.cn/archives/99/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;32.115题Java面试问题和答案之JSP:&nbsp;<a href="http://www.zicheng.net/article/68.htm" target="_blank">http://www.zicheng.net/article/68.htm</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;33.高并发性能调试经验分享:&nbsp;<a href="https://zhuanlan.zhihu.com/p/21348220" target="_blank">https://zhuanlan.zhihu.com/p/21348220</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;34.我是如何面试WEB前端开发人员的:&nbsp;<a href="http://www.techug.com/interviewing-a-front-end-developer" target="_blank">http://www.techug.com/interviewing-a-front-end-developer</a></span></p>
 <p align="left">&nbsp;</p>
 <h2>
 	<span style="font-family: SimSun; font-size: 18px;"><strong>B.开源源码：</strong></span>
@@ -389,6 +391,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;5.渗透测试工具实战技巧合集:&nbsp;<a href="http://www.freebuf.com/sectool/105524.html" target="_blank">http://www.freebuf.com/sectool/105524.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;6.Web服务器在外网能裸奔多久？:&nbsp;<a href="http://rdcqii.hundsun.com/portal/article/447.html" target="_blank">http://rdcqii.hundsun.com/portal/article/447.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;7.在调试器里看百度云管家:&nbsp;<a href="http://geek.csdn.net/news/detail/79743" target="_blank">http://geek.csdn.net/news/detail/79743</a></span></p>
+<p align="left">8.浅析HTTPS中间人攻击与证书校验:<a href=" http://drops.wooyun.org/tips/17078" target="_blank"> http://drops.wooyun.org/tips/17078</a></p>
 <p align="left">&nbsp;</p>
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">L.网络</span></span></strong>
@@ -396,6 +399,7 @@ Top Level Project: <br/>
 <p align="left">
 		<span style="font-family: SimSun;"><span style="font-size: 18px;"><strong>&nbsp;</strong><span lang="EN-US">1.TCP/UDP</span><span>常用端口列表：<a href="http://wsgzao.github.io/post/service-names-port-numbers/" target="_blank">http://wsgzao.github.io/post/service-names-port-numbers/</a></span></span></span>
 	</p>
+<p >2.Nginx配置参数中文说明：<a href="http://dockone.io/article/1482" target="_blank">http://dockone.io/article/1482</a></p>
 <p align="left">
 		<span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp; &nbsp;</span></span>
 	</p>
