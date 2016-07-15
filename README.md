@@ -86,6 +86,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;39.Java编程常见问题汇总:<a href="http://www.codeceo.com/article/java-programming-tips.html" target="_blank">http://www.codeceo.com/article/java-programming-tips.html</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;40.Java程序员的10道XML面试题:<a href="http://www.codeceo.com/article/10-xml-questions-java-programmer.html" target="_blank">http://www.codeceo.com/article/10-xml-questions-java-programmer.html</a></span></p>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">41.5个经典的JavaScript面试基础问题:<a href="http://www.codeceo.com/article/5-javascript-interview-question.html" target="_blank">http://www.codeceo.com/article/5-javascript-interview-question.html</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;42.Java同步问题面试参考指南:<a href="http://www.codeceo.com/article/java-asy-interview.html" target="_blank">http://www.codeceo.com/article/java-asy-interview.html</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;43.很全的Python面试题:<a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk" target="_blank">http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk</a></span></p>
+<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;44.Java面试题：<a href="http://coderknock.com/blog/2016/04/08/Interview.html" target="_blank">http://coderknock.com/blog/2016/04/08/Interview.html</a></span></p>
 <p>&nbsp;</p>
 <h2>
 	<span style="font-family: SimSun; font-size: 18px;"><strong>B.开源源码：</strong></span>
@@ -126,6 +127,7 @@ Top Level Project: <br/>
 <div><span style="font-size: 18px; font-family: 宋体;">&nbsp;19.Python Cookbook 3rd Edition Documentation:<a href="http://python3-cookbook.readthedocs.io/zh_CN/latest/" target="_blank">http://python3-cookbook.readthedocs.io/zh_CN/latest/</a></span></div>
 <div>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">20.最常被程序员们谎称读过的计算机书籍：<a href="http://www.vaikan.com/books-programmers-dont-really-read/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1468026005413" target="_blank">http://www.vaikan.com/books-programmers-dont-really-read</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;21.大型网站架构演化历程：<a href="http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk" target="_blank">http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;22.Go语言(golang)开源项目大全:<a href="http://www.ifcoder.us/462" target="_blank">http://www.ifcoder.us/462</a></span></p>
+<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;23.一般人不知道的数据获取方式:<a href="http://www.58maisui.com/2016/07/15/a-545/" target="_blank">http://www.58maisui.com/2016/07/15/a-545/</a></span></p>
 </div>
 </div>
 </div>
@@ -326,9 +328,15 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
+
+
+
 &nbsp;<span style="font-family: 宋体;">&nbsp;</span>
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
+
+
+
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -337,7 +345,13 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;</span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;&nbsp;</span></div>
+
+
+
 </div>
+
+
+
 </div>
 <div>&nbsp;</div>
 <div>
@@ -435,6 +449,9 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
+
+
+
 
 
 
