@@ -130,10 +130,6 @@ Top Level Project: <br/>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;23.一般人不知道的数据获取方式:<a href="http://www.58maisui.com/2016/07/15/a-545/" target="_blank">http://www.58maisui.com/2016/07/15/a-545/</a></span></p>
 <p>&nbsp;</p>
 </div>
-</div>
-</div>
-<div>&nbsp;</div>
-</div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
