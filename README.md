@@ -128,6 +128,7 @@ Top Level Project: <br/>
 <div>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">20.最常被程序员们谎称读过的计算机书籍：<a href="http://www.vaikan.com/books-programmers-dont-really-read/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1468026005413" target="_blank">http://www.vaikan.com/books-programmers-dont-really-read</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;21.大型网站架构演化历程：<a href="http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk" target="_blank">http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;22.Go语言(golang)开源项目大全:<a href="http://www.ifcoder.us/462" target="_blank">http://www.ifcoder.us/462</a></span></p>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;23.一般人不知道的数据获取方式:<a href="http://www.58maisui.com/2016/07/15/a-545/" target="_blank">http://www.58maisui.com/2016/07/15/a-545/</a></span></p>
+<p>&nbsp;</p>
 </div>
 </div>
 </div>
@@ -277,6 +278,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;70.编写高效CSS代码的一些建议:<a href="http://www.codeceo.com/article/do-better-css-code.html" target="_blank">http://www.codeceo.com/article/do-better-css-code.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;71.CSS3动画代码大集合:<a href="http://netsmell.com/post/css3-animation-sniplet.html?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#/" target="_blank">点击打开链接</a></span></p>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">72.You Don't Need JavaScript:<a href="https://github.com/NamPNQ/You-Dont-Need-Javascript" target="_blank">https://github.com/NamPNQ/You-Dont-Need-Javascript</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;73.一个DIV的CSS艺术:<a href="http://netsmell.com/apps/A-Single-Div/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1467934488281" target="_blank">http://netsmell.com/apps/A-Single-Div/</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;74.12个非常实用的jQuery代码片段:<a href="http://bbs.jointforce.com/topic/17252" target="_blank">http://bbs.jointforce.com/topic/17252</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;75.jQuery/CSS3经典按钮系列插件:<a href="http://www.codeceo.com/article/jquery-css3-button-1.html" target="_blank">http://www.codeceo.com/article/jquery-css3-button-1.html</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;76.41个Web开发者必须收藏的JavaScript实用技巧：<a href="http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html" target="_blank">http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html</a></span></p>
+<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;77.字符型图片验证码识别完整过程及Python实现：<a href="http://www.ifcoder.us/1873" target="_blank">http://www.ifcoder.us/1873</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>G.Web插件</strong></span></h2>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;</strong>1.<span style="font-family: 宋体; font-size: 13.5pt;">图表插件-<span lang="EN-US">ECharts</span>：<a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion" target="_blank">http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion</a></span></span></p>
@@ -331,9 +333,15 @@ Top Level Project: <br/>
 
 
 
+
+
+
 &nbsp;<span style="font-family: 宋体;">&nbsp;</span>
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
+
+
+
 
 
 
@@ -348,7 +356,13 @@ Top Level Project: <br/>
 
 
 
+
+
+
 </div>
+
+
+
 
 
 
@@ -401,9 +415,10 @@ Top Level Project: <br/>
 <p align="left">&nbsp; <span style="font-family: SimSun; font-size: 18px;">2.<strong>Swift语言指南</strong>：<a href="https://github.com/ipader/SwiftGuide/blob/master/weekly/Issue-53.md" target="_blank">https://github.com/ipader/SwiftGuide/blob/master/weekly/Issue-53.md</a></span></p>
 <p align="left">&nbsp; <span style="font-size: 18px; font-family: 宋体;">3.iOS完整App资源收集:&nbsp;<a href="http://www.henishuo.com/ios-app-fully-code/" target="_blank">http://www.henishuo.com/ios-app-fully-code/</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;4.<strong>百度iOS技术周报</strong>：<a href="https://github.com/BaiduHiDeviOS/iOS-Tech-Weekly" target="_blank">https://github.com/BaiduHiDeviOS/iOS-Tech-Weekly</a></span></p>
-<p align="left"><strong><br />
+<p align="left"><strong>&nbsp; </strong><span style="font-size: 18px; font-family: 宋体;">5.<strong>500+开源iOS应用</strong>：<a href="https://github.com/dkhamsing/open-source-ios-apps" target="_blank">https://github.com/dkhamsing/open-source-ios-apps</a></span><strong><br />
 		</strong>
 	</p>
+<p align="left">&nbsp;</p>
 <h2 align="left">
 		<strong><span style="font-size: 18px;">J.算法</span></strong>
 	</h2>
@@ -449,6 +464,9 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
+
+
+
 
 
 
