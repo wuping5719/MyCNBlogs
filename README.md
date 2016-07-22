@@ -90,6 +90,7 @@ Top Level Project: <br/>
 <p>&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">45.Android开发工程师面试指南：<a href="http://www.diycode.cc/wiki/androidinterview" target="_blank">http://www.diycode.cc/wiki/androidinterview</a></span></p>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">46.国内一线互联网公司内部面试题库：<a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;47.这里有一份面经，请查收：<a href="http://blog.jobbole.com/103105/" target="_blank">http://blog.jobbole.com/103105/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;48.iOS,面试必看:<a href="http://www.jianshu.com/p/5d2163640e26" target="_blank">http://www.jianshu.com/p/5d2163640e26</a></span></p>
 <p>&nbsp;</p>
 <h2>
 	<span style="font-family: SimSun; font-size: 18px;"><strong>B.开源源码：</strong></span>
@@ -131,19 +132,34 @@ Top Level Project: <br/>
 <div>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">20.最常被程序员们谎称读过的计算机书籍：<a href="http://www.vaikan.com/books-programmers-dont-really-read/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1468026005413" target="_blank">http://www.vaikan.com/books-programmers-dont-really-read</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;21.大型网站架构演化历程：<a href="http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk" target="_blank">http://bbs.jointforce.com/topic/17235?f=jf_tg_zsjk</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;22.Go语言(golang)开源项目大全:<a href="http://www.ifcoder.us/462" target="_blank">http://www.ifcoder.us/462</a></span></p>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;23.一般人不知道的数据获取方式:<a href="http://www.58maisui.com/2016/07/15/a-545/" target="_blank">http://www.58maisui.com/2016/07/15/a-545/</a></span></p>
-<p>&nbsp;</p>
+<p>&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">24.阿里，百度，腾讯，360开源项目：<a href="http://bbs.jointforce.com/topic/17859" target="_blank">http://bbs.jointforce.com/topic/17859</a></span></p>
+
+
+
 
 </div>
 
+
+
+
 </div>
+
+
+
 
 </div>
 <div>&nbsp;</div>
+
+
+
 
 </div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
+
+
+
 
 <span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;"><span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">WebStorm:&nbsp;<a href="http://www.jetbrains.com/webstorm/" target="_blank">http://www.jetbrains.com/webstorm/</a></span></span></span></div>
 <div>
@@ -207,6 +223,9 @@ Top Level Project: <br/>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">36.程序中减少使用if语句的方法集锦：<a href="http://geek.csdn.net/news/detail/81154" target="_blank">http://geek.csdn.net/news/detail/81154</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;37.深入理解分布式事务:<a href="http://www.codeceo.com/article/distributed-transaction.html" target="_blank">http://www.codeceo.com/article/distributed-transaction.html</a></span></p>
 <p>&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">38.Java后端工程师学习大纲:<a href="http://www.rowkey.me/blog/2016/06/27/java-backend-study/" target="_blank">http://www.rowkey.me/blog/2016/06/27/java-backend-study/</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;39.Spring+Log4j+ActiveMQ实现远程记录日志&mdash;实战+分析:<a href="http://my.oschina.net/itblog/blog/533730" target="_blank">http://my.oschina.net/itblog/blog/533730</a></span></p>
+<p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">40.Java后端相关的范例项目:&nbsp;<a href="http://wosyingjun.iteye.com/blog/2312553?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;41.Spring中你不知道的注入方式:&nbsp;<a href="http://my.oschina.net/itblog/blog/206481" target="_blank">http://my.oschina.net/itblog/blog/206481</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;42.NGINX and ZooKeeper, Dynamic Load Balancing and Deployments:<a href="https://www.nginx.com/blog/nginx-and-zookeeper-dynamic-load-balancing-and-deployments/" target="_blank">点击打开链接</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><strong><span style="font-size: 18px;">E.C++:</span></strong></span></span></h2>
 <p align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;1.<span style="color: #808000;"><strong>最全面的C++资源、框架大全</strong></span>: <a href="http://www.codeceo.com/article/cpp-resource-framework.html" target="_blank">http://www.codeceo.com/article/cpp-resource-framework.html</a></span></span></span></p>
@@ -287,6 +306,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;71.CSS3动画代码大集合:<a href="http://netsmell.com/post/css3-animation-sniplet.html?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#/" target="_blank">点击打开链接</a></span></p>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">72.You Don't Need JavaScript:<a href="https://github.com/NamPNQ/You-Dont-Need-Javascript" target="_blank">https://github.com/NamPNQ/You-Dont-Need-Javascript</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;73.一个DIV的CSS艺术:<a href="http://netsmell.com/apps/A-Single-Div/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1467934488281" target="_blank">http://netsmell.com/apps/A-Single-Div/</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;74.12个非常实用的jQuery代码片段:<a href="http://bbs.jointforce.com/topic/17252" target="_blank">http://bbs.jointforce.com/topic/17252</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;75.jQuery/CSS3经典按钮系列插件:<a href="http://www.codeceo.com/article/jquery-css3-button-1.html" target="_blank">http://www.codeceo.com/article/jquery-css3-button-1.html</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;76.41个Web开发者必须收藏的JavaScript实用技巧：<a href="http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html" target="_blank">http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html</a></span></p>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;77.字符型图片验证码识别完整过程及Python实现：<a href="http://www.ifcoder.us/1873" target="_blank">http://www.ifcoder.us/1873</a></span></p>
+<p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">78.前端书籍和学习资源推荐:<a href="http://ms.csdn.net/geek/90147" target="_blank">http://ms.csdn.net/geek/90147</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>G.Web插件</strong></span></h2>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;</strong>1.<span style="font-family: 宋体; font-size: 13.5pt;">图表插件-<span lang="EN-US">ECharts</span>：<a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion" target="_blank">http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion</a></span></span></p>
@@ -304,6 +324,7 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;11.<strong>30分钟快速掌握Bootstrap</strong>：<a href="http://www.cnblogs.com/zhili/p/BoostrapQuickStart.html#rd" target="_blank">http://www.cnblogs.com/zhili/p/BoostrapQuickStart.html#rd</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;12.使用Echarts实现动态曲线图表:&nbsp;<a href="http://www.cnblogs.com/Dreamer-1/p/5530221.html" target="_blank">http://www.cnblogs.com/Dreamer-1/p/5530221.html</a></span></p>
 <p>&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">13.jQuery WeUI-可能是最好用WeUI版本:&nbsp;<a href="http://www.spotty.com.cn/archives/55/" target="_blank">http://www.spotty.com.cn/archives/55/</a></span></p>
+<p>&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">14.多屏互动&mdash;H5中级进阶:&nbsp;<a href="http://toutiao.com/i6308165735969456642/" target="_blank">http://toutiao.com/i6308165735969456642/</a></span></p>
 <p>&nbsp;</p>
 <h2><strong><span style="font-family: 宋体; font-size: 18px;">H.博客</span></strong></h2>
 <p><span style="font-family: 宋体; font-size: 18px;">&nbsp;<strong>&alpha;.前端：</strong></span></p>
@@ -338,13 +359,9 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
-
-
 &nbsp;<span style="font-family: 宋体;">&nbsp;</span>
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
-
-
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -353,11 +370,7 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;</span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;&nbsp;</span></div>
-
-
 </div>
-
-
 </div>
 <div>&nbsp;</div>
 <div>&nbsp;<span style="font-size: 18px;"><strong><span style="font-family: SimSun;">&delta;.Net:</span></strong></span>
@@ -439,7 +452,8 @@ Top Level Project: <br/>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;5.渗透测试工具实战技巧合集:&nbsp;<a href="http://www.freebuf.com/sectool/105524.html" target="_blank">http://www.freebuf.com/sectool/105524.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;6.Web服务器在外网能裸奔多久？:&nbsp;<a href="http://rdcqii.hundsun.com/portal/article/447.html" target="_blank">http://rdcqii.hundsun.com/portal/article/447.html</a></span></p>
 <p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;7.在调试器里看百度云管家:&nbsp;<a href="http://geek.csdn.net/news/detail/79743" target="_blank">http://geek.csdn.net/news/detail/79743</a></span></p>
-<p align="left">&nbsp;&nbsp;<span style="font-size: 18px;"><span style="font-family: 宋体;">8.浅析HTTPS中间人攻击与证书校验:&nbsp;<a href="http://drops.wooyun.org/tips/17078" target="_blank">http://drops.wooyun.org/tips/17078</a></span></span></p>
+<p align="left">&nbsp;<span style="font-size: 18px;"><span style="font-family: 宋体;">8.浅析HTTPS中间人攻击与证书校验:&nbsp;<a href="http://drops.wooyun.org/tips/17078" target="_blank">http://drops.wooyun.org/tips/17078</a></span></span></p>
+<p>&nbsp;<span style="font-size: 18px; font-family: 宋体;">9.目录遍历漏洞：How to disable directory listing for Jetty's WebAppContext?：<a href="http://stackoverflow.com/questions/7217969/how-to-disable-directory-listing-for-jettys-webappcontext" target="_blank">点击打开链接</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">L.网络</span></span></strong>
@@ -454,8 +468,6 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
-
-
 	<span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">1.<span lang="EN-US">2016</span>年最火的<span lang="EN-US">15</span>款<span lang="EN-US">HTML5</span>游戏引擎：<a href="http://diycode.cc/topics/16" target="_blank">http://diycode.cc/topics/16</a></span></span>
 <p align="left">
 		<span><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">2.阿里自主研发的互动游戏引擎<span lang="EN-US">Hilo</span>：<a href="http://www.html5cn.org/article-9409-1.html" target="_blank">http://www.html5cn.org/article-9409-1.html</a></span></span></span>
