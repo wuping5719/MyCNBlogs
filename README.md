@@ -137,12 +137,21 @@ Top Level Project: <br/>
 
 
 
+
+
+
 </div>
 
 
 
 
+
+
+
 </div>
+
+
+
 
 
 
@@ -153,10 +162,16 @@ Top Level Project: <br/>
 
 
 
+
+
+
 </div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
+
+
+
 
 
 
@@ -226,6 +241,7 @@ Top Level Project: <br/>
 <p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">40.Java后端相关的范例项目:&nbsp;<a href="http://wosyingjun.iteye.com/blog/2312553?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;41.Spring中你不知道的注入方式:&nbsp;<a href="http://my.oschina.net/itblog/blog/206481" target="_blank">http://my.oschina.net/itblog/blog/206481</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;42.NGINX and ZooKeeper, Dynamic Load Balancing and Deployments:<a href="https://www.nginx.com/blog/nginx-and-zookeeper-dynamic-load-balancing-and-deployments/" target="_blank">点击打开链接</a></span></p>
+<p align="left">&nbsp; <span style="font-size: 18px; font-family: 宋体;">43.Zookeeper原理：<a href="http://coderknock.com/blog/2016/07/25/Zookeeper.html" target="_blank">http://coderknock.com/blog/2016/07/25/Zookeeper.html</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><strong><span style="font-size: 18px;">E.C++:</span></strong></span></span></h2>
 <p align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;1.<span style="color: #808000;"><strong>最全面的C++资源、框架大全</strong></span>: <a href="http://www.codeceo.com/article/cpp-resource-framework.html" target="_blank">http://www.codeceo.com/article/cpp-resource-framework.html</a></span></span></span></p>
@@ -307,6 +323,7 @@ Top Level Project: <br/>
 <p>&nbsp; <span style="font-size: 18px; font-family: 宋体;">72.You Don't Need JavaScript:<a href="https://github.com/NamPNQ/You-Dont-Need-Javascript" target="_blank">https://github.com/NamPNQ/You-Dont-Need-Javascript</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;73.一个DIV的CSS艺术:<a href="http://netsmell.com/apps/A-Single-Div/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1467934488281" target="_blank">http://netsmell.com/apps/A-Single-Div/</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;74.12个非常实用的jQuery代码片段:<a href="http://bbs.jointforce.com/topic/17252" target="_blank">http://bbs.jointforce.com/topic/17252</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;75.jQuery/CSS3经典按钮系列插件:<a href="http://www.codeceo.com/article/jquery-css3-button-1.html" target="_blank">http://www.codeceo.com/article/jquery-css3-button-1.html</a></span><br /><span style="font-size: 18px; font-family: 宋体;">&nbsp;76.41个Web开发者必须收藏的JavaScript实用技巧：<a href="http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html" target="_blank">http://www.smartcitychina.cn/QianYanJiShu/2016-07/7454.html</a></span></p>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;77.字符型图片验证码识别完整过程及Python实现：<a href="http://www.ifcoder.us/1873" target="_blank">http://www.ifcoder.us/1873</a></span></p>
 <p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">78.前端书籍和学习资源推荐:<a href="http://ms.csdn.net/geek/90147" target="_blank">http://ms.csdn.net/geek/90147</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;79.光滑变换的CSS3图标：<a href="http://netsmell.com/apps/transformable-icons/getting-started.html" target="_blank">http://netsmell.com/apps/transformable-icons/getting-started.html</a></span></p>
 <p>&nbsp;</p>
 <h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>G.Web插件</strong></span></h2>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;</strong>1.<span style="font-family: 宋体; font-size: 13.5pt;">图表插件-<span lang="EN-US">ECharts</span>：<a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion" target="_blank">http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion</a></span></span></p>
@@ -359,9 +376,15 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
+
+
+
 &nbsp;<span style="font-family: 宋体;">&nbsp;</span>
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
+
+
+
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -370,7 +393,13 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;</span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;&nbsp;</span></div>
+
+
+
 </div>
+
+
+
 </div>
 <div>&nbsp;</div>
 <div>&nbsp;<span style="font-size: 18px;"><strong><span style="font-family: SimSun;">&delta;.Net:</span></strong></span>
@@ -468,6 +497,9 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
+
+
+
 	<span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">1.<span lang="EN-US">2016</span>年最火的<span lang="EN-US">15</span>款<span lang="EN-US">HTML5</span>游戏引擎：<a href="http://diycode.cc/topics/16" target="_blank">http://diycode.cc/topics/16</a></span></span>
 <p align="left">
 		<span><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">2.阿里自主研发的互动游戏引擎<span lang="EN-US">Hilo</span>：<a href="http://www.html5cn.org/article-9409-1.html" target="_blank">http://www.html5cn.org/article-9409-1.html</a></span></span></span>
