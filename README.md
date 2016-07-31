@@ -27,7 +27,6 @@ Top Level Project: <br/>
 <h2><strong><span style="font-family: SimSun; font-size: 18px;">程序猿学习资料集邮：</span></strong></h2>
 <p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;编程学习中经常要访问一些网站找资料，为了以后便于查找，在这里做下整理。</span></p>
 <p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</span></p>
-<p>&nbsp;</p>
 <h2><strong><span style="font-family: SimSun; font-size: 18px;">A.面试：</span></strong></h2>
 <p align="left"> <span style="font-size: 18px;">&nbsp; &nbsp;</span><span style="font-weight: normal;"><span style="font-size: 18px;"><span style="font-family: 宋体;">1.前端开发面试题1：</span><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank"><span style="font-family: 宋体;">点击打开链接</span></a><br />
 		<span style="font-family: 宋体;">&nbsp; 2.前端开发面试题2：</span><a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank"><span style="font-family: 宋体;">https://github.com/hawx1993/Front-end-Interview-questions</span></a><br />
@@ -140,15 +139,21 @@ Top Level Project: <br/>
 
 
 
-</div>
-
-
-
-
-
 
 
 </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
 
 
 
@@ -165,10 +170,14 @@ Top Level Project: <br/>
 
 
 
+
+
 </div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
+
+
 
 
 
@@ -374,17 +383,12 @@ Top Level Project: <br/>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;8.alighters：<a href="http://alighters.com/" target="_blank">http://alighters.com/</a></span></p>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">9.<strong><span style="color: #800080;">lightSky&lsquo;Blog</span>:&nbsp;</strong><a href="http://www.lightskystreet.com/" target="_blank">http://www.lightskystreet.com/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.雷纯锋:&nbsp;<a href="http://www.leichunfeng.com/" target="_blank">http://www.leichunfeng.com/</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;11.JohnHany的博客：<a href="http://johnhany.net/category/gallery/cg/" target="_blank">http://johnhany.net/category/gallery/cg/</a></span></p>
 <p align="left">&nbsp;</p>
 <p align="left"><span style="font-size: 18px;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="letter-spacing: -0.1pt; font-size: 13.5pt;">&nbsp;&nbsp;<strong>&gamma;.后台：</strong></span></span></span></p>
-
-
-
 &nbsp;<span style="font-family: 宋体;">&nbsp;</span>
 <div style="display: inline !important;">
 <p style="display: inline !important;" align="left"><span style="font-family: 宋体; font-size: 18px;">1.<span style="color: #ff0000;"><strong>奇虎360技术博客</strong></span>：<a href="http://blogs.360.cn/" target="_blank">http://blogs.360.cn/</a></span></p>
-
-
-
 </div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;2.JohnHany的博客:&nbsp;<a href="http://johnhany.net/" target="_blank">http://johnhany.net/</a></span></div>
 <div><span style="font-family: 宋体; font-size: 18px;">&nbsp;3.桃子&nbsp;Nicol TAO：<a href="http://taozj.org/" target="_blank">http://taozj.org/</a></span></div>
@@ -393,13 +397,7 @@ Top Level Project: <br/>
 <div style="display: inline !important;"><span style="font-family: 宋体; font-size: 18px;">Whatbeg's blog：<a href="http://whatbeg.com/" target="_blank">http://whatbeg.com/</a></span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;</span></div>
 <div style="display: inline !important;"><span style="font-family: 宋体;">&nbsp;&nbsp;</span></div>
-
-
-
 </div>
-
-
-
 </div>
 <div>&nbsp;</div>
 <div>&nbsp;<span style="font-size: 18px;"><strong><span style="font-family: SimSun;">&delta;.Net:</span></strong></span>
@@ -497,6 +495,8 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
+
+
 
 
 
