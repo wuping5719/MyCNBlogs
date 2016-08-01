@@ -90,7 +90,10 @@ Top Level Project: <br/>
 <p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">46.国内一线互联网公司内部面试题库：<a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;47.这里有一份面经，请查收：<a href="http://blog.jobbole.com/103105/" target="_blank">http://blog.jobbole.com/103105/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;48.iOS,面试必看:<a href="http://www.jianshu.com/p/5d2163640e26" target="_blank">http://www.jianshu.com/p/5d2163640e26</a></span></p>
-<p>&nbsp;</p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;49.史上最全的Java&amp;Android面试题搜集整理:<a href="http://blog.csdn.net/wdong_love_cl/article/details/52084720" target="_blank">http://blog.csdn.net/wdong_love_cl/article/details/52084720</a></span></p>
+<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;50.iOS面试一般性问题:<a href="http://www.cocoachina.com/programmer/20160113/14976.html" target="_blank">http://www.cocoachina.com/programmer/20160113/14976.html</a></span></p>
+<p align="left">&nbsp;</p>
+<p>&nbsp; &nbsp;</p>
 <h2>
 	<span style="font-family: SimSun; font-size: 18px;"><strong>B.开源源码：</strong></span>
 </h2>
@@ -141,17 +144,20 @@ Top Level Project: <br/>
 
 
 
-</div>
-
-
-
-
-
-
-
-
 
 </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
 
 
@@ -172,10 +178,12 @@ Top Level Project: <br/>
 
 
 
+
 </div>
 <div>
 <h2 style="display: inline !important;" align="left"><strong><span style="font-family: SimSun; font-size: 18px;">C.编程工具软件:<br /></span></strong></h2>
 <p style="display: inline !important;" align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;" lang="EN-US">&nbsp;1.</span><span style="font-family: 宋体;">前端页面开发<span lang="EN-US">IDE</span>软件-</span></span></p>
+
 
 
 
@@ -495,11 +503,6 @@ Top Level Project: <br/>
 <h2 align="left">
 		<strong><span style="font-size: 18px;"><span style="font-family: SimSun;">M.游戏</span></span></strong>
 	</h2>
-
-
-
-
-
 	<span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">1.<span lang="EN-US">2016</span>年最火的<span lang="EN-US">15</span>款<span lang="EN-US">HTML5</span>游戏引擎：<a href="http://diycode.cc/topics/16" target="_blank">http://diycode.cc/topics/16</a></span></span>
 <p align="left">
 		<span><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">2.阿里自主研发的互动游戏引擎<span lang="EN-US">Hilo</span>：<a href="http://www.html5cn.org/article-9409-1.html" target="_blank">http://www.html5cn.org/article-9409-1.html</a></span></span></span>
