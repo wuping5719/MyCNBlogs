@@ -29,39 +29,45 @@ Top Level Project: <br/>
 <p>&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</p>
 
 <h3>A.面试：</h2>
-&nbsp; &nbsp; 1.前端开发面试题1：
-<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank">URL</a>
+&nbsp;&nbsp; 1.前端开发面试题1：
+<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank">URL</a> 
 <br />
-&nbsp; &nbsp; 2.前端开发面试题2：
-<a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank">URL</a>
+&nbsp;&nbsp; 2.前端开发面试题2：
+<a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank">URL</a> 
 <br />
-		<span style="font-family: 宋体;">&nbsp; 3.iOS面试题汇总：</span><a href="http://www.cocoachina.com/programmer/20151019/13746.html" target="_blank"><span style="font-family: 宋体;">http://www.cocoachina.com/programmer/20151019/13746.html</span></a><br />
-		<span style="font-family: 宋体;">&nbsp; 4.程序员简历模版：</span><a href="https://github.com/geekcompany/ResumeSample" target="_blank"><span style="font-family: 宋体;">https://github.com/geekcompany/ResumeSample</span></a></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: SimSun; font-weight: normal;"><span style="font-size: 18px;">&nbsp;&nbsp;<span style="font-family: SimSun;">5.那些著名或非著名的iOS面试题－前编:<a href="http://www.jianshu.com/p/8f16613861fa" target="_blank">http://www.jianshu.com/p/8f16613861fa</a></span></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: 宋体; font-size: 18px;">&nbsp; </span><span style="font-family: SimSun; font-weight: normal;"><span style="font-size: 18px;">6.</span><span style="color: #212121; text-align: center; line-height: 1.3;"><span style="font-size: 18px;">iOS开发面试高频题:&nbsp;<a href="http://www.58maisui.com/2016/05/04/article-98/" target="_blank">http://www.58maisui.com/2016/05/04/article-98/</a></span></span></span>
-	</p>
-<p align="left">
-		<span style="color: #212121;"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;</span><span style="font-family: SimSun; font-size: 18px; font-weight: normal;">7.69个经典Spring面试题和答案:<a href="http://developer.51cto.com/art/201605/510561.htm?utm_source=tuicool&amp;utm_medium=referral" target="_blank">点击打开链接</a></span></span>
-	</p>
-<p align="left">
-		<span style="color: #212121;">&nbsp; &nbsp;<span style="font-family: SimSun; font-size: 18px;"><span style="font-weight: normal;">8.</span></span></span><span style="color: #1a1a1a; line-height: 1.225; font-weight: normal;"><span style="font-family: SimSun; font-size: 18px;">保研机试刷题集合：<a href="http://www.guolanzhe.com/?p=582#more-582" target="_blank">http://www.guolanzhe.com/?p=582#more-582</a></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: 宋体;"><span style="font-size: 18px;"><span style="font-weight: normal;">&nbsp; 9.<span style="color: #212121; text-align: center; line-height: 1.3;">10个值得深思的PHP面试问题：<a href="http://www.58maisui.com/2016/05/01/article-61/" target="_blank">http://www.58maisui.com/2016/05/01/article-61/</a></span></span></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: 宋体;"><span style="font-weight: normal;"><span style="font-size: 18px;">&nbsp;10.阿里、百度、搜狐等公司社招面试记录与总结:&nbsp;<a href="http://www.cnblogs.com/binyue/p/4015884.html" target="_blank">点击打开链接</a></span></span></span>
-	</p>
-<p align="left">
-		<span style="font-weight: normal;"><span style="font-family: 宋体;">&nbsp;</span><span style="font-family: SimSun; font-size: 18px;">11.<strong>LeetCode solutions in JavaScript (JS) with simple explaination</strong>:&nbsp;<a href="https://github.com/hanzichi/leetcode" target="_blank">点击打开链接</a></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: 宋体;"><span style="font-size: 18px; color: #212121;"><span style="font-weight: normal;">&nbsp;12.Java线程面试题Top50:&nbsp;<a href="http://easygeek.com.cn/topic/27eb6b9066c443eca4bae01f33bdb043.html" target="_blank">http://easygeek.com.cn/topic/27eb6b9066c443eca4bae01f33bdb043.html</a></span></span></span></p>
-<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">13.Java集合相关面试问题和答案：<a href="http://codecloud.net/java-set-interviews-7716.html" target="_blank">http://codecloud.net/java-set-interviews-7716.html</a></span></p>
+&nbsp;&nbsp; 3.iOS面试题汇总：
+<a href="http://www.cocoachina.com/programmer/20151019/13746.html" target="_blank">URL</a> 
+<br />
+&nbsp;&nbsp; 4.程序员简历模版：
+<a href="https://github.com/geekcompany/ResumeSample" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 5.那些著名或非著名的iOS面试题－前编:
+<a href="http://www.jianshu.com/p/8f16613861fa" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 6.iOS开发面试高频题:
+<a href="http://www.58maisui.com/2016/05/04/article-98/" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 7.69个经典Spring面试题和答案:
+<a href="http://developer.51cto.com/art/201605/510561.htm?utm_source=tuicool&amp;utm_medium=referral" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 8.保研机试刷题集合：
+<a href="http://www.guolanzhe.com/?p=582#more-582" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 9.10个值得深思的PHP面试问题：
+<a href="http://www.58maisui.com/2016/05/01/article-61/" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 10.阿里、百度、搜狐等公司社招面试记录与总结:
+<a href="http://www.cnblogs.com/binyue/p/4015884.html" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 11.LeetCode solutions in JavaScript (JS) with simple explaination:
+<a href="https://github.com/hanzichi/leetcode" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 12.Java线程面试题Top50:
+<a href="http://easygeek.com.cn/topic/27eb6b9066c443eca4bae01f33bdb043.html" target="_blank">URL</a>
+<br />
+&nbsp;&nbsp; 13.Java集合相关面试问题和答案：
+<a href="http://codecloud.net/java-set-interviews-7716.html" target="_blank">URL</a>
+<br />
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;14.各大互联网公司2014前端笔试面试题&ndash;JavaScript篇：<a href="http://www.codeceo.com/article/2014-javascript-interview.html" target="_blank">点击打开链接</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;15.一道面试题：遇到大规模Oracle坏块该怎么处理？&nbsp;<a href="http://www.58maisui.com/2016/05/22/a-4/" target="_blank">http://www.58maisui.com/2016/05/22/a-4/</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;16.我的实习生面试之旅（拿下阿里巴巴、腾讯、百词斩offer）：<a href="http://blog.csdn.net/mxm691292118/article/details/51261266" target="_blank">点击打开链接</a></span></p>
