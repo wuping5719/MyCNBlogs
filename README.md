@@ -24,12 +24,17 @@ Top Level Project: <br/>
 &nbsp; &nbsp; (3)rpcx: https://github.com/smallnest/rpcx <br/>
 
 <br/>
-<h2><strong><span style="font-family: SimSun; font-size: 18px;">程序猿学习资料集邮：</span></strong></h2>
-<p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;编程学习中经常要访问一些网站找资料，为了以后便于查找，在这里做下整理。</span></p>
-<p><span style="font-family: SimSun; font-size: 18px;">&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</span></p>
-<h2><strong><span style="font-family: SimSun; font-size: 18px;">A.面试：</span></strong></h2>
-<p align="left"> <span style="font-size: 18px;">&nbsp; &nbsp;</span><span style="font-weight: normal;"><span style="font-size: 18px;"><span style="font-family: 宋体;">1.前端开发面试题1：</span><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank"><span style="font-family: 宋体;">点击打开链接</span></a><br />
-		<span style="font-family: 宋体;">&nbsp; 2.前端开发面试题2：</span><a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank"><span style="font-family: 宋体;">https://github.com/hawx1993/Front-end-Interview-questions</span></a><br />
+<h2>程序猿学习资料集邮：</h2>
+<p>&nbsp; &nbsp;编程学习中经常要访问一些网站找资料，为了以后便于查找，在这里做下整理。</p>
+<p>&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</p>
+
+<h3>A.面试：</h2>
+&nbsp; &nbsp; 1.前端开发面试题1：
+<a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com" target="_blank">URL</a>
+<br />
+&nbsp; &nbsp; 2.前端开发面试题2：
+<a href="https://github.com/hawx1993/Front-end-Interview-questions" target="_blank">URL</a>
+<br />
 		<span style="font-family: 宋体;">&nbsp; 3.iOS面试题汇总：</span><a href="http://www.cocoachina.com/programmer/20151019/13746.html" target="_blank"><span style="font-family: 宋体;">http://www.cocoachina.com/programmer/20151019/13746.html</span></a><br />
 		<span style="font-family: 宋体;">&nbsp; 4.程序员简历模版：</span><a href="https://github.com/geekcompany/ResumeSample" target="_blank"><span style="font-family: 宋体;">https://github.com/geekcompany/ResumeSample</span></a></span></span>
 	</p>
