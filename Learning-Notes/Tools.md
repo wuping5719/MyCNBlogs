@@ -26,6 +26,12 @@
     <td><a href="http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html" target="_blank">2.神级命令行软件</a></td>
   </tr>
   <tr>
-    <td><a href="http://wxmimperio.tk/2016/02/25/Redis-Monitor-Tools/" target="_blank">3.监控工具:Redis-stat-RedisLive</a></td>
+    <td><a href="http://wxmimperio.tk/2016/02/25/Redis-Monitor-Tools/" target="_blank">3.监控工具:Redis-stat,RedisLive</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://www.shiyanlou.com/" target="_blank">4.实验楼</a></td>
+  </tr>
+  <tr>
+    <td><a style="font-size: 18px;" href="http://www.codeceo.com/article/10-web-tools-for-developer.html" target="_blank">5.为Web开发者准备的10个最新工具</a></td>
   </tr>
 </table>
