@@ -1,8 +1,5 @@
 <h2>C.编程工具软件:</h2>
 <br />
-WebStorm:&nbsp;<a href="http://www.jetbrains.com/webstorm/" target="_blank">http://www.jetbrains.com/webstorm/</a></span></span></span></div>
-<div>
-<p align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;">&nbsp;2.<span style="font-family: 宋体; font-size: 13.5pt;">神级命令行软件</span><span style="font-family: Georgia,serif; font-size: 13.5pt;" lang="EN-US">Tmux: &nbsp;</span><a href="http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html" target="_blank">http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html</a></span></span></p>
 <p align="left"><span style="font-family: SimSun; font-size: 18px;">&nbsp;<span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">3.</span><span style="font-family: sans,serif; font-size: 13.5pt;" lang="EN-US">Redis</span><span style="font-family: 宋体; font-size: 13.5pt;">监控工具</span><span style="font-family: sans,serif; font-size: 13.5pt;" lang="EN-US">&mdash;Redis-stat</span><span style="font-family: 宋体; font-size: 13.5pt;">、</span><span style="font-family: sans,serif; font-size: 13.5pt;" lang="EN-US">RedisLive:&nbsp;</span><a href="http://wxmimperio.tk/2016/02/25/Redis-Monitor-Tools/" target="_blank">http://wxmimperio.tk/2016/02/25/Redis-Monitor-Tools/</a></span></p>
 <p align="left"><span style="font-size: 18px;"><span style="font-family: SimSun;">&nbsp;4.实验楼：</span><span style="font-family: 宋体;"><a href="https://www.shiyanlou.com/" target="_blank">https://www.shiyanlou.com/</a></span></span></p>
 <p align="left"><span style="color: #333333; font-family: 宋体; font-size: 18px; line-height: 1.5;">&nbsp;5.为Web开发者准备的10个最新工具: </span><a style="font-family: 宋体; font-size: 18px; line-height: 1.5;" href="http://www.codeceo.com/article/10-web-tools-for-developer.html" target="_blank">http://www.codeceo.com/article/10-web-tools-for-developer.html</a></p>
@@ -28,5 +25,7 @@ WebStorm:&nbsp;<a href="http://www.jetbrains.com/webstorm/" target="_blank">http
   <tr>
     <td><a href="http://www.wushxin.top/2016/03/28/%E4%BD%BF%E7%94%A8tmux.html" target="_blank">2.神级命令行软件</a></td>
   </tr>
-  <tr></tr>
+  <tr>
+    <td><a href="http://wxmimperio.tk/2016/02/25/Redis-Monitor-Tools/" target="_blank">3.监控工具:Redis-stat-RedisLive</a></td>
+  </tr>
 </table>
