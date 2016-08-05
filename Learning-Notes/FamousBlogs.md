@@ -44,13 +44,13 @@
     <td><a href="http://wwsun.github.io/" target="_blank">14.景庄-Weiwei SUN</a></td>
   </tr>
   <tr>
-    <td><a href="http://t.ioreq.com/gh/nvbn/thefuck" target="_blank">15.The Fuck</a></td>
+    <td><a href="http://www.cnblogs.com/vajoy/" target="_blank">15.腾讯前端 VaJoy-蓝邦珏</a></td>
   </tr>
   <tr>
-    <td><a href="http://www.58maisui.com/2016/06/11/a-145/" target="_blank">16.最牛程序员必备软件大比拼</a></td>
+    <td><a href="http://chokcoco.github.io/magicCss/html/index.html" target="_blank">16.ChokCoco</a></td>
   </tr>
   <tr>
-    <td><a href="http://www.58maisui.com/2016/06/11/a-144/" target="_blank">17.程序员必备十个神器</a></td>
+    <td><a href="http://dean.edwards.name/weblog/2005/10/add-event/" target="_blank">17.Dean Edwards</a></td>
   </tr>
   <tr>
     <td><a href="http://www.appinn.com/markdown/" target="_blank">18.Markdown语法说明(简体中文版)</a></td>
