@@ -108,7 +108,4 @@
   <tr>
     <td><a href="http://www.leixuesong.cn/" target="_blank">5.PHP:雷雪松</a></td>
   </tr>
-  <tr>
-    <td><a href="http://www.cnblogs.com/hujunzheng" target="_blank">6.胡峻峥</a></td>
-  </tr>
 </table>
