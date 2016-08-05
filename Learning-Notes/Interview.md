@@ -1,4 +1,5 @@
 <h2>A.面试</h2>
+
 <strong>算法</strong>
 <table>
   <tr>
@@ -25,14 +26,10 @@
    <tr>
     <td><a href="http://bbs.jointforce.com/topic/16983">8.程序员如何准备面试中的算法</a></td>
   </tr>
-  
 </table>
 
 <strong>前端</strong>
 <table>
-  <tr>
-    <td><a href="https://github.com/geekcompany/ResumeSample">1.程序员简历模版</a></td>
-  </tr>
   <tr>
     <td><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com"><strong>1.前端开发面试题1</strong></a></td>
   </tr>
@@ -112,7 +109,20 @@
   <tr>
     <td><a href="http://coderknock.com/blog/2016/04/08/Interview.html">11.Java面试题</a></td>
   </tr>
+  <tr>
+    <td><a href="http://www.codeceo.com/article/15-apache-interview-question.html">12.25个Apache面试题汇总</a></td>
+  </tr>
 </table>
+
+<strong>Android</strong>
+<table>
+  <tr>
+      <td><a href="http://blog.csdn.net/wdong_love_cl/article/details/52084720">1.史上最全的Java&amp;Android面试题搜集整理</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.diycode.cc/wiki/androidinterview">2.Android开发工程师面试指南</a></td>
+  </tr>
+<table>
 
 <strong>iOS</strong>
 <table>
@@ -136,21 +146,45 @@
   </tr>
 </table>
 
-10.阿里、百度、搜狐等公司社招面试记录与总结:
-<a href="http://www.cnblogs.com/binyue/p/4015884.html" target="_blank">URL</a>
-15.一道面试题：遇到大规模Oracle坏块该怎么处理？
-<a href="http://www.58maisui.com/2016/05/22/a-4/" target="_blank">URL</a>
-<br />
-&nbsp;&nbsp; 16.我的实习生面试之旅（拿下阿里巴巴、腾讯、百词斩offer）：
-<a href="http://blog.csdn.net/mxm691292118/article/details/51261266" target="_blank">URL</a>
-<br />
-33.高并发性能调试经验分享:&nbsp;<a href="https://zhuanlan.zhihu.com/p/21348220" target="_blank">https://zhuanlan.zhihu.com/p/21348220</a></span></p>
-36.25个Apache面试题汇总:<a href="http://www.codeceo.com/article/15-apache-interview-question.html" target="_blank">http://www.codeceo.com/article/15-apache-interview-question.html</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;37.11个高级MySQL数据库面试问题和答案:&nbsp;<a href="http://www.codeceo.com/article/11-mysql-interview-question.html" target="_blank">http://www.codeceo.com/article/11-mysql-interview-question.html</a></span></p>
-43.很全的Python面试题:<a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk" target="_blank">http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk</a></span></p>
-45.Android开发工程师面试指南：<a href="http://www.diycode.cc/wiki/androidinterview" target="_blank">http://www.diycode.cc/wiki/androidinterview</a></span></p>
-46.国内一线互联网公司内部面试题库：<a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md" target="_blank">点击打开链接</a></span></p>
-47.这里有一份面经，请查收：<a href="http://blog.jobbole.com/103105/" target="_blank">http://blog.jobbole.com/103105/</a></span></p>
-49.史上最全的Java&amp;Android面试题搜集整理:<a href="http://blog.csdn.net/wdong_love_cl/article/details/52084720" target="_blank">http://blog.csdn.net/wdong_love_cl/article/details/52084720</a></span></p>
-51.2015史上最全面经合集：百度、阿里、腾讯、360、网易:<a href="http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#" target="_blank">http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#</a></span></p>
+<strong>各大公司面试经验总结</strong>
+<table>
+  <tr>
+    <td><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md"><strong>1.国内一线互联网公司内部面试题库</strong></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.cnblogs.com/binyue/p/4015884.html">2.阿里、百度、搜狐等公司社招面试记录与总结</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#">3.2015史上最全面经合集：百度、阿里、腾讯、360、网易</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://blog.jobbole.com/103105/">4.这里有一份面经，请查收</a></td>
+  </tr>
+</table>
 
+<strong>数据库</strong>
+<table>
+  <tr>
+    <td><a href="http://www.codeceo.com/article/11-mysql-interview-question.html">1.11个高级MySQL数据库面试问题和答案</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.58maisui.com/2016/05/22/a-4/">2.一道面试题：遇到大规模Oracle坏块该怎么处理？</a></td>
+  </tr>
+</table>
+
+<strong>Python</strong>
+<table>
+  <tr>
+    <td><a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk">1.很全的Python面试题</a></td>
+  </tr>
+</table>
+
+<strong>其它面试资料</strong>
+<table>
+  <tr>
+    <td><a href="https://github.com/geekcompany/ResumeSample"><strong>1.程序员简历模版</strong></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://zhuanlan.zhihu.com/p/21348220">2.高并发性能调试经验分享</a></td>
+  </tr>
+</table>
