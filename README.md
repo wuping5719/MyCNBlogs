@@ -1,12 +1,8 @@
 # MyCNBlogs
 <Strong>WP_CNBlogs: http://www.cnblogs.com/wp5719/ </Strong>
 
+<h2>Top Company GitHub:</h2>
 <table>
-  <tr>
-    <td>
-       Top Company GitHub
-    </td>
-  </tr>
   <tr>
     <td>
       <a href="https://github.com/google">1.Google</a>
@@ -23,8 +19,6 @@
     <td>
       <a href="https://github.com/twitter">5.Twitter</a>
     </td>
-  </tr>
-  <tr>
     <td>
       <a href="https://github.com/square">6.Square</a>
     </td>
