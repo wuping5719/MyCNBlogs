@@ -85,6 +85,9 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Tools.md">C.编程工具软件</a>
     </td>
     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/CPlusPlus.md">E.C++</a>
+    </td>
+    <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/FamousBlogs.md">H.博客</a>
     </td>
     <td>
@@ -139,11 +142,7 @@
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;42.NGINX and ZooKeeper, Dynamic Load Balancing and Deployments:<a href="https://www.nginx.com/blog/nginx-and-zookeeper-dynamic-load-balancing-and-deployments/" target="_blank">点击打开链接</a></span></p>
 <p align="left">&nbsp; <span style="font-size: 18px; font-family: 宋体;">43.Zookeeper原理：<a href="http://coderknock.com/blog/2016/07/25/Zookeeper.html" target="_blank">http://coderknock.com/blog/2016/07/25/Zookeeper.html</a></span></p>
 <p>&nbsp;</p>
-<h2 align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><strong><span style="font-size: 18px;">E.C++:</span></strong></span></span></h2>
-<p align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;1.<span style="color: #808000;"><strong>最全面的C++资源、框架大全</strong></span>: <a href="http://www.codeceo.com/article/cpp-resource-framework.html" target="_blank">http://www.codeceo.com/article/cpp-resource-framework.html</a></span></span></span></p>
-<p align="left"><span style="color: #4d4d4d; line-height: 32px;"><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;</span><span style="font-family: 宋体; font-size: 18px;">2.图说C++对象模型：对象内存布局详解:&nbsp;<a href="http://www.cnblogs.com/QG-whz/p/4909359.html" target="_blank">http://www.cnblogs.com/QG-whz/p/4909359.html</a></span></span></span></p>
-<p align="left">&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">3.Tutorials: <a href="http://www.leadwerks.com/werkspace/page/tutorials" target="_blank">http://www.leadwerks.com/werkspace/page/tutorials</a></span></p>
-<p align="left">&nbsp;</p>
+
 <h2 align="left"><span style="font-size: 18px;"><span><span style="font-family: SimSun;"><strong>F.前端：</strong></span></span></span></h2>
 <p align="left"><span style="font-size: 18px;"><span><span style="font-family: SimSun;">&nbsp;<span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">1.JQueryEasyUI</span><span style="font-family: 宋体; font-size: 13.5pt;">中文网：</span><a href="http://www.jeasyui.net/" target="_blank">http://www.jeasyui.net/</a></span></span></span></p>
 <p align="left"><span style="font-size: 18px;"><span>&nbsp;<span style="font-family: SimSun;">2.<span lang="EN-US">Handlebars.js:<span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">MinimalTemplating on Steroids</span><span style="font-family: 宋体; font-size: 13.5pt;">：</span><a href="http://handlebarsjs.com/" target="_blank">http://handlebarsjs.com/</a></span></span></span></span></p>
