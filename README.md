@@ -99,6 +99,12 @@
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Game.md">M.游戏</a>
     </td>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/BigData.md">O.大数据</a>
+    </td>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/MachineLearning.md">Q.机器学习</a>
+    </td>
   </tr>
 </table>
 
@@ -311,15 +317,7 @@
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;14.15个初学者必看的基础SQL查询语句:<a href="http://www.codeceo.com/article/15-basic-sql-for-beginner.html" target="_blank">http://www.codeceo.com/article/15-basic-sql-for-beginner.html</a></span></p>
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;15.MySQL性能优化的最佳20+条经验：<a href="http://www.codeceo.com/article/20-mysql-performance-tips.html" target="_blank">http://www.codeceo.com/article/20-mysql-performance-tips.html</a></span></p>
 <p>&nbsp;</p>
-<h2 align="left">
-		<span style="font-family: SimSun; font-size: 18px;"><strong>O.大数据</strong></span>
-	</h2>
-<p align="left">
-		<span><span lang="EN-US"><span style="font-size: 18px;">&nbsp;</span><span style="font-family: SimSun; font-size: 18px;">1.<strong><span style="color: #008000;">史上最全的大数据学习资源汇总</span></strong>：<a href="http://www.cnblogs.com/dunitian/p/5461280.html" target="_blank">http://www.cnblogs.com/dunitian/p/5461280.html</a></span></span></span>
-	</p>
-<p align="left">
-		<span lang="EN-US">&nbsp;<span style="font-family: SimSun; font-size: 18px;">2.Spark性能优化指南&mdash;高级篇：<a href="http://tech.meituan.com/spark-tuning-pro.html" target="_blank">http://tech.meituan.com/spark-tuning-pro.html</a></span></span>
-	</p>
+
 <p align="left"><span style="font-size: 18px; font-family: 宋体;" lang="EN-US">
 		&nbsp;3.史上最全的机器学习资料（上）：<a href="https://yq.aliyun.com/articles/43089" target="_blank">https://yq.aliyun.com/articles/43089</a>
 	</span></p>
