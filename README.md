@@ -102,6 +102,11 @@
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/BigData.md">O.大数据</a>
     </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/OperatingSystem.md">P.操作系统OS</a>
+    </td>
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/MachineLearning.md">Q.机器学习</a>
     </td>
@@ -318,28 +323,6 @@
 <p><span style="font-size: 18px; font-family: 宋体;">&nbsp;15.MySQL性能优化的最佳20+条经验：<a href="http://www.codeceo.com/article/20-mysql-performance-tips.html" target="_blank">http://www.codeceo.com/article/20-mysql-performance-tips.html</a></span></p>
 <p>&nbsp;</p>
 
-<p align="left"><span style="font-size: 18px; font-family: 宋体;" lang="EN-US">
-		&nbsp;3.史上最全的机器学习资料（上）：<a href="https://yq.aliyun.com/articles/43089" target="_blank">https://yq.aliyun.com/articles/43089</a>
-	</span></p>
-<p align="left"><span style="font-size: 18px; font-family: 宋体;">
-		&nbsp;4.机器学习进阶路上不可错过的28个视频：<a href="http://www.chinarobots.cn/JiQiXueXi/909.html" target="_blank">http://www.chinarobots.cn/JiQiXueXi/909.html</a></span><span><span lang="EN-US"><br />
-		</span></span>
-	</p>
-<p align="left">&nbsp;</p>
-<h2 align="left">
-		<span style="font-family: SimSun; font-size: 18px;"><strong>P.操作系统OS</strong></span>
-	</h2>
-<p align="left">
-		<span><span lang="EN-US"><span style="font-size: 18px;">&nbsp; </span><span style="font-family: SimSun; font-size: 18px;">1.</span></span></span><span style="color: #333333; line-height: 1.2;"><span style="font-family: SimSun; font-size: 18px;">Java程序员眼中的Linux:&nbsp;<a href="https://github.com/judasn/Linux-Tutorial?hmsr=toutiao.io&amp;amp;utm_medium=toutiao.io&amp;amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></span>
-	</p>
-<p align="left">
-		<span style="color: #333333; line-height: 1.2;">&nbsp; <span style="font-family: SimSun;"><span style="font-size: 18px;">2.<strong><span style="color: #008000;">80多个Linux系统管理员必备的监控工具</span></strong>:&nbsp;<a href="http://www.smartcitychina.cn/QianYanJiShu/2016-05/7057.html" target="_blank">http://www.smartcitychina.cn/QianYanJiShu/2016-05/7057.html</a></span></span></span>
-	</p>
-<p align="left">
-		&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">3.fork()函数与Linux中的多线程编程:&nbsp;<a href="http://www.techug.com/linux-fork" target="_blank">http://www.techug.com/linux-fork</a></span><span><span lang="EN-US"><span style="font-family: SimSun; font-size: 18px;"><br />
-		</span></span></span>
-	</p>
-<p align="left">&nbsp;</p>
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">Q.心得杂谈</span></span></strong>
 	</h2>
