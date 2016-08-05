@@ -6,33 +6,43 @@
   </tr>
   <tr>
     <td><a href="http://www.ruanyifeng.com/blog/" target="_blank"><strong>1.阮一峰的网络日志</strong></a></td>
+    <td><a href="http://tech.uc.cn/" target="_blank"><strong>1.UC技术博客</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.alloyteam.com/author/tat-sheran/" target="_blank"><strong>2.腾讯全端AlloyTeam团队Blog</strong></a></td>
+    <td><a href="http://tech.meituan.com/" target="_blank"><strong>2.美团点评技术团队</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://lab.yuanwai.wang/" target="_blank">3.支付宝前端：王员外-攻城师的实验室</a></td>
+    <td><a href="http://hukai.me/" target="_blank">3.腾讯Android工程师：胡凯</a></td>
   </tr>
   <tr>
     <td><a href="https://imququ.com/" target="_blank">4.360前端 Jerry Qu</a></td>
+    <td><a href="https://blog.maxleap.cn/?lang=zh" target="_blank">4.maxleap</a></td>
   </tr>
   <tr>
     <td><a href="http://www.barretlee.com/entry/" target="_blank">5.淘宝前端：小胡子哥</a></td>
+    <td><a href="http://www.henishuo.com/" target="_blank">5.iOS标哥的技术博客</a></td>
   </tr>
   <tr>
     <td><a href="http://purplebamboo.github.io/" target="_blank">6.前端 purplebamboo</a></td>
+    <td><a href="http://yydcdut.com/" target="_blank">6.Android杂文-yydcdut</a></td>
   </tr>
   <tr>
     <td><a href="http://www.aoao.org.cn/" target="_blank">7.淘宝网前端:嗷嗷</a></td>
+    <td><a href="http://alighters.com/" target="_blank">7.alighters</a></td>
   </tr>
   <tr>
     <td><a href="http://www.welefen.com/" target="_blank">8.百度新首页和百度空间前端：李成银</a></td>
+    <td><a href="http://www.lightskystreet.com/" target="_blank">8.lightSky&lsquo;Blog</a></td>
   </tr>
   <tr>
     <td><a href="http://docs.kissyui.com/" target="_blank">9.淘宝前端框架KISSY的维护与开发：何一鸣</a></td>
+    <td><a href="http://www.leichunfeng.com/" target="_blank">9.雷纯锋</a></td>
   </tr>
   <tr>
     <td><a href="http://luolonghao.iteye.com/" target="_blank">10.土豆网前端：罗龙浩</a></td>
+    <td><a href="http://johnhany.net/" target="_blank">10.JohnHany的博客</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/fool2fish/blog/issues?q=is%3Aopen" target="_blank">11.淘宝网前端团队卖家线：杨周璇</a></td>
@@ -54,40 +64,6 @@
   </tr>
   <tr>
     <td><a href="http://dean.edwards.name/weblog/2005/10/add-event/" target="_blank">17.Dean Edwards</a></td>
-  </tr>
-</table>
-
-<p>&nbsp;<strong>&beta;.移动开发：</strong></p>
-<table>
-  <tr>
-    <td><a href="http://tech.uc.cn/" target="_blank"><strong>1.UC技术博客</strong></a></td>
-  </tr>
-  <tr>
-    <td><a href="http://tech.meituan.com/" target="_blank"><strong>2.美团点评技术团队</strong></a></td>
-  </tr>
-  <tr>
-    <td><a href="http://hukai.me/" target="_blank">3.腾讯Android工程师：胡凯</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://blog.maxleap.cn/?lang=zh" target="_blank">4.maxleap</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://www.henishuo.com/" target="_blank">5.iOS标哥的技术博客</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://yydcdut.com/" target="_blank">6.Android杂文-yydcdut</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://alighters.com/" target="_blank">7.alighters</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://www.lightskystreet.com/" target="_blank">8.lightSky&lsquo;Blog</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://www.leichunfeng.com/" target="_blank">9.雷纯锋</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://johnhany.net/" target="_blank">10.JohnHany的博客</a></td>
   </tr>
 </table>
 
