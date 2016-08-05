@@ -91,6 +91,9 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/FamousBlogs.md">H.博客</a>
     </td>
     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Algorithm.md">J.算法</a>
+    </td>
+    <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Network.md">L.网络</a>
     </td>
   </tr>
@@ -266,26 +269,7 @@
 <p align="left"><strong>&nbsp; </strong><span style="font-size: 18px; font-family: 宋体;">5.<strong>500+开源iOS应用</strong>：<a href="https://github.com/dkhamsing/open-source-ios-apps" target="_blank">https://github.com/dkhamsing/open-source-ios-apps</a></span><strong><br />
 		</strong>
 	</p>
-<p align="left">&nbsp;</p>
-<h2 align="left">
-		<strong><span style="font-size: 18px;">J.算法</span></strong>
-	</h2>
-<p align="left">
-		<span style="font-size: 18px;"><strong>&nbsp;</strong><span style="font-family: SimSun;">1.<span>关于<span lang="EN-US">ACM</span>的一些资料：<a href="http://www.cnblogs.com/gpcuster/archive/2007/06/14/782955.html" target="_blank">http://www.cnblogs.com/gpcuster/archive/2007/06/14/782955.html</a></span></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: SimSun;"><span><span style="font-size: 18px;">&nbsp;2.<span style="font-family: 宋体;" lang="EN-US">ACM</span><span style="font-family: 宋体;">：</span><a href="http://github.thinkingbar.com/" target="_blank">http://github.thinkingbar.com/</a></span></span></span>
-	</p>
-<p align="left">
-		<span style="font-family: SimSun;">&nbsp;</span><span style="font-family: SimSun; font-size: 18px;">3.LeetCode:&nbsp;<a href="https://leetcode.com/problemset/algorithms/" target="_blank">https://leetcode.com/problemset/algorithms/</a></span>
-	</p>
-<p align="left">&nbsp; <span style="font-family: SimSun; font-size: 18px;">4.搜索引擎索引数据结构和算法：<span style="font-family: 宋体;"><a href="http://www.hoohack.me/2016/05/09/datasture-and-algorithm-of-search-engine?hmsr=toutiao.io&amp;amp;utm_medium=toutiao.io&amp;amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></span>
-	</p>
-<p align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体;">&nbsp;5.机器学习常见算法分类汇总:<a href="http://www.codeceo.com/article/machine-learning.html" target="_blank">http://www.codeceo.com/article/machine-learning.html</a></span></span></p>
-<p align="left">
-		<span style="font-family: SimSun;"><span><span style="font-size: 18px;"><br />
-		</span></span></span>
-	</p>
+
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">K.安全</span></span></strong></h2>
 <p><strong><span style="font-family: SimSun;"><span style="font-size: 18px;">&nbsp;</span></span></strong><span style="font-family: SimSun;"><span style="font-size: 18px;">1.WooYun知识库-360安全卫士：<a href="http://drops.wooyun.org/author/360%E5%AE%89%E5%85%A8%E5%8D%AB%E5%A3%AB" target="_blank">http://drops.wooyun.org/author/360%E5%AE%89%E5%85%A8%E5%8D%AB%E5%A3%AB</a></span></span></p>
