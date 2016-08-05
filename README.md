@@ -105,6 +105,9 @@
   </tr>
   <tr>
     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/DataBase.md">N.数据库</a>
+    </td>
+    <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/BigData.md">O.大数据</a>
     </td>
     <td>
@@ -286,30 +289,6 @@
 <p align="left"><strong>&nbsp; </strong><span style="font-size: 18px; font-family: 宋体;">5.<strong>500+开源iOS应用</strong>：<a href="https://github.com/dkhamsing/open-source-ios-apps" target="_blank">https://github.com/dkhamsing/open-source-ios-apps</a></span><strong><br />
 		</strong>
 	</p>
-
-<h2 align="left">
-		<strong><span style="font-family: SimSun; font-size: 18px;">N.数据库</span></strong>
-	</h2>
-<p align="left">
-		<span style="font-size: 18px;"><strong>&nbsp;&nbsp;</strong><span style="font-family: SimSun;">1.SQL养成一个好习惯是一笔财富:<a href="http://www.xiongge.club/508.html" target="_blank">http://www.xiongge.club/508.html</a></span></span>
-	</p>
-<p align="left">
-		<span style="font-size: 18px;">&nbsp; </span><span style="font-family: SimSun; font-size: 18px;">2.三招搞挂MySQL：<a href="http://www.58maisui.com/2016/05/13/article-173/" target="_blank">http://www.58maisui.com/2016/05/13/article-173/</a></span>
-	</p>
-<p align="left"><span style="font-family: SimSun; font-size: 18px;">&nbsp;3.21条最佳MySQL性能优化:&nbsp;<a href="http://www.phpxs.com/post/5092" target="_blank">http://www.phpxs.com/post/5092</a></span></p>
-<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">4.PHP+MySQL数据库教程:&nbsp;<a href="http://www.5idev.com/php-mysql.shtml" target="_blank">http://www.5idev.com/php-mysql.shtml</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;5.数据库必会必知之SQL四种语言：DDL DML DCL TCL:&nbsp;<a href="http://www.bysocket.com/?p=1174" target="_blank">http://www.bysocket.com/?p=1174</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;6.MySQL查询语句执行过程:&nbsp;<a href="http://shanks.leanote.com/post/MySQL%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B" target="_blank">http://shanks.leanote.com/post/MySQL查询过程</a></span></p>
-<p align="left">&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">7.SQL性能优化：<a href="http://www.vaikan.com/what-do-you-know-about-sql-performance/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect1465626312452" target="_blank">点击打开链接</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;8.MySQL知识分享网站：<a href="http://ourmysql.com/" target="_blank">http://ourmysql.com/</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;9.MySQL分页性能优化指南:<a href="http://www.codeceo.com/article/mysql-page-performance.html" target="_blank">http://www.codeceo.com/article/mysql-page-performance.html</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.MySQL数据库优化的最佳实践:<a href="http://www.codeceo.com/article/best-database-better.html" target="_blank">http://www.codeceo.com/article/best-database-better.html</a></span></p>
-<p>&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">11.100+个MySQL调试和优化技巧:<a href="http://mp.weixin.qq.com/s?__biz=MzAwMDM2NzUxMg==&amp;mid=2247484514&amp;idx=1&amp;sn=2cb4246bbf991186eb08aeacd71b2893&amp;scene=21#wechat_redirect" target="_blank">http://mp.weixin.qq.com/</a></span></p>
-<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;12.MySQL架构优化实战系列：定时计划任务与表分区:<a href="http://www.58maisui.com/2016/07/08/a-472/" target="_blank">http://www.58maisui.com/2016/07/08/a-472/</a></span></p>
-<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;13.MySQL中容易被我们误会的地方:<a href="http://bbs.jointforce.com/topic/17197" target="_blank">http://bbs.jointforce.com/topic/17197</a></span></p>
-<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;14.15个初学者必看的基础SQL查询语句:<a href="http://www.codeceo.com/article/15-basic-sql-for-beginner.html" target="_blank">http://www.codeceo.com/article/15-basic-sql-for-beginner.html</a></span></p>
-<p><span style="font-size: 18px; font-family: 宋体;">&nbsp;15.MySQL性能优化的最佳20+条经验：<a href="http://www.codeceo.com/article/20-mysql-performance-tips.html" target="_blank">http://www.codeceo.com/article/20-mysql-performance-tips.html</a></span></p>
-<p>&nbsp;</p>
 
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">Q.心得杂谈</span></span></strong>
