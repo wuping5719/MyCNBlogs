@@ -97,10 +97,7 @@
     <td><a href="http://jm.taobao.org/" target="_blank"><strong>2.阿里中间件团队博客</strong></a></td>
   </tr>
   <tr>
-    <td><a href="http://taozj.org/" target="_blank">3.桃子&nbsp;Nicol TAO</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://whatbeg.com/" target="_blank">4.Whatbeg's blog</a></td>
+    <td><a href="http://whatbeg.com/" target="_blank">3.Whatbeg's blog</a></td>
   </tr>
   <tr>
     <td><a href="http://www.cnblogs.com/kissdodog/" target="_blank">4.逆心</a></td>
