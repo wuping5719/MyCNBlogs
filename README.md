@@ -55,7 +55,7 @@
   </tr>
   <tr>
     <td>
-      <Strong>8.RPC Framework:</Strong>
+      8.RPC Framework:
     </td>
     <td>
       <a href="http://dubbo.io/">(1)dubbo</a>
@@ -64,7 +64,7 @@
       <a href="https://github.com/weibocom/motan">(2)motan</a>
     </td>
     <td>
-      <a href="https://github.com/smallnest/rpcx">(3)rpcx/a>
+      <a href="https://github.com/smallnest/rpcx">(3)rpcx</a>
     </td>
   </tr>
 </table>
