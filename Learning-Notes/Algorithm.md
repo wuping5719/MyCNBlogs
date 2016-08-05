@@ -1,7 +1,7 @@
 <h2>J.算法</h2>
 <table>
   <tr>
-    <td><a href="http://www.cnblogs.com/gpcuster/archive/2007/06/14/782955.html"><strong>1.关于ACM的一些资料：</strong></a></td>
+    <td><a href="http://www.cnblogs.com/gpcuster/archive/2007/06/14/782955.html"><strong>1.关于ACM的一些资料</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://github.thinkingbar.com/">2.ACM</a></td>
