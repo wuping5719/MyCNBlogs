@@ -88,6 +88,9 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/CPlusPlus.md">E.C++</a>
     </td>
     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/WebPlug-Ins.md">G.Web插件</a>
+    </td>
+    <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/FamousBlogs.md">H.博客</a>
     </td>
     <td>
@@ -99,11 +102,11 @@
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Network.md">L.网络</a>
     </td>
+  </tr>
+  <tr>
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Game.md">M.游戏</a>
     </td>
-  </tr>
-  <tr>
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/DataBase.md">N.数据库</a>
     </td>
@@ -243,24 +246,6 @@
 <p align="left">&nbsp; <span style="font-family: 宋体; font-size: 18px;">78.前端书籍和学习资源推荐:<a href="http://ms.csdn.net/geek/90147" target="_blank">http://ms.csdn.net/geek/90147</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;79.光滑变换的CSS3图标：<a href="http://netsmell.com/apps/transformable-icons/getting-started.html" target="_blank">http://netsmell.com/apps/transformable-icons/getting-started.html</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;80.光标Cursors:<a href="http://netsmell.com/apps/cursors-gh-pages/index.html" target="_blank">http://netsmell.com/apps/cursors-gh-pages/index.html</a></span></p>
-<p>&nbsp;</p>
-<h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>G.Web插件</strong></span></h2>
-<p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;</strong>1.<span style="font-family: 宋体; font-size: 13.5pt;">图表插件-<span lang="EN-US">ECharts</span>：<a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion" target="_blank">http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion</a></span></span></p>
-<p align="left"><span style="font-size: 18px;">&nbsp;&nbsp;<span style="font-family: SimSun;">2.<span style="font-size: 18px;">图表插件-</span><span style="font-size: 13.5pt;" lang="EN-US">Highcharts</span><span style="font-size: 13.5pt;">中文网：<a href="http://www.hcharts.cn/" target="_blank">http://www.hcharts.cn/</a></span></span></span></p>
-<p align="left"><span style="font-size: 18px;"><span style="font-family: SimSun;">&nbsp;3.<span lang="EN-US">Zrender</span>绘图：<a href="http://ecomfe.github.io/zrender/index.html" target="_blank">http://ecomfe.github.io/zrender/index.html</a></span></span></p>
-<p align="left"><span style="font-size: 18px;">&nbsp;<span style="font-family: SimSun;">4.<span lang="EN-US">JQueryThemeRoller</span><span>：<a href="http://jqueryui.com/themeroller/" target="_blank">http://jqueryui.com/themeroller/</a></span></span></span></p>
-<p align="left"><span style="font-size: 18px;"><span style="font-family: SimSun;">&nbsp;5.<span style="font-family: 宋体; font-size: 13.5pt;" lang="EN-US">jQuery</span><span style="font-family: 宋体; font-size: 13.5pt;">树插件-<span style="font-family: 宋体; font-size: 18px;">zTree</span>：<a href="http://www.ztree.me/v3/main.php#_zTreeInfo" target="_blank">http://www.ztree.me/v3/main.php#_zTreeInfo</a></span></span></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;6.提示框插件SweetAlert</span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp; &nbsp;SweetAlert-js超酷消息警告框插件: <a href="http://www.htmleaf.com/jQuery/Lightbox-Dialog/20141218888.html" target="_blank">http://www.htmleaf.com/jQuery/Lightbox-Dialog/20141218888.html</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp; &nbsp;SweetAlert-演示6种不同的提示框效果: <a href="http://www.sucaihuo.com/js/190.html" target="_blank">http://www.sucaihuo.com/js/190.html</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;7.layer弹窗组件：<a href="http://layer.layui.com/" target="_blank">http://layer.layui.com/</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;8.10个jQuery时间选择器插件：<a href="http://webres.wang/10-jquery-time-picker-plugins/" target="_blank">http://webres.wang/10-jquery-time-picker-plugins/</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;9.百度地图：<a href="http://mapv.baidu.com/demo/index.html" target="_blank">http://mapv.baidu.com/demo/index.html</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;10.新一代JavaScript控件：Wijmo 5：<a href="http://wijmo.gcpowertools.com.cn/products/wijmo-5/" target="_blank">http://wijmo.gcpowertools.com.cn/products/wijmo-5/</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;11.<strong>30分钟快速掌握Bootstrap</strong>：<a href="http://www.cnblogs.com/zhili/p/BoostrapQuickStart.html#rd" target="_blank">http://www.cnblogs.com/zhili/p/BoostrapQuickStart.html#rd</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;12.使用Echarts实现动态曲线图表:&nbsp;<a href="http://www.cnblogs.com/Dreamer-1/p/5530221.html" target="_blank">http://www.cnblogs.com/Dreamer-1/p/5530221.html</a></span></p>
-<p>&nbsp;&nbsp;<span style="font-family: 宋体; font-size: 18px;">13.jQuery WeUI-可能是最好用WeUI版本:&nbsp;<a href="http://www.spotty.com.cn/archives/55/" target="_blank">http://www.spotty.com.cn/archives/55/</a></span></p>
-<p>&nbsp;&nbsp;<span style="font-size: 18px; font-family: 宋体;">14.多屏互动&mdash;H5中级进阶:&nbsp;<a href="http://toutiao.com/i6308165735969456642/" target="_blank">http://toutiao.com/i6308165735969456642/</a></span></p>
 <p>&nbsp;</p>
 
 <h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体; letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="font-family: 宋体; letter-spacing: -0.1pt; font-size: 13.5pt;"><strong>I.移动开发</strong></span></span></span></h2>
