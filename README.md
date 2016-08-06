@@ -137,6 +137,6 @@
   </tr>
 </table>
 
-<h3>59条搞笑但却真实无比的编程语录:</h3>
- <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
-
+<p>59条搞笑但却真实无比的编程语录:
+  <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
+</p>
