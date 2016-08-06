@@ -4,62 +4,62 @@
 <table>
   <tr>
     <td><strong>算法</strong></td>
-    <td></td>
+    <td>|</td>
     <td><strong>Java</strong></td>
   </tr>
   <tr>
     <td><a href="http://www.guolanzhe.com/?p=582#more-582">1.保研机试刷题集合</a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://blog.csdn.net/jackfrued/article/details/44921941"><strong>1.Java面试题全集</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://coolshell.cn/"><strong>2.酷壳&nbsp;Coolshell</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://developer.51cto.com/art/201605/510561.htm?utm_source=tuicool&amp;utm_medium=referral">2.69个经典Spring面试题和答案</a></td>
   </tr>
   <tr>
     <td><a href="http://www.matrix67.com/blog/"><strong>3.Matrix67大牛的博客</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://codecloud.net/java-set-interviews-7716.html">3.Java集合相关面试问题和答案</a></td>
   </tr>
   <tr>
     <td><a href="http://blog.csdn.net/v_JULY_v"><strong>4.July的CSDN博客</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.importnew.com/12773.html">4.Java线程面试题Top 50</a></td>
   </tr>
   <tr>
     <td><a href="http://zhedahht.blog.163.com/"><strong>5.何海涛博客</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.zicheng.net/article/68.htm">5.115题Java面试问题和答案之JSP</a></td>
   </tr>
   <tr>
     <td><a href="http://www.hawstein.com/posts/ctci-solutions-contents.html"><strong>6.笔试面试的经典:Cracking the coding interview-问题与解答</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-interview-question.html">6.经典的Java基础面试题集锦</a></td>
   </tr>
   <tr>
     <td><a href="http://blog.csdn.net/hackbuteer1"><strong>7.Hackbuteer1的专栏</strong></a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-programming-tips.html">7.Java编程常见问题汇总</a></td>
   </tr>
   <tr>
     <td><a href="http://bbs.jointforce.com/topic/16983">8.程序员如何准备面试中的算法</a></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.codeceo.com/article/10-xml-questions-java-programmer.html">8.Java程序员的10道XML面试题</a></td>
   </tr>
   <tr>
     <td></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-asy-interview.html">9.Java同步问题面试参考指南</a></td>
   </tr>
   <tr>
     <td></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://coderknock.com/blog/2016/04/08/Interview.html">10.Java面试题</a></td>
   </tr>
   <tr>
     <td></td>
-    <td></td>
+    <td>|</td>
     <td><a href="http://www.codeceo.com/article/15-apache-interview-question.html">11.25个Apache面试题汇总</a></td>
   </tr>
 </table>
