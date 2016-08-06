@@ -34,7 +34,7 @@
   </tr>
   <tr>
     <td><a href="http://ouvens.github.io/article-translation/2016/05/12/proper-error-handler-in-javascript.html">8.JavaScript中的错误处理</a></td>
-    <td><a href="http://netsmell.com/post/css3-animation-sniplet.html?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#/">8.CSS3动画代码大集合</a></td>
+    <td><a href="http://netsmell.com/post/css3-animation-sniplet.html?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#/"><strong>8.CSS3动画代码大集合</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.cnblogs.com/sharpxiajun/p/4111853.html">9.关于编写性能高效的JavaScript事件的技术</a></td>
