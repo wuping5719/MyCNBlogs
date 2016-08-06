@@ -151,7 +151,7 @@
 <table>
 
 <div>
-   <div>
+   <div style="float:left">
      <strong>各大公司面试经验总结</strong>
      <table>
        <tr>
@@ -169,7 +169,7 @@
      </table>
    </div>
    
-   </div>
+   </div style="float:left">
       <strong>数据库</strong>
       <table>
         <tr>
