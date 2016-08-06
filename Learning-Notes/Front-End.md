@@ -70,7 +70,7 @@
   </tr>
   <tr>
     <td><a href="http://yanhaijing.com/javascript/2015/12/29/mini-js-lib/">17.不可错过的JavaScript迷你库</a></td>
-    <td><a href="http://codepen.io/">17.CodePen动画</a></td>
+    <td><a href="http://codepen.io/"><strong>17.CodePen动画</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.spotty.com.cn/archives/29/">18.console对象--详解</a></td>
@@ -190,6 +190,10 @@
   <tr>
     <td></td> 
     <td><a href="http://www.ifcoder.us/1873">24.字符型图片验证码识别完整过程及Python实现</a></td>  
+  </tr>
+  <tr>
+    <td></td> 
+    <td><a href="https://github.com/phodal/awesome-growth"><strong>25.Awesome Growth：技能图谱</strong></a></td>  
   </tr>
 </table>
 
