@@ -50,7 +50,7 @@
   </tr>
   <tr>
     <td><a href="http://m.oschina.net/blog/673008">12.Java细粒度锁实现的几种方式</a></td>
-    <td><a href="http://www.runoob.com/">12.技术在线学习文档</a></td>
+    <td><a href="http://www.runoob.com/"><strong>12.技术在线学习文档</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://wosyingjun.iteye.com/blog/2312553?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io">13.Java后端相关的范例项目</a></td>
@@ -65,7 +65,7 @@
     <td><a href="http://lib.csdn.net/base/20/structure">15.CSDN知识库</a></td>
   </tr>
   <tr>
-    <td><a href="http://www.open-open.com/"><strong>16.Java开源大全</strong></a></td>
+    <td><a href="http://www.open-open.com/">16.Java开源大全</a></td>
     <td><a href="http://mp.weixin.qq.com/s?__biz=MzI4NTA1MDEwNg==&amp;mid=403173621&amp;idx=1&amp;sn=ef02a7b7731eafa2dfbb74ea84a7fde3&amp;scene=0#wechat_redirect">16.那些年，追过的开源软件和技术</a></td>
   </tr>
   <tr>
