@@ -10,7 +10,7 @@
   </tr>
   <tr>
     <td><a href="http://es6.ruanyifeng.com/"><strong>2.ECMAScript 6入门</strong></a></td>
-    <td><a href="http://www.cnblogs.com/xiaohuochai/p/5518943.html"><strong>2.深入理解CSS伪类</strong></a></td>
+    <td><a href="http://www.cnblogs.com/xiaohuochai/p/5518943.html">2.深入理解CSS伪类</a></td>
   </tr>
   <tr>
     <td><a href="http://www.spotty.com.cn/archives/98/">3.跟着9张思维导图学习JavaScript</a></td>
