@@ -41,7 +41,7 @@
     <td><a href="http://coderknock.com/blog/2016/07/25/Zookeeper.html">9.Zookeeper原理</a></td>
   </tr>
   <tr>
-    <td><a href="http://blog.csdn.net/luanlouis/article/details/24589193">10.Java动态代理机制详解（JDK和CGLIB，Javassist，ASM）</a></td>
+    <td><a href="http://blog.csdn.net/luanlouis/article/details/24589193">10.Java动态代理机制详解</a></td>
     <td><a href="http://blog.csdn.net/fw0124/article/details/48368695">10.Maven学习笔记-常用命令和设置</a></td>
   </tr>
   <tr>
