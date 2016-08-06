@@ -1,5 +1,6 @@
 # MyCNBlogs
 <Strong>WP_CNBlogs: http://www.cnblogs.com/wp5719/ </Strong>
+<p>&nbsp; &nbsp;Source Code:<a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode">URL</a></p>
 
 <h2>Top Company GitHub:</h2>
 <table>
@@ -136,5 +137,6 @@
   </tr>
 </table>
 
-
-
+<p>&nbsp; 59条搞笑但却真实无比的编程语录
+  <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
+</p>
