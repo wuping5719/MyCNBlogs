@@ -94,16 +94,19 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/FamousBlogs.md">H.博客</a>
     </td>
     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/MobileDevelopment.md">I.移动开发</a>
+    </td>
+    <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Algorithm.md">J.算法</a>
     </td>
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Security.md">K.安全</a>
     </td>
-    <td>
-      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Network.md">L.网络</a>
-    </td>
   </tr>
   <tr>
+     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Network.md">L.网络</a>
+    </td>
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Game.md">M.游戏</a>
     </td>
@@ -247,33 +250,6 @@
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;79.光滑变换的CSS3图标：<a href="http://netsmell.com/apps/transformable-icons/getting-started.html" target="_blank">http://netsmell.com/apps/transformable-icons/getting-started.html</a></span></p>
 <p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;80.光标Cursors:<a href="http://netsmell.com/apps/cursors-gh-pages/index.html" target="_blank">http://netsmell.com/apps/cursors-gh-pages/index.html</a></span></p>
 <p>&nbsp;</p>
-
-<h2 align="left"><span style="font-family: SimSun; font-size: 18px;"><span style="font-family: 宋体; letter-spacing: -0.1pt; font-size: 13.5pt;"><span style="font-family: 宋体; letter-spacing: -0.1pt; font-size: 13.5pt;"><strong>I.移动开发</strong></span></span></span></h2>
-<p>&nbsp; &nbsp; <span style="font-family: 宋体; font-size: 18px;">移动开发周刊：<a href="http://mobilev5.github.io/" target="_blank">http://mobilev5.github.io/</a></span></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp; <strong>㈠ Android</strong></span></p>
-<p align="left"><span style="font-family: SimSun; font-size: 18px;"><strong>&nbsp;&nbsp;</strong>1.<span style="color: #000000;">微信公众平台开发</span>：<a href="http://www.cnblogs.com/txw1958/p/wxpay-mkt-transfer.html" target="_blank">http://www.cnblogs.com/txw1958/p/wxpay-mkt-transfer.html</a></span></p>
-<p align="left">&nbsp; &nbsp;&nbsp;<span style="font-size: 18px;"><span style="font-family: SimSun;">2.<span style="color: #333333; line-height: 1; text-align: center;">微信支付SDK-两行代码解决支付:&nbsp;<a href="http://arccode.net/2016/05/02/微信支付SDK-两行代码解决支付/?hmsr=toutiao.io&amp;amp;utm_medium=toutiao.io&amp;amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></span></span></p>
-<p align="left"><span style="font-size: 18px;"><span style="font-family: SimSun;">&nbsp; 3.<strong>自学Android资料大全</strong>:&nbsp;<a href="http://bbs.jiandaima.com/thread-306-1-1.html" target="_blank">http://bbs.jiandaima.com/thread-306-1-1.html</a></span></span></p>
-<p align="left"><span style="font-size: 18px;"><span style="font-family: SimSun;">&nbsp;&nbsp;</span></span><span style="font-family: 宋体; font-size: 18px;">4.Android性能优化典范之多线程篇：<a href="http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&amp;mid=2653577007&amp;idx=1&amp;sn=0786fca3a00c4d0a1b580999b2b7a0f5&amp;scene=1&amp;srcid=0520OEDbwx6tncGUOlTCjvp9#wechat_redirect" target="_blank">点击打开链接</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 5.Java开发者应当知道的7个最佳Android开发库:&nbsp;<a href="http://www.wanwuyun.com/pages/news/315.html" target="_blank">http://www.wanwuyun.com/pages/news/315.html</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 6.<strong>腾讯质量开放平台WeTest</strong>:&nbsp;<a href="http://wetest.qq.com/lab/" target="_blank">http://wetest.qq.com/lab/</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 7.Android架构初探：<a href="http://www.lightskystreet.com/2016/05/20/android-architecture/" target="_blank">http://www.lightskystreet.com/2016/05/20/android-architecture/</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 8.开源项目Philm的MVP架构分析：<a href="http://www.lightskystreet.com/2015/02/10/philm_mvp/" target="_blank">http://www.lightskystreet.com/2015/02/10/philm_mvp/</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 9.如何自学Android:&nbsp;<a href="http://gityuan.com/2016/04/24/how-to-study-android/?rel=time" target="_blank">http://gityuan.com/2016/04/24/how-to-study-android/?rel=time</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 10.Android通用流行框架大全:&nbsp;<a href="http://www.phpxs.com/post/5067" target="_blank">http://www.phpxs.com/post/5067</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 11.<strong>Android开发书籍推荐:从入门到精通系列学习路线书籍介绍</strong>:&nbsp;<a href="http://diycode.cc/wiki/androidbook?hmsr=toutiao.io&amp;amp;utm_medium=toutiao.io&amp;amp;utm_source=toutiao.io" target="_blank">点击打开链接</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;12.加载动画：LoadingDrawable：<a href="https://github.com/dinuscxj/LoadingDrawable" target="_blank">https://github.com/dinuscxj/LoadingDrawable</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp; 13.<strong>Android学习资料收集</strong>：<a href="https://github.com/Freelander/Android_Data" target="_blank">https://github.com/Freelander/Android_Data</a></span></p>
-<p align="left"><span style="font-family: 宋体; font-size: 18px;">&nbsp;&nbsp;14.Android内存泄漏的八种可能：<a href="http://developer.51cto.com/art/201607/513681.htm" target="_blank">http://developer.51cto.com/art/201607/513681.htm</a></span></p>
-<p align="left">&nbsp;</p>
-<p>&nbsp; &nbsp;<strong><span style="font-family: 宋体; font-size: 18px;">㈡ iOS</span></strong></p>
-<p><span style="font-family: 宋体; font-size: 18px;">&nbsp;1.Swift中10个震惊小伙伴的单行代码:&nbsp;<a href="http://swift.gg/2016/04/18/10-Swift-One-Liners-To-Impress-Your-Friends/" target="_blank">http://swift.gg/2016/04/18/10-Swift-One-Liners-To-Impress-Your-Friends/</a></span></p>
-<p align="left">&nbsp; <span style="font-family: SimSun; font-size: 18px;">2.<strong>Swift语言指南</strong>：<a href="https://github.com/ipader/SwiftGuide/blob/master/weekly/Issue-53.md" target="_blank">https://github.com/ipader/SwiftGuide/blob/master/weekly/Issue-53.md</a></span></p>
-<p align="left">&nbsp; <span style="font-size: 18px; font-family: 宋体;">3.iOS完整App资源收集:&nbsp;<a href="http://www.henishuo.com/ios-app-fully-code/" target="_blank">http://www.henishuo.com/ios-app-fully-code/</a></span></p>
-<p align="left"><span style="font-size: 18px; font-family: 宋体;">&nbsp;4.<strong>百度iOS技术周报</strong>：<a href="https://github.com/BaiduHiDeviOS/iOS-Tech-Weekly" target="_blank">https://github.com/BaiduHiDeviOS/iOS-Tech-Weekly</a></span></p>
-<p align="left"><strong>&nbsp; </strong><span style="font-size: 18px; font-family: 宋体;">5.<strong>500+开源iOS应用</strong>：<a href="https://github.com/dkhamsing/open-source-ios-apps" target="_blank">https://github.com/dkhamsing/open-source-ios-apps</a></span><strong><br />
-		</strong>
-	</p>
 
 <h2 align="left">
 		<strong><span style="font-family: SimSun;"><span style="font-size: 18px;">Q.心得杂谈</span></span></strong>
