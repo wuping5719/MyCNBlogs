@@ -63,7 +63,7 @@
   1.Measuring programming progress by lines of code is like measuring aircraft building progress by weight. (Bill Gates)
    通过代码行数衡量开发进程就好比用重量来衡量飞机制造进度。
 
-  2. Programming is like sex. One mistake and you have to support it for the rest of your life. (Michael Sinz)
+  2.Programming is like sex. One mistake and you have to support it for the rest of your life. (Michael Sinz)
    编程就像性爱一样。一个错误就能绑住你的余生。
 
   3.Walking on water and developing software from a specification are easy if both are frozen. (Edward V Berard)
@@ -81,7 +81,7 @@
   7.The hardest part of design … is keeping features out. (Donald Norman)
    设计中最难的部分……是阻止功能。
 
-  8. In order to understand recursion, one must first understand recursion. (Anonymous)
+  8.In order to understand recursion, one must first understand recursion. (Anonymous)
    要想了解递归，首先必须理解递归。
 
   9.There are only two kinds of programming languages: those people always bitch about and those nobody uses. (Bjarne Stroustrup)
