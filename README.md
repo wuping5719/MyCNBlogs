@@ -122,6 +122,9 @@
     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/MachineLearning.md">Q.机器学习</a>
     </td>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/Experiences.md">R.心得杂谈</a>
+    </td>
   </tr>
 </table>
 
