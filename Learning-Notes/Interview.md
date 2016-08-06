@@ -169,7 +169,7 @@
      </table>
    </div>
    
-   </div style="float:left">
+   <div style="float:left">
       <strong>数据库</strong>
       <table>
         <tr>
