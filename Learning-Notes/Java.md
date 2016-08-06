@@ -5,7 +5,7 @@
     <td>2) Web框架</td>
   </tr>
   <tr>
-    <td><a href="http://easygeek.com.cn/topic/e93f9d5a4bfe446d9180f6f8fb23c658"><strong>1.100个高质量Java开发者博客</strong></a></td>
+    <td><a href="http://easygeek.com.cn/topic/e93f9d5a4bfe446d9180f6f8fb23c658">1.100个高质量Java开发者博客</a></td>
     <td><a href="http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-webservice%3A%2F%2F">1.dubbo用户指南</a></td>
   </tr>
   <tr>
@@ -25,7 +25,7 @@
     <td><a href="http://shiyanjun.cn/archives/1119.html">5.HadoopYARN架构设计要点</a></td>
   </tr>
   <tr>
-    <td><a href="http://w3cschool.codecloud.net/"><strong>6.程序员的资料库在线文档教程</strong></a></td>
+    <td><a href="http://w3cschool.codecloud.net/">6.程序员的资料库在线文档教程</a></td>
     <td><a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper-code/index.html">6.Apache ZooKeeper服务启动源码解释</a></td>
   </tr>
   <tr>
