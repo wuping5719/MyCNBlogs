@@ -1,6 +1,6 @@
 # MyCNBlogs
 <Strong>WP_CNBlogs: http://www.cnblogs.com/wp5719/ </Strong>
-<p>&nbsp; &nbsp;Source Code:<a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode">URL</a></p>
+<p>&nbsp;Source Code:<a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode">URL</a></p>
 
 <h2>Top Company GitHub:</h2>
 <table>
@@ -70,7 +70,7 @@
   </tr>
 </table>
 
-<h2>程序猿学习资料集邮：</h2>
+<h2>程序猿学习资料集邮</h2>
 <p>&nbsp; &nbsp;编程学习中经常要访问一些网站找资料，为了以后便于查找，在这里做下整理。</p>
 <p>&nbsp; &nbsp;哎，越学越觉得自己还只是个菜鸟！励志成为一个小小的全栈工程狮。</p>
 
