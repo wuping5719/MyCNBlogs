@@ -38,7 +38,7 @@
   10.Once a new technology starts rolling, if you’re not part of the steamroller, you’re part of the road. (Stewart Brand)
    一旦一种新技术开始滚动碾压道路，如果你不能成为压路机的一部分，那么你就只能成为道路的一部分。
 
-  11. If at first you don’t succeed, call it version 1.0 (unknown)
+  11.If at first you don’t succeed, call it version 1.0 (unknown)
    如果第一次你没有成功，那么称之为1.0版，继续加油。
 
   12.All programmers are playwrights and all computers are lousy actors. (Anonymous Hack Actor)
