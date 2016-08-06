@@ -70,7 +70,7 @@
   </tr>
   <tr>
     <td><a href="http://yanhaijing.com/javascript/2015/12/29/mini-js-lib/">17.不可错过的JavaScript迷你库</a></td>
-    <td></td>
+    <td><a href="http://codepen.io/">17.CodePen动画</a></td>
   </tr>
   <tr>
     <td><a href="http://www.spotty.com.cn/archives/29/">18.console对象--详解</a></td>
