@@ -172,28 +172,20 @@
     <td><a href="http://www.xuanfengge.com/chrome-developer-debugging-tool-tool-tips.html">19.Chrome调试工具Developer Tool技巧</a></td>  
   </tr>
   <tr>
-    <td></td> 
+    <td><a href="https://github.com/putaoshu/jdf/">20.京东前端开发集成解决方案JDF</a></td> 
     <td><a href="http://www.ui.cn/detail/32941.html">20.200+值得收藏的设计师资源站</a></td>  
   </tr>
   <tr>
-    <td></td> 
-    <td><a href="https://github.com/putaoshu/jdf/">21.京东前端开发集成解决方案JDF</a></td>  
+    <td><a href="http://www.html5tricks.com/html5-effect-no-flash.html">21.7款无FlashHTML5动画特效</a></td> 
+    <td><a href="https://github.com/phodal/awesome-growth"><strong>21.Awesome Growth：技能图谱</strong></a></td>  
+  </tr>
+  <tr>
+    <td><a href="http://www.jianshu.com/p/bf266ec5a244">22.20张Cheat Sheet，让前端开发与设计效率x2</a></td>  
+    <td><a href="http://www.ifcoder.us/1873">22.字符型图片验证码识别完整过程及Python实现</a></td>  
   </tr>
   <tr>
     <td></td> 
-    <td><a href="http://www.html5tricks.com/html5-effect-no-flash.html">22.7款无FlashHTML5动画特效</a></td>  
-  </tr>
-  <tr>
-    <td></td> 
-    <td><a href="http://www.jianshu.com/p/bf266ec5a244">23.20张Cheat Sheet，让前端开发与设计效率x2</a></td>  
-  </tr>
-  <tr>
-    <td></td> 
-    <td><a href="http://www.ifcoder.us/1873">24.字符型图片验证码识别完整过程及Python实现</a></td>  
-  </tr>
-  <tr>
-    <td></td> 
-    <td><a href="https://github.com/phodal/awesome-growth"><strong>25.Awesome Growth：技能图谱</strong></a></td>  
+    <td><a href="https://keelii.github.io/2016/07/31/something-have-to-say-with-JD-item/">23.京东单品页前端开发那些不得不说的事儿</a></td>  
   </tr>
 </table>
 
