@@ -68,54 +68,39 @@
 <table>
   <tr>
     <td><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers?utm_source=ourjs.com"><strong>1.前端开发面试题1</strong></a></td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/hawx1993/Front-end-Interview-questions"><strong>2.前端开发面试题2</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/2014-javascript-interview.html">3.各大互联网公司2014前端笔试面试题 JavaScript篇</a></td>
-  </tr>
-  <tr>
-    <td><a href="http://www.cnblogs.com/coco1s/category/831730.html"><strong>4.BAT及各大互联网公司2014前端笔试面试题</strong></a></td>
+     <td><a href="http://www.cnblogs.com/coco1s/category/831730.html"><strong>4.BAT及各大互联网公司2014前端笔试面试题</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.58maisui.com/2016/06/03/a-88/">5.国外的十三道JavaScript题</a></td>
-  </tr>
-  <tr>
     <td><a href="http://ourjs.com/detail/542152eb91e3afe823000004">6.5个经典的前端面试问题</a></td>
   </tr>
   <tr>
     <td><a href="http://www.open-open.com/lib/view/open1451796617120.html">7.你有必要知道的25个JavaScript面试题</a></td>
-  </tr>
-  <tr>
     <td><a href="https://segmentfault.com/a/1190000005681454">8.44个Javascript变态题解析(上)</a></td>
   </tr>
   <tr>
     <td><a href="https://segmentfault.com/a/1190000005682214">9.44个Javascript变态题解析(下)</a></td>
-  </tr>
-  <tr>
     <td><a href="http://www.spotty.com.cn/archives/99/">10.5道JavaScript练习题</a></td>
   </tr>
   <tr>
     <td><a href="http://www.techug.com/interviewing-a-front-end-developer">11.我是如何面试WEB前端开发人员的</a></td>
-  </tr>
-  <tr>
     <td><a href="http://www.codeceo.com/article/5-javascript-interview-question.html">12.5个经典的JavaScript面试基础问题</a></td>
   </tr>
   <tr>
     <td><a href="http://www.58maisui.com/2016/05/01/article-61/">13.10个值得深思的PHP面试问题</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/hanzichi/leetcode"><strong>*14.LeetCode solutions in JavaScript (JS) with simple explaination</strong></a></td>
+     <td><a href="https://github.com/hanzichi/leetcode"><strong>14.LeetCode solutions in JavaScript (JS) with simple explaination</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.nowcoder.com/ta/front-end-interview"><strong>15.牛客网-前端面试经典题目合集</strong></a></td>
-  </tr>
-  <tr>
     <td><a href="http://blog.csdn.net/kongjiea/article/details/46341575">16.CSDN-前端面试题</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese">17.前端工作面试问题</a></td>
+    <td></td>
   </tr>
 </table>
 
