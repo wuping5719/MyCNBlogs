@@ -74,7 +74,7 @@
   </tr>
   <tr>
     <td><a href="http://www.spotty.com.cn/archives/29/">18.console对象--详解</a></td>
-    <td></td>
+    <td><a href="http://www.aseoe.com/special/webstart/css3_animation/"><strong>18.CSS3动画库 Animatable</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.vaikan.com/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect146642726662">19.早该知道的7个JavaScript技巧</a></td>
