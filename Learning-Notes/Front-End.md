@@ -187,5 +187,9 @@
     <td></td> 
     <td><a href="https://keelii.github.io/2016/07/31/something-have-to-say-with-JD-item/">23.京东单品页前端开发那些不得不说的事儿</a></td>  
   </tr>
+  <tr>
+    <td></td> 
+    <td><a href="http://codecloud.net/books/jquery/regexp.html#1"><strong>24.正则表达式速查表</strong></a></td>  
+  </tr>
 </table>
 
