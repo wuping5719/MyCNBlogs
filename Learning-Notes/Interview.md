@@ -70,7 +70,7 @@
   <tr>
     <td></td>
     <td>|</td>
-    <td><a href="http://mp.weixin.qq.com/s?__biz=MzI0NjUxNTY5Nw==&mid=2247483720&idx=1&sn=62049558dd5bc0df04f28cd6555189fc&scene=1&srcid=08202rcrU3JiEoJ0TgIw5lGV#rd"><strong>13.Java研发方向如何准备BAT技术面试答案（中）</strong></a></td>
+    <td><a href="http://mp.weixin.qq.com/s?__biz=MzI0NjUxNTY5Nw==&mid=2247483720&idx=1&sn=62049558dd5bc0df04f28cd6555189fc&scene=1&srcid=08202rcrU3JiEoJ0TgIw5lGV#rd"><strong>13.Java研发方向如何准备BAT技术面试答案</strong></a></td>
   </tr>
 </table>
 
