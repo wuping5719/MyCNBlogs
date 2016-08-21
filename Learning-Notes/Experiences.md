@@ -38,4 +38,8 @@
     <td><a href="http://m.wanga.me/2013/04/Scale2.swf">17.可观察宇宙</a></td>
     <td><a href="http://diycode.cc/topics/164">18.如何为你的开源项目选择一个合适的开源协议</a></td>
   </tr>
+  <tr>
+    <td><a href="https://www.zhihu.com/question/36546814">19.有哪些软件堪称「神器」，却不为大众所知？</a></td>
+    <td></td>
+  </tr>
 </table>
