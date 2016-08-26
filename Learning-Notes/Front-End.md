@@ -184,7 +184,7 @@
     <td><a href="http://www.ifcoder.us/1873">22.字符型图片验证码识别完整过程及Python实现</a></td>  
   </tr>
   <tr>
-    <td></td> 
+    <td><a href="http://saito.im/note/The-Architecture-of-F2E/#userconsent#"><strong>23.前端架构</strong></a></td> 
     <td><a href="https://keelii.github.io/2016/07/31/something-have-to-say-with-JD-item/">23.京东单品页前端开发那些不得不说的事儿</a></td>  
   </tr>
   <tr>
