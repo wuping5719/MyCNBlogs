@@ -78,7 +78,7 @@
   </tr>
   <tr>
     <td><a href="http://www.vaikan.com/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/?_biz=MjM5OTA1MDUyMA==&amp;mid=407358558&amp;idx=2&amp;sn=b21877f23bf4063fa311185009c1f0b7&amp;scene=0#wechat_redirect146642726662">19.早该知道的7个JavaScript技巧</a></td>
-    <td></td>
+    <td><a href="https://github.com/jobbole/awesome-css-cn"><Strong>19.CSS 资源大全中文版</Strong></a></td>
   </tr>
   <tr>
     <td><a href="http://webres.wang/you-don-t-need-javascript-for-that/">20.这些地方你不需要使用JavaScript</a></td>
