@@ -82,7 +82,7 @@
   </tr>
   <tr>
     <td><a href="http://webres.wang/you-don-t-need-javascript-for-that/">20.这些地方你不需要使用JavaScript</a></td>
-    <td></td>
+    <td><a href="http://enjoycss.com/gallery/shapes"><Strong>20.EnjoyCSS</Strong></a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/NamPNQ/You-Dont-Need-Javascript"><strong>21.You Don't Need JavaScript</strong></a></td>
