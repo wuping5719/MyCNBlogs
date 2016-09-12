@@ -48,7 +48,7 @@
     <td><a href="http://www.codeceo.com/article/10-xml-questions-java-programmer.html">8.Java程序员的10道XML面试题</a></td>
   </tr>
   <tr>
-    <td></td>
+    <td><a href="http://www.2cto.com//special/javamsh/"><strong>9.23种设计模式</strong></a></td>
     <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-asy-interview.html">9.Java同步问题面试参考指南</a></td>
   </tr>
