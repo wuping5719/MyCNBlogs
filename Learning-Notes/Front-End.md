@@ -88,6 +88,10 @@
     <td><a href="https://github.com/NamPNQ/You-Dont-Need-Javascript"><strong>21.You Don't Need JavaScript</strong></a></td>
     <td></td>
   </tr>
+  <tr>
+    <td><a href="http://www.webhek.com/javascript6">22.JavaScript6里都有啥新鲜东西</a></td>
+    <td></td>
+  </tr>
 </table>
 
 <table>
