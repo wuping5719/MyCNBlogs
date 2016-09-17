@@ -96,6 +96,10 @@
     <td><a href="http://www.codeceo.com/article/learning-javascript-part-9.html"><Strong>23.JavaScript学习总结</Strong></a></td>
     <td></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/damonare/Sorts">24.JavaScript版经典排序算法</a></td>
+    <td></td>
+  </tr>
 </table>
 
 <table>
@@ -198,6 +202,10 @@
   <tr>
     <td></td> 
     <td><a href="http://codecloud.net/books/jquery/regexp.html#1"><strong>24.正则表达式速查表</strong></a></td>  
+  </tr>
+  <tr>
+    <td></td> 
+    <td><a href="http://www.tupian114.com/tupian/quanjing.html">25.全景图片</a></td>  
   </tr>
 </table>
 
