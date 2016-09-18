@@ -52,4 +52,7 @@
   <tr>
     <td><a href="http://developer.51cto.com/art/201607/513681.htm">14.Android内存泄漏的八种可能</a></td>
   </tr>
+  <tr>
+    <td><a href="http://xfenglin.com/a/12007061970.html">15.5个最佳的Android测试框架</a></td>
+  </tr>
 </table>
