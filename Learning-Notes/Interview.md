@@ -181,6 +181,9 @@
        <tr>
          <td><a href="http://blog.jobbole.com/103105/">4.这里有一份面经，请查收</a></td>
        </tr>
+       <tr>
+         <td><a href="http://www.nowcoder.com/discuss/12805?type=0&order=0&pos=6&page=1"><strong>5.2016秋季校园招聘笔经面经专题汇总</strong></a></td>
+       </tr>
      </table>
    </div>
    
