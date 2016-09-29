@@ -3,7 +3,7 @@
 
 <table>
   <tr>
-    <td><strong>算法</strong></td>
+    <td><strong>算法 And C++</strong></td>
     <td>|</td>
     <td><strong>Java</strong></td>
   </tr>
