@@ -53,7 +53,7 @@
     <td><a href="http://www.codeceo.com/article/java-asy-interview.html">9.Java同步问题面试参考指南</a></td>
   </tr>
   <tr>
-    <td></td>
+    <td><a href="http://www.cnblogs.com/lanxuezaipiao/p/4127904.html">10.C/C++求职宝典21个重点笔记</a></td>
     <td>|</td>
     <td><a href="http://www.codeceo.com/article/15-apache-interview-question.html">10.25个Apache面试题汇总</a></td>
   </tr>
