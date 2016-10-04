@@ -7,4 +7,7 @@
   <tr>
     <td><a href="http://tech.meituan.com/spark-tuning-pro.html">2.Spark性能优化指南&mdash;高级篇</a></td>
   </tr>
+  <tr>
+    <td><a href="http://www.linkedkeeper.com/detail/blog.action?bid=121">3.Redis内存使用优化与存储</a></td>
+  </tr>
 </table>
