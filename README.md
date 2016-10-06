@@ -26,6 +26,9 @@
     <td>
       <a href="https://github.com/alibaba">7.Alibaba</a>
     </td>
+    <td>
+      <a href="https://github.com/baidu">8.Baidu</a>
+    </td>
   </tr>
 </table>
 
