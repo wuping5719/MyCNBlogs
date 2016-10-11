@@ -29,4 +29,8 @@
     <td><a href="http://www.spotty.com.cn/archives/55/">13.jQuery WeUI-可能是最好用WeUI版本</a></td>
     <td><a href="http://toutiao.com/i6308165735969456642/">14.多屏互动&mdash;H5中级进阶</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/Mikhus/canvas-gauges">15.HTML5 Canvas计量器绘制工具</a></td>
+    <td></td>
+  </tr>
 </table>
