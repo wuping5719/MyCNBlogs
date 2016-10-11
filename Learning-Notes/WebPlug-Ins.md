@@ -1,5 +1,4 @@
 <h2>G.Web插件</h2>
-
 <table>
   <tr>
     <td><a href="http://echarts.baidu.com/doc/example.html?qq-pf-to=pcqq.discussion">1.图表插件-ECharts</a></td>
