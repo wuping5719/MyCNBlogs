@@ -91,6 +91,16 @@
     <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-interview-forget.html">17.那些经常被遗忘的Java面试题</a></td>
   </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="http://www.nowcoder.com/discuss/2917">18.100+经典Java面试题及答案解析</a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="http://www.nowcoder.com/discuss/6890">19.Java研发方向如何准备BAT技术面试答案（上）</a></td>
+  </tr>
 </table>
 
 <strong>前端</strong>
