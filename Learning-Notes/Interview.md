@@ -224,4 +224,7 @@
   <tr>
     <td><a href="https://zhuanlan.zhihu.com/p/21348220">2.高并发性能调试经验分享</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/InterviewExperience/DataMining.md">3.数据挖掘面经</a></td>
+  </tr>
 </table>
