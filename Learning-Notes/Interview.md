@@ -174,61 +174,59 @@
   </tr>
 <table>
 
-<div>
-   <div>
-     <strong>各大公司面试经验总结</strong>
-     <table>
-       <tr>
-         <td><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md"><strong>1.国内一线互联网公司内部面试题库</strong></a></td>
-       </tr>
-       <tr>
-         <td><a href="http://www.cnblogs.com/binyue/p/4015884.html">2.阿里、百度、搜狐等公司社招面试记录与总结</a></td>
-       </tr>
-       <tr>
-         <td><a href="http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#">3.2015史上最全面经合集：百度、阿里、腾讯、360、网易</a></td>
-       </tr>
-       <tr>
-         <td><a href="http://blog.jobbole.com/103105/">4.这里有一份面经，请查收</a></td>
-       </tr>
-       <tr>
-         <td><a href="http://www.nowcoder.com/discuss/12805?type=0&order=0&pos=6&page=1"><strong>5.2016秋季校园招聘笔经面经专题汇总</strong></a></td>
-       </tr>
-     </table>
-   </div>
-   
-   <div>
-      <strong>数据库</strong>
-      <table>
-        <tr>
-          <td><a href="http://www.codeceo.com/article/11-mysql-interview-question.html">1.11个高级MySQL数据库面试问题和答案</a></td>
-        </tr>
-        <tr>
-          <td><a href="http://www.58maisui.com/2016/05/22/a-4/">2.一道面试题：遇到大规模Oracle坏块该怎么处理？</a></td>
-        </tr>
-      </table>
-  </div>
-</div>
+<table>
+   <tr>
+      <td><strong>面经</strong></td>
+      <td>|</td>
+      <td><strong>智力题</strong></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md"><strong>1.国内一线互联网公司内部面试题库</strong></a></td>
+      <td>|</td>
+      <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
+    </tr>
+    <tr>
+       <td><a href="http://www.cnblogs.com/binyue/p/4015884.html">2.阿里、百度、搜狐等公司社招面试记录与总结</a></td>
+       <td>|</td>
+       <td><a href="http://blog.csdn.net/hackbuteer1/article/details/6726419">2.程序员有趣的面试智力题</a></td>
+    </tr>
+    <tr>
+       <td><a href="http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#">3.2015史上最全面经合集：百度、阿里、腾讯、360、网易</a></td>
+       <td>|</td>
+       <td><a href="http://www.iteye.com/topic/1138208">3.IT面试常见的智力题</a></td>
+    </tr>
+    <tr>
+       <td><a href="http://blog.jobbole.com/103105/">4.这里有一份面经，请查收</a></td>
+       <td>|</td>
+       <td></td>
+    </tr>
+    <tr>
+       <td><a href="http://www.nowcoder.com/discuss/12805?type=0&order=0&pos=6&page=1"><strong>5.2016秋季校园招聘笔经面经专题汇总</strong></a></td>
+       <td>|</td>
+       <td></td>
+    </tr>
+    <tr>
+       <td><a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/InterviewExperience/DataMining.md">6.数据挖掘面经</a></td>
+       <td>|</td>
+       <td></td>
+    </tr>
+</table>
 
 <table>
   <tr>
     <td><strong>Python</strong></td>
     <td>|</td>
-    <td><strong>智力题</strong></td>
+    <td><strong>数据库</strong></td>
   </tr>
   <tr>
     <td><a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk">1.很全的Python面试题</a></td>
     <td>|</td>
-    <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
+    <td><a href="http://www.codeceo.com/article/11-mysql-interview-question.html">1.11个高级MySQL数据库面试问题和答案</a></td>
   </tr>
   <tr>
     <td></td>
     <td>|</td>
-    <td><a href="http://blog.csdn.net/hackbuteer1/article/details/6726419">2.程序员有趣的面试智力题</a></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>|</td>
-    <td><a href="http://www.iteye.com/topic/1138208">3.IT面试常见的智力题</a></td>
+    <td><a href="http://www.58maisui.com/2016/05/22/a-4/">2.一道面试题：遇到大规模Oracle坏块该怎么处理？</a></td>
   </tr>
 </table>
 
@@ -239,8 +237,5 @@
   </tr>
   <tr>
     <td><a href="https://zhuanlan.zhihu.com/p/21348220">2.高并发性能调试经验分享</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/InterviewExperience/DataMining.md">3.数据挖掘面经</a></td>
   </tr>
 </table>
