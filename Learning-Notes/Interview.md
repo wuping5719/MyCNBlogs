@@ -209,10 +209,26 @@
   </div>
 </div>
 
-<strong>Python</strong>
 <table>
   <tr>
+    <td><strong>Python</strong></td>
+    <td>|</td>
+    <td><strong>智力题</strong></td>
+  </tr>
+  <tr>
     <td><a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk">1.很全的Python面试题</a></td>
+    <td>|</td>
+    <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="http://blog.csdn.net/hackbuteer1/article/details/6726419">2.程序员有趣的面试智力题</a></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="http://www.iteye.com/topic/1138208">3.IT面试常见的智力题</a></td>
   </tr>
 </table>
 
