@@ -10,4 +10,7 @@
   <tr>
     <td><a href="https://www.zhihu.com/question/51039416">3.普通程序员如何向人工智能靠拢？</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/zlotus/notes-LSJU-machine-learning">4.机器学习笔记</a></td>
+  </tr>
 </table>
