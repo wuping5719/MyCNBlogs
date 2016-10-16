@@ -39,6 +39,7 @@
   <tr>
     <td><a href="http://www.aoao.org.cn/" >7.淘宝网前端:嗷嗷</a></td>
     <td><a href="http://alighters.com/" >7.alighters</a></td>
+    <td><a href="http://blog.720ui.com/" >7.梁桂钊的博客</a></td>
   </tr>
   <tr>
     <td><a href="http://www.welefen.com/" >8.百度新首页和百度空间前端：李成银</a></td>
