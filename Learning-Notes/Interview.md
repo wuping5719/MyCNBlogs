@@ -101,6 +101,11 @@
     <td>|</td>
     <td><a href="http://www.nowcoder.com/discuss/6890">19.Java研发方向如何准备BAT技术面试答案B</a></td>
   </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="http://www.importnew.com/12773.html">20.Java线程面试题Top 50</a></td>
+  </tr>
 </table>
 
 <strong>前端</strong>
