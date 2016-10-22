@@ -106,6 +106,11 @@
     <td>|</td>
     <td><a href="http://www.importnew.com/12773.html">20.Java线程面试题Top 50</a></td>
   </tr>
+  <tr>
+    <td></td>
+    <td>|</td>
+    <td><a href="https://github.com/it-interview/easy-job/blob/master"><Strong>21.Java研发知识点总结</Strong></a></td>
+  </tr>
 </table>
 
 <strong>前端</strong>
