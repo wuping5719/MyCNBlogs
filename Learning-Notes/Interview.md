@@ -109,7 +109,7 @@
   <tr>
     <td></td>
     <td>|</td>
-    <td><a href="https://github.com/it-interview/easy-job/blob/master"><Strong>21.Java研发知识点总结</Strong></a></td>
+    <td><a href="https://github.com/it-interview/easy-job"><Strong>21.Java研发知识点总结</Strong></a></td>
   </tr>
 </table>
 
