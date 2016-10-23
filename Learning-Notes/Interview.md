@@ -149,7 +149,7 @@
   </tr>
   <tr>
     <td><a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese">17.前端工作面试问题</a></td>
-    <td></td>
+    <td><a href="https://github.com/EdgarLovesProgramming/FE-Learning"><Strong>18.前端面试面经</Strong></a></td>
   </tr>
 </table>
 
