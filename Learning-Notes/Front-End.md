@@ -87,7 +87,7 @@
   </tr>
   <tr>
     <td><a href="https://github.com/NamPNQ/You-Dont-Need-Javascript"><strong>21.You Don't Need JavaScript</strong></a></td>
-    <td></td>
+    <td><a href="http://www.webhek.com/cssicon#/icon/relieved-solid">21.CSS3绘制的各种小图标</a></td>
   </tr>
   <tr>
     <td><a href="http://www.webhek.com/javascript6">22.JavaScript6里都有啥新鲜东西</a></td>
