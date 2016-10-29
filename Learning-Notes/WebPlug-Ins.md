@@ -31,6 +31,6 @@
   </tr>
   <tr>
     <td><a href="https://github.com/Mikhus/canvas-gauges">15.HTML5 Canvas计量器绘制工具</a></td>
-    <td></td>
+    <td><a href="http://www.html5tricks.com/"><Strong>16.HTML5资源教程</Strong></a></td>
   </tr>
 </table>
