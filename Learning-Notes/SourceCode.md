@@ -45,4 +45,8 @@
     <td><a href="http://www.58maisui.com/2016/07/15/a-545/" target="_blank">21.一般人不知道的数据获取方式</a></td>
     <td><a href="http://bbs.jointforce.com/topic/17859" target="_blank">22.阿里，百度，腾讯，360开源项目</a></td>
   </tr>
+  <tr>
+    <td><a href="http://geek.csdn.net/news/detail/110921" ><Strong>23.IT技能知识库</Strong></a></td>
+    <td></td>
+  </tr>
 </table>
