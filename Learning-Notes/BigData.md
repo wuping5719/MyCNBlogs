@@ -13,4 +13,7 @@
   <tr>
     <td><a href="http://blog.thankbabe.com/2016/09/14/high-concurrency-scheme/?from=geek26">4.大话程序猿眼里的高并发架构</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/blogchong/my-docs"><strong>5.博客虫大数据技术文章合集</strong></a></td>
+  </tr>
 </table>
