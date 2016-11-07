@@ -43,7 +43,8 @@
   </tr>
   <tr>
     <td><a href="http://www.welefen.com/" >8.百度新首页和百度空间前端：李成银</a></td>
-    <td><a href="http://www.lightskystreet.com/" target="_blank">8.lightSky&lsquo;Blog</a></td>
+    <td><a href="http://www.lightskystreet.com/" >8.lightSky&lsquo;Blog</a></td>
+    <td><a href="https://www.byvoid.com/" ><strong>8.BYVoid(Google)</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://docs.kissyui.com/" >9.淘宝前端框架KISSY的维护与开发：何一鸣</a></td>
