@@ -43,4 +43,8 @@
     <td><a href="https://www.zhihu.com/question/36546814">19.有哪些软件堪称「神器」，却不为大众所知？</a></td>
     <td><a href="http://www.zhihu.com/question/37692782">20.你见过哪些令你瞠目结舌的C/C++代码技巧？</a></td>
   </tr>
+  <tr>
+    <td><a href="https://www.zhihu.com/question/19934502">21.优秀程序员的博客有哪些？</a></td>
+    <td></td>
+  </tr>
 </table>
