@@ -47,6 +47,6 @@
   </tr>
   <tr>
     <td><a href="http://geek.csdn.net/news/detail/110921" ><Strong>23.IT技能知识库</Strong></a></td>
-    <td></td>
+    <td><a href="http://php.net/manual/zh/" ><Strong>24.PHP手册</Strong></a></td>
   </tr>
 </table>
