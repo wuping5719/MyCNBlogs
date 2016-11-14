@@ -49,4 +49,8 @@
     <td><a href="http://geek.csdn.net/news/detail/110921" ><Strong>23.IT技能知识库</Strong></a></td>
     <td><a href="http://php.net/manual/zh/" ><Strong>24.PHP手册</Strong></a></td>
   </tr>
+  <tr>
+    <td><a href="http://wiki.jikexueyuan.com/list/redis/" ><Strong>25.Redis入门基础教程</Strong></a></td>
+    <td></td>
+  </tr>
 </table>
