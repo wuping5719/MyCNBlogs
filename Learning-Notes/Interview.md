@@ -1,40 +1,33 @@
 <h2>A.面试</h2>
 
-<strong>算法</strong>
+<strong>算法(C++)</strong>
 <table>
   <tr>
     <td><a href="http://www.guolanzhe.com/?p=582#more-582">1.保研机试刷题集合</a></td>
-    <td>|</td>
     <td><a href="http://coolshell.cn/"><strong>2.酷壳&nbsp;Coolshell</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.matrix67.com/blog/"><strong>3.Matrix67大牛的博客</strong></a></td>
-    <td>|</td>
     <td><a href="http://blog.csdn.net/v_JULY_v"><strong>4.July的CSDN博客</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://zhedahht.blog.163.com/"><strong>5.何海涛博客</strong></a></td>
-    <td>|</td>
     <td><a href="http://www.hawstein.com/posts/ctci-solutions-contents.html"><strong>6.笔试面试的经典:Cracking the coding interview-问题与解答</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://blog.csdn.net/hackbuteer1"><strong>7.Hackbuteer1的专栏</strong></a></td>
-    <td>|</td>
     <td><a href="http://bbs.jointforce.com/topic/16983">8.程序员如何准备面试中的算法</a></td>
   </tr>
   <tr>
     <td><a href="http://www.2cto.com//special/javamsh/"><strong>9.23种设计模式</strong></a></td>
-    <td>|</td>
     <td><a href="http://www.cnblogs.com/lanxuezaipiao/p/4127904.html">10.C/C++求职宝典21个重点笔记</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/hehe520/Data-structure-and-algorithm">11.数据结构和算法</a></td>
-    <td>|</td>
     <td><a href="https://github.com/jwasham/google-interview-university#google-interview-university"><Strong>12.Google Interview University</Strong></a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/hehe520/Data-structure-and-algorithm">11.数据结构和算法</a></td>
-    <td>|</td>
     <td><a href="https://github.com/jwasham/google-interview-university#google-interview-university"><Strong>12.Google Interview University</Strong></a></td>
   </tr>
 </table>
@@ -43,57 +36,46 @@
 <table>
   <tr>
     <td><a href="http://blog.csdn.net/jackfrued/article/details/44921941"><strong>1.Java面试题全集</strong></a></td>
-    <td>|</td>
     <td><a href="http://developer.51cto.com/art/201605/510561.htm?utm_source=tuicool&amp;utm_medium=referral">2.69个经典Spring面试题和答案</a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/201-java-interview-qa.html">3.2015年Java开发岗位面试题归类</a></td>
-    <td>|</td>
     <td><a href="http://www.importnew.com/12773.html">4.Java线程面试题Top 50</a></td>
   </tr>
   <tr>
     <td><a href="http://www.zicheng.net/article/68.htm">5.115题Java面试问题和答案之JSP</a></td>
-    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-interview-question.html">6.经典的Java基础面试题集锦</a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/java-programming-tips.html">7.Java编程常见问题汇总</a></td>
-    <td>|</td>
     <td><a href="http://www.codeceo.com/article/10-xml-questions-java-programmer.html">8.Java程序员的10道XML面试题</a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/java-asy-interview.html">9.Java同步问题面试参考指南</a></td>
-    <td>|</td>
     <td><a href="http://www.codeceo.com/article/15-apache-interview-question.html">10.25个Apache面试题汇总</a></td>
   </tr>
   <tr>
     <td><a href="http://www.nowcoder.com/discuss/5949"><strong>11.牛客网-阿里面试题总结</strong></a></td>
-    <td>|</td>
     <td><a href="http://mp.weixin.qq.com/s?__biz=MzI0NjUxNTY5Nw==&mid=2247483720&idx=1&sn=62049558dd5bc0df04f28cd6555189fc&scene=1&srcid=08202rcrU3JiEoJ0TgIw5lGV#rd"><strong>12.Java研发方向如何准备BAT技术面试答案A</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/133-java-interview-5-years.html">13.近5年133个Java面试问题列表</a></td>
-    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-developer-interview-list.html">14.Java高级软件工程师面试考纲</a></td>
   </tr>
   <tr>
     <td><a href="https://my.oschina.net/hosee/blog/652410">15.阿里实习@Java研发@一面@面经</a></td>
-    <td>|</td>
     <td><a href="http://bbs.jointforce.com/topic/20501">16.49道Spring面试题和答案</a></td>
   </tr>
   <tr>
     <td><a href="http://www.nowcoder.com/discuss/2917">17.100+经典Java面试题及答案解析</a></td>
-    <td>|</td>
     <td><a href="http://www.codeceo.com/article/java-interview-forget.html">18.那些经常被遗忘的Java面试题</a></td>
   </tr>
   <tr>
     <td><a href="http://www.importnew.com/12773.html">19.Java线程面试题Top 50</a></td>
-    <td>|</td>
     <td><a href="http://www.nowcoder.com/discuss/6890">20.Java研发方向如何准备BAT技术面试答案B</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/it-interview/easy-job"><Strong>21.Java研发知识点总结</Strong></a></td>
-    <td>|</td>
     <td><a href="http://www.jfox.info/"><Strong>22.Java面试题</Strong></a></td>
   </tr>
 </table>
@@ -138,105 +120,80 @@
   </tr>
 </table>
 
+<strong>Android</strong>
 <table>
   <tr>
-    <td><strong>Android</strong></td>
-    <td><strong>iOS</strong></td>
-  </tr>
-  <tr>
     <td><a href="http://blog.csdn.net/wdong_love_cl/article/details/52084720">1.史上最全的Java&amp;Android面试题搜集整理</a></td>
-    <td><a href="http://www.cocoachina.com/programmer/20151019/13746.html">1.iOS面试题汇总</a></td>
-  </tr>
-  <tr>
     <td><a href="http://www.diycode.cc/wiki/androidinterview">2.Android开发工程师面试指南</a></td>
-    <td><a href="http://www.jianshu.com/p/8f16613861fa">2.那些著名或非著名的iOS面试题－前编</a></td>
+  </tr>
+  
+</table>
+
+<strong>iOS</strong>
+<table>
+  <tr>
+    <td><a href="http://www.jianshu.com/p/8f16613861fa">1.那些著名或非著名的iOS面试题－前编</a></td>
+    <td><a href="http://www.cocoachina.com/programmer/20151019/13746.html">2.iOS面试题汇总</a></td>
   </tr>
   <tr>
-    <td></td>
     <td><a href="http://www.58maisui.com/2016/05/04/article-98/">3.iOS开发面试高频题</a></td>
-  </tr>
-  <tr>
-    <td></td>
     <td><a href="http://www.henishuo.com/ios-interview-entrance/">4.iOS面试宝典</a></td>
   </tr>
   <tr>
-    <td></td>
     <td><a href="http://www.jianshu.com/p/5d2163640e26">5.iOS,面试必看</a></td>
-  </tr>
-  <tr>
-    <td></td>
     <td><a href="http://www.cocoachina.com/programmer/20160113/14976.html">6.iOS面试一般性问题</a></td>
   </tr>
 <table>
 
+<strong>面经</strong>
 <table>
-   <tr>
-      <td><strong>面经</strong></td>
-      <td>|</td>
-      <td><strong>智力题</strong></td>
-    </tr>
+  <tr>
+     <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
+     <td><a href="http://blog.csdn.net/hackbuteer1/article/details/6726419">2.程序员有趣的面试智力题</a></td>
+  </tr>
+  <tr>
+     <td><a href="http://www.iteye.com/topic/1138208">3.IT面试常见的智力题</a></td>
+     <td></td>
+  </tr>
+</table>
+
+<strong>智力题</strong>
+<table>
     <tr>
       <td><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md"><strong>1.国内一线互联网公司内部面试题库</strong></a></td>
-      <td>|</td>
-      <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
-    </tr>
-    <tr>
-       <td><a href="http://www.cnblogs.com/binyue/p/4015884.html">2.阿里、百度、搜狐等公司社招面试记录与总结</a></td>
-       <td>|</td>
-       <td><a href="http://blog.csdn.net/hackbuteer1/article/details/6726419">2.程序员有趣的面试智力题</a></td>
+      <td><a href="http://www.cnblogs.com/binyue/p/4015884.html">2.阿里、百度、搜狐等公司社招面试记录与总结</a></td>
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/311?type=&amp;order=0&amp;pos=3&amp;page=?from=lt#userconsent#">3.2015史上最全面经合集：百度、阿里、腾讯、360、网易</a></td>
-       <td>|</td>
-       <td><a href="http://www.iteye.com/topic/1138208">3.IT面试常见的智力题</a></td>
-    </tr>
-    <tr>
        <td><a href="http://blog.jobbole.com/103105/">4.这里有一份面经，请查收</a></td>
-       <td>|</td>
-       <td></td>
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/12805?type=0&order=0&pos=6&page=1"><strong>5.2016秋季校园招聘笔经面经专题汇总</strong></a></td>
-       <td>|</td>
-       <td></td>
-    </tr>
-    <tr>
        <td><a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/InterviewExperience/DataMining.md">6.数据挖掘面经</a></td>
-       <td>|</td>
-       <td></td>
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/15760?type=0&order=0&pos=2&page=2">7.【牛客访谈】</a></td>
-       <td>|</td>
-       <td></td>
-    </tr>
-    <tr>
        <td><a href="http://www.nowcoder.com/discuss/3244?type=0&order=0&pos=9&page=2">8.牛客Android开发面经</a></td>
-       <td>|</td>
-       <td></td>
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/4484?type=0&order=0&pos=13&page=1">9.牛客iOS开发面经</a></td>
-       <td>|</td>
        <td></td>
     </tr>
 </table>
 
+<strong>数据库</strong>
 <table>
   <tr>
-    <td><strong>Python</strong></td>
-    <td>|</td>
-    <td><strong>数据库</strong></td>
+    <td><a href="http://www.codeceo.com/article/11-mysql-interview-question.html">1.11个高级MySQL数据库面试问题和答案</a></td>
+    <td><a href="http://www.58maisui.com/2016/05/22/a-4/">2.一道面试题：遇到大规模Oracle坏块该怎么处理？</a></td>
   </tr>
+</table>
+
+<strong>Python</strong>
+<table>
   <tr>
     <td><a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk">1.很全的Python面试题</a></td>
-    <td>|</td>
-    <td><a href="http://www.codeceo.com/article/11-mysql-interview-question.html">1.11个高级MySQL数据库面试问题和答案</a></td>
-  </tr>
-  <tr>
     <td></td>
-    <td>|</td>
-    <td><a href="http://www.58maisui.com/2016/05/22/a-4/">2.一道面试题：遇到大规模Oracle坏块该怎么处理？</a></td>
   </tr>
 </table>
 
