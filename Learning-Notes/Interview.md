@@ -72,7 +72,7 @@
   </tr>
   <tr>
     <td><a href="https://github.com/it-interview/easy-job"><Strong>21.Java研发知识点总结</Strong></a></td>
-    <td><a href="http://www.jfox.info/"><Strong>22.Java面试题</Strong></a></td>
+    <td><a href="http://www.jfox.info/"><Strong>22.Java面试题(超全)</Strong></a></td>
   </tr>
 </table>
 
@@ -141,7 +141,7 @@
   </tr>
 <table>
 
-<strong>面经</strong>
+<strong>智力题</strong>
 <table>
   <tr>
      <td><a href="http://blog.csdn.net/hilyoo/article/details/4445858"><strong>1.经典面试智力题200+题和解答</strong></a></td>
@@ -153,7 +153,7 @@
   </tr>
 </table>
 
-<strong>智力题</strong>
+<strong>面经</strong>
 <table>
     <tr>
       <td><a href="https://github.com/JackyAndroid/AndroidInterview-Q-A/blob/master/README-CN.md"><strong>1.国内一线互联网公司内部面试题库</strong></a></td>
