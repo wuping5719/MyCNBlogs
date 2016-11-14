@@ -26,10 +26,6 @@
     <td><a href="https://github.com/hehe520/Data-structure-and-algorithm">11.数据结构和算法</a></td>
     <td><a href="https://github.com/jwasham/google-interview-university#google-interview-university"><Strong>12.Google Interview University</Strong></a></td>
   </tr>
-  <tr>
-    <td><a href="https://github.com/hehe520/Data-structure-and-algorithm">11.数据结构和算法</a></td>
-    <td><a href="https://github.com/jwasham/google-interview-university#google-interview-university"><Strong>12.Google Interview University</Strong></a></td>
-  </tr>
 </table>
 
 <strong>Java</strong>
