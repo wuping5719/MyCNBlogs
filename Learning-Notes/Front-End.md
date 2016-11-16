@@ -101,6 +101,10 @@
     <td><a href="https://github.com/damonare/Sorts">24.JavaScript版经典排序算法</a></td>
     <td></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/dreamapplehappy/effective-javascript"><strong>25.Effective JavaScript</strong></a></td>
+    <td></td>
+  </tr>
 </table>
 
 <table>
