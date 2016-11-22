@@ -7,5 +7,6 @@
   </tr>
   <tr>
     <td><a href="http://www.leadwerks.com/werkspace/page/tutorials" target="_blank">3.Tutorials</a></td>
+    <td></td>
   </tr>
 </table>
