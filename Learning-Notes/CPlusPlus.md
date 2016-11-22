@@ -3,8 +3,6 @@
 <table>
   <tr>
     <td><a href="http://www.codeceo.com/article/cpp-resource-framework.html" target="_blank"><strong>1.最全面的C++资源、框架大全</strong></a></td>
-  </tr>
-  <tr>
     <td><a href="http://www.cnblogs.com/QG-whz/p/4909359.html" target="_blank">2.图说C++对象模型：对象内存布局详解</a></td>
   </tr>
   <tr>
