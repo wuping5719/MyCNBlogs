@@ -11,5 +11,6 @@
   </tr>
   <tr>
     <td><a href="https://github.com/ExtremeMart/DeepLearningBook-CN"><Strong>5.深度学习(DeepLearningBook-CN)</Strong></a></td>
+    <td></td>
   </tr>
 </table>
