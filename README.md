@@ -2,7 +2,7 @@
 <Strong>WP_CNBlogs: http://www.cnblogs.com/wp5719/ </Strong>
 <p>&nbsp;Source Code:<a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode">URL</a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-  <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode"><strong>我的简历(My Resume)</strong></a> 
+  <a href="https://github.com/wuping5719/MyCNBlogs/edit/master/Introduce/MyResume.md"><strong>我的简历(My Resume)</strong></a> 
 </p>
 
 <h3>Top Company GitHub</h3>
