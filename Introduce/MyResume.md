@@ -90,10 +90,16 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 熟练掌握Java开源Web框架(Spring，SpringMVC， MyBatis，Dubbo，Struts2，Hibernate). </td>
+    <td> ○ 熟练Java开源Web框架(Spring，SpringMVC， MyBatis，Dubbo，Struts2，Hibernate). </td>
   </tr>
   <tr>
     <td> ○ 熟练基本的关系型数据库(Oracle，MySQL，SQLServer). </td>
+  </tr>
+  <tr>
+    <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB图像处理和三维建模Maya的使用. 对数据结构有较深理解. </td>
+  </tr>
+  <tr>
+    <td> ○ 熟练基本Linux Web服务器管理。熟练使用IDE:VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
     <td> ○ 熟练前端网页开发(Handlebars，Linner，JavaScript，CSS3，HTML5，JSP).</td>
@@ -103,11 +109,5 @@
   </tr>
   <tr>
     <td> ○ 熟练智能化仪表采集程序开发，家电制造领域实验室检测软件开发. </td>
-  </tr>
-  <tr>
-    <td> ○ 熟练基本Linux Web服务器管理。熟练使用IDE:VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
-  </tr>
-  <tr>
-    <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB图像处理和三维建模Maya的使用. 对数据结构有较深理解.  </td>
   </tr>
 </table>
