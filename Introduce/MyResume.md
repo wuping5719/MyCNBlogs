@@ -1,6 +1,6 @@
  姓名：吴平                                 
  Phone:  18765951838                          Email:  wp571988@163.com         
- GitHub: https://github.com/wuping5719            Blog: http://www.cnblogs.com/wp5719/     
+ GitHub: https://github.com/wuping5719        Blog: http://www.cnblogs.com/wp5719/     
  学历：硕士研究生                             学校：中国海洋大学     
  专业：计算机技术                             毕业时间：2017年6月
 
