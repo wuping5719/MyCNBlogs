@@ -74,6 +74,10 @@
     <td><a href="https://github.com/it-interview/easy-job"><Strong>21.Java研发知识点总结</Strong></a></td>
     <td><a href="http://www.jfox.info/"><Strong>22.Java面试题(超全)</Strong></a></td>
   </tr>
+  <tr>
+    <td><a href="https://www.zhihu.com/question/19774340/answer/132525239">23.如何面试Java工程师？</a></td>
+    <td></td>
+  </tr>
 </table>
 
 <strong>前端</strong>
