@@ -102,7 +102,7 @@
     <td> ○ 熟练基本Linux Web服务器管理。熟练使用IDE:VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
-    <td> ○ 熟练前端网页开发(Handlebars，Linner，JavaScript，CSS3，HTML5，JSP，PHP).</td>
+    <td> ○ 熟练前端网页开发(Handlebars，JavaScript，CSS3，HTML5，JSP，PHP).</td>
   </tr>
   <tr>
     <td> ○ 熟练.Net软件开发，了解视频接入，曲线显示，地图导航等功能的实现，软件项目实施. </td>
