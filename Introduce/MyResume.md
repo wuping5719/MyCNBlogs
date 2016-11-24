@@ -3,12 +3,12 @@
 <h3>★	基本信息</h3>
 <table>
   <tr>
-    <td> Email: wp571988@163.com </td>
+    <td> Email：wp571988@163.com </td>
     <td> 专业：计算机技术 </td>
   </tr>
   <tr>
-    <td> GitHub: https://github.com/wuping5719 </td>
-    <td> Blog: http://www.cnblogs.com/wp5719 </td>
+    <td> GitHub： https://github.com/wuping5719 </td>
+    <td> Blog： http://www.cnblogs.com/wp5719 </td>
   </tr>
   <tr>
     <td> 学历：硕士研究生 </td>
@@ -32,7 +32,7 @@
     <td> ① 2015/08-2016/11 &nbsp;&nbsp;&nbsp;&nbsp; 模块质量互联平台 </td>
   </tr>
   <tr>
-    <td>项目简介：将海尔集团分布在不同地区、不同供应商研发的超过600个种类模块的测试实验室资源进行集成，实现系统互联，信息共享。为不同类型的厂商、产品提供服务，统一管理各种用户和数据、资源。面向三类不同用户提供了测试能力认可，新品模块认可，量产模块认可，用户评价，数据分析，基础管理等功能。此项目后台使用Spring、SpringMVC、MyBatis和Dubbo开发，前台使用Linner和Handlebars，项目数据库为MySQL和SQL Server 2008。</td>
+    <td>项目简介：将海尔集团分布在不同地区、不同供应商研发的超过600个种类模块的测试实验室资源进行集成，实现系统互联，信息共享。为不同类型的厂商、产品提供服务，统一管理各种用户和数据、资源。面向三类不同用户提供了测试能力认可，新品模块认可，量产模块认可，用户评价，数据分析，基础管理等功能。此项目后台使用Spring、SpringMVC、MyBatis和Dubbo开发，使用Redis做分布式缓存，前台使用Linner和Handlebars，项目数据库为MySQL和SQL Server 2008。</td>
   </tr>
   <tr>
     <td>职责：负责项目Web开发框架搭建，开发学习与培训，平台用户管理，权限管理通用平台开发，用户评价和数据分析核心模块开发。兼任项目协调，代码维护与检查。牵头项目开发。</td>
@@ -80,7 +80,7 @@
     <td> ⑤ 2014/05-2014/08 &nbsp;&nbsp;&nbsp;&nbsp; 家电检测系统 </td>
   </tr>
   <tr>
-    <td>项目简介：家电系统负责海尔、海信、澳柯玛的家电质量检测，涉及冰箱、冰柜、空调、洗衣机和热水器等大类。囊括包括视频监控在内的实验室环境监控。</td>
+    <td>项目简介：家电系统负责海尔、海信、澳柯玛等家电企业的家电质量检测，涉及冰箱、冰柜、空调、洗衣机和热水器等大类。囊括包括视频监控在内的实验室环境监控。</td>
   </tr>
   <tr>
     <td>职责：维护和测试家电检测软件，协助开发小模块。</td>
@@ -90,10 +90,10 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 熟练Java开源Web框架(Spring，SpringMVC， MyBatis，Dubbo，Struts2，Hibernate). </td>
+    <td> ○ 熟练Java开源Web框架(Spring，SpringMVC，MyBatis，Dubbo，Struts2，Hibernate). </td>
   </tr>
   <tr>
-    <td> ○ 熟练基本的关系型数据库(Oracle，MySQL，SQLServer). </td>
+    <td> ○ 熟练关系型数据库(Oracle，MySQL，SQLServer)；非关系型数据库(Redis，MongoDB，HBase). </td>
   </tr>
   <tr>
     <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB图像处理和三维建模Maya的使用. 对数据结构有较深理解. </td>
@@ -102,7 +102,7 @@
     <td> ○ 熟练基本Linux Web服务器管理。熟练使用IDE:VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
-    <td> ○ 熟练前端网页开发(Handlebars，Linner，JavaScript，CSS3，HTML5，JSP).</td>
+    <td> ○ 熟练前端网页开发(Handlebars，Linner，JavaScript，CSS3，HTML5，JSP，PHP).</td>
   </tr>
   <tr>
     <td> ○ 熟练.Net软件开发，了解视频接入，曲线显示，地图导航等功能的实现，软件项目实施. </td>
