@@ -51,6 +51,6 @@
   </tr>
   <tr>
     <td><a href="http://wiki.jikexueyuan.com/list/redis/" ><Strong>25.Redis入门基础教程</Strong></a></td>
-    <td></td>
+    <td><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md" ><Strong>26.自由编程书籍</Strong></a></td>
   </tr>
 </table>
