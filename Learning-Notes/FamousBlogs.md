@@ -49,6 +49,7 @@
   <tr>
     <td><a href="http://docs.kissyui.com/" >9.淘宝前端框架KISSY的维护与开发：何一鸣</a></td>
     <td><a href="http://www.leichunfeng.com/" >9.雷纯锋</a></td>
+    <td><a href="http://blog.huihoo.com/" ><strong>9.开放博客(陈雨强)</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://luolonghao.iteye.com/" >10.土豆网前端：罗龙浩</a></td>
