@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><a href="http://drops.wooyun.org/"><strong>1.WooYun知识库</strong></a></td>
+    <td><a href="http://drops.wooyun.org/">1.WooYun知识库(被封了)</a></td>
     <td><a href="http://rdcqii.hundsun.com/portal/article/421.html">2.有https就够安全了吗？</a></td>
   </tr>
   <tr>
