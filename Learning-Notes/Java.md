@@ -87,7 +87,7 @@
   </tr>
   <tr>
     <td><a href="http://www.cnblogs.com/richieyang/p/4840614.html">21.编写让别人能够读懂的代码</a></td>
-    <td></td>
+    <td><a href="http://docs.spring.io/spring-boot/docs/1.3.7.RELEASE/reference/htmlsingle/#using-boot-maven"><strong>21.Spring Boot Reference Guide</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://www.rowkey.me/blog/2016/08/03/java-8-top-tips/">22.Java8 Top Tips</a></td>
