@@ -59,6 +59,7 @@
   <tr>
     <td><a href="https://github.com/fool2fish/blog/issues?q=is%3Aopen" >11.淘宝网前端团队卖家线：杨周璇</a></td>
     <td><a href="http://blog.pangu.io/" ><strong>11.盘古团队iOS</strong></a></td>
+    <td><a href="http://blog.me115.com/page2/" >11.大CC-今日头条</a></td>
   </tr>
   <tr>
     <td><a href="http://w3help.org/zh-cn/kb/" >12.新浪微博前端基础架构组：钱宝坤</a></td>
