@@ -41,4 +41,8 @@
     <td><a href="http://www.w3ctech.com/topic/1833">19.如何将Chrome变成开发利器，开发者们在用这些插件</a></td>
     <td><a href="http://usyiyi.cn/translate/django_182/index.html">20.Django 文档</a></td>
   </tr>
+  <tr>
+    <td><a href="https://code.visualstudio.com/">21.Visual Studio Code</a></td>
+    <td></td>
+  </tr>
 </table>
