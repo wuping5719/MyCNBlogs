@@ -82,7 +82,7 @@
     <td><a href="http://dean.edwards.name/weblog/2005/10/add-event/" >17.Dean Edwards</a></td>
   </tr>
   <tr>
-    <td><a href="http://zhangwenli.com/cv/cn.html#userconsent#" ><strong>18.百度前端工程师-张雯莉</strong></a></td>
+    <td><a href="http://zhangwenli.com/cv/cn.html#userconsent#" >18.百度前端工程师-张雯莉</a></td>
   </tr>
   <tr>
     <td><a href="https://www.h5jun.com/" >19.360前端工程师-十年踪迹</a></td>
