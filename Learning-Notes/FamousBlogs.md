@@ -54,7 +54,7 @@
   <tr>
     <td><a href="http://luolonghao.iteye.com/" >10.土豆网前端：罗龙浩</a></td>
     <td><a href="http://johnhany.net/" >10.JohnHany的博客</a></td>
-    <td><a href="http://blog.didispace.com/" ><strong>10.SpringCloud(翟永超)</strong></a></td>
+    <td><a href="http://blog.didispace.com/" >10.SpringCloud(翟永超)</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/fool2fish/blog/issues?q=is%3Aopen" >11.淘宝网前端团队卖家线：杨周璇</a></td>
