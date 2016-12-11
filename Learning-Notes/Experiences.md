@@ -45,6 +45,6 @@
   </tr>
   <tr>
     <td><a href="https://www.zhihu.com/question/19934502">21.优秀程序员的博客有哪些？</a></td>
-    <td></td>
+    <td><a href="https://alpha.wallhaven.cc/">22.壁纸(wallhaven)</a></td>
   </tr>
 </table>
