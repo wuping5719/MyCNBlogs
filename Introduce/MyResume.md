@@ -90,7 +90,7 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 熟练Java开源Web框架(Spring，SpringMVC，MyBatis，Dubbo，Struts2，Hibernate). </td>
+    <td> ○ 熟练Java开源Web框架(Spring，SpringMVC，MyBatis，Dubbo，Struts2，Hibernate, SpringBoot, SpringCloud). </td>
   </tr>
   <tr>
     <td> ○ 熟练关系型数据库(Oracle，MySQL，SQLServer)；非关系型数据库(Redis，MongoDB，HBase). </td>
