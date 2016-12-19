@@ -1,5 +1,5 @@
 # MyCNBlogs
-> `WP_CNBlogs`: http://www.cnblogs.com/wp5719/ </strong>
+> <strong>WP_CNBlogs</strong>: http://www.cnblogs.com/wp5719/ 
  &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/CNBlogs-SourceCode">Source Code</a>
  
 > <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Introduce/MyResume.md"><strong>我的简历(My Resume)</strong></a> 
