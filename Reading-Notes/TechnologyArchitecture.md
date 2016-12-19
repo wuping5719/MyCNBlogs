@@ -44,4 +44,5 @@
     (3) RAID(廉价磁盘冗余阵列) vs HDFS(Hadoop 分布式文件系统)
       HDFS 两类重要的服务器角色：NameNode (名字服务节点)和 DataNode (数据存储节点).
       HDFS 配合 MapReduce 等并行计算框架进行大数据处理时，可以在整个集群上并发读写访问所有的磁盘，无需 RAID 支持.
+      
 ```
