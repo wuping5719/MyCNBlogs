@@ -151,18 +151,17 @@
   </tr>
 </table>
 
-<p>59条搞笑但却真实无比的编程语录:
+>59条搞笑但却真实无比的编程语录:
   <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
-</p>
 
-<h3>*读书笔记(Reading Notes)</h3>
+<h3>读书笔记(Reading Notes)</h3>
 <table>
   <tr>
     <td>
     <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/Learning-Notes/InterviewExperience">1.面经(Interview Experiences)</a>
     </td>
     <td>
-    <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/Learning-Notes/InterviewExperience">2.《大型网站技术架构-核心原理与案例分析》</a>
+    <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/Learning-Notes/InterviewExperience">2.《大型网站技术架构-核心原理与案例分析》</a>
     </td>
   </tr>
 </table>
