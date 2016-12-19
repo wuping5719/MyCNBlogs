@@ -151,8 +151,7 @@
   </tr>
 </table>
 
->59条搞笑但却真实无比的编程语录:
-  <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
+> 59条搞笑但却真实无比的编程语录:<a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
 
 <h3>读书笔记(Reading Notes)</h3>
 <table>
