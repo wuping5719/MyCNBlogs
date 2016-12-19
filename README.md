@@ -155,7 +155,7 @@
   <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Humor.md">URL</a>
 </p>
 
-<storng>读书笔记(Reading Notes)</storng>
+<p><strong>读书笔记(Reading Notes)</strong></p>
 <table>
   <tr>
     <td>
