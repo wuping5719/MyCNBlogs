@@ -91,7 +91,7 @@
   </tr>
   <tr>
     <td><a href="http://www.webhek.com/javascript6">22.JavaScript6里都有啥新鲜东西</a></td>
-    <td></td>
+    <td><a href="http://www.webpagefx.com/tools/emoji-cheat-sheet/">22.Emoji Cheat Sheet</a></td>
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/learning-javascript-part-9.html"><Strong>23.JavaScript学习总结</Strong></a></td>
