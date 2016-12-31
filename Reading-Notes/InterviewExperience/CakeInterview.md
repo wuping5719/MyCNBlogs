@@ -1,37 +1,75 @@
 * 饼神面经：
 
-  工作单位：百度（实习，已拿offer，等待入职）百度程序化广告交易策略技术部offer.
-  其他offer： 阿里 环信 妙计 君康人寿 等一些创业公司.
+ 1.秋招帝都实习7k安全岗(渗透测试)面经:
+```html
+   渗透测试岗位，面试官问的我有没有代码审计经验，身为php狗的我研究过dedecms代码和phpcms代码.
+   还有我们学校各个学院的网站做过友情检测，读过代码很重要，现在国内还是依靠手工挖洞。
+   会不会shell编程和Python编程，这个也很重要，还问了我Linux常用操作。
+   然后问了问owasp的流程以及POC实现。大概40分钟。
+
+   一般的安全岗位要求的技能真的不少:
+     脚本编程：Python和shell必备 PHP代码审计会的话 加分.
+     运维技术：Windows+IIS+SQL Server以及Win服务器各种配置 .
+              从03到12 Linux安全配置 防火墙 LAMP LNMP体系.
+     工具使用Kali Linux MSF Wireshark Fiddler Tcpdump Sqlmap等等.
+     SQL注入 xss注入 csrf注入 webshell getshell java序列化漏洞利用.
+  真的很多 建议看看知道创宇技能表最新版本.
   
-  在校经历：
-     校电脑爱好者协会精英技术小组组长
-     校信息安全小组负责人
-     院大数据技术小组主要成员
-  
-  社区参与情况：
-      河北Linux用户组原负责人
-      Gentoo中国社区维护者
-      OpenDDAL分布式数据库访问层开发组核心成员
+  讲讲我比较熟悉的漏洞挖掘吧.
+   (1) Tomcat + JSP; IIS + ASPX; LNAP;LAMP环境搭建必须会.
+   (2) XSS和CSRF注入必须会 尤其是DOM XSS Buffer Overflows.
+   (3) owasp Top 10 & CWE/SANS Top 25那套流程可以搞.
+   (4) 扫描器原理懂 自己可以做出来 现成的扫描器能看懂返回信息.
+   (5) 搭建漏洞测试环境 DVWA WebGoat.
+   (6) Web手动测试.
+   (7) 使用Burp Suite Pro动态修改数据 人工观察返回信息.
+   (8) 理解Payload.
+   (9) Web代码分析 传统漏洞分析 ASP/ASPX/JSP/PHP源码角度跟踪数据传播.
+     解读函数、变量、参数到数据执行.
+   (10) C/C++代码纯静态分析 C/C++源码角度跟踪数据执行 依靠外部的数据来控制行为的污染.
+     理解缓冲区溢出和输入验证.
+   (11) C/C++代码编译分析 深入内存数据 跟踪数据执行流程 理解内存破坏问题.
+   (12) 知道常见漏洞和安全知识库 开源软件源码更新版本Patchdiff 危险函数/有漏洞历史的函数.
+   (13) IDA pro反汇编 Patchdiff方法 BinDiff二进制补丁比较 .NET->NET Reflector Java -> Java Decompiler.
+   (14) 脱壳和动态调试分析.
+   (15) beSTORM测试通用协议 会构造Payload来Fuzzing测试.
+   (16) 熟悉分析浏览器调用ActiveX控件和Fuzzing测试.
+   (17) 熟悉POC实现.
+```
 
-  擅长领域：后台开发、分布式架构设计、内核安全、自然语言处理技术、IM通讯技术.
+ 2.启明星辰渗透测试工程师实习面经:
+```html
+  PHP篇：
+     include、require、include_once 区别. 
+     超全局数组.
+  算法：
+     爬虫、宽度优先遍历.
+  渗透测试：
+     sqlmap原理、内网渗透、xss进入内网、预传输漏洞、文件上传漏洞截断问题、宽字节注入、
+     如何定位绝对路径、渗透测试流程，如何入侵百度.
+  逆向：
+     如何破解注册码.
+  工具类：
+     你对常用渗透测试工具看法，如何改进，如何收集网上信息，上什么网站.
+```
 
-  项目经历：
-      中电54所SIP寻呼产品国际化项目组研发
-      研发公式搜索引擎（国家发明专利一项）
-      普天车联网APP（IM后台、社交系统后台、LBS系统后台）
-  
-  获奖情况：
-      专业奖学金一次
-      挑战杯省二等奖第一名
-      2016XCTF国际信息安全竞赛杭州站23名
-      2016阿里CTF国内17名
-
-  他的面经：
-大二学渣秋招帝都实习7k安全岗面经http://www.nowcoder.com/discuss/3837
-
-启明星辰渗透测试工程师实习面经http://www.nowcoder.com/discuss/5963
-
-大二学渣百度测试开发一面http://www.nowcoder.com/discuss/6097
+  3.百度测试开发一面:
+```html
+  (1) C/C++
+    虚函数 动态绑定 指针引用.
+    如果i=5；那么 a=(++i)--;之后，a和i的值各是多少?
+    STL用过吗 vector和List区别？
+  (2) SQL 建表 插入数据 索引 分库分表.
+  (3) PHP中PDO连接mysql.
+  (4) Linux sed命令 找到8080端口占用进程 man和help区别.
+  (5) Vagrant Docker使用情况.
+  (6) 不调用C++/C的字符串库函数，编写函数 strcpy.
+  (7) 最大子数组之和.
+  (8) QQ登录测试样例.
+  (9) 读了那些书? Unix内核源码剖析 深度理解对象模型 Web全栈工程师自我修养 读书感悟.
+  (10) 自动化测试了解.
+  (11) 为啥学汇编？
+```
 
 赤橙黄绿青蓝紫，谁持彩练当空舞——十二天实习面试求职之路http://www.nowcoder.com/discuss/13391
 更多：
