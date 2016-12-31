@@ -1,4 +1,4 @@
-* 饼神面经：
+* 饼神(孟一凡)面经：
 
   1.秋招帝都实习7k安全岗(渗透测试)面经:
 ```html
@@ -135,57 +135,79 @@
         单词翻转问题(字符串翻转，但是单词内字符串顺序不变).
 ```
 
-他发过的技术干货：
-机器学习笔记——相似性度量http://www.nowcoder.com/discuss/3453
+  5.机器学习笔记——相似性度量:
+  <https://www.nowcoder.com/discuss/3453>
 
-c++部分总结http://www.nowcoder.com/discuss/3455
+  6.c++部分总结:
+  <https://www.nowcoder.com/discuss/3455>
 
-POJ_1274_二分匹配题解http://www.nowcoder.com/discuss/3456
+  7.POJ_1274_二分匹配题解:
+  <http://www.nowcoder.com/discuss/3456>
 
-图形推理题部分整理未完结http://www.nowcoder.com/discuss/3459
+  8.图形推理题部分整理:
+  <http://www.nowcoder.com/discuss/3459>
+   图形推理网络资料整理摘自部分公务员考试资料
+  <https://www.nowcoder.com/discuss/3460>
 
-图形推理网络资料整理摘自部分公务员考试资料http://www.nowcoder.com/discuss/3460
+  9.c++引用机制:
+  <http://www.nowcoder.com/discuss/3505>
+  
+  10.windows网络编程总结:
+  <http://www.nowcoder.com/discuss/3507>
 
-c++引用机制http://www.nowcoder.com/discuss/3505
+  11.ThinkPHP学习笔记之模板引擎_系统变量:
+  <https://www.nowcoder.com/discuss/3508>
+  
+  12.软件工程那些事#Git,让我们High起来.
+  <https://www.nowcoder.com/discuss/3541>
+  
+  13.算法整理#线段树技巧小结:
+  <http://www.nowcoder.com/discuss/3685>
 
-windows网络编程总结http://www.nowcoder.com/discuss/3507
+  14.成为Java顶尖程序员 ，看这11本书就够了：
+  <http://www.nowcoder.com/discuss/3748>
+  
+  15.算法导论学习笔记#分治策略:
+  <http://www.nowcoder.com/discuss/3898>
 
-ThinkPHP学习笔记之模板引擎_系统变量http://www.nowcoder.com/discuss/3508
+  16.iOS安全学习资料汇总:
+  <http://www.nowcoder.com/discuss/4078>
 
-#软件工程那些事#Git,让我们High起来http://www.nowcoder.com/discuss/3541
+  17.KMP算法整理:
+  <http://www.nowcoder.com/discuss/4236>
 
-#算法整理#线段树技巧小结http://www.nowcoder.com/discuss/3685
+  18.分分钟学会安装linux:
+  <http://www.nowcoder.com/discuss/5615>
 
-成为Java顶尖程序员 ，看这11本书就够了http://www.nowcoder.com/discuss/3748
+  19.2016百度之星 资格赛A题 题解:
+  <http://www.nowcoder.com/discuss/5827>
 
-#算法导论学习笔记#分治策略http://www.nowcoder.com/discuss/3898
+  20.《算法设计编程实验》读书笔记之第三章数论的编程实验：
+  <http://www.nowcoder.com/discuss/6018>
 
-IOS安全学习资料汇总http://www.nowcoder.com/discuss/4078
+  21.POJ 2262哥德巴赫猜想：
+  <http://www.nowcoder.com/discuss/6020>
+  
+  22.TCP协议流图:
+  <http://www.nowcoder.com/discuss/7736>
 
-KMP算法整理http://www.nowcoder.com/discuss/4236
+  23.缓存系列文章--1.缓存的一些基本常识:
+  <http://www.nowcoder.com/discuss/7876>
 
-分分钟学会安装linux http://www.nowcoder.com/discuss/5615
+  24.腾讯云centos6.5搭建python机器学习环境:
+  <http://www.nowcoder.com/discuss/12707>
 
-2016百度之星 资格赛A题 题解http://www.nowcoder.com/discuss/5827
-
-《算法设计编程实验》读书笔记之第三章数论的编程实验http://www.nowcoder.com/discuss/6018
-
-POJ 2262哥德巴赫猜想http://www.nowcoder.com/discuss/6020
-
-TCP协议流传图 看图http://www.nowcoder.com/discuss/7736
-
-缓存系列文章--1.缓存的一些基本常识http://www.nowcoder.com/discuss/7876
-
-腾讯云centos6.5搭建python机器学习环境http://www.nowcoder.com/discuss/12707
-
-App后台架构剖析(未完结)http://www.nowcoder.com/discuss/14624
-
-
-他发过的招聘信息：
-游戏公司暴雪Demonware招聘高级Python工程师http://www.nowcoder.com/discuss/3820
-
-河北师范大学车联网研发基地http://www.nowcoder.com/discuss/5623
-
-美团内推http://www.nowcoder.com/discuss/5713
-
-饼哥亲测 北京全民快乐科技有限公司招聘http://www.nowcoder.com/discuss/10504
+  25.App后台架构剖析:
+  <http://www.nowcoder.com/discuss/14624>
+  
+  26.代发招聘信息：
+```html
+  (1) 游戏公司暴雪Demonware招聘高级Python工程师:
+     http://www.nowcoder.com/discuss/3820
+  (2) 河北师范大学车联网研发基地:
+     http://www.nowcoder.com/discuss/5623
+  (3) 美团内推:
+     http://www.nowcoder.com/discuss/5713
+  (4) 北京全民快乐科技有限公司招聘:
+     http://www.nowcoder.com/discuss/10504
+```
