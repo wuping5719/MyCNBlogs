@@ -145,8 +145,8 @@
   <http://www.nowcoder.com/discuss/3456>
 
   8.图形推理题部分整理:
-  <http://www.nowcoder.com/discuss/3459>
-   图形推理网络资料整理摘自部分公务员考试资料
+  <http://www.nowcoder.com/discuss/3459>            
+  图形推理网络资料整理摘自部分公务员考试资料
   <https://www.nowcoder.com/discuss/3460>
 
   9.c++引用机制:
@@ -203,11 +203,11 @@
   26.代发招聘信息：
 ```html
   (1) 游戏公司暴雪Demonware招聘高级Python工程师:
-     http://www.nowcoder.com/discuss/3820
+     <http://www.nowcoder.com/discuss/3820>
   (2) 河北师范大学车联网研发基地:
-     http://www.nowcoder.com/discuss/5623
+     <http://www.nowcoder.com/discuss/5623>
   (3) 美团内推:
-     http://www.nowcoder.com/discuss/5713
+     <http://www.nowcoder.com/discuss/5713>
   (4) 北京全民快乐科技有限公司招聘:
-     http://www.nowcoder.com/discuss/10504
+     <http://www.nowcoder.com/discuss/10504>
 ```
