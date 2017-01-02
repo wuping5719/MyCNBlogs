@@ -18,4 +18,31 @@
   (2) Session Replication：在 Web 服务器之间增加会话数据同步。
   (3) Session 数据集中存储：把 Session 数据集中存储起来。
   (4) Cookie Based：通过 Cookie 来传递 Session 数据。
+  
+ 4.Java 并发编程的类、接口和方法：
+  (1) 线程池：ThreadPoolExecutor 和定时线程池 ScheduledThreadPoolExecutor。
+  (2) synchronized。
+  (3) ReentrantLock 可重入锁和 ReentrantReadWriteLock。
+      lock.lock();
+      try {
+         // do something
+      }
+      finally {
+         lock.unlock();
+      }
+  (4) volatile：实现变量可见性，但不保证原子性。  
+  (5) Atomics：原子类。  
+  (6) wait、notify、notifyAll。 
+      public void testWait() throws InterruptedException {
+         synchronized (this) {
+            this.wait();
+         }
+      }
+      public void testNotify() {
+         synchronized (this) {
+            this.notify();
+         }
+      }
+  (7) CountDownLatch：当多个线程都达到了预期状态或完成预期工作时触发事件。
+  (8) CyclicBarrier：协同多个线程，让多个线程在这个屏障前等待，直到所有线程都到达了这个屏障时，再一起继续执行后面动作。
 ```
