@@ -45,4 +45,59 @@
       }
   (7) CountDownLatch：当多个线程都达到了预期状态或完成预期工作时触发事件。
   (8) CyclicBarrier：协同多个线程，让多个线程在这个屏障前等待，直到所有线程都到达了这个屏障时，再一起继续执行后面动作。
+  (9) Semaphore：信号量。
+      semaphore.acquire();
+      try {
+         //调用远程通信的方法
+      }
+      finally {
+         semaphore.release();
+      }
+  (10) Exchanger：用于在两个线程之间进行数据交换。
+  (11) Future 和 FutureTask。
+  (12) 并发容器：CopyOnWrite。
+  
+ 5.动态代理：
+   public void testDynamicProxy() {
+      Calculator calculator = new CalculatorImpl();
+      LogHandler lh = new LogHandler(calculator);
+      Calculator proxy = (Calculator) Proxy.newProxyInstance(calculator.getClass().getClassLoader(),
+                   calculator.getClass().getInterfaces(), lh);
+      proxy.add(1, 1);
+   }
+   
+   public class LogHandler implements InvocationHandler {
+      Object obj;
+      LogHandler(Object obj) {
+         this.obj = obj;
+      }
+      public Object invoke(Object obj1, Method method, Object[] args) throws Throwable {
+         this.doBefore();
+         Object o = method.invoke(obj, args);
+         this.doAfter();
+         return o;
+      }
+      public void doBefore() {
+         System.out.println("do this before");
+      }
+      public void doAfter() {
+         System.out.println("do this after");
+      }
+   }
+   
+ 6.反射：
+   (1) 获取对象属于哪个类.
+     Class class = object.getClass();
+   (2) 获取类的信息.
+     String className = class.getName();                 //获取类名
+     Method[] methods = class.getDeclaredMethods();      //获取类中定义的方法
+     Field[] fields = class.getDeclaredFields();         //获取类中定义的成员
+   (3) 构建对象.
+     Class.forName("ClassName").newInstance();
+   (4) 动态执行方法.
+     Method method = class.getDeclaredMethod("add", int.class, int.class);
+     method.invoke(this, 1, 1);
+   (5) 动态操作属性.
+     Field field = class.getDeclaredField("name");
+     field.set(this, "Test");
 ```
