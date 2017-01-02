@@ -160,5 +160,8 @@
     <td>
     <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/TechnologyArchitecture.md">2.《大型网站技术架构-核心原理与案例分析》</a>
     </td>
+    <td>
+    <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/TechnologyArchitecture.md">3.《大型网站系统与Java中间件实践》</a>
+    </td>
   </tr>
 </table>
