@@ -12,4 +12,10 @@
   (2) 面对故障独立性。  
   (3) 处理单点故障。  
   (4) 事务的挑战。  
+ 
+ 3.集群 Session 同步：
+  (1) Session Sticky：让同样的 Session 请求每次都发送到同一个服务器处理。 
+  (2) Session Replication：在 Web 服务器之间增加会话数据同步。
+  (3) Session 数据集中存储：把 Session 数据集中存储起来。
+  (4) Cookie Based：通过 Cookie 来传递 Session 数据。
 ```
