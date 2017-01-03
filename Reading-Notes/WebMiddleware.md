@@ -118,5 +118,5 @@
      (3) 分库分表后查询：非排序分页——A.等步长分页，B.等比例分页。
      
    8.数据层结构图：
-   <http://images.cnblogs.com/cnblogs_com/wp5719/831982/o_Data.png>
+   <img src="http://images.cnblogs.com/cnblogs_com/wp5719/831982/o_Data.png" />
 ```
