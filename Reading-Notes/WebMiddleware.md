@@ -100,4 +100,20 @@
    (5) 动态操作属性.
      Field field = class.getDeclaredField("name");
      field.set(this, "Test");
+     
+  7.数据库从单机到分布式的挑战与应对：
+    1) 从应用使用单机数据库开始。
+    2) 数据库垂直/水平拆分的困难。
+    3) 单机变为多机后，事务如何处理。
+     (1) 大型网站一致性的基础理论——CAP/BASE。
+      CAP：Consistency：一致性、Availability：可用性、Partition-Tolerance：分区容忍性。
+     (2) 比两阶段提交更轻量一些的 Paxos 协议。
+     (3) 集群内数据一致性的算法：Quorum 和 Vector Clock算法。
+    4) 多机的 Sequence 问题与处理。
+      方案：把所有的 ID 集中存放在一个地方进行管理，对每个 ID 序列独立管理，每台机器使用 ID 时都从这个
+        ID 生成器上取。
+    5) 应对多机的数据查询。
+     (1) 跨库 Join。
+     (2) 外键约束。
+     (3) 分库分表后查询：非排序分页——A.等步长分页，B.等比例分页。
 ```
