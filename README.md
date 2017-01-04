@@ -164,4 +164,11 @@
     <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/WebMiddleware.md">3.《大型网站系统与Java中间件实践》</a>
     </td>
   </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/Reading-Notes/MachineLearning.md">4.《机器学习》</a>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
