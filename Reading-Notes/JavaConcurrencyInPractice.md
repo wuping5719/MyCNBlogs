@@ -99,4 +99,46 @@
   12.实例封闭：
     将数据封装在对象内部，可以将数据的访问限制在对象的方法上，从而更容易确保线程在访问数据时总能持有正确的锁。
     封闭机制更易于构造线程安全的类，因为当封闭类的状态，在分析类的线程安全性时就无须检查整个程序。
+    
+  13.线程安全性的委托：
+    独立的状态变量。
+    当委托失效时：如果一个类是由多个独立且线程安全的状态变量组成，并且在所有的操作中都不包含无效状态转换，那么可以
+  将线程安全性委托给底层的状态变量。
+    发布底层的状态变量：如果一个状态变量是线程安全的，并且没有任何不变性条件来约束它的值，在变量的操作上也不存在任何
+  不允许的状态转换，那么就可以安全地发布这个变量。
+  
+  14.在现有的线程安全类中添加功能：
+    (1) 客户端加锁机制：通过客户端加锁来实现“若没有则添加”。
+    public class ListHelper<E> {
+       public List<E> list = Collections.synchronizedList(new ArrayList<E>());
+      
+       public boolean putIfAbsent(E x) {
+          synchronized (this) {
+             boolean absent = ! list.contains(x);
+             if (absent)
+                list.add(x);
+             return absent;
+          }
+       }
+    }
+    
+    (2) 组合：通过组合实现“若没有则添加”。
+    public class ImprovedList<T> implements List<T>  {
+       private final List<T> list;
+       
+       public ImprovedList(List<T> list) { this.list = list; }
+       
+       public synchronized boolean putIfAbsent(T x) {
+          boolean contains = list.contains(x);
+          if (contains)
+              list.add(x);
+          return !contains;
+       }
+       
+       public synchronized void clear() { list.clear(); }
+       //按照类似的方式委托 List 的其他方法
+    }
+    
+  15.将同步策略文档化：
+    在文档中说明客户端代码需要了解的线程安全性保证，以及代码维护人员需要了解的同步策略。
 ```
