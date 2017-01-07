@@ -205,11 +205,11 @@
     <td><a href="https://keelii.github.io/2016/07/31/something-have-to-say-with-JD-item/">23.京东单品页前端开发那些不得不说的事儿</a></td>  
   </tr>
   <tr>
-    <td></td> 
+    <td><a href="https://www.awesomes.cn/repos/Applications/frameworks">24.前端框架</a></td> 
     <td><a href="http://codecloud.net/books/jquery/regexp.html#1"><strong>24.正则表达式速查表</strong></a></td>  
   </tr>
   <tr>
-    <td></td> 
+    <td><a href="http://div.io/#/welcome">25.Div.IO(高质量前端资源汇聚)</a></td> 
     <td><a href="http://www.tupian114.com/tupian/quanjing.html">25.全景图片</a></td>  
   </tr>
 </table>
