@@ -188,7 +188,7 @@
   
   20.同步工具类：
     同步工具类可以是任何一个对象，只要它根据其自身的状态来协调线程的控制流。阻塞队列可以作为同步工具类，其他类型的同步工具
-  类还包括闭锁(Latch：CountDownLatch，FutureTask)、信号量(Semaphore)、栅栏(Barrier：CyclicBarrier，Exchanger)。
+  类还包括闭锁(Latch：CountDownLatch，FutureTask)、信号量(Semaphore)、栅栏(Barrier：CyclicBarrier，Exchanger).
     
     (1) 在计时测试中使用 CountDownLatch 来启动和停止线程。
     public class TestHarness {
