@@ -141,4 +141,182 @@
     
   15.将同步策略文档化：
     在文档中说明客户端代码需要了解的线程安全性保证，以及代码维护人员需要了解的同步策略。
+  
+  16.同步容器类：
+    同步容器类包括 Vector 和 HashTable。
+    迭代器与 ConcurrentModificationException。
+    隐藏迭代器：正如封装对象的状态有助于维持不变性条件一样，封装对象的同步机制同样有助于确保实施同步策略。
+  
+  17.并发容器：
+    通过并发容器来替代同步容器，可以极大地提高伸缩性并降低风险。
+    ConcurrentHashMap。
+    额外的原子 Map 操作：ConcurrentMap接口：
+    public interface ConcurrentMap<K,V> extends Map<K,V> {
+      //仅当 K 没有相应的映射值时才插入
+      V putIfAbsent(K key, V value);
+      
+      //仅当 K 被映射到 V 时才移除
+      boolean remove(K key, V value);
+      
+      //仅当 K 被映射到 oldValue 时才替换为 newValue
+      boolean replace(K key, V oldValue, V newValue);
+      
+      //仅当 K 被映射到某个值时才替换为 newValue
+      V replace(K key, V newValue);
+    }
+    CopyOnWriteArrayList用于替代同步 List。
+    
+  18.阻塞队列(BlockingQueue)和生产者-消费者模式： 
+    在构建高可靠的应用程序时，有界队列是一种强大的资源管理工具：它们能抑制并防止产生过多的工作项，使应用程序在负荷过载的
+  情况下变得更加健壮。
+    串行线程封闭。
+    双端队列与工作密取。
+  
+  19.阻塞方法与中断方法：传递 InterruptedException；恢复中断。
+    public class TaskRunnable implements Runnable {
+      BlockingQueue<Task> queue;
+      
+      public void run() {
+        try {
+           processTask(queue.take());
+        } catch (InterruptedException e) {
+           //恢复被中断的状态
+           Thread.currentThread().interrupt();
+        }
+      }
+    }
+  
+  20.同步工具类：
+    同步工具类可以是任何一个对象，只要它根据其自身的状态来协调线程的控制流。阻塞队列可以作为同步工具类，其他类型的同步工具
+  类还包括闭锁(Latch：CountDownLatch，FutureTask)、信号量(Semaphore)、栅栏(Barrier：CyclicBarrier，Exchanger)。
+    
+    (1) 在计时测试中使用 CountDownLatch 来启动和停止线程。
+    public class TestHarness {
+       public long timeTasks(int nThreads, final Runnable task) throws InterruptedException {
+          final CountDownLatch startGate = new CountDownLatch(1);
+          final CountDownLatch endGate = new CountDownLatch(nThreads);
+          
+          for(int i = 0; i < nThreads; i++) {
+             Thread t = new Thread() {
+                public void run() {
+                   try {
+                      startGate.await();
+                      try { 
+                         task.run();
+                      } finally {
+                         endGate.countDown();
+                      }
+                   } catch (InterruptedException ignored) { }
+                }
+             };
+             t.start();
+          }
+          
+          long start = System.nanoTime();
+          startGate.countDown();
+          endGate.await();
+          long end = System.nanoTime();
+          return end - start;
+       }
+    }
+    
+    (2) 使用 FutureTask 来提前加载稍后需要的数据。
+    public class Preloader {
+       private final FutureTask<ProductInfo> future = 
+             new FutureTask<ProductInfo>(new Callable<ProductInfo>() {
+                public ProductInfo call() throws DataLoadException {
+                   return loadProductInfo();
+                }
+             });
+       private final Thread thread = new Thread(future);
+       
+       public void start() { thread.start(); }
+       
+       public ProductInfo get() throws DataLoadException, InterruptedException {
+          try {
+             return future.get();
+          } catch (ExecutionException e) {
+             Throwable cause = e.getCause();
+             if (cause instanceof DataLoadException)
+                throw (DataLoadException) cause;
+             else
+                throw launderThrowable(cause);
+          }
+       }
+    }
+    
+    (3) 使用 Semaphore 为容器设置边界。
+    public class BoundedHashSet<T> {
+       private final Set<T> set;
+       private final Semaphore sem;
+       
+       public BoundedHashSet(int bound) {
+          this.set = Collections.synchronizedSet(new HashSet<T>());
+          sem = new Semaphore(bound);
+       }
+       
+       public boolean add(T o) throws InterruptedException {
+          sem.acquire();
+          boolean wasAdded = false;
+          try {
+             wasAdded = set.add(o);
+             return wasAdded;
+          } finally {
+             if (!wasAdded)
+               sem.release();
+          }
+       }
+       
+       public boolean remove(Object o) {
+          boolean wasRemoved = set.remove(o);
+          if (wasRemoved)
+             sem.release();
+          return wasRemoved;
+       }
+    }
+    
+    (4) 通过 CyclicBarrier 协调自动细胞自动衍生系统中的计算。
+    public class CellularAutomata {
+       private final Board mainBoard;
+       private final CyclicBarrier barrier;
+       private final Worker[] workers;
+       
+       public CellularAutomata(Board board) {
+          this.mainBoard = board;
+          int count = Runtime.getRuntime().availableProcessors();
+          this.barrier = new CyclicBarrier(count,
+                 new Runnable() {
+                    public void run() {
+                       mainBoard.commitNewValues();
+                    }});
+          this.workers = new Worker[count];
+          for (int i = 0; i < count; i++)
+             workers[i] = new Worker(mainBoard.getSubBoard(count, i));
+       }
+       
+       private class Worker implements Runnable {
+          private final Board board;
+          public Worker(Board board) { this.board = board; }
+          public void run() {
+             while(!board.hasConverged()) {
+                for (int x = 0; x < board.getMaxX(); x++)
+                  for (int y = 0; y < board.getMaxY(); y++)
+                     board.setNewValue(x, y, computeValue(x, y));
+                try {
+                   barrier.await();
+                } catch (InterruptedException ex) {
+                   return;
+                } catch (BrokenBarrierException ex) {
+                   return;
+                }
+             }
+          }
+       }
+       
+       public void start() {
+           for (int i = 0; i < workers.length; i++)
+              new Thread(workers[i]).start();
+           mainBoard.waitForConvergence();
+       }
+    }
 ```
