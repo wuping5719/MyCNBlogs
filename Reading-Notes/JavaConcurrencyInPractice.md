@@ -423,4 +423,13 @@
     并且你希望获得一种更灵活的执行策略时，请考虑使用 Executor 来代替 Thread。
     
     (4) 线程池：
+      可以通过调用 Executors 中的静态工厂方法来创建一个线程池。
+      newFixedThreadPool：创建一个固定长度的线程池。
+      newCachedThreadPool：创建一个可缓存的线程池。
+      newSingleThreadExecutor：一个单线程的 Executor，它创建单个工作线程来执行任务，如果这个线程异常结束，
+    会创建另一个线程来替代。
+      newScheduledThreadPool：创建一个固定长度的线程池，而且以延迟或定时的方式来执行任务。
+    
+    (5) Executor的生命周期：
+    
 ```
