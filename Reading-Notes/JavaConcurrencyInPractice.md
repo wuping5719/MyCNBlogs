@@ -431,5 +431,63 @@
       newScheduledThreadPool：创建一个固定长度的线程池，而且以延迟或定时的方式来执行任务。
     
     (5) Executor的生命周期：
+    ExecutorService 中的生命周期管理方法：
+    public interface ExecutorService extends Executor {
+      void shutdown();
+      List<Runnable> shutdownNow();
+      boolean isShutdown();
+      boolean isTerminated();
+      boolean awaitTermination(long timeout, TimeUnit unit) throws InterrupteException;
+     }
+
+     支持关闭操作的 Web 服务器：
+     class LifecycleWebServer {
+        private final ExecutorService exec = ...;
+     
+        public void start() throws IOException {
+           ServerSocket socket = new ServerSocket(80);
+           while(!exec.isShutdown()) {
+              try {
+                 final Socket conn = socket.accept();
+                 exec.execute(new Runnable() {
+                    public void run() { handleRequest(conn); }
+                 });
+              } catch (RejectedExecutorException e) {
+                 if (!exec.isShutdown())
+                   log("task submission rejected", e);
+            }
+         }
+      }
+
+      public void stop() { exec.shutdown(); }
+
+      void handleRequest(Socket connection) {
+         Request req = readRequest(connection);
+         if(isShutdownRequest(req))
+            stop();
+         else
+            dispatchRequest(req);
+      }
+    }
     
+   (6) 延迟任务与周期任务。
+   
+  24.找出可利用的并行性：
+   (1) 携带结果的任务 Callable 与 Future。
+   Callable 与 Future接口：
+   public interface Callable<V> {
+     V call() throws Exception;
+   }
+
+   public interface Future<V> {
+     boolean cancel(boolean mayInterruptedIfRunning);
+     boolean isCanncelled();
+     boolean isDone();
+     V get() throws InterruptedException, ExecutionException, CancellationException;
+     V get(long timeout, TimeUnit unit) throws InterruptedException, 
+                        ExecutionException, CancellationException, TimeoutException;
+    }
+    
+    (2) 在异构任务并行化中存在的局限。
+    (3) CompletionService：Executor 与 BlockingQueue。
 ```
