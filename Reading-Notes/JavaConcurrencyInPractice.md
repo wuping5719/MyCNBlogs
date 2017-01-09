@@ -371,3 +371,56 @@
        }
     } 
 ```
+
+```html
+ 二.结构化并发应用程序
+  22.任务执行-在线程中执行任务：
+    串行地执行任务。
+    显示地为任务创建线程。
+    无限制创建线程的不足：线程生命周期的开销非常高；资源消耗；稳定性。
+    
+  23.Executor 框架：
+    (1) Executor 接口：
+    public interface Executor {
+       void execute(Runnable command);
+    }
+    
+    (2) 基于 Executor 的 Web 服务器：
+    class TaskExecutionWebServer {
+       private static final int NTHREADS = 100;
+       private static final Executor exec = Executors.newFixedThreadPool(NTHREADS);
+       
+       public static void main(String[] args) throws IOException {
+          ServerSocket socket = new ServerSocket(80);
+          while(true) {
+             final Socket connection = socket.accept();
+             Runnable task = new Runnable() {
+                public void run() {
+                   handleRequest(connection);
+                }
+             };
+             exec.execute(task);
+          }
+       }
+    }
+    
+    为每一个请求启动一个新线程的 Executor。
+    public class ThreadPerTaskExecutor implements Executor {
+       public void execute(Runnable r) {
+          new Thread(r).start();
+       };
+    }
+    
+    在调用线程中以同步方式执行所有任务的 Executor。
+    public class WithinThreadExecutor implements Executor {
+       public void execute(Runnable r) {
+          r.run();
+       };
+    }
+    
+    (3) 执行策略：
+      每当看到下面这种形式的代码时： new Thread(runnable).start(); 
+    并且你希望获得一种更灵活的执行策略时，请考虑使用 Executor 来代替 Thread。
+    
+    (4) 线程池：
+```
