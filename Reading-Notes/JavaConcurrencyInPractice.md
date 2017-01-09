@@ -438,13 +438,13 @@
       boolean isShutdown();
       boolean isTerminated();
       boolean awaitTermination(long timeout, TimeUnit unit) throws InterrupteException;
-     }
+    }
 
-     支持关闭操作的 Web 服务器：
-     class LifecycleWebServer {
-        private final ExecutorService exec = ...;
+    支持关闭操作的 Web 服务器：
+    class LifecycleWebServer {
+      private final ExecutorService exec = ...;
      
-        public void start() throws IOException {
+      public void start() throws IOException {
            ServerSocket socket = new ServerSocket(80);
            while(!exec.isShutdown()) {
               try {
@@ -486,8 +486,8 @@
      V get() throws InterruptedException, ExecutionException, CancellationException;
      V get(long timeout, TimeUnit unit) throws InterruptedException, 
                         ExecutionException, CancellationException, TimeoutException;
-    }
+   }
     
-    (2) 在异构任务并行化中存在的局限。
-    (3) CompletionService：Executor 与 BlockingQueue。
+   (2) 在异构任务并行化中存在的局限。
+   (3) CompletionService：Executor 与 BlockingQueue。
 ```
