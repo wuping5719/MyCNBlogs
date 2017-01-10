@@ -43,6 +43,6 @@
   </tr>
   <tr>
     <td><a href="https://code.visualstudio.com/">21.Visual Studio Code</a></td>
-    <td></td>
+    <td><a href="https://tinypng.com/">22.图像压缩-TinyPng</a></td>
   </tr>
 </table>
