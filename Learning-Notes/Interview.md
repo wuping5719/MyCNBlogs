@@ -169,7 +169,7 @@
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/12805?type=0&order=0&pos=6&page=1"><strong>5.2016秋季校园招聘笔经面经专题汇总</strong></a></td>
-       <td><a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Learning-Notes/InterviewExperience/DataMining.md">6.数据挖掘面经</a></td>
+       <td><a href="https://www.nowcoder.com/discuss?type=2&order=0">6.牛客面经讨论区</a></td>
     </tr>
     <tr>
        <td><a href="http://www.nowcoder.com/discuss/15760?type=0&order=0&pos=2&page=2">7.【牛客访谈】</a></td>
