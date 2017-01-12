@@ -3,3 +3,4 @@
 
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/JavaConcurrencyInPractice/ConcurrencyInPractice-1.md">一.并发编程基础知识.</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/JavaConcurrencyInPractice/ConcurrencyInPractice-2.md">二.结构化并发应用程序.</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/JavaConcurrencyInPractice/ConcurrencyInPractice-3.md">三.活跃性、性能与测试.</a>
