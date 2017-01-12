@@ -490,4 +490,58 @@
     
    (2) 在异构任务并行化中存在的局限。
    (3) CompletionService：Executor 与 BlockingQueue。
+   使用 CompletionService，使页面元素在下载完成后立即显示出来。
+   public class Renderer {
+     private final ExecutorService executor;
+
+     Renderer(ExecutorService executor) { this.executor = executor; }
+
+     void renderPage(CharSequence source) {
+       List<ImageInfo> info = scanForImageInfo(source);
+       CompletionService<ImageData> completionService = new ExecutorCompletionService<ImageData>(executor);
+          for(final ImageInfo imageInfo : info)
+              completionService.submit(new Callable<ImageData>() {
+                  public ImageData call() {
+                     return imageInfo.downloadImage();
+                  }
+              });
+
+       renderText(source);
+
+       try {
+          for(int t = 0; n = info.size(); t < n; t++) {
+             Future<ImageData> f = completionService.take();
+             ImageData imageData = f.get();
+             renderImage(imageData);
+          }
+       } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+       } catch (ExecutionException e) {
+          throw launderThrowable(e.getCause());
+       }
+     }
+   }
+  
+   (4) 为任务设置时限。
+   在指定时间内获取广告信息：
+   Page renderPageWithAd() throws InterruptedException {
+      long endNanos = System.nanoTime() + TIME_BUDGET;
+      Future<Ad> f = exec.submit(new FetchAdTask());
+      // 在等待广告的同时显示页面
+      Page page = renderPageBody();
+      Ad ad;
+      try {
+         // 只等待指定的时间长度
+         long timeLeft = endNanos - System.nanoTime();
+         ad = f.get(timeLeft, NANOSECONDS);
+      } catch (ExecutionException e) {
+         ad = DEFAULT_AD;
+      } catch (TimeoutException e) {
+         ad = DEFAULT_AD;
+         f.cancel(true);
+      }
+      page.setAd(ad);
+      return page;
+   }
+
 ```
