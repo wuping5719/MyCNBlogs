@@ -226,5 +226,25 @@
               Thread.currentThread().interrupted();
         }
      }
-     
+   
+   (4) 通过 Future 来实现取消：
+   public static void timedRun(Runnable r, long timeout, TimeUnit unit) throws InterruptedException {
+      Future<?> task = taskExec.submit(r);
+      try {
+         task.get(timeout, unit);
+      } catch (TimeoutException e) {
+         // 接下来的任务将被取消
+      } catch (ExecutionException e) {
+         // 如果在任务中抛出了异常，那么重新抛出该异常
+         throw launderThrowable(e.getCause());
+      } finally {
+         // 如果任务已经结束，那么执行取消操作也不会带来任何影响
+         task.cancel(true);  // 如果任务正在运行，那么将被中断
+      }
+   }
+    当 Future.get 抛出 InterruptedException 或 TimeoutException 时，如果你知道不再需要结果，
+  那么就可以调用 Future.cancel 来取消任务。
+
+   (5) 处理不可中断的阻塞：Java.io 包中的同步 Socket I/O；Java.io 包中的同步 I/O；Selector 的异步 I/O；获取某个锁。
+   (6) 采用 newTaskFor 来封装非标准的取消。
 ```
