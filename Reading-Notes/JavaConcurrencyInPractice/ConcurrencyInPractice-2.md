@@ -247,4 +247,116 @@
 
    (5) 处理不可中断的阻塞：Java.io 包中的同步 Socket I/O；Java.io 包中的同步 I/O；Selector 的异步 I/O；获取某个锁。
    (6) 采用 newTaskFor 来封装非标准的取消。
+   
+ 26.停止基于线程的服务。
+   对于持有线程的服务，只要服务的存在时间大于创建线程的方法的存在时间，那么就应该提供生命周期方法。
+  (1) 关闭 ExecutorService。 
+  使用 ExecutorService 的日志服务：
+  public class LogService {
+     private final ExecutorService exec = new SingleThreadExecutor();
+     ...
+     public void start() { }
+
+     public void stop() throws InterruptedException {
+        try {
+           exec.shutdown();
+           exec.awaitTermination(TIMEOUT, UNIT);
+        } finally {
+           writer.close();
+        }
+     }
+     public void log(String msg) {
+        try {
+           exec.execute(new WriteTask(msg));
+        } catch (RejectedExecutionException ignored) { }
+     }
+  }
+
+  (2) “毒丸”对象。 
+  通过“毒丸”对象来关闭服务。
+  public class IndexingService {
+     private static final File POISON = new File("");
+     private final IndexerThread consumer = new IndexerThread();
+     private final CrawlerThread producer = new CrawlerThread();
+     private final BlockingQueue<File> queue;
+     private final FileFilter fileFilter;
+     private final File root;
+
+     // IndexingService 消费者线程
+     class IndexerThread extends Thread {
+        public void run() {
+           try {
+              while(true) {
+                 File file = queue.take();
+                 if(file == POISON)
+                    break;
+                 else 
+                    indexFile(file);
+              }
+           } catch (InterruptedException consumed) { }
+        }
+     }
+
+     // IndexingService 生产者线程
+     class CrawlerThread extends Thread {
+        public void run() {
+           try {
+              crawl(root);
+           } catch (InterruptedException e) { // 发生异常 }
+           finally {
+              while(true) {
+                 try {
+                    queue.put(POISON);
+                    break;
+                 } catch (InterruptedException e1) { // 重新尝试 }
+              }
+           }
+        }
+
+        private void crawl(File root) throws InterruptedException { ... }
+     }
+
+     public void start() {
+        producer.start();
+        consumer.start();
+     }
+
+     public void stop() { producer.interrupt(); }
+
+     public void awaitTermination() throws InterruptedException {
+        consumer.join();
+     }
+  }
+
+  (3) shutdownNow 的局限性。 
+
+ 27.处理非正常的线程终止。
+  典型的线程池工作者线程结构：
+  public void run() {
+    Throwable thrown = null;
+    try {
+       while (!isInterrupted())
+         runTask(getTaskFromWorkQueue());
+    } catch (Throwable e) {
+       thrown = e;
+    } finally {
+       threadExited(this, thrown);
+    }
+  }
+  未捕获异常的处理：在运行时间较长的应用程序中，通常会为所有线程的未捕获异常指定同一个异常处理器，
+并且该处理器至少会将异常信息记录到日志中。
+
+28.JVM 关闭。
+  (1) 关闭钩子。
+  通过注册一个关闭钩子来停止日志服务。
+  public void start() {
+     Runtime.getRuntime().addShutdownHook(new Thread() {
+       public void run() {
+          try { LogService.this.stop(); }
+          catch (InterruptedException ignored) {}
+       }
+     });
+  }
+  (2) 守护线程：守护线程通常不能用于替代应用程序管理程序中各个服务的生命周期。
+  (3) 终结器：避免使用终结器。
 ```
