@@ -172,5 +172,59 @@
       page.setAd(ad);
       return page;
    }
+ 
+   25.任务取消：用户请求取消；有时间限制的操作；应用程序事件；错误；关闭。
+   (1) 中断：在 Java 的 API 或语言规范中，并没有将中断与任何取消语义关联起来，但实际上，
+    如果在取消之外的其他操作中使用中断，那么都是不合适的，并且很难支撑起来更大的应用。
+    Thread 中的中断方法：
+    public class Thread {
+       public void interrupt() { ... }
+       public boolean isInterrupted() { ... }
+       public static boolean interrupted() { ... }
+    }
 
+    调用 interrupt 并不意味着立即停止目标线程正在进行的工作，而只是传递了请求中断的消息。
+    通常，中断是实现取消的最合理方式。
+    通过中断来取消：
+    class PrimeProducer extends Thread {
+       private final BlockingQueue<BigInteger> queue;
+
+       PrimeProducer(BlockingQueue<BigInteger> queue) {
+         this.queue = queue;
+       }
+
+       public void run() {
+          try {
+             BigInteger p = BigInteger.ONE;
+             while(!Thread.currentThread().isInterrupted())
+               queue.put(p = p.nextProbablePrime());
+          } catch (InterruptedException consumed) {
+            // 允许线程退出
+          }
+       }
+       public void cancel() { interrupt(); }
+    }
+
+   (2) 中断策略：
+     由于每个线程都拥有各自的中断策略，因此除非你知道中断对该线程的含义，否则就不应该中断这个线程。
+   (3) 响应中断：
+     只有实现了线程中断策略的代码才可以屏蔽中断请求。在常规的任务和库代码中都不应该屏蔽中断请求。
+     不可取消的任务在退出前恢复中断：
+     public Task getNextTask(BlockingQueue<Task> queue) {
+        boolean interrupted = false;
+        try {
+           while (true) {
+              try {
+                return queue.take();
+              } catch (InterruptedException e) {
+                 interrupted = true;
+                 // 重新尝试
+              }
+           }
+         } finally {
+            if (interrupted)
+              Thread.currentThread().interrupted();
+        }
+     }
+     
 ```
