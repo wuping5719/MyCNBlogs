@@ -362,10 +362,9 @@
   
  29.线程池的使用：在任务与执行策略之间的隐性耦合。
    需要明确地指定执行策略的任务类型有：依赖性任务；使用线程封闭机制的任务；对响应时间敏感的任务；使用 ThreadLocal 的任务。
-   在一些任务中，需要拥有或排除某种特定的执行策略。如果某些任务依赖于其他的任务，那么会要求
- 线程池足够大，从而确保它们依赖任务不会被放入等待队列中或被拒绝，而采用线程封闭机制的任务需要
- 串行执行。通过将这些需求写入文档，将来的代码维护人员就不会由于使用了某种不合适的执行策略而
- 破坏安全性或活跃性。
+   在一些任务中，需要拥有或排除某种特定的执行策略。如果某些任务依赖于其他的任务，那么会要求线程池足够大，
+ 从而确保它们依赖任务不会被放入等待队列中或被拒绝，而采用线程封闭机制的任务需要串行执行。通过将这些需求写入文档，
+ 将来的代码维护人员就不会由于使用了某种不合适的执行策略而破坏安全性或活跃性。
    (1) 线程饥饿死锁。
    每当提交一个有依赖性的 Executor 任务时，要清楚地知道可能会出现线程“饥饿”死锁，因此需要在代码或
  配置 Executor 的配置文件中记录线程池的大小限制或配置限制。
@@ -380,8 +379,9 @@
 
  31.配置 ThreadPoolExecutor：
    ThreadPoolExecutor 的通用构造函数：
-   public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit,
-             BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RejectExecutionHandler handler) { ... }
+   public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, 
+             TimeUnit unit, BlockingQueue<Runnable> workQueue, 
+             ThreadFactory threadFactory, RejectExecutionHandler handler) { ... }
    (1) 线程的创建与销毁。
    (2) 管理队列任务。
    对于 Executor，newCachedThreadPool 工厂方法是一种很好的默认选择，它能提供比固定大小的线程池更好的排队性能。
