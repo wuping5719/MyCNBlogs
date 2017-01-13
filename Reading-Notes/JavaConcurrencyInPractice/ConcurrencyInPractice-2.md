@@ -359,4 +359,104 @@
   }
   (2) 守护线程：守护线程通常不能用于替代应用程序管理程序中各个服务的生命周期。
   (3) 终结器：避免使用终结器。
+  
+ 29.线程池的使用：在任务与执行策略之间的隐性耦合。
+   需要明确地指定执行策略的任务类型有：依赖性任务；使用线程封闭机制的任务；对响应时间敏感的任务；使用 ThreadLocal 的任务。
+   在一些任务中，需要拥有或排除某种特定的执行策略。如果某些任务依赖于其他的任务，那么会要求
+ 线程池足够大，从而确保它们依赖任务不会被放入等待队列中或被拒绝，而采用线程封闭机制的任务需要
+ 串行执行。通过将这些需求写入文档，将来的代码维护人员就不会由于使用了某种不合适的执行策略而
+ 破坏安全性或活跃性。
+   (1) 线程饥饿死锁。
+   每当提交一个有依赖性的 Executor 任务时，要清楚地知道可能会出现线程“饥饿”死锁，因此需要在代码或
+ 配置 Executor 的配置文件中记录线程池的大小限制或配置限制。
+   (2) 运行时间较长的任务。
+
+ 30.设置线程池的大小：
+    Ncpu = number of CPUs;
+    Ucpu = target CPU utilization, 0 ≦ Ucpu ≦ 1;
+    W / C = ratio of wait time to compute time.
+   要使处理器达到期望的使用率，线程池的最优大小等于：
+    Nthreads = Ncpu * Ucpu * (1 +  W / C).
+
+ 31.配置 ThreadPoolExecutor：
+   ThreadPoolExecutor 的通用构造函数：
+   public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit,
+             BlockingQueue<Runnable> workQueue, ThreadFactory threadFactory, RejectExecutionHandler handler) { ... }
+   (1) 线程的创建与销毁。
+   (2) 管理队列任务。
+   对于 Executor，newCachedThreadPool 工厂方法是一种很好的默认选择，它能提供比固定大小的线程池更好的排队性能。
+ 当需要限制当前任务的数量以满足资源管理需求时，那么可以选择固定大小的线程池，就像在接受网络客户请求的服务器应用程序中，
+ 如果不进行限制，那么容易发生过载问题。
+   (3) 饱和策略。
+   使用 Semaphore 来控制任务的提交速率。
+   public class BoundedExecutor {
+      private final Executor exec;
+      private final Semaphore semaphore;
+
+      public BoundedExecutor(Executor exec, int bound) {
+         this.exec = exec;
+         this.semaphore = new Semaphore(bound);
+      } 
+
+      public void submitTask(final Runnable command) throws InterruptedException {
+         semaphore.acquire();
+         try {
+            exec.execute(new Runnable() {
+               public void run() {
+                  try {
+                     command.run();
+                  } finally {
+                     semaphore.release();
+                  }
+               }
+            });
+         } catch (RejectExecutionException e) {
+            semaphore.release();
+         }
+      }
+   }
+
+   (4) 线程工厂。
+   ThreadFactory 接口：
+   public interface ThreadFactory {
+      Thread newThread(Runnable r);
+   }
+   (5) 在调用构造函数后再定制 ThreadPoolExecutor。
+
+ 32.扩展ThreadPoolExecutor：
+   增加了日志和计时等功能的线程池：
+   public class TimingThreadPool extends ThreadPoolExecutor {
+      private final ThreadLocal<Long> startTime = new ThreadLocal<Long>();
+      private final Logger log = Logger.getLogger("TimingThreadPool");
+      private final AtomicLong numTasks = new AtomicLong();
+      private final AtomicLong totalTime = new AtomicLong();
+
+      protected void beforeExecute(Thread t, Runnable r) {
+         super.beforeExecute(t, r);
+         log.fine(String.format("Thread %s: Start %s", t, r));
+         startTime.set(System.nanoTime());
+      }
+
+      protected void afterExecute(Runnable r, Throwable t) {
+         try {
+            long endTime = System.nanoTime();
+            long taskTime = endTime - startTime.get();
+            numTasks.incrementAndGet();
+            totalTime.addAndGet(taskTime);
+            log.fine(String.format("Thread %s: end %s, time=%dns", t, r, taskTime));
+         } finally {
+            super.afterExecute(r, t);
+         }
+      }
+
+      protected void terminated() {
+         try {
+            log.info(String.format("Terminated: avg time=%dns", totalTime.get() / numTasks.get()));
+         } finally {
+            super.terminated();
+         }
+      }
+   }
+   
+  33.递归算法的并行化。
 ```
