@@ -171,6 +171,8 @@
     <td>
      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/JavaConcurrencyInPractice/ConcurrencyInPractice.md">5.《Java 并发编程实战》</a>
     </td>
-    <td></td>
+    <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveJava.md">6.《Effective Java》</a>
+    </td>
   </tr>
 </table>
