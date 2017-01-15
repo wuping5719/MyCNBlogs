@@ -88,4 +88,95 @@
   (2) 内存同步：不要过度担心非竞争同步带来的开销。这个基本的机制已经非常快了，并且 JVM 还能进行额外的优化以进一步
  降低或取消开销。因此，我们应该将优化重点放在那些发生锁竞争的地方。
   (3) 阻塞。
+  
+ 43.减少锁的竞争：
+  在并发程序中，对可伸缩性的最主要威胁就是独占方式的资源锁。
+  有3种方式可以降低锁的竞争程度：
+    减少锁的持有时间；
+    降低锁的请求频率；
+    使用带有协调机制的独占锁，这些机制允许更高的并发性。
+  (1) 缩小锁的范围(“快进快出”)。
+    减小锁的持有时间:
+    public class BetterAttributeStore {
+       private final Map<String, String> attributes = new HashMap<String, String>();
+
+       public boolean userLocationMatches(String name, String regexp) {
+          String key = "users." + name + ".location";
+          String location;
+          synchronized (this) {
+             location = attributes.get(key);
+          }
+          if (location == null)
+             return false;
+          else
+             return Pattern.matches(regexp, location);
+       }
+    }
+
+  (2) 减小锁的粒度。
+    将 ServerStatus 重新改写为使用锁分解技术：
+    public class ServerStatus {
+       public final Set<String> users;
+       public final Set<String> queries;
+       ...
+       public void addUser(String u) {
+          synchronized (users) {
+             users.add(u);
+          }
+       }
+
+       public void addQuery(String q) {
+          synchronized (queries) {
+             queries.add(q);
+          }
+       }
+       // 去掉同样被改写为使用被分解锁的方法
+    }
+
+  (3) 锁分段。
+    在基于散列的 Map 中使用锁分段技术：
+    public class StripedMap {
+       // 同步策略：buckets[n] 由 locks[n % N_LOCKS] 来保护
+       private static final int N_LOCKS = 16;
+       private final Node[] buckets;
+       private final Object[] locks;
+
+       private static class Node { ... }
+
+       public StripedMap(int numBuckets) {
+          buckets = new Node[numBuckets];
+          locks = new Object[N_LOCKS];
+          for(int i = 0; i < N_LOCKS; i++)
+             locks[i] = new Object();
+       }
+
+       private final int hash(Object key) {
+          return Math.abs(key.hashCode() % buckets.length);
+       }
+
+       public Object get(Object key) {
+          int hash = hash(key);
+          synchronized (locks[hash % N_LOCKS]) {
+             for(Node m = buckets[hash]; m != null; m = m.next)
+                if (m.key.equals(key))
+                   return m.value;
+          }
+          return null;
+       }
+
+       public void clear() {
+          for(int i = 0; i < buckets.length; i++) {
+             synchronized (locks[i % N_LOCKS]) {
+                buckets[i] = null;
+             }
+          }
+       }
+       ...
+    }
+
+  (4) 避免热点域。
+  (5) 一些替代独占锁的方法：ReadWriteLock、原子变量。
+  (6) 监控 CPU 的利用率：负载不充足；I/O密集；外部限制；锁竞争。
+  (7) 向对象池说“不”：通常，对象分配操作的开销比同步开销更低。
+  (8) 减少上下文切换的开销。
 ```
