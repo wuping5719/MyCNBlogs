@@ -67,5 +67,48 @@
 
  (4) 非块结构的加锁。
  
- 
+ 51.性能考虑因素：性能是一个不断变化的指标，如果在昨天的测试基准中发现 X 比 Y 更快，那么在今天就可能已经过时了。
+  公平性：在 ReentrantLock 的构造函数中提供了两种公平性选择：创建一个非公平的锁(默认)或者一个公平的锁。
+  在 synchronized 和 ReentrantLock 之间进行选择：在一些内置锁无法满足需求的情况下，ReentrantLock 可以作为
+一种高级工具。当需要一些高级功能时才应该使用 ReentrantLock，这些功能包括：可定时的、可轮询的与可中断的锁获取
+操作，公平队列，以及非块结构的锁。否则，还是应该优先使用 synchronized。
+
+ 52.读-写锁：
+  ReadWriteLock 接口：
+  public interface ReadWriteLock {
+     Lock readLock();
+     Lock writeLock();
+  }
+  ReadWriteLock 中的一些可选实现包括：释放优先；读线程插队；重入性；降级；升级。
+  用读—写锁来包装 Map:
+  public class ReadWriteMap<K, V> {
+     private final Map<K, V> map;
+     private final ReadWriteLock lock = new ReentrantReadWriteLock();
+     private final Lock r = lock.readLock();
+     private final Lock w = lock.writeLock();
+
+     public ReadWriteMap(Map<K, V> map) {
+        this.map = map;
+     }
+
+     public V put(K key, V value) {
+        w.lock();
+        try {
+           return map.put(key, value);
+        } finally {
+           w.unlock();
+        }
+     }
+     // 对 remove(), putAll(), clear() 等方法执行相同的操作
+
+     public V get(Object key) {
+        r.lock();
+        try {
+           return map.get(key);
+        } finally {
+           r.unlock();
+        }
+     }
+     // 对其他只读的 Map 方法执行相同的操作
+  }
 ```
