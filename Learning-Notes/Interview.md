@@ -127,7 +127,7 @@
     <td><a href="http://www.diycode.cc/wiki/androidinterview">2.Android开发工程师面试指南</a></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/GeniusVJR/LearningNotes">3.Android-LearningNotes</a></td>
+    <td><a href="https://github.com/GeniusVJR/LearningNotes"><strong>3.Android-LearningNotes</strong></a></td>
   </tr>
 </table>
 
