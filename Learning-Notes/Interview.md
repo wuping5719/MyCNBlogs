@@ -126,7 +126,9 @@
     <td><a href="http://blog.csdn.net/wdong_love_cl/article/details/52084720">1.史上最全的Java&amp;Android面试题搜集整理</a></td>
     <td><a href="http://www.diycode.cc/wiki/androidinterview">2.Android开发工程师面试指南</a></td>
   </tr>
-  
+  <tr>
+    <td><a href="https://github.com/GeniusVJR/LearningNotes">3.Android-LearningNotes</a></td>
+  </tr>
 </table>
 
 <strong>iOS</strong>
