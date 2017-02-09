@@ -284,4 +284,162 @@
      if (新的状态允许某个被阻塞的线程获取成功)
         解除队列中一个或多个线程的阻塞状态
   }
+  
+ 58.硬件对并发的支持：
+  (1) 比较并交换(CAS)：模拟 CAS 操作。
+  public class SimulatedCAS {
+     @GuardedBy("this") private int value;
+
+     public synchronized int get() { return value; }
+
+     public synchronized int compareAndSwap(int expectedValue, int newValue) { 
+        int oldValue = value;
+        if (oldValue == expectedValue)
+           value = newValue;
+        return oldValue;
+     }
+
+     public synchronized boolean compareAndSet(int expectedValue, int newValue) { 
+        return (expectedValue == compareAndSwap(expectedValue, newValue));
+     }
+  }
+
+  (2) 非阻塞的计数器：基于 CAS 实现的非阻塞计数器。
+  public class CasCounter {
+     private SimulateCAS value;
+
+     public int getValue() {
+        return value.get();
+     }
+    
+     public int increment() {
+        int v;
+        do {
+           v = value.get();
+        }
+        while (v != value.compareAndSwap(v, v + 1));
+        return v + 1;
+     }
+  }
+  (3) JVM 对 CAS 的支持。
+
+ 59.原子变量类：
+  1) 原子变量是一种“更好的 volatile”。
+  2) 性能比较：锁与原子变量。
+  (1) 基于 ReentrantLock 实现的随机数生成器。
+  public class ReentrantLockPaseudoRandom extends PaseudoRandom {
+     private final Lock lock = new ReentrantLock(false);
+     private int seed;
+
+     ReentrantLockPaseudoRandom(int seed) {
+        this.seed = seed;
+     }
+
+     public int nextInt(int n) {
+        lock.lock();
+        try {
+           int s = seed;
+           seed = calculateNext(s);
+           int remainder = s % n;
+           return remainder > 0 ? remainder : remainder + n;
+        } finally {
+           lock.unlock();
+        }
+     }
+  }
+  (2) 基于 AtomicInteger 实现的随机数生成器。
+  public class AtomicPaseudoRandom extends PaseudoRandom {
+     private AtomicInteger seed;
+
+     AtomicPaseudoRandom(int seed) {
+        this.seed = new AtomicInteger(seed);
+     }
+
+     public int nextInt(int n) {
+        while (true) {
+           int s = seed.get();
+           int nextSeed = calculateNext(s);
+           if (seed.compareAndSet(s, nextSeed)) {
+               int remainder = s % n;
+               return remainder > 0 ? remainder : remainder + n;
+           }
+        }
+     }
+  }
+
+ 60.非阻塞算法：
+  (1) 非阻塞的栈：使用 Treiber 算法(Treiber,1986)构造的非阻塞栈。
+  public class ConcurrentStack <E> {
+     AtomicReference<Node<E>> top = new AtomicReference<Node<E>>();
+
+     public void push(E item) {
+        Node<E> newHead = new Node<E>(item);
+        Node<E> oldHead;
+        do {
+           oldHead = top.get();
+           newHead.next = oldHead;
+        } while (!top.compareAndSet(oldHead, newHead));
+     }
+
+     public E pop() {
+        Node<E> oldHead;
+        Node<E> newHead;
+        do {
+           oldHead = top.get();
+           if (oldHead == null)
+              return null;
+           newHead = oldHead.next;
+        } while (!top.compareAndSet(oldHead, newHead));
+        return oldHead.item;
+     }
+
+     private static class Node<E> {
+         public final E item;
+         public Node<E> next;
+
+         public Node(E item) {
+            this.item = item;
+         }
+     }
+  }
+
+  (2) 非阻塞的链表：Michael-Scott(Michael  and Scott,1996)非阻塞算法中的插入算法。
+  public class LinkedQueue <E> {
+     private static class Node <E> {
+        final E item;
+        final AtomicReference<Node<E>> next;
+
+        public Node(E item, Node<E> next) {
+           this.item = item;
+           this.next = new AtomicReference<Node<E>>(next);
+        }
+     }
+
+     private final Node<E> dummy = new Node<E>(null, null);
+     private final AtomicReference<Node<E>> head = new AtomicReference<Node<E>>(dummy);
+     private final AtomicReference<Node<E>> tail = new AtomicReference<Node<E>>(dummy);
+
+     public boolean put(E item) {
+        Node<E> newNode = new Node<E>(item, null);
+        while (true) {
+           Node<E> curTail = tail.get();
+           Node<E> tailNext = curTail.next.get();
+           if (curTail == tail.get()) {
+              if (tailNext != null) {
+                 // 队列处于中间状态，推进尾节点
+                 tail.compareAndSet(curTail, tailNext);
+              } else {
+                 // 处于稳定状态，尝试插入新节点
+                 if (curTail.next.compareAndSet(null, newNode)) {
+                    // 插入操作成功，尝试推进尾节点
+                    tail.compareAndSet(curTail, newNode);
+                    return true;
+                 }
+              }
+           }
+        }
+     }
+  }
+  (3) 原子的域更新器。
+  (4) ABA 问题。
 ```
