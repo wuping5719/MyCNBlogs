@@ -205,4 +205,83 @@
   8) 封装条件队列。
   9) 人口协议与出口协议。
 
+ 56.显示的 Condition 对象：
+ (1) Condition 接口：
+ public interface Condition {
+    void await() throws InterruptedException;
+    boolean await(long time, TimeUnit unit) throws InterruptedException;
+    long awaitNanos(long nanosTimeout) throws InterruptedException;
+    void awaitUninterruptibly();
+    boolean awaitUntil(Date deadline) throws InterruptedException;
+
+    void signal();
+    void signalAll();
+ }
+   特别注意：在 Condition 对象中，与 wait、notify 和 notifyAll 方法对应的分别是await、signal 和 signalAll。
+ 但是，Condition 对 Object 进行了扩展，因而它也包含 wait 和 notify 方法。一定要确保使用正确的版本——await 和signal.
+ (2) 使用显示条件变量的有界缓存：
+ public class ConditionBoundedBuffer<T> {
+    protected final Lock lock = new ReentrantLock();
+    // 条件谓词：notFull (count < items.length)
+    private final Condition notFull = lock.newCondition();
+    // 条件谓词：notEmpty (count > 0) 
+    private final Condition notEmpty = lock.newCondition();
+    @GuardBy("lock") private final T[] items = (T[]) new Object[BUFFER_SIZE];
+    @GuardBy("lock") private int tail, head, count;
+
+    // 阻塞并直到：notFull
+    public void put(T x) throws InterruptedException {
+       lock.lock();
+       try {
+          while (count == items.length)
+              notFull.await();
+          items[tail] = x;
+          if (++tail == items.length)
+             tail = 0;
+          ++count;
+          notEmpty.signal();
+       } finally {
+          lock.unlock();
+       }
+    }
+
+    // 阻塞并直到：notEmpty
+    public T take() throws InterruptedException {
+       lock.lock();
+       try {
+          while (count == 0)
+            notEmpty.await();
+          T x = items[head];
+          items[head] = null;
+          if (++head == items.length)
+             head = 0;
+          --count;
+          notFull.signal();
+          return x;
+       } finally {
+          lock.unlock();
+       }
+    }
+ }
+
+ 57.AbstractQueuedSynchronizer：AQS 中获取操作和释放操作的标准形式。
+  boolean acquire() throws InterruptedException {
+     while (当前状态不允许获取操作) {
+        if (需要阻塞获取请求) {
+           如果当前线程不在队列中，则将其插入队列
+           阻塞当前线程
+        }
+        else
+           返回失败
+     }
+     可能更新同步器的状态
+     如果线程位于队列中，则将其移出队列
+     返回成功
+  }
+
+  void release() {
+     更新同步器的状态
+     if (新的状态允许某个被阻塞的线程获取成功)
+        解除队列中一个或多个线程的阻塞状态
+  }
 ```
