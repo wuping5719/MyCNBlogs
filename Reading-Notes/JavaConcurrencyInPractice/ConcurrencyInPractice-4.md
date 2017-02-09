@@ -126,6 +126,83 @@
   非阻塞算法在设计和实现时非常困难，但通常能够提供更高的伸缩性，并能够更好的防止活跃性故障的发生。在 JVM 从一个
 版本升级到下一个版本的过程中，并发性能的主要提升都来自于(在 JVM 内部以及平台类库中)对阻塞算法的使用。
 
+ 55.条件队列：
+ 1) 使用条件队列实现的有界缓存：
+  public class BoundedBuffer<V> extends BaseBoundedBuffer<V> {
+    // 条件谓词：not-full (!isFull())
+    // 条件谓词：not-empty (!isEmpty())
+
+    public BoundedBuffer(int size) { super(size); }
+
+    // 阻塞并直到：not-full 
+    public synchronized void put(V v) throws InterruptedException {
+       while (isFull()) 
+          wait();
+       doPut(v);
+       notifyAll();
+    }
+
+    // 阻塞并直到：not-empty
+    public synchronized V take() throws InterruptedException {
+       while (isEmpty()) 
+          wait();
+       V v = doTake();
+       notifyAll();
+       return v;
+    }
+  }
   
+ 2) 条件谓词：
+   将与条件队列相关联的条件谓词以及这些条件谓词上等待的操作都写入文档。
+   每一次 wait 调用都会隐式地与特定的条件谓词关联起来。当调用某个特定条件谓词的 wait 时，调用者必须已经持有
+ 与条件队列相关的锁，并且这个锁必须保护着构成条件谓词的状态变量。
+ 3) 过早唤醒：  
+   状态依赖方法的标准形式：
+   void stateDependentMethod() throws InterruptedException {
+      // 必须通过一个锁来保护条件谓词
+      synchronized(lock) {
+         while (!conditionPredicate())
+            lock.wait();
+         // 现在对象处于合适的状态
+      }
+   }
+   当使用条件等待时(例如 Object.wait 或 Condition.await)：
+    (1) 通常都有一个条件谓词——包括一些对象状态的测试，线程在执行前必须首先通过这些测试。
+    (2) 在调用 wait 之前测试条件谓词，并且从 wait 中返回时再次进行测试。
+    (3) 在一个循环中调用 wait。
+    (4) 确保使用与条件队列相关的锁来保护构成条件谓词的各个状态变量。
+    (5) 当调用 wait、notify 或 notifyAll 等方法时，一定要持有与条件队列相关的锁。
+    (6) 在检查条件谓词之后以及开始执行相应的操作之前，不要释放锁。
+  4) 丢失的信号。
+  5) 通知：每当在等待一个条件时，一定要确保在条件谓词变为真时通过某种方式发出通知。
+     只有同时满足以下两个条件时，才能用单一的 notify 而不是 notifyAll：
+     所有等待线程的类型都相同。只有一个条件谓词与条件队列相关，并且每个线程在从 wait 返回后将执行相同的操作。
+     单进单出。在条件变量上的每次通知，最多只能唤醒一个线程来执行。
+  6) 阀门类：使用 wait 和 notifyAll 来实现可重新关闭的阀门。
+    public class ThreadGate {
+       // 条件谓词：opened-since(n) (isOpen || generation>n)
+       @GuardedBy("this") private boolean isOpen;
+       @GuardedBy("this") private int generation;
+
+       public synchronized void close() {
+          isOpen = false;
+       }
+
+       public synchronized void open() {
+          ++generation;
+          isOpen = true;
+          notifyAll();
+       }
+
+       // 阻塞并直到：opened-since(generation on entry) 
+       public synchronized void await() throws InterruptedException {
+          int arrivalGeneration = generation;
+          while(!isOpen && arrivalGeneration == generation)
+             wait();
+       }
+    } 
+  7) 子类的安全问题。
+  8) 封装条件队列。
+  9) 人口协议与出口协议。
 
 ```
