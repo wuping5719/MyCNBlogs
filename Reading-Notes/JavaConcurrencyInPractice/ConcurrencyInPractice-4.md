@@ -442,4 +442,57 @@
   }
   (3) 原子的域更新器。
   (4) ABA 问题。
+  
+ 61.Java 内存模型：
+    Java 内存模型说明了某个线程的内存操作在哪些情况下对于其他线程是可见的。其中包括确保这些操作是按照一种 Happens-Before
+ 的偏序关系进行排序，而这种关系是基于内存操作和同步操作等级别来定义的。如果缺少充足的同步，那么当线程访问共享数据时，会发生
+ 一些非常奇怪的问题。
+    Happens-Before 的规则包括：
+    程序顺序规则。如果程序中操作 A 在操作 B 之前，那么在线程中 A 操作将在 B 操作之前执行。
+    监视器锁规则。在监视器锁上的解锁操作必须在同一个监视器锁上的加锁操作之前执行。
+    volatile 变量规则。对 volatile 变量的写入操作必须在对该变量的读操作之前执行。
+    线程启动规则。在线程上对 Thread.Start 的调用必须在该线程中执行任何操作之前执行。
+    线程结束规则。线程中的任何操作都必须在其他线程检测到该线程已经结束之前执行，或者从 Thread.join 中成功返回，或者在调用
+ Thread.isAlive 时返回 false。
+    中断规则。当一个线程在另一个线程上调用 interrupt 时，必须在被中断线程检测到 interrupt 调用之前执行
+ (通过抛出 InterruptedException，或者调用 isInterrupted 和 interrupted)。
+    终结器规则。对象的构造函数必须在启动该对象的终结器之前执行完成。
+    传递性。如果操作 A 在操作 B 之前执行，并且操作 B 在操作 C 之前执行，那么操作 A 必须在操作 C 之前执行。
+
+ 62.发布：除了不可变对象以外，使用被另一个线程初始化的对象通常都是不安全的，除非对象的发布操作是在使用该对象的线程
+ 开始使用之前执行。
+   1) 安全初始化模式：
+    (1) 线程安全的延迟初始化：
+     public class SafeLazyInitialization {
+        private static Resource resource;
+
+        public syhchronized static Resource getInstance() {
+           if (resource == null)
+              resource = new Resource();
+           return resource;
+        }
+     }
+     (2) 提前初始化：
+     public class EagerInitialization {
+        private static Resource resource = new Resource();
+
+        public static Resource getResource() { return resource; }
+     }
+     (3) 延迟初始化占位类模式：
+     public class ResourceFactory {
+        private static class ResourceHolder {
+            public static Resource resource = new Resource();
+        }
+
+        public static Resource getResource() {
+            return ResourceHolder.resource;
+        }
+     }
+
+   2) 初始化过程中的安全性：
+     初始化安全性将确保，对于被正确构造的对象，所有线程都能看到由构造函数为对象给各个 final 域设置的正确值，而不管采用
+   何种方式来发布对象。而且，对于可以通过被正确构造对象中某个 final 域到达的任意变量(例如某个 final 数组中的元素，或者
+   由一个 final 域引用的 HashMap 的内容)将同样对于其他线程是可见的。
+     初始化安全性只能保证通过 final 域可达的值从构造过程完成时开始的可见性。对于通过非 final 域可达的值，或者在构造过程
+   完成后可能改变的值，必须采用同步来确保可见性。
 ```
