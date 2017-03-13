@@ -160,7 +160,8 @@
        public static final Thing[] VALUES = {...};  (安全漏洞)
      解决方法1:
        private static final Thing[] PRIVATE_VALUES = {...};
-       public static final List<Thing> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+       public static final List<Thing> VALUES = 
+                  Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
      解决方法2:
        private static final Thing[] PRIVATE_VALUES = {...};
        public static final Thing[] values() {
