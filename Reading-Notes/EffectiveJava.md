@@ -146,4 +146,66 @@
   实现对象拷贝：提供一个拷贝构造器或拷贝工厂。
   拷贝工厂是类似拷贝构造器的静态工厂。
     public static Yum newInstance(Yum yum);
+    
+12.考虑实现 Comparable 接口。
+
+13.使类和成员的可访问性最小化。
+   (1) 尽可能地使每个类或者成员不被外界访问;
+   私有的(private)：只有在声明该成员的顶层类内部才可以访问。
+   包级私有的(package-private)(default)：声明该成员的包内部的任何类都可以访问。
+   受保护的(protected)：声明该成员的类的子类可以访问。
+   公有的(public)：在任何地方都可以访问。
+   (2) 实例域决不能是公有的，包含公有可变域的类并不是线程安全的。
+   (3) 类具有公有的静态 final 数组域，或者返回这种域的访问方法，这几乎总是错误的。
+       public static final Thing[] VALUES = {...};  (安全漏洞)
+     解决方法1:
+       private static final Thing[] PRIVATE_VALUES = {...};
+       public static final List<Thing> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+     解决方法2:
+       private static final Thing[] PRIVATE_VALUES = {...};
+       public static final Thing[] values() {
+          return PRIVATE_VALUES.clone();
+       } 
+
+14.在公有类中使用访问方法而非公有域。
+
+15.使可变性最小化。
+  (1) 不要提供任何会修改对象状态的方法(mutator);
+  (2) 保证类不会扩展;
+  (3) 使所有的域都是 final 的;
+  (4) 使所有的域都成为私有的;
+  (5) 确保对于任何可变组件的互斥访问。
+
+16.复合优先于继承。
+  包装类(wrapper class)即装饰(Decorator)模式，不能用于回调框架(callback framework)。
+
+17.要么为继承而设计，并提供文档说明，要么禁止继承。
+  (1) 无论是 clone 还是 readObject，都不可以调用可覆盖的方法，不管是以直接还是间接的方式。
+  (2) 对于那些并非为了安全地进行子类化而设计和编写文档的类，要禁止子类化。
+
+18.接口优于抽象类。
+  (1) 现有类可以很容易更新，以实现新的接口;
+  (2) 接口是定义 mixin (混合类型)的理想选择;
+  (3) 接口允许我们构造非层次结构的类型框架;
+  通过对你导出的每个重要接口都提供一个抽象的骨架实现(skeletal implementation)类，把接口和抽象类的优点结合起来。
+
+19.接口只用于定义类型。
+  常量接口模式是对接口的不良使用。
+
+20.类层次优于标签类。
+
+21.用函数对象表示策略。(策略接口)
+   public interface Comparator<T> {
+       public int compare(T t1, T t2);
+   }
+
+22.优先考虑静态成员类。
+   嵌套类(nested class)是指被定义在另一个类的内部的类。
+   4种嵌套类：静态成员类(static member class)、非静态成员类(nostatic member class)、匿名类(anonymous class)
+和局部类(local class)。
+   如果声明成员类不要求访问外围实例，始终把 static 修饰符放在它的声明中，使它成为静态成员类。
+   匿名类的常见用法：
+    ① 动态地创建函数对象(function object);
+    ② 创建过程对象(process object);
+    ③ 在静态工厂方法的内部。
 ```
