@@ -209,4 +209,102 @@
     ① 动态地创建函数对象(function object);
     ② 创建过程对象(process object);
     ③ 在静态工厂方法的内部。
+    
+23.请不要在新代码中使用原生态类型。
+   (1) 如果使用原生态类型，就失掉了泛型在安全性和表述性方面的所有优势。
+   (2) 如果使用像 List 这样的原生态类型，就会失掉类型安全性，但是如果使用像 List<Object> 这样的参数化类型，则不会。
+   (3) 在类文字(class literal)中必须使用原生态类型。(List.class，String[].class)
+   (4) 利用泛型来使用 instanceof 操作符的首选方法。
+     if (o instanceof Set) {
+        Set<?> m = (Set<?>) o;
+        ...
+     }
+
+24.消除非受检警告。
+   (1) 如果无法消除警告，同时可以证明引起警告的代码是类型安全的，才可以用一个 @SuppressWarning("unchecked") 注解
+来禁止这条警告。
+   (2) 应该始终在尽可能小的范围中使用 SuppressWarning 注解。
+   (3) 每当使用 SuppressWarning("unchecked") 注解时，都要添加一条注释，说明为什么这么做是安全的。
+
+25.列表优先于数组。
+   (1) 数组是协变的(covariant)，泛型是不可变的(invariant)。
+   (2) 数组是具体化的(reified)，泛型通过擦除(erasure)来实现的。
+
+26.优先考虑泛型。
+
+27.优先考虑泛型方法。
+   (1) public static <E> Set<E> union(Set<E> s1, Set<E> s2) {
+           Set<E> result = new HashSet<E>(s1);
+           result.addAll(s2);
+           return result;
+       }
+   (2) public static <K, V> HashMap<K, V> newHashMap() {
+           return new HashMap<K, V>();
+       }
+       Map<String, List<String>> anagrams = newHashMap();
+   (3) public static <T extends Comparable<T>> T max(List<T> list) {
+           Iterator<T> i = list.iterator();
+           T result = i.next();
+           while (i.hasNext()) {
+               T t = i.next();
+               if (t.compareTo(result) > 0)
+                  result = t;
+           }
+           return result;
+       }
+
+28.利用有限通配符来提升 API 的灵活性。
+   (1) public void pushAll(Iterable<? extends E> src) {
+           for (E e : src)
+               push(e);
+       }
+   (2) public void popAll(Collection<? super E> dst) {
+           while (!isEmpty())
+              dst.add(pop());
+       }
+     为了获得最大限度的灵活性，要在表示生产者或消费者的输入参数上使用通配符类型。
+     PECS 表示 producer-extends，consumer-super。
+     static <E> E reduce(List<? extends E> list, Function<E> f, E initVal);
+     public static <E> Set<E> union(Set<? extends E> s1, Set<? extends E> s2);
+     不要使用通配符类型作为返回类型。
+   (3) public static <T extends Comparable <? super T>> T max(List<? extends T> list) {
+           Iterator<? extends T> i = list.iterator();
+           T result = i.next();
+           while(i.hashNext()) {
+              T t = i.next();
+              if (t.compareTo(result) > 0)
+                 result = t;
+           }
+           return result;
+       }
+    (4) public static void swap(List<?> list, int i, int j) {
+            swapHelper(list, i, j);
+        }
+        private static <E> void swapHelper(List<E> list, int i, int j) {
+            list.set(i, list.set(j, list.get(i)));
+        }
+      所有的 comparable 和 comparator 都是消费者。
+
+29.优先考虑类型安全的异构器。
+   (1) public class Favorites {
+           private Map<Class<?>, Object> favorities = new HashMap<Class<?>, Object>();
+           public <T> void putFavorite(Class<T> type, T instance) {
+               if (type == null)
+                   throw new NullPointerException("Type is null");
+               favorities.put(type, instance);
+           }
+           public <T> getFavorite(Class<T> type) {
+               return type.cast(favorities.get(type));
+           }
+       }
+   (2) 在编译时读取类型未知的注解。
+       static Annotation getAnnotation(AnnotatedElement element, String annotationTypeName) {
+           Class<?> annotationType = null;
+           try {
+               annotationType = Class.forName(annotationTypeName);
+           } catch (Exception ex) {
+               throw new IllegalArgumentException(ex);
+           }
+           return element.getAnnotation(annotationType.asSubclass(Annotation.class));
+       }
 ```
