@@ -307,4 +307,98 @@
            }
            return element.getAnnotation(annotationType.asSubclass(Annotation.class));
        }
+
+29.优先考虑类型安全的异构器。
+   (1) public class Favorites {
+           private Map<Class<?>, Object> favorities = new HashMap<Class<?>, Object>();
+           public <T> void putFavorite(Class<T> type, T instance) {
+               if (type == null)
+                   throw new NullPointerException("Type is null");
+               favorities.put(type, instance);
+           }
+           public <T> getFavorite(Class<T> type) {
+               return type.cast(favorities.get(type));
+           }
+       }
+   (2) 在编译时读取类型未知的注解。
+       static Annotation getAnnotation(AnnotatedElement element, String annotationTypeName) {
+           Class<?> annotationType = null;
+           try {
+               annotationType = Class.forName(annotationTypeName);
+           } catch (Exception ex) {
+               throw new IllegalArgumentException(ex);
+           }
+           return element.getAnnotation(annotationType.asSubclass(Annotation.class));
+       }
+
+30.用 enum 代替 int 常量。
+   (1) public enum Apple { FUJI, PIPPIN, GRANNY_SMITH };
+     为了将数据与枚举常量关联起来，得声明实例域，并编写一个带有数据并将数据保存在域中的构造器。
+   (2) 特定常量的方法实现：
+     public enum Operation {
+        PLUS { double apply(double x, double y) { return x+y; } },
+        MIUS { double apply(double x, double y) { return x-y; } },
+        TIMES { double apply(double x, double y) { return x*y; } },
+        DIVIDES { double apply(double x, double y) { return x/y; } };
+        abstract double apply(double x, double y);
+     }
+    (3) 枚举中的 switch 语句适合于给外部的枚举类型增加特定于常量的行为。
+
+31.用实例域代替序数。
+   永远不要根据枚举的序数导出与它关联的值，而是要将它保存在一个实例域中。
+   public enum Ensemble {
+      SOLO(1), DUET(2), TRIO(3), QUARTET(4), QUINTET(5),
+      SEXTET(6), SEPTET(7), OCTET(8), DOUBLE_QUARTET(8),
+      NONET(9), DECTET(10), TRIPLE_QUARTET(12);
+      private final int numberOfMusicians;
+      Ensemble(int size) { 
+         this.numberOfMusicians = size;
+      }
+      public int numberOfMusicians() {
+         return numberOfMusicians;
+      }
+   }
+
+32.用 EnumSet 代替位域。
+   因为枚举类型要用在集合(Set)中，所以没理由用位域表示它。
+   public class Text {
+      public enum Style {
+         BOLD, ITALIC, UNDERLINE, STRIKETHROUGH
+      }
+      public void applyStyles(Set<Style> styles) {...}
+   }
+   Text.applyStyles(EnumSet.of(Style.BOLD, Style.ITALIC));
+
+33.用 EnumMap 代替序数索引。
+   Map<Herb.Type, Set<Herb>> herbsByType = new EnumMap<Herb.Type, Set<Herb>>(Herb.Type.class);
+   for (Herb.Type t: Herb.Type.values())
+      herbsByType.put(t, new HashSet<Herb>());
+   for (Herb h: garden)
+      herbsByType.get(h.type).add(h);
+   System.out.println(herbsByType);
+
+34.用接口模拟可伸缩的枚举。
+   (1) public interface Operation {
+          double apply(double x, double y);
+       }
+       public enum ExtendedOperation implements Operation {
+           EXP("^") {
+               public double apply(double x, double y) {
+                  return Math.pow(x, y);
+               }
+           },
+           REMAINDER("%") {
+               public double apply(double x, double y) {
+                  return x % y;
+               }
+           };
+           private final String symbol;
+           ExtendedOperation(String symbol) {
+              this.symbol = symbol;
+           }
+           @Override public String toString() {
+              return symbol;
+           }
+       }
+     虽然无法编写可扩展的枚举类型，却可以通过编写接口以及实现该接口的基础枚举类型，对它进行模拟。
 ```
