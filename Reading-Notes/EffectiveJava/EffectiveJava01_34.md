@@ -2,7 +2,7 @@
 
 > 布洛克 (Bloch, Joshua) 著    机械工业出版社
 
-```html
+```java
 1.(考虑)用静态工厂方法代替构造器。
   例： public static Boolean valueOf(boolean b) {
          return b ? Boolean.TRUE : Boolean.FALSE;
