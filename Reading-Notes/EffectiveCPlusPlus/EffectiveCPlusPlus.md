@@ -2,7 +2,7 @@
 
 > Scott Meyers 著    电子工业出版社
 
-```html
+```c++
 1.视 C++ 为一个语言联邦。
    C：C++ 以 C 为基础。区块(blocks)、语句(statements)、预处理器(preprocessor)、
 内置数据类型(built-in data types)、数组(arrays)、指针(pointers)等统统来自 C。
