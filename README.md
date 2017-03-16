@@ -177,7 +177,7 @@
   </tr>
   <tr>
      <td>
-      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus.md">6.《Effective C++》</a>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus.md">7.《Effective C++》</a>
      </td>
   </tr>
 </table>
