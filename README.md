@@ -175,4 +175,9 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveJava/EffectiveJava.md">6.《Effective Java》</a>
     </td>
   </tr>
+  <tr>
+     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus.md">6.《Effective C++》</a>
+     </td>
+  </tr>
 </table>
