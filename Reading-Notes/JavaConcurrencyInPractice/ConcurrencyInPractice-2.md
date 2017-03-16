@@ -2,7 +2,7 @@
 
 > Brian Goetz、 Tim Peierls、 Joshua Bloch、 Joseph Bowbeer、 David Holmes、 Doug Lea 著   
 
-```html
+```java
  二.结构化并发应用程序
   22.任务执行-在线程中执行任务：
     串行地执行任务。
