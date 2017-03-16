@@ -2,7 +2,7 @@
 
 > 曾宪杰 著       电子工业出版社
 
-```html
+```java
  1.网络 IO 实现方式：         
   (1) BIO 方式：Blocking IO，阻塞 IO，一个 Socket 套接字需要使用一个线程来进行处理。        
   (2) NIO 方式：Nonblocking IO，非阻塞 IO，基于事件驱动思想，采用 Reactor 模式。  
