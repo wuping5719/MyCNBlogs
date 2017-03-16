@@ -2,7 +2,7 @@
 
 > Brian Goetz、 Tim Peierls、 Joshua Bloch、 Joseph Bowbeer、 David Holmes、 Doug Lea 著   
 
-```html
+```java
  一.并发编程基础知识：
    (1) 可变状态是至关重要的。        
       所有的并发问题都可以归结为如何协调对并发状态的访问。可变状态越少，就越容易确保线程安全性。
