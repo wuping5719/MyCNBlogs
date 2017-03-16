@@ -2,7 +2,7 @@
 
 > 布洛克 (Bloch, Joshua) 著    机械工业出版社
 
-```html
+```java
 35.注解优先于命名模式。
    (1) import java.lang.annotation.*;
        @Retention(RetentionPolicy.RUNTIME)
