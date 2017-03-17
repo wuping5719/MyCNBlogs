@@ -47,7 +47,7 @@
       class Rational { ... };
       const Rational operator* (const Rational& lhs, const Rational& rhs);
   (4) const 成员函数。
-      class TextBlock {
+      ① class TextBlock {
          public:
            ...
            // 返回 const 对象
@@ -56,16 +56,53 @@
            char& operator[](std::size_t position) { return text[position]; } 
          private:
            std::string text;
-      };
-      TextBlock tb("Hello");
-      const TextBlock ctb("World");
-      void print(const TextBlock& ctb) {
-         std::count << ctb[0];   // 调用 const TextBlock::operator[]
+        };
+        TextBlock tb("Hello");
+        const TextBlock ctb("World");
+        void print(const TextBlock& ctb) {
+           std::count << ctb[0];   // 调用 const TextBlock::operator[]
+           ...
+        }
+        std::count << tb[0];      // 没问题——读一个 non-const TextBlock
+        tb[0] = 'x';              // 没问题——写一个 non-const TextBlock
+        std::count << ctb[0];     // 没问题——读一个 const TextBlock
+        ctb[0] = 'x';             // 错误!——写一个 const TextBlock
+      ② 成员函数是 const 意味着什么?
+      两个流行概念：bitwise constness(又称 physical constness)和 logical constness。
+      利用 mutable(可变的)释放掉 non-static 成员变量的 bitwise constness 约束：
+        class CTextBlock {
+          public:
+            ...
+            std::size_t length() const;
+          private:
+            char* pText;
+            mutable std::size_t textLength;  // 这些成员变量可能总是会被更改，即使在 const成员函数内
+            mutable bool lengthIsValid;
+        };
+        std::size_t CTextBlock::length() const {
+           if (!lengthIsValid) {
+              textLength = std::strlen(pText);   // 现在，可以改变了
+              lengthIsValid = true;
+           }
+           return textLength;
+        }
+   (5) 在 const 和 non-const 成员函数中避免重复。
+     当 const 和 non-const 成员函数有着实质等价的实现时，令 non-const 版本调用 const 版本可避免代码重复。
+     令 non-const operator[] 调用其 const 兄弟是一个避免代码重复的安全做法
+       ——即使过程中需要一个转型(casting)动作。
+     class TextBlock {
+       public:
          ...
-      }
-      std::count << tb[0];      // 没问题——读一个 non-const TextBlock
-      tb[0] = 'x';              // 没问题——写一个 non-const TextBlock
-      std::count << ctb[0];     // 没问题——读一个 const TextBlock
-      ctb[0] = 'x';             // 错误!——写一个 const TextBlock
-
+         const char& operator[](std::size_t position) const {
+            ... // 边界检验(bounds checking)
+            ... // 志记数据访问(log access data)
+            ... // 检验数据完整性(verify data integrity)
+            return text[position];
+         }
+         char& operator[](std::size_t position) {  
+            return const_cast<char&>(static_cast<const TextBlock&>(*this)[position]);
+         }
+         ...
+     };
+     这里共有两次转型：第一次用来为 *this 添加 const，第二次则是从 const operator[] 的返回值中移除 const。
 ```
