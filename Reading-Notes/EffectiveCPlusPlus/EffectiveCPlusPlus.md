@@ -30,4 +30,42 @@
    替换：#define CALL_WITH_MAX(a, b) f((a) > (b) ? (a) : (b))
 
 3.尽可能使用 const。
+  (1) 关键字 const 出现在星号左边，表示被指物是常量；出现在星号右边，表示指针自身是常量；
+出现在星号两边，表示被指物和指针两者都是常量。
+      void f1(const Widget* pw);   // f1 获得一个指针，指向一个常量的 Widget 对象
+      void f2(Widget const * pw);  // f2 也是
+  (2) STL 迭代器系以指针为根据塑模出来，迭代器的作用就像个 T* 指针。
+      std::vector<int> vec;
+      ...
+      const std::vector<int>::iterator iter = vec.begin();  // iter 的作用像个 T* const
+      *iter = 10;              // 没问题，改变 iter 所指物
+      ++iter;                  // 错误! iter 是 const  
+      std::vector<int>::const_iterator cIter = vec.begin();  // cIter 的作用像个 const T* 
+      *cIter = 10;             // 错误! *cIter 是 const
+      ++cIter;                 // 没问题，改变 cIter
+  (3) 令函数返回一个常量值，往往可以降低客户错误而造成的意外。
+      class Rational { ... };
+      const Rational operator* (const Rational& lhs, const Rational& rhs);
+  (4) const 成员函数。
+      class TextBlock {
+         public:
+           ...
+           // 返回 const 对象
+           const char& operator[](std::size_t position) const { return text[position]; } 
+           // 返回 non-const 对象
+           char& operator[](std::size_t position) { return text[position]; } 
+         private:
+           std::string text;
+      };
+      TextBlock tb("Hello");
+      const TextBlock ctb("World");
+      void print(const TextBlock& ctb) {
+         std::count << ctb[0];   // 调用 const TextBlock::operator[]
+         ...
+      }
+      std::count << tb[0];      // 没问题——读一个 non-const TextBlock
+      tb[0] = 'x';              // 没问题——写一个 non-const TextBlock
+      std::count << ctb[0];     // 没问题——读一个 const TextBlock
+      ctb[0] = 'x';             // 错误!——写一个 const TextBlock
+
 ```
