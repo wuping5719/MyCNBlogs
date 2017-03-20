@@ -131,5 +131,18 @@
       }
 
 5.了解 C++ 默默编写并调用哪些函数。
-   编译器可以暗自为 class 创建默认(default)构造函数、复制(copy)构造函数、copy assignment 操作符，以及析构函数。  
+   编译器可以暗自为 class 创建默认(default)构造函数、复制(copy)构造函数、copy assignment 操作符，以及析构函数。
+     class Empty { };
+   相当于：
+     class Empty { 
+       public:
+           Empty() { ... }                   // 默认(default)构造函数
+           Empty(const Empty& rhs) { ... }   // 复制(copy)构造函数
+           ~Empty() { ... }                  // 析构函数
+           Empty& operator=(const Empty& rhs) { ... } // copy assignment 操作符
+     };
+
+6.若不想使用编译器自动生成的函数，就该明确拒绝。
+   为驳回编译器自动(暗自)提供的机能，可将相应的成员函数声明为 private 并且不予实现。
+使用像 Uncopybale 这样的 base class 也是一种做法。
 ```
