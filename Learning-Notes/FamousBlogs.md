@@ -73,6 +73,8 @@
   </tr>
   <tr>
     <td><a href="http://wwsun.github.io/" >14.景庄-Weiwei SUN</a></td>
+    <td></td>
+    <td><a href="http://shiyanjun.cn/" >14.简单之美</a></td>
   </tr>
   <tr>
     <td><a href="http://www.cnblogs.com/vajoy/" >15.腾讯前端 VaJoy-蓝邦珏</a></td>
