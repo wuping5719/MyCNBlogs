@@ -110,7 +110,25 @@
    (1) 为内置对象进行手工初始化，因为 C++ 不保证初始化它们。
    (2) 构造函数最好使用成员初始化列表(member initialization list)，而不要在构造函数本体内使用赋值操作(assignment)。
 成员初始化列表列出的成员变量其排列次序应该和它们在 class 中的声明次序相同。
+      ABEntry::ABEntry(const std::string& name, const std::string& address, 
+                     const std::list<PhoneNumber>& phones)
+              :theName(name), theAddress(address), thePhones(phones), numTimesConsulted(0)  // 初始化
+      { }  // 构造函数本体不必有任何动作
    (3) 为免除“跨编译单元之初始化次序”问题，请以 local static 对象替换 non-local static 对象。
+      class FileSystem { ... }; 
+      FileSystem& tfs() {        // 这个函数用来替换 tfs 对象；它在 FileSystem class 中可能是个 static。
+         static FileSystem fs;   // 定义并初始化一个 local static 对象，返回一个 reference 指向上述对象。
+         return fs;
+      }
+      class Directory { ... };
+      Directory::Directory(params) {
+         ...
+         std::size_t disks = tfs().numDisks();    // 原本的 reference to tfs 改为 tfs()
+      }
+      Directory& tempDir() {    // 用来替换 tempDir 对象
+         static Directory td;   // 它在 Directory class 中可能是个 static。定义并初始化 local static 对象
+         return td;             // 返回一个 reference 指向上述对象
+      }
 
 5.了解 C++ 默默编写并调用哪些函数。
    编译器可以暗自为 class 创建默认(default)构造函数、复制(copy)构造函数、copy assignment 操作符，以及析构函数。  
