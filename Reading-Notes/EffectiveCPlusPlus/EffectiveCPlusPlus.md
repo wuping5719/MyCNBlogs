@@ -218,8 +218,9 @@
     }
     class BuyTransaction : public Transaction {
        public:
-          BuyTransaction(parameters) : Transaction(createLogString(parameters)) {  // 将 log 信息传给基类构造函数
-             ...
+          // 将 log 信息传给基类构造函数
+          BuyTransaction(parameters) : Transaction(createLogString(parameters)) {  
+             ...  
           }
           ...
        private:
