@@ -145,4 +145,84 @@
 6.若不想使用编译器自动生成的函数，就该明确拒绝。
    为驳回编译器自动(暗自)提供的机能，可将相应的成员函数声明为 private 并且不予实现。
 使用像 Uncopybale 这样的 base class 也是一种做法。
+   class Uncopyable {
+      protected:
+         Uncopyable() { }                    // 允许 derived 对象构造和析构
+         ~Uncopyable() { } 
+      private:
+         Uncopyable(const Uncopyable&);      // 阻止 copying
+         Uncopyable& operator=(const Uncopyable&); 
+   };
+   class HomeForSale: private Uncopyable {   // 不在声明 copy 构造函数或 copy assign 操作符
+      ...      
+   };
+
+7.为多态基类声明 virtual 析构函数。
+  (1) polymorphic(带多态性质的) base classes 应该声明一个 virtual 析构函数。如果 class 带有任何 virtual 函数，
+它就应该拥有一个 virtual 析构函数。
+   class TimeKeeper {
+      public:
+        TimeKeeper();
+        virtual ~TimeKeeper();
+        ...
+   };
+   TimeKeeper* ptk = getTimeKeeper();
+   ...
+   delete ptk;
+  (2) Classes 的设计目的如果不是作为 base classes 使用，或不是为了具备多态性(polymorphically)，就不应该
+声明 virtual 析构函数。
+    class AWOV {       // AWOV = "Abstract w/o Virtuals"
+       public:
+         virtual ~AWOV() = 0;      // 声明 pure virtual 析构函数
+    };
+    AWOV::~AWOV() { }  // pure virtual 析构函数的定义
+
+8.别让异常逃离析构函数。
+   (1) 析构函数绝对不要吐出异常。如果一个被析构函数调用的函数可能抛出异常，析构函数应该捕捉任何异常，然后吞下
+它们(不传播)或结束程序。
+   (2) 如果客户需要对某个操作函数运行期间抛出的异常做出反应，那么 class 应该提供一个普通函数(而非在析构函数中)
+执行该操作。
+    class DBConn {
+       public:
+         ...
+         void close() {      // 供客户使用的新函数
+            db.close();
+            closed = true;
+         }
+         ~DBConn() {
+            if (!closed) {
+               try {    
+                  db.close();      // 关闭连接(如果客户未关闭连接)
+               } catch (...) {
+                   // 记录下来并结束程序，或吞下异常
+               }
+            }
+         }
+       private:
+         DBConnection db;
+         bool closed;
+    };
+
+9.绝不在构造和析构过程中调用 virtual 函数。
+   在构造和析构期间不要调用 virtual 函数，因为这类调用从不下降至 derived class(比起当前执行构造函数和析构函数
+的那层)。
+    class Transaction {
+       public:
+          explicit Transaction(const std::string& logInfo);
+          void logTransaction(const std::string& logInfo) const;   // non-virtual 函数
+          ...
+    };
+    Transaction::Transaction(const std::string& logInfo){
+       ...
+       logTransaction(logInfo);     // non-virtual 函数调用
+    }
+    class BuyTransaction : public Transaction {
+       public:
+          BuyTransaction(parameters) : Transaction(createLogString(parameters)) {  // 将 log 信息传给基类构造函数
+             ...
+          }
+          ...
+       private:
+         static std::string createLogString(parameters);
+    };
 ```
