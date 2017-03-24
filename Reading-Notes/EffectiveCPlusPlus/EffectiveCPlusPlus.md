@@ -226,4 +226,15 @@
        private:
          static std::string createLogString(parameters);
     };
+
+10.令 operator= 返回一个 reference to *this。
+    class Widget {
+       public:
+         ...
+         Widget& operator=(const Widget& rhs) {   
+            ...
+            return *this;        // 返回一个指向当前对象的引用
+         }
+         ... 
+    }
 ```
