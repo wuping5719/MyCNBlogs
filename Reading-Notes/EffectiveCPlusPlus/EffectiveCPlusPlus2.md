@@ -47,4 +47,39 @@ copying 函数共同调用。
         std::tr1::shared_ptr<Investment> pInv(createInvestment());  
         ...
      }
+     
+14.在资源管理类中小心 copying 行为。
+   (1) 复制 RAII 对象必须一并复制它所管理的资源，所以资源的 copying 行为决定 RAII 对象的 copying 行为。
+   (2) 普遍而常见的 RAII class copying 行为是：抑制 copying、施行引用计数法(reference counting)。
+不过其它行为也都可能被实现。
+     class Lock {
+        public:
+          // 以某个 Mutex 初始化 shared_ptr 并以 unlock 函数为删除器
+           explicit Lock(Mutex* pm) : mutexPtr(pm, unlock) {   
+               lock(mutexPtr.get()); 
+           }
+        private:
+           std::tr1::shared_ptr<Mutex> mutexPtr;   // 使用 shared_ptr 替换 raw pointer
+     }
+
+15.在资源管理类中提供对原始资源的访问。
+   (1) APIs 往往要求访问原始资源(raw resources)，所以每一个 RAII class 
+应该提供一个“取得其所管理之资源”的办法。
+   (2) 对原始资源的访问可能经由显式转换或隐式转换。一般而言显式转换比较安全，但隐式转换对客户比较方便。
+   tr1::shared_ptr 和 auto_ptr 都提供一个 get 成员函数，用来执行显式转换，
+它会返回智能指针内部的原始指针(的复件):
+     int days = daysHeld(pInv.get());
+   tr1::shared_ptr 和 auto_ptr 重载了指针取值(pointer derfercing)操作符(operator-> 和 operator*)，
+它们允许隐式转换至底部原始指针。
+
+16.成对使用 new 和 delete 时要采取相同形式。
+   如果你在 new 表达式中使用 []，必须在相应的 delete 表达式中也使用 []。如果你在 new 表达式中不使用 []，
+一定不要在相应的 delete 表达式中使用 []。
+      std::string* stringPtr1 = new std::string;
+      std::string* stringPtr2 = new std::string[100];
+      ...
+      delete stringPtr1;        // 删除一个对象
+      delete [] stringPtr2;     // 删除一个由对象组成的数组
+
+17.以独立语句将 newed 对象置于智能指针。
 ```
