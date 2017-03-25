@@ -82,4 +82,34 @@ copying 函数共同调用。
       delete [] stringPtr2;     // 删除一个由对象组成的数组
 
 17.以独立语句将 newed 对象置于智能指针。
+   以独立语句将 newed 对象存储于(置入)智能指针内。如果不这样做，一旦异常被抛出，
+有可能导致难以察觉的资源泄漏。
+     std::tr1::shared_ptr<Widget> pw(new Widget);   // 在单独语句内以智能指针存储 newed 所得对象
+     processWidget(pw, priority());                 // 这个调用动作绝不至于造成泄漏
+
+18.让接口容易被正确使用，不易被误用。
+   (1) 好的接口很容易被正确使用，不容易被误用。你应该在你的所有接口中努力达成这些性质。
+   (2) “促进正确使用”的办法包括接口的一致性，以及与内置类型的行为兼容。
+   (3) "阻止误用"的办法包括建立新类型、限制类型上的操作，束缚对象值，以及消除客户的资源管理责任。
+   (4) tr1::shared_ptr 支持定制型删除器(custom deleter)。
+这可防范 DLL 问题，可被用来自动解除互斥锁(mutex)等等。
+
+19.设计 class 犹如设计 type。
+   (1) 新 type 的对象应该如何被创建和销毁?
+   (2) 对象的初始化和对象的赋值该有什么样的差别?
+   (3) 新 type 的对象如果被 passed by value(以值传递)，意味着什么?
+   (4) 什么是新 type 的"合法值"?
+   (5) 你的新 type 需要配合某个继承图系(inheritance graph)吗?
+   (6) 你的新 type 需要什么样的转换?
+   (7) 什么样的操作符和函数对此新 type 而言是合理的?
+   (8) 什么样的标准函数应该驳回?
+   (9) 谁该取用新 type 的成员?
+   (10) 什么是新 type 的"未声明接口"(undeclared interface)?
+   (11) 你的新 type 有多么一般化?
+   (12) 你真的需要一个新 type 吗?
+
+20.宁以 pass-by-reference-to-const 替换 pass-by-value。
+   (1) 尽量以 pass-by-reference-to-const 替换 pass-by-value。前者通常比较高效，并可避免切割问题。
+       bool validateStudent(const Student& s); 
+   (2) 以上规则并不适用于内置类型，以及 STL 的迭代器和函数对象。对它们而言，pass-by-value 往往比较恰当。
 ```
