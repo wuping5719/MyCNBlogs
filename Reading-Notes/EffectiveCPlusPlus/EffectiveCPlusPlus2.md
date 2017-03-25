@@ -25,4 +25,26 @@
         return *this;
      }
    (2) 确定任何函数如果操作一个以上的对象，而其中多个对象是同一个对象时，其行为仍然正确。
+
+12.复制对象时勿忘其每一个成分。
+   (1) copying 函数应该确保复制"对象内的所有成员变量"及"所有 base class 成分"。
+   (2) 不要尝试以某个 copying 函数实现另一个 copying 函数。应该将共同机能放进第三个函数中，并由两个
+copying 函数共同调用。
+
+13.以对象管理资源。
+   常见的系统资源：动态分配的内存、文件描述器(file descriptors)、互斥锁(mutex locks)、图形界面中的字型和笔刷、
+数据库连接、以及网络 sockets。
+   (1) 为防止资源泄漏，请使用 RAII (资源取得时机便是初始化时机，Resource Acquisition Is Initialization) 对象，
+它们在构造函数中获得资源并在析构函数中释放资源。
+   (2) 两个常被使用的 RAII classes 分别是 tr1::shared_ptr 和 auto_ptr。前者通常是较佳选择，因为其 copy 行为
+比较直观。若选择 auto_ptr，复制动作会使它(被复制物)指向 null。
+     void f1() {
+        std::auto_ptr<Investment> pInv(createInvestment());  // 经由 auto_ptr 的析构函数自动删除 pInv
+        ...
+     }
+     void f2() {
+        // 经由 shared_ptr 的析构函数自动删除 pInv
+        std::tr1::shared_ptr<Investment> pInv(createInvestment());  
+        ...
+     }
 ```
