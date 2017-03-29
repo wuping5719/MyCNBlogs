@@ -6,4 +6,5 @@
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus2.md">10-20条</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus3.md">21-30条</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus4.md">31-40条</a>
-* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus4.md">41-55条</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus5.md">41-50条</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus6.md">51-55条</a>
