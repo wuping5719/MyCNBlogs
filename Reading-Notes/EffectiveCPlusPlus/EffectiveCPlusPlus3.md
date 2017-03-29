@@ -25,5 +25,60 @@
     }
 
 24.若所有参数皆需类型转换，请为此采用非成员(non-member)函数。
+   如果你需要为某个函数的所有参数(包括被 this 指针所指的那个隐喻参数)进行类型转换，
+那么这个函数必须是个非成员(non-member)函数。
+   class Rational {
+      ...        // 不包括 operator*
+   };
+   // non-member函数
+   const Rational operator*(const Rational& lhs, const Rational& rhs) {
+      return Rational(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());
+   }
+   Rational oneFourth(1, 4);
+   Rational result;
+   result = oneFourth * 2;    // 没问题，通过编译
+   result = 2 * oneFourth;    // 没问题，通过编译
+
+25.考虑写出一个不抛异常的 swap 函数。
+   (1) 当 std::swap 对你的类型效率不高时，提供一个 swap 成员函数，并确定这个函数不抛出异常。
+   (2) 如果你提供一个 member swap，也该提供一个 no-member swap 用来调用前者。
+对于 classes (而非 templates)，也请特化 std::swap。
+   (3) 调用 swap 时应针对 std::swap 使用 using 声明式，然后调用 swap 并且不带任何"命名空间资格修饰"。
+   (4) 为"用户定义类型"进行 std templates 全特化是好的，但千万不要尝试在 std 内加入某些对 std 而言全新的东西。
+      namespace WidgetStuff {
+         ...               // 模板化的 WidgetImpl
+         template<typename T>        // 内含 swap 成员函数
+         class Widget { ... };
+         ...
+         template<typename T>        // non-member swap 函数
+         // 这里不属于 std 命名空间
+         void swap(Widget<T>& a, Widget<T>& b) {
+            a.swap(b);
+         }
+      }
+
+26.尽可能延后变量定义式的出现时间。
+   这样做可增加程序的清晰度并改善程序效率。
+   定义并初始化 encrypted 的最佳做法。
+     std::string encryptPassword(const std::string& password) {
+        ...      // 检查长度
+        std::string encrypted(password);    // 通过 copy 构造函数定义并初始化
+        encrypt(encrypted);
+        return encrypted;
+     }
+
+27.尽量少做转型动作。
+   (1) 如果可以，尽量避免转型，特别是在注重效率的代码中避免 dynamic_casts。如果有个设计需要转型动作，
+试着发展无需转型的替代设计。
+   (2) 如果转型是必要的，试着将它隐藏于某个函数背后。客户随后可以调用该函数，而不需要将转型放进他们自己的代码内。
+   (3) 宁可使用 C++ style(新式)转型，不要使用旧式转型。前者容易辨识出来，而且也比较有着分门别类的职责。
+     "旧式转型"(old-style casts)：
+        C风格：     (T) expression          // 将 expression 转型为 T
+        函数风格：   T (expression)         // 将 expression 转型为 T
+     新式转型(C++ style casts)：
+        const_cast<T> (expression)         // 对象常量性转型
+        dynamic_cast<T> (expression)       // 安全向下转型，用来决定某对象是否归属继承体系中的某个类型
+        reinterpret_cast<T> (expression)   // 低级转型，不可移植
+        static_cast<T> (expression)        // 强迫隐式转换
 
 ```
