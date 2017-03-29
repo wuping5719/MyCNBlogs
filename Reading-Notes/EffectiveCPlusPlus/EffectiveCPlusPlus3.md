@@ -133,5 +133,15 @@
      }
      
 30.透彻了解 inlining 的里里外外。
-
+   (1) 将大多数 inlining 限制在小型、被频繁调用的函数身上。这可使日后的调试过程和二进制升级(binary upgradabiblity) 
+更容易，也可使潜在的代码膨胀问题最小化，使程序的速度提升机会最大化。
+   (3) 不要只因为 function templates 出现在头文件，就将它们声明为 inline。
+     Derived::Derived() {                     // "空白 Derived 构造函数"的观念性实现
+        Base::Base();                         // 初始化"Base"
+        try { dm1.std::string::string(); }    // 试图构造 dm1
+        catch (...) {                         // 如果抛出异常就销毁 base class，并传播该异常
+            Base::~Base(); 
+            throw;
+        }
+     }
 ```
