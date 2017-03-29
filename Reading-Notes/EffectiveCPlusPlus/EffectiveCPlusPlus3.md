@@ -16,5 +16,14 @@
 并提供 class 作者以充分的实现弹性。
    (2) protected 并不比 public 更具封装性。
 
-23.宁以 non-member、non-friend 函数替换 member 函数。
+23.宁以非成员(non-member)、非友元(non-friend)函数替换成员(member)函数。
+   这样做可以增加封装性、包裹弹性(packaging flexibility)和机能扩充性。
+    namespace WebBrowserStuff {
+       class WebBrowser { ... };
+       void clearBrowser(WebBrowser& wb);
+       ...
+    }
+
+24.若所有参数皆需类型转换，请为此采用非成员(non-member)函数。
+
 ```
