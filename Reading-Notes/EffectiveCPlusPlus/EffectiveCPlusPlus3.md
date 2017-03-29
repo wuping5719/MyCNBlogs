@@ -80,5 +80,58 @@
         dynamic_cast<T> (expression)       // 安全向下转型，用来决定某对象是否归属继承体系中的某个类型
         reinterpret_cast<T> (expression)   // 低级转型，不可移植
         static_cast<T> (expression)        // 强迫隐式转换
+     dynamic_cast 替代方案：“使用类型安全容器”或"将 virtual 函数往继承体系上方移动"。
+        class Window {
+          public:
+             virtual void blink() { }      // 缺省实现代码"什么也没做"
+             ...
+        };
+        class SpecialWindow: public Window {
+           public:
+              virtual void blink() { ... }; // 在此 class 内，blink 做某些事
+              ...
+        };
+        typedef std::vector<std::trl::shared_ptr<Window>> VPW;
+        VPW winPtrs;           // 容器，内含指针，指向所有可能的 Window 类型
+        ...
+        for (VPW::iterator iter = winPtrs.begin(); iter != winPtrs.end(); ++iter)
+           (*iter)->blink();   // 注意，这里没有 dynamic_cast
+
+28.避免返回 handles 指向对象内部成分。
+   避免返回 handles(包括 references、指针、迭代器) 指向对象内部。遵守这个条款可增加封装性，帮助 const 成员函数
+的行为像个 const，并将发生"虚吊号码牌"(dangling handles) 的可能性降至最低。
+     class Rectangle {
+        public:
+           ...
+           const Point& upperLeft() const { return pData->ulhc; }
+           const Point& lowerRight() const { return pData->lrhc; }
+           ...
+     };
+     
+29.为"异常安全"而努力是值得的。
+   (1) 异常安全函数 (Exception-safe functions) 即使发生异常也不会泄漏资源或允许任何数据结构败坏。这样的函数
+区分为三种可能的保证：基本型、强烈型、不抛异常型。
+   (2) "强烈保证"往往能够以 copy-and-swap 实现出来，但"强烈保证"并非对所有函数都可实现或具备现实意义。
+   (3) 函数提供的"异常安全保证"通常最高只等于其所调用之各个函数的"异常安全保证"中的最弱者。
+     struct PMImpl {        // PMImpl = "PrettyMenu Impl"
+         std::trl::shared_ptr<Image> bgImage;
+         int imageChanges;
+     };
+     class PrettyMenu {
+         ...
+       private:
+         Mutex mutex;
+         std::trl::shared_ptr<PMImpl> pImpl;
+     };
+     void PrettyMenu::changeBackground(std::istream& imgSrc) {
+        using std::swap;
+        Lock ml(&mutex);     // 获得 mutex 的副本数据
+        std::trl:shared_ptr<PMImpl> pNew(new PMImpl(*pImpl));
+        pNew->bgImage.reset(new Image(imgSrc));    // 修改副本
+        ++pNew->imageChanges;
+        swap(pImpl, pNew);   // 置换(swap)数据，释放 mutex
+     }
+     
+30.透彻了解 inlining 的里里外外。
 
 ```
