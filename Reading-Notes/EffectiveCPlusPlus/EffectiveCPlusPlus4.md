@@ -81,4 +81,31 @@
      typedef std::trl::function<int (const GameCharacter&)> HealthCalcFunc;
      ...
    (4) 将继承体系内的 virtual 函数替换为另一个继承体系内的 virtual 函数。这是 Strategy 设计模式的传统实现手法。
+
+36.绝不重新定义继承而来的 non-virtual 函数。
+
+37.绝不重新定义继承而来的缺省参数值。
+   绝对不要重新定义一个继承而来的的缺省参数值，因为缺省参数值都是静态绑定，而 virtual 函数 —— 你唯一应该覆写的东西
+—— 却是动态绑定。
+   class Shape {
+      public: 
+         enum ShapeColor { Red, Green, Blue };
+         void draw(ShapeColor color = Red) const {    // 它是 non-virtual
+            doDraw(color);                            // 调用一个 virtual
+         }
+         ...
+      private:
+         virtual void doDraw(ShapeColor color) const = 0;  // 真正的工作在此处完成
+   };
+   class Rectangle: public Shape {
+       public:
+          ...
+       private:
+          virtual void doDraw(ShapeColor color) const;     // 无需指定缺省参数值
+          ...
+   };
+
+38.通过复合塑模出 has-a 或 "根据某物实现出"。
+
+39.明智而审慎地使用 private 继承。
 ```
