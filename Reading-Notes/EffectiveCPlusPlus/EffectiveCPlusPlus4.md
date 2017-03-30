@@ -44,4 +44,41 @@
       d.mf1(x);    // 错误！Base::mf1()被遮掩了
 
 34.区分接口继承和实现继承。
+   (1) 接口继承和实现继承不同。在 public 继承之下，derived class 总是继承 base class 的接口。
+   (2) 纯虚(pure virtual)函数只具有指定接口继承。
+   (3) 简朴的(非纯) impure virtual 函数具体指定接口继承及缺省实现继承。
+   (4) non-virtual 函数具体指定接口继承以及强制性实现继承。
+      class Shape {
+         public:
+            virtual void draw() const = 0;                // 纯虚(pure virtual)函数
+            virtual void error(const std::string& msg);   // 简朴的(非纯) impure virtual 函数
+            int objectID() const;
+            ...
+      };
+      class Rectangle: public Shape { ... };
+      class Ellipse: public Shape { ... };
+
+35.考虑 virtual 函数以外的其他选择。
+   (1) 使用 non-virtual interface (NVI) 手法，那是 Template Method 设计模式的一种特殊形式。
+它以 public non-virtual 成员函数包裹较低访问性(private 或 protected) 的 virtual 函数。
+   (2) 将 virtual 函数替换为 "函数指针成员变量"，这是 Strategy 设计模式的一种分解表现形式。
+     class GameCharacter;             // 前置声明 (forward declaration)
+     // 以下函数是计算健康指数的缺省算法
+     int defaultHealthCalc(const GameCharacter& gc);
+     class GameCharacter {
+        public:
+           typedef int (*HealthCalcFunc) (const GameCharacter&);
+           explicit GameCharacter(HealthCalcFunc hcf = defaultHealthCalc) : healthFunc(hcf) {}
+           int healthValue() const { return healthFunc(*this); }
+           ...
+        private:
+           HealthCalcFunc healthFunc;
+     };
+   (3) 以 trl::function 成员变量替换 virtual 函数，因而允许使用任何可调用物 (callable entity) 搭配一个兼容于需求
+的签名式。这也是 Strategy 设计模式的某种形式。
+     ...
+     // HealthCalcFunc 可以是任何"可调用物"，可被调用并接受任何兼容于 GameCharacter 之物，返回任何兼容于 int 的东西
+     typedef std::trl::function<int (const GameCharacter&)> HealthCalcFunc;
+     ...
+   (4) 将继承体系内的 virtual 函数替换为另一个继承体系内的 virtual 函数。这是 Strategy 设计模式的传统实现手法。
 ```
