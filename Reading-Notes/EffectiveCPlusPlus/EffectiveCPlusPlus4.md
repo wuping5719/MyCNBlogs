@@ -106,6 +106,58 @@
    };
 
 38.通过复合塑模出 has-a 或 "根据某物实现出"。
-
+   (1) 复合 (composition) 的意义和 public 继承完全不同。
+   (2) 在应用域 (application domain)，复合意味 has-a (有一个)。在实现域 (implementation domain),
+复合意味着 is-implemented-in-terms-of (根据某物实现出)。
+    用 list 实现 Set：
+    template<class T>           // 将 list 应用于 Set
+    class Set {
+       public:
+          bool member(const T& item) const;
+          void insert(const T& item);
+          void remove(const T& item);
+          std::size_t size() const;
+        private:
+          std::list<T> rep;     // 用来表述 Set 的数据
+    };
+    template<typename T>
+    bool Set<T>::member(const T& item) const {
+       return std::find(rep.begin(), rep.end(), item) != rep.end();
+    }
+    template<typename T>
+    void Set<T>::insert(const T& item) {
+       if (!member(item))   rep.push_back(item);
+    }
+    template<typename T>
+    void Set<T>::remove(const T& item) {
+       typename std::list<T>::iterator it = std::find(rep.begin(), rep.end(), item);
+       if (it != rep.end())  rep.erase(it);
+    }
+    template<typename T>
+    std::size_t Set<T>::size() const {
+       return rep.size();
+    }
+    
 39.明智而审慎地使用 private 继承。
+   (1) Private 继承意味 is-implemented-in-terms-of (根据某物实现出)。它通常比复合 (composition) 的级别低。
+但是当 derived class 需要访问 protected base class 的成员，或需要重新定义继承而来的 virtual 函数时，
+这么设计是合理的。
+     模拟 Java 的 final 和 C# 的 sealed：
+     class Widget {
+        private:
+          class WidgetTimer: public Timer {
+             public:
+                virtual void onTick() const;
+                ...
+          };
+          WidgetTimer timer;
+          ...
+     };
+   (2) 和复合 (composition) 不同，private 继承可以造成 EBO (empty base optimization: 空白基类最优化)。
+这对致力于 "对象尺寸最小化" 的程序开发者而言，可能很重要。
+     class Empty { };      // 没有数据，所以其对象应该不使用任何内存
+     class HoldAnInt : private Empty {
+        private:
+          int x;
+     };
 ```
