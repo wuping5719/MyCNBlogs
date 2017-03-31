@@ -160,4 +160,46 @@
         private:
           int x;
      };
+
+40.明智而审慎地使用多重继承。
+   (1) 多重继承比单一继承复杂。它可能导致新的歧义性，以及对 virtual 继承的需要。
+   (2) virtual 继承会增加大小、速度、初始化 (及赋值) 复杂度等等成本。如果 virtual base class 不带任何数据，
+将是最具实用价值的情况。
+     Java 和 .Net 的 Interface 在许多方面兼容于 C++ 的 virtual base class，也不允许含有任何数据。
+     class File { ... };
+     class InputFile: virtual public File { ... };
+     class OutputFile: virtual public File { ... };
+     class IOFile: public InputFile, public OutputFile { ... };
+   (3) 多重继承的确有正当用途。其中一个情节涉及 "public 继承某个 Interface class" 和 "private 继承某个协助
+实现的 class" 的两相组合。
+     class IPerson {       // 这个 class 指出需实现的接口
+        public:
+           virtual ~IPerson();
+           virtual std::string name() const = 0;
+           virtual std::string birthDate() const = 0;
+     };
+     class DatabaseID { ... };     
+     class PersonInfo {
+        public:
+           explicit PersonInfo(DatabaseID pid);
+           virtual ~PersonInfo();
+           virtual const char* theName() const;
+           virtual const char* theBirthDate() const;
+           virtual const char* valueDelimOpen() const;
+           virtual const char* valueDelimClose() const;
+           ...
+     };
+     class CPerson: public IPerson, private PersonInfo {   // 多重继承
+        public:
+           explicit CPerson(DatabaseID pid): PersonInfo(pid) { }
+           virtual std::string name() const {       // 实现必要的 IPerson 成员函数
+               return PersonInfo::theName();
+           }
+           virtual std::string birthDate() const {  // 实现必要的 IPerson 成员函数
+               return PersonInfo::theBirthDate();
+           }
+        private:
+           const char* valueDelimOpen() const { return ""; }   // 重新定义继承而来的 virtual "界限函数"
+           const char* valueDelimClose() const { return ""; }
+     };
 ```
