@@ -148,4 +148,36 @@
      const Rational<T> doMultiply(const Rational<T>& lhs, const Rational<T>& rhs) {
         return Rational<T>(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());
      }
+     
+47.请使用 traits classes 表现类型信息。
+   (1) Traits classes 使得 "类型相关信息" 在编译期可用。它们以 templates 和 "templates 特化" 完成实现。
+      struct input_iterator_tag {};      // Input 迭代器只能向前移动，一次一步，只能读取 (istream_iterator)
+      struct output_iterator_tag {};     // Output 迭代器只能向前移动，一次一步，只能涂写 (ostream_iterator)
+      struct forward_iterator_tag: public input_iterator_tag {};  // Forward 迭代器只能向前移动，可读写 (slist)
+      // Bidirectional 迭代器可以前后移动，可读写 (list，set，multiset，map，multimap)
+      struct bidirectional_iterator_tag: public forward_iterator_tag {};  
+      // Random Access 迭代器可以在常量时间内向前或向后跳跃任意距离，可读写 (vector，deque，string)
+      struct random_access_iterator_tag: public bidirectional_iterator_tag {};  
+   (2) 整合重载技术 (overloading) 后，traits classes 有可能在编译期对类型执行 if...else 测试。
+      template<typename IterT, typename DistT>   // 这份实现用于 random access 迭代器
+      void doAdvance(IterT& iter, DistT d, std::random_access_iterator_tag) {
+         iter += d;
+      }
+      template<typename IterT, typename DistT>   // 这份实现用于 bidirectional 迭代器
+      void doAdvance(IterT& iter, DistT d, std::bidirectional_iterator_tag) {
+         if (d >= 0) { while (d--) ++iter; }
+         else { while (d++) --iter; }
+      }
+      template<typename IterT, typename DistT>   // 这份实现用于 input 迭代器
+      void doAdvance(IterT& iter, DistT d, std::input_iterator_tag) {
+         if (d < 0) { throw std::out_of_range("Negative distance"); }
+         while (d--) ++iter; 
+      }
+      template<typename IterT, typename DistT>
+      void advance(IterT& iter, DistT d) {
+         // 调用的 doAdvance 版本对 iter 之迭代器分类而言必须是适当的
+         doAdvance(iter, d, typename std::iterator_traits<IterT>::iterator_category());
+      }
+
+48.认识 template 元编程。
 ```
