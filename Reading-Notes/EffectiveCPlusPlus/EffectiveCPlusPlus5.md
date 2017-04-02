@@ -58,4 +58,47 @@
    }
    
 44.将与参数无关的代码抽离 template。
+   (1) Template 生成多个 class 和多个函数，所以任何 template 代码都不应该与某个造成膨胀的 template 函数
+产生相依关系。
+   (2) 因非类型模版参数 (non-type template parameters) 而造成的代码膨胀，往往可以消除，做法是以函数参数
+或 class 成员变量替换 template 参数。
+    ① 方法一：建立一个带数值参数的函数。
+    template<typename T>                   
+    class SquareMatrixBase {                      // 与尺寸无关的基类，用于正方矩阵
+       protected:
+          ...
+          void invert(std::size_t matrixSize);    // 以给定尺寸求逆矩阵
+    };
+    template<typename T, std::size_t n>
+    class SquareMatrix: private SquareMatrixBase<T> {
+       private:
+          using SquareMatrixBase<T>::invert;      // 避免遮掩基类的 invert
+       public:
+          ...
+          void invert() { this->invert(n); }      // 制造一个 inline 调用，调用基类的 invert
+    };
+    ② 方法二：贮存一个指针，指向矩阵数值所在的内存。
+    template<typename T>                   
+    class SquareMatrixBase {                     
+       protected:
+          // 存储矩阵大小和一个指针，指向矩阵数值
+          SquareMatrixBase(std::size_t n, T* pMem) : size(n), pData(pMem) { }
+          void setDataPtr(T* ptr) { pData = ptr; }   // 重新赋值给 pData
+          ...
+       private:
+          std::size_t size;           // 矩阵大小
+          T* pData;                   // 指针，指向矩阵内容
+    };
+    template<typename T, std::size_t n>
+    class SquareMatrix: private SquareMatrixBase<T> {
+       public:
+          // 将基类的数据指针设为 null，为矩阵内容分配内存，将指向该内存的指针存储起来，然后将它的一个副本交给基类
+          SquareMatrix() : SquareMatrixBase<T>(n, 0), pData(new T[n*n]) { this->setDataPtr(pData.get()); }
+          ...
+       private:
+          boost::scoped_array<T> pData;
+    };
+   (3) 因类型参数 (type parameters) 而造成的代码膨胀，往往可降低，做法是让带有完全相同的二进制表述
+(binary respresentations) 的具现类型 (instantiation types) 共享实现码。
+
 ```
