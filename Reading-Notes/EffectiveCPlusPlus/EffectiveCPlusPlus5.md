@@ -127,4 +127,25 @@
             shared_ptr& operator=(shared_ptr<Y> const& r); 
             ...
       };
+      
+46.需要类型转换时请为模版定义非成员函数。
+   当我们编写一个 class template，而它所提供之 "与此 template 相关的" 函数支持 "所有参数之隐式类型转换" 时，
+请将那些函数定义为 "class template 内部的 friend 函数"。
+     template<typename T> class Rational;       // 声明 Rational template
+     template<typename T>                       // 声明 helper template
+     const Rational<T> doMultiply(const Rational<T>& lhs, const Rational<T>& rhs);
+     template<typename T> 
+     class Rational {
+        public:
+           ...
+           // 令 friend 调用 helper
+           friend const Rational<T> operator*(const Rational<T>& lhs, const Rational<T>& rhs) {
+               return doMultiply(lhs, rhs);
+           }
+           ...
+     };
+     template<typename T>     // 若有必要，在头文件内定义 helper template
+     const Rational<T> doMultiply(const Rational<T>& lhs, const Rational<T>& rhs) {
+        return Rational<T>(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());
+     }
 ```
