@@ -114,19 +114,19 @@
    (2) "强烈保证"往往能够以 copy-and-swap 实现出来，但"强烈保证"并非对所有函数都可实现或具备现实意义。
    (3) 函数提供的"异常安全保证"通常最高只等于其所调用之各个函数的"异常安全保证"中的最弱者。
      struct PMImpl {        // PMImpl = "PrettyMenu Impl"
-         std::trl::shared_ptr<Image> bgImage;
+         std::tr1::shared_ptr<Image> bgImage;
          int imageChanges;
      };
      class PrettyMenu {
          ...
        private:
          Mutex mutex;
-         std::trl::shared_ptr<PMImpl> pImpl;
+         std::tr1::shared_ptr<PMImpl> pImpl;
      };
      void PrettyMenu::changeBackground(std::istream& imgSrc) {
         using std::swap;
         Lock ml(&mutex);     // 获得 mutex 的副本数据
-        std::trl:shared_ptr<PMImpl> pNew(new PMImpl(*pImpl));
+        std::tr1:shared_ptr<PMImpl> pNew(new PMImpl(*pImpl));
         pNew->bgImage.reset(new Image(imgSrc));    // 修改副本
         ++pNew->imageChanges;
         swap(pImpl, pNew);   // 置换(swap)数据，释放 mutex
