@@ -101,4 +101,30 @@
    (3) 因类型参数 (type parameters) 而造成的代码膨胀，往往可降低，做法是让带有完全相同的二进制表述
 (binary respresentations) 的具现类型 (instantiation types) 共享实现码。
 
+45.运用成员函数模版接受所有兼容类型。
+   (1) 请使用 member function template (成员函数模版) 生成 “可接受所有兼容类型” 的函数。
+      template<typename T>
+      class SmartPtr {
+         public:
+            template<typename U>
+            // 以 other 的 heldPtr 初始化 this 的 heldPtr
+            SmartPtr(const SmartPtr<U>& other) : heldPtr(other.get()) { ... } 
+            T* get() const { return heldPtr; }
+            ...
+         private:
+            T* heldPtr;   // 这个 SmartPtr 持有的内置 (原始) 指针
+      };
+   (2) 如果你声明 member template 用于 "泛化 copy 构造" 或 "泛化 assignment 操作"，
+你还是需要声明正常的 copy 构造函数和 copy assignment 操作符。
+      template<class T>
+      class shared_ptr {
+         public:
+            shared_ptr(shared_ptr const& r);       // copy 构造函数
+            template<class Y>                      // 泛化 copy 构造函数
+            shared_ptr(shared_ptr<Y> const& r); 
+            shared_ptr& operator=(shared_ptr const& r);   // copy assignment
+            template<class Y>                             // 泛化 copy assignment
+            shared_ptr& operator=(shared_ptr<Y> const& r); 
+            ...
+      };
 ```
