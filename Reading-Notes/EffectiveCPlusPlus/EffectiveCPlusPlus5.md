@@ -153,7 +153,8 @@
    (1) Traits classes 使得 "类型相关信息" 在编译期可用。它们以 templates 和 "templates 特化" 完成实现。
       struct input_iterator_tag {};      // Input 迭代器只能向前移动，一次一步，只能读取 (istream_iterator)
       struct output_iterator_tag {};     // Output 迭代器只能向前移动，一次一步，只能涂写 (ostream_iterator)
-      struct forward_iterator_tag: public input_iterator_tag {};  // Forward 迭代器只能向前移动，可读写 (slist)
+      // Forward 迭代器只能向前移动，可读写 (slist)
+      struct forward_iterator_tag: public input_iterator_tag {};  
       // Bidirectional 迭代器可以前后移动，可读写 (list，set，multiset，map，multimap)
       struct bidirectional_iterator_tag: public forward_iterator_tag {};  
       // Random Access 迭代器可以在常量时间内向前或向后跳跃任意距离，可读写 (vector，deque，string)
