@@ -74,11 +74,11 @@
         private:
            HealthCalcFunc healthFunc;
      };
-   (3) 以 trl::function 成员变量替换 virtual 函数，因而允许使用任何可调用物 (callable entity) 搭配一个兼容于需求
+   (3) 以 tr1::function 成员变量替换 virtual 函数，因而允许使用任何可调用物 (callable entity) 搭配一个兼容于需求
 的签名式。这也是 Strategy 设计模式的某种形式。
      ...
      // HealthCalcFunc 可以是任何"可调用物"，可被调用并接受任何兼容于 GameCharacter 之物，返回任何兼容于 int 的东西
-     typedef std::trl::function<int (const GameCharacter&)> HealthCalcFunc;
+     typedef std::tr1::function<int (const GameCharacter&)> HealthCalcFunc;
      ...
    (4) 将继承体系内的 virtual 函数替换为另一个继承体系内的 virtual 函数。这是 Strategy 设计模式的传统实现手法。
 
