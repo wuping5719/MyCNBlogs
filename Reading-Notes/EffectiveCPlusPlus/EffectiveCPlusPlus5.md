@@ -181,4 +181,30 @@
       }
 
 48.认识 template 元编程。
+   (1) Template metaprogramming (TMP，模板元编程) 可将工作由运行期移往编译期，因而得以实现早起错误侦测
+和更高的执行效率。
+   (2) TMP 可被用来生成 "基于政策选择组合" (based on combinations of policy choices) 的客户定制代码，
+也可用来避免生成对某些特殊类型并不合适的代码。
+
+49.了解 new-handler 的行为。
+   (1) set_new_handler 允许客户指定一个函数，在内存分配无法获得满足时被调用。
+     class Widget {
+        public:
+           static std::new_handler set_new_handler(std::new_handler p) throw();
+           static void* operator new(std::size_t size) throw(std::bad_alloc);
+        private:
+           static std::new_handler currentHandler;
+     };
+   (2) Nothrow new 是一个颇为局限的工具，因为它只适用于内存分配，后继的构造函数调用还是可能抛出异常。
+
+50.了解 new 和 delete 的合理替换时机。
+   有许多理由需要写个自定义的 new 和 delete，包括改善效能、对 heap 运用错误进行调试、收集 heap 使用信息。
+   替换缺省的 new 和 delete 的理由：
+   (1) 为了检测运用错误。
+   (2) 为了收集动态分配内存之使用统计信息。 
+   (3) 为了增加分配和归还的速度。
+   (4) 为了降低缺省内存管理器带来的空间额外开销。
+   (5) 为了弥补缺省分配器中的非最佳齐位 (suboptimal alignment)。
+   (6) 为了将相关对象成簇集中。
+   (7) 为了获得非传统的行为。
 ```
