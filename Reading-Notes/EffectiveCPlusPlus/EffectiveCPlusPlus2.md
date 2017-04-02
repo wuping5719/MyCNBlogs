@@ -44,7 +44,7 @@ copying 函数共同调用。
      }
      void f2() {
         // 经由 shared_ptr 的析构函数自动删除 pInv
-        std::trl::shared_ptr<Investment> pInv(createInvestment());  
+        std::tr1::shared_ptr<Investment> pInv(createInvestment());  
         ...
      }
      
@@ -59,17 +59,17 @@ copying 函数共同调用。
                lock(mutexPtr.get()); 
            }
         private:
-           std::trl::shared_ptr<Mutex> mutexPtr;   // 使用 shared_ptr 替换 raw pointer
+           std::tr1::shared_ptr<Mutex> mutexPtr;   // 使用 shared_ptr 替换 raw pointer
      }
 
 15.在资源管理类中提供对原始资源的访问。
    (1) APIs 往往要求访问原始资源(raw resources)，所以每一个 RAII class 
 应该提供一个“取得其所管理之资源”的办法。
    (2) 对原始资源的访问可能经由显式转换或隐式转换。一般而言显式转换比较安全，但隐式转换对客户比较方便。
-   trl::shared_ptr 和 auto_ptr 都提供一个 get 成员函数，用来执行显式转换，
+   tr1::shared_ptr 和 auto_ptr 都提供一个 get 成员函数，用来执行显式转换，
 它会返回智能指针内部的原始指针(的复件):
      int days = daysHeld(pInv.get());
-   trl::shared_ptr 和 auto_ptr 重载了指针取值(pointer derfercing)操作符(operator-> 和 operator*)，
+   tr1::shared_ptr 和 auto_ptr 重载了指针取值(pointer derfercing)操作符(operator-> 和 operator*)，
 它们允许隐式转换至底部原始指针。
 
 16.成对使用 new 和 delete 时要采取相同形式。
@@ -84,14 +84,14 @@ copying 函数共同调用。
 17.以独立语句将 newed 对象置于智能指针。
    以独立语句将 newed 对象存储于(置入)智能指针内。如果不这样做，一旦异常被抛出，
 有可能导致难以察觉的资源泄漏。
-     std::trl::shared_ptr<Widget> pw(new Widget);   // 在单独语句内以智能指针存储 newed 所得对象
+     std::tr1::shared_ptr<Widget> pw(new Widget);   // 在单独语句内以智能指针存储 newed 所得对象
      processWidget(pw, priority());                 // 这个调用动作绝不至于造成泄漏
 
 18.让接口容易被正确使用，不易被误用。
    (1) 好的接口很容易被正确使用，不容易被误用。你应该在你的所有接口中努力达成这些性质。
    (2) “促进正确使用”的办法包括接口的一致性，以及与内置类型的行为兼容。
    (3) "阻止误用"的办法包括建立新类型、限制类型上的操作，束缚对象值，以及消除客户的资源管理责任。
-   (4) trl::shared_ptr 支持定制型删除器(custom deleter)。
+   (4) tr1::shared_ptr 支持定制型删除器(custom deleter)。
 这可防范 DLL 问题，可被用来自动解除互斥锁(mutex)等等。
 
 19.设计 class 犹如设计 type。
