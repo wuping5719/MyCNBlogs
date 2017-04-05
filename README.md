@@ -108,6 +108,9 @@
      <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveCPlusPlus/EffectiveCPlusPlus.md">7.《Effective C++》</a>
      </td>
+     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveSTL/EffectiveSTL.md">8.《Effective STL》</a>
+     </td>
   </tr>
 </table>
 
