@@ -13,4 +13,20 @@
   (7) 几种标准的非 STL 容器：数组、bitset、valarray、stack、queue 和 priority_queue。
 
 2.不要试图编写独立于容器类型的代码。
+  使用封装 (encapsulation) 技术从一种容器类型转到另一种。
+  (1) class Widget { ... };
+      typedef vector<Widget> WidgetContainer;
+      WidgetContainer wc;
+      Widget bestWidget;
+      ...
+      WidgetContainer::iterator i = find(wc.begin(), wc.end(), bestWidget);
+  (2) class Widget { ... };
+      template<typename T>
+      SpecialAllocator { ... };
+      typedef vector<Widget, SpecialAllocator<Widget>> WidgetContainer;
+      WidgetContainer wc;
+      Widget bestWidget;
+      ...
+      WidgetContainer::iterator i = find(wc.begin(), wc.end(), bestWidget);
+
 ```
