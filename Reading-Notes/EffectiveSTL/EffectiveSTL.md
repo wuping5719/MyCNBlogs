@@ -29,4 +29,13 @@
       ...
       WidgetContainer::iterator i = find(wc.begin(), wc.end(), bestWidget);
 
+3.确保容器中的对象拷贝正确而高效。
+
+4.调用 empty 而不是检查 size() 是否为 0。
+
+5.区间成员函数优先于与之对应的单元素成员函数。
+  给定 v1 和 v2 两个向量(vector)，使 v1 的内容和 v2 的后半部分相同的最简单操作?
+  v1.assign(v2.begin() + v2.size() / 2, v2.end());
+
+6.当心 C++ 编译器最烦人的分析机制。
 ```
