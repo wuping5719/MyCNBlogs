@@ -35,7 +35,33 @@
 
 5.区间成员函数优先于与之对应的单元素成员函数。
   给定 v1 和 v2 两个向量(vector)，使 v1 的内容和 v2 的后半部分相同的最简单操作?
-  v1.assign(v2.begin() + v2.size() / 2, v2.end());
+    v1.assign(v2.begin() + v2.size() / 2, v2.end());
 
 6.当心 C++ 编译器最烦人的分析机制。
+  一个存有整数 (int) 的文件，把这些整数复制到一个 list 中：
+    ifstream dataFile("ints.dat");
+    istream_iterator<int> dataBegin(dataFile);
+    istream_iterator<int> dataEnd;
+    list<int> data(dataBegin, dataEnd);
+
+7.如果容器中包含了通过 new 操作创建的指针，切记在容器对象析构前将指针 delete 掉。
+    void doSomething() {
+       typedef boost::shared_ptr<Widget> SPW;
+       vector<SPW> vwp;
+       for(int i=0; i<SOME_MAGIC_NUMBER; ++i) 
+          vwp.push_back(SPW(new Widget));    // 从 Widget* 创建 SPW，然后对它进行一次 push_back
+       ...
+    }
+    
+8.切勿创建包含 auto_ptr 的容器。
+    template<class RandomAccessIterator, class Compare>
+    void sort(RandomAccessIterator first, RandomAccessIterator last, Compare comp) {
+       typedef typename iterator_traits<RandomAccessIterator>::value_type ElementType;
+       RandomAccessIterator i;
+       ...                          // 使 i 指向基准元素
+       ElementType pivotValue(*i);  // 把基准元素复制到局部临时变量中
+       ...                          // 做其余的排序工作  
+    }
+
+9.慎重选择删除元素的方法。
 ```
