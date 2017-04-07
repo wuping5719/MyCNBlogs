@@ -64,4 +64,38 @@
     }
 
 9.慎重选择删除元素的方法。
+ (1) 要删除容器中有特定值的所有对象：
+   如果容器是 vector、string 或 deque，则使用 erase-remove 习惯用法。
+    Container<int> c;
+    c.erase(remove(c.begin(), c.end(), 1963), c.end());
+   如果容器是 list，则使用 list::remove。
+    c.remove(1963);
+   如果容器是一个标准关联容器，则使用它的 erase 成员函数。
+    c.erase(1963);
+ (2) 要删除容器中满足特定判别式 (条件) 的所有对象：
+   如果容器是 vector、string 或 deque，则使用 erase-remove_if 习惯用法。
+    bool badValue(int );     // 返回 x 是否为 "坏值"
+    c.erase(remove_if(c.begin(), c.end(), badValue), c.end());
+   如果容器是 list，则使用 list::remove_if。
+    c.remove_if(badValue);
+   如果容器是一个标准关联容器，则使用 remove_copy_if 和 swap，或者写一个循环来遍历容器中的元素，
+记住当把迭代器传给 erase 时，要对它进行后缀递增。
+  ① AssocContainer<int> c;             // 标准关联容器
+    ...
+    AssocContainer<int> goodValues;    // 保存不被删除的值的临时容器
+    // 把不被删除的值从 c 复制到 goodValues 中
+    remove_copy_if(c.begin(), c.end(), inserter(goodValues, goodValues.end()), badValue); 
+    c.swap(goodValues);                // 交换 c 和 goodValues 的内容
+  ② AssocContainer<int> c;
+    ...
+    // for 循环的第三部分是空的，i 在下面递增
+    for (AssocContainer<int>::iterator i = c.begin(); i != c.end(); /*什么也不做*/ ) {
+        if (badValue(*i))  c.erase(i++);    // 对坏值，把当前的 i 传给 erase，递增 i 是副作用
+        else ++i;                           // 对好值，则简单地递增 i
+    }
+  (3) 要在循环内部做某些 (除了删除对象之外的) 操作：
+   如果容器是一个标准序列容器，则写一个循环来遍历容器中的元素，记住每次调用 erase 时，要用它的返回值更新迭代器。
+   如果容器是一个标准关联容器，则写一个循环来遍历容器中的元素，记住当把迭代器传给 erase 时，要对迭代器做后缀递增。
+
+10.了解分配子 (allocator) 的约定和限制。
 ```
