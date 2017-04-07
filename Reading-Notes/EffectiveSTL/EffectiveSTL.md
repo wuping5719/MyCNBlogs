@@ -98,4 +98,52 @@
    如果容器是一个标准关联容器，则写一个循环来遍历容器中的元素，记住当把迭代器传给 erase 时，要对迭代器做后缀递增。
 
 10.了解分配子 (allocator) 的约定和限制。
+  (1) 你的分配子是一个模版，模版参数 T 代表你为它分配内存的对象的类型。
+  (2) 提供类型定义 pointer 和 reference，但是始终让 pointer 为 T*，reference 为 T&。
+  (3) 千万别让你的分配子拥有随对象而不同的状态。通常，分配子不应该有非静态的数据成员。
+  (4) 记住，传给分配子的 allocate 成员函数的是那些要求内存的对象的个数，而不是所需的字节数。
+这些函数返回 T* 指针，即使尚未有 T 对象被构造出来。
+  (5) 一定要提供嵌套的 rebind 模版，因为标准容器依赖该模版。
+    template <typename T>      // 标准的分配子这样声明
+    class allocator {
+       public:
+          template<typename U>
+          struct rebind {
+             typedef allocator<U> other;
+          };
+          ...
+    };
+
+11.理解自定义分配子的合理用法。
+   假定你有一些特殊过程，它们采用 malloc 和 free 内存模型来管理一个位于共享内存的堆：
+     void* mallocShared(size_t bytesNeeded);
+     void* freeShared(void* ptr);
+而你想把 STL 容器的内容放到这块共享内存中去。
+     template <typename T>
+     class SharedMemoryAllocator {
+        public:
+           ...
+           pointer allocate<size_type numObjects, const void *localityHint = 0) {
+              return static_cast<pointer>(mallocShared(numObjects * sizeof(T)));
+           }
+           void deallocate(pointer ptrToMemory, size_type numObjects) {
+              freeShared(ptrToMemory);
+           }
+           ...
+     };
+     typedef vector<double, SharedMemoryAllocator<double>> SharedDoubleVec;
+     ... 
+     {  
+        ... // 开始某个代码块
+        SharedDoubleVec v;   //创建一个 vector，其元素位于共享内存中
+        ...
+     }
+     void *pVectorMemory = mallocShared(sizeof(SharedDoubleVec)); // 为 SharedDoubleVec 对象分配足够的内存
+     // 使用 "placement new" 在内存中创建一个 SharedDoubleVec 对象
+     SharedDoubleVec *pv = new (pVectorMemory) SharedDoubleVec;  
+     ...  // 使用对象 (通过 pv)
+     pv->~SharedDoubleVec();       // 析构共享内存中的对象
+     freeShared(pVectorMemory);    // 释放最初分配的那一块共享内存
+
+12.切勿对 STL 容器的线程安全性有不切实际的依赖。
 ```
