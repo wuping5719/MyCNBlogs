@@ -146,4 +146,26 @@
      freeShared(pVectorMemory);    // 释放最初分配的那一块共享内存
 
 12.切勿对 STL 容器的线程安全性有不切实际的依赖。
+   在一个 vector<int> 中查找值为 5 的第一个元素，如果找到了，就把该元素置为 0。
+     template<typename Container>    // 一个为容器获取和释放互斥体的模版
+     class Lock {     // 框架
+        public:
+           Lock(const Container& container) : c(container) {
+              getMutexFor(c);       // 在构造函数中获取互斥体
+           }
+           ~Lock() {
+              releaseMutexFor(c);   // 在析构函数中释放它
+           }
+        private:
+           const Container& c;
+     };
+     vector<int> V;
+     ...
+     {                               // 创建新的代码块
+        Lock<vector<int>> lock(v);   // 获取互斥体
+        <vector<int>::iterator first5(find(v.begin(), v.end(), 5));
+        if (first5 != v.end()) {
+           *first5 = 0;
+        }
+     }                                // 代码块结束，自动释放互斥体
 ```
