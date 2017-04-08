@@ -111,4 +111,40 @@
     string s(vc.begin(), vc.begin() + charsWritten);  // 通过区间构造函数，把数据从 vc 复制到 s 中
 
 17.使用 "swap技巧" 除去多余的容量。
+   shrink-to-fit (压缩至适当大小):
+    class Contestant { ... };
+    vector<Contestant> v;
+    string s;
+    ...                        // 使用 v 和 s
+    // vector<Contestant>(v).swap(v);  // 从 v 中去除多余的容量
+    vector<Contestant>().swap(v);      // 清除 v 并把它的容量变为最小
+    string().swap(s);                  // 清除 s 并把它的容量变为最小
+
+18.避免使用 vector<bool>。
+    template<typename Allocator>
+    vector<bool, Allocator> {
+       public:
+          class reference { ... };     // 用来为指向单个位的引用而产生代理的类
+          reference operator[](size_type n); // operator[] 返回一个代理
+          ...      
+    };
+
+19.理解相等 (equality) 和等价 (equivalence) 的区别。
+   每个标准关联容器都通过 key_comp 成员函数使排序判别式可被外部使用，所以，如果下面的表达式为 true，则按照
+关联容器 c 的排序准则，两个对象 x 和 y 有等价的值：
+   // 在 c 的排列顺序中，x 在 y 之前不为真，y 在 x 之前也不为真
+   !c.key_comp()(x, y) && !c.key_comp()(y, x)  
+
+20.为包含指针的关联容器指定比较类型。
+    struct StringPtrLess:public binary_function<const string*, const string*, bool> {
+       bool operator()(const string *ps1, const string *ps2) const {
+          return *ps1 < *ps2;
+       }
+    };
+    typedef set<string*, StringPtrLess> StringPtrSet;   // 用 StringPtrLess 作为 ssp 的比较类型
+    StringPtrSet ssp;  // 创建一个包含字符串的集合，并把它用 StringPtrLess 定义的顺序排序
+    ssp.insert(new string("Anteater"));
+    ...   // 插入4个字符串
+    for(StringPtrSet::const_iterator i = ssp.begin()); i != ssp.end(); ++i)
+       count << **i << endl;
 ```
