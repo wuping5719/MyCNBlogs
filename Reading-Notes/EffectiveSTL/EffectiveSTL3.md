@@ -23,4 +23,22 @@
    }
 
 23.考虑用排序的 vector 替代关联容器。
+   把排序的 vector 当做映射表来使用，其本质上就如同将它用做一个集合一样。
+    vector<Data> vd;                    // 取代 map<string, int>
+    ...                                 // 设置阶段：大量的插入，查找却很少
+    sort(vd.begin(), vd.end());         // 设置阶段结束(当模拟 multiset 时，你可能选用 stable_sort)
+    string s;                           // 用于存放待查找值的对象
+    ...                                 // 开始查找阶段
+    if (binary_search(vd.begin(), vd.end(), s, DataCompare()))  ...   // 通过 binary_search 查找
+    vector<Data>::iterator i = lower_bound(vd.begin(), vd.end(), s, DataCompare()); // 通过 lower_bound 查找
+    if (i != vd.end() && !DataCompare()(s, *i))  ...
+    pair<vector<Data>::iterator, vector<Data>::iterator> range 
+                          = equal_range(vd.begin(), vd.end(), s, DataCompare());   // 通过 equal_range 查找
+    if (range.first != range.second()) ...
+    ...                                 // 结束查找阶段，开始重组阶段
+    sort(vd.begin(), vd.end(), DataCompare());   // 开始新查找阶段...
+
+24.当效率至关重要时，请在 map::operator[] 与 map::insert 之间谨慎做出选择。
+   
+25.熟悉非标准的散列容器。
 ```
