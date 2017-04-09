@@ -39,6 +39,16 @@
     sort(vd.begin(), vd.end(), DataCompare());   // 开始新查找阶段...
 
 24.当效率至关重要时，请在 map::operator[] 与 map::insert 之间谨慎做出选择。
-   
+   如果要更新一个已有的映射表元素，则应该优先选择 operator[]；如果要添加一个新的元素，最好选择 insert。
+      map<int, Widget> m;
+      m[1] = 1.50;
+   在功能上等同于：
+      typedef map<int, Widget> IntWidgetMap;
+      // 用键值 1 和默认构造的值对象创建一个新的 map 条目
+      pair<IntWidgetMap::iterator, bool> result = m.insert(IntWidgetMap::value_type(1, Widget())); 
+      result.first->second = 1.50;     // 为新构造的值对象赋值
+   把对 operator[] 的使用换成对 insert 的直接调用：
+      m.insert(IntWidgetMap::value_type(1, 1.50)); 
+
 25.熟悉非标准的散列容器。
 ```
