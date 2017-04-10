@@ -72,4 +72,30 @@
       iterator erase(iterator rangeBegin, iterator rangeEnd);
 
 27.使用 distance 和 advance 将容器的 const_iterator 转换成 iterator。
+      typedef deque<int> IntDeque;       // 类型定义，简化代码
+      typedef IntDeque::iterator Iter;
+      typedef IntDeque::const_iterator ConstIter;
+      IntDeque d;
+      ConstIter ci;
+      ...                    // 使 ci 指向 d
+      Iter i (d.begin());    // 使 i 指向 d 的起始位置
+      // 将 i 和 ci 都当做 const_iterator，计算它们之间的距离，然后将 i 移动这段距离
+      advance(i, distance<ConstIter>(i, ci));   
+
+28.正确理解由 reverse_iterator 的 base() 成员函数所产生的 iterator 的用法。
+   (1) 如果要在一个 reverse_iterator ri 指定的位置上插入新元素，则只需在 ri.base() 处插入元素即可。
+对于插入操作而言，ri 和 ri.base() 是等价的。
+   (2) 如果要在一个 reverse_iterator ri 指定的位置上删除一个元素，则需要在 ri.base() 前面的位置执行删除操作。
+对于删除操作而言，ri 和 ri.base() 是不等价的。
+      vector<int> v;
+      ...
+      vector<int>::reverse_iterator ri = find(v.rbegin(), v.rend(), 3);
+      v.erase((++ri).base());
+
+29.对于逐个字符的输入请考虑使用 istreambuf_iterator。
+   把一个文本文件复制到一个 string 对象中：
+      ifstream inputFile("interestData.txt");
+      string fileData((istreambuf_iterator<char>(inputFile)), istreambuf_iterator<char>());
+
+30.确保目标区间足够大。
 ```
