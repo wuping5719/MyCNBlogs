@@ -98,4 +98,13 @@
       string fileData((istreambuf_iterator<char>(inputFile)), istreambuf_iterator<char>());
 
 30.确保目标区间足够大。
+   要在算法执行过程中增大目标区间，请使用插入型迭代器，比如 ostream_iterator，
+或者由 back_inserter、front_inserter 和 inserter 返回的迭代器。
+      vector<int> values;
+      vector<int> results;
+      ...
+      results.clear();                 // 清除 results 中的所有元素
+      results.reserve(values.size());  // 预留足够的空间
+      // 将 transform 的结果放到 results 中
+      transform(values.begin(), values.end(), back_inserter(results), transmogrify);
 ```
