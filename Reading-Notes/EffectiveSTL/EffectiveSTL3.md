@@ -51,4 +51,25 @@
       m.insert(IntWidgetMap::value_type(1, 1.50)); 
 
 25.熟悉非标准的散列容器。
+   (1) SGI 使用传统的开放式散列策略，由指向元素的单向链表的指针数组(桶)构成。
+   SGI 的 hash_set 的声明：
+      template<typename T, typename HashFunction = hash<T>, typename CompareFunction = equal_to<T>,
+          typename Allocator = allocator<T>>
+      class hash_set;
+   (2) Dinkumware 基于一种新型数据结构，即由指向元素的双向链表迭代器数组组成，
+相邻的一对迭代器标识了每个桶中元素的范围。
+   Dinkumware 的 hash_set 的声明：
+      template<typename T, typename CompareFunction>
+      class hash_compare;
+      template<typename T, typename HashingInfo = hash_compare<T, less<T>>, 
+          typename Allocator = allocator<T>>
+      class hash_set;
+
+26.iterator 优先于 const_iterator、reverse_iterator 及 const_reverse_iterator。
+   vector<T> 容器中 insert 和 erase 函数的原型：
+      iterator insert(iterator position, const T& x);
+      iterator erase(iterator position);
+      iterator erase(iterator rangeBegin, iterator rangeEnd);
+
+27.使用 distance 和 advance 将容器的 const_iterator 转换成 iterator。
 ```
