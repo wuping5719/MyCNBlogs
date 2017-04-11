@@ -65,4 +65,33 @@ sort 和 stable_sort 算法。如果你需要获得 partial_sort 或 nth_element
    }
 
 37.使用 accumulate 或者 for_each 进行区间统计。
+   (1) 计算一个区间中数值的乘积：
+     vector<float> vf;      // 创建一个 float 容器并加入一些数据
+     ...
+     // 对 vf 中的每个元素调用 multiplies<float>，并把结果赋给 product，初始值为 1.0f
+     float product = accumulate(vf.begin(), vf.end(), 1.0f, multiplies<float>()); 
+   (2) 计算出一个区间中的所有点的平均值：
+     struct Point {
+        Ponit(double initX, duoble initY): x(initX), y(initY) {}
+        double x, y;
+     };
+     class PointAverage: public unary_function<Point, void> {
+        public:
+           PointAverage():xSum(0), ySum(0), numPoints(0) {}
+           void operator()(const Point& p) {
+              ++numPoints;
+              xSum += p.x;
+              ySum += p.y;
+           }
+           Point result() const {
+              return Point(xSum/numPoints, ySum/numPoints);
+           }
+        private:
+           size_t numPoints;
+           double xSum;
+           double ySum;
+     };
+     list<Point> lp;
+     ...
+     Point avg = for_each(lp.begin(), lp.end(), PointAverage()).result();
 ```
