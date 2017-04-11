@@ -21,7 +21,7 @@
        goalPosition = begin + widgets.size() / 2;   // 找到具有中间质量级别的 Widget
        nth_element(begin, goalPosition, end, qualityCompare);
     (4) 如果需要将一个标准序列容器中的元素按照是否满足某个特定的条件区分开来，
- 可以使用 partition 和 stable_partition。
+可以使用 partition 和 stable_partition。
        bool hasAcceptableQuality(const Widget& w) {
           // 判断 w 的质量值是否为 2 或者更好
        }
