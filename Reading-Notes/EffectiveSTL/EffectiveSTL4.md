@@ -94,4 +94,10 @@ sort 和 stable_sort 算法。如果你需要获得 partial_sort 或 nth_element
      list<Point> lp;
      ...
      Point avg = for_each(lp.begin(), lp.end(), PointAverage()).result();
+     
+38.遵循按值传递的原则来设计函数子类。
+
+39.确保判别式是 "纯函数"。
+
+40.若一个类是函数子，则应使它可配接。
 ```
