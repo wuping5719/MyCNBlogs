@@ -31,14 +31,38 @@
 sort 和 stable_sort 算法。如果你需要获得 partial_sort 或 nth_element 算法的效果，可以通过间接途径完成。
 
 32.如果确实需要删除元素，则需要在 remove 这一类算法之后调用 erase。
+    vector<int> v;
+    ...
+    v.erase(remove(v.begin(), v.end(), 99), v.end());     // 真正删除所有值等于 99 的元素
+    count << v.size();
 
 33.对包含指针的容器使用 remove 这一类算法时要特别小心。
 
 34.了解哪些算法要求使用排序的区间作为参数。
-
+   (1) 用于查找的算法 binary_search、lower_bound、upper_bound 和 equal_range 
+要求排序的区间，因为它们用二分法查找数据。
+   (2) set_union、set_intersection、set_difference 和 set_symmetric_difference 
+这 4 个算法提供了线性时间效率的集合操作。
+   (3) merge 和 inplace_merge 实现了合并和排序的联合操作。
+   (4) unique 和 unique_copy 删除区间中的重复值。
+  
 35.通过 mismatch 或 lexicographical_compare 实现简单的忽略大小写的字符串比较。
+   bool ciCharLess(char c1, char c2) {   // 返回忽略大小写的情况下，c1 是否在 c2 之前
+      return tolower(static_cast<unsigned char>(c1)) < tolower(static_cast<unsigned char>(c2));
+   }
+   bool ciStringCompare(const string &s1, const string &s2) {
+      return lexicographical_compare(s1.begin(), s1.end(), s1.begin(), s1.end(), ciCharLess);
+   }
 
 36.理解 copy_if 算法的正确实现。
+   template<typename InputIterator, typename OutputIterator, typename Predicate>
+   OutputIterator copy_if(InputIterator begin, InputIterator end, OutputIterator destBegin, Predicate p) {
+      while (begin != end) {
+         if (p(*begin)) *destBegin++ = *begin;
+         ++begin;
+      }
+      return destBegin;
+   }
 
 37.使用 accumulate 或者 for_each 进行区间统计。
 ```
