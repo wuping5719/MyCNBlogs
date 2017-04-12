@@ -128,4 +128,23 @@ sort 和 stable_sort 算法。如果你需要获得 partial_sort 或 nth_element
 argument_type、first_argument_type、second_argument_type 及 result_type。提供这些类型定义的最简便方法是
 让函数子从一个基结构继承。如果函数子类的 operator() 只有一个实参，它应该从 std::unary_function 继承；
 如果函数子类的 operator() 有两个实参，它应该从 std::binary_function 继承。
+     template<typename T>
+     class MeetsThreshold: public std::unary_function<Widget, bool> {
+        private:
+           const T threshold;
+        public:
+           MeetsThreshold(const T& threshold);
+           bool operator()(const Widget&) const;
+           ...
+     };
+     struct WidgetNameCompare: public std::binary_function<Widget, Widget, bool> {
+        bool operator()(const Widget& lhs, const Widget& rhs) const;
+     }
+     list<Widget> widgets;
+     ...
+     list<Widget>::reverse_iterator i1 =         // 找到最后一个不符合阈值 10 的 Widget
+          find_if(widgets.rbegin(), widgets.rend(), not1(MeetsThreshold<int>(10)));
+     Widget w(...);
+     list<Widget>::iterator i2 =  // 找到按 WidgetNameCompare 定义的规则排序时，在 w 之前的第一个 Widget 对象
+          find_if(widgets.begin(), widgets.end(), bind2nd(WidgetNameCompare(), w));
 ```
