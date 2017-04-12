@@ -96,8 +96,36 @@ sort 和 stable_sort 算法。如果你需要获得 partial_sort 或 nth_element
      Point avg = for_each(lp.begin(), lp.end(), PointAverage()).result();
      
 38.遵循按值传递的原则来设计函数子类。
-
+   "Bridge Pattern" 或 "Pimpl Idiom":
+      template<typename T>
+      class BPFCImpl: public unary_function<T, void> {  // BPFC (Big Polymorphic Functor Class) 实现类
+         private:
+            Widget w;      // 原来 BPFC 中的数据
+            int x;
+            ...
+            virtual ~BPFCImpl();   // 多态类析构函数
+            virtual void operator() (const T& val) const;
+            friend class BPFC<T>;
+      };
+      template<typename T>
+      class BPFC: public unary_function<T, void> {  // 新的 BPFC 类：短小，单态
+         private:
+            BPFCImpl<T> *pImpl;      // BPFC 唯一的数据成员
+         public:
+            void operator() (const T& val) const {   // 非虚函数将调用转到 BPFCImpl 中
+               pImpl->operator()(val);
+            }
+            ...
+      };
+      
 39.确保判别式是 "纯函数"。
+   (1) 判别式 (predicate)：返回值为 bool 类型 (或者可以隐式地转换为 bool 类型) 的函数.
+   (2) 纯函数 (pure function)：返回值仅仅依赖于其参数的函数。
+   (3) 判别式类 (predicate class)：函数子类，它的 operator() 函数是一个判别式，返回 true 或 false。 
 
 40.若一个类是函数子，则应使它可配接。
+   4 个标准的函数配接器 (not1、not2、bind1st 和 bind2nd) 都要求一些特殊的类型定义。这些特殊的类型定义是：
+argument_type、first_argument_type、second_argument_type 及 result_type。提供这些类型定义的最简便方法是
+让函数子从一个基结构继承。如果函数子类的 operator() 只有一个实参，它应该从 std::unary_function 继承；
+如果函数子类的 operator() 有两个实参，它应该从 std::binary_function 继承。
 ```
