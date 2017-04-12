@@ -21,8 +21,29 @@
      for_each(vw.begin(), vw.end(), ptr_fun(test));    // 与调用 #1 的行为一样
 
 42.确保 less<T> 与 operator< 具有相同的语义。
+   Boost 库的智能指针 shared_ptr 的部分实现：
+    namespace std {          // 针对 boost::shared_ptr<T> 的 std::less 特化
+       template<typename T>
+       struct less<boost::shared_ptr<T>>: public binary_function<boost::shared_ptr<T>, 
+                     boost::shared_ptr<T>, bool> {
+            bool operator() (const boost::shared_ptr<T>& a, const boost::shared_ptr<T>& b) const {
+                return less<T*>()(a.get(), b.get());  // shared_ptr::get 返回 shared_ptr 对象的内置指针
+            }    
+       };
+    }
 
 43.算法调用优先于手写的循环。
+   (1) 效率：算法通常比程序员自己写的循环效率更高。
+   (2) 正确性：自己写循环比使用算法更容易出错。
+   (3) 可维护性：使用算法的代码通常比手写循环的代码更简洁明了。
+     deque<double> d;
+     ...
+     deque<double>::iterator insertLocation = d.begin();
+     for (size_t i = 0; i < numDoubles; ++i) {
+        // 每次 insert 调用之后都更新 insertLocation 以便保持迭代器有效
+        insertLocation = d.insert(insertLocation, data[i] + 41);   
+        ++insertLocation;
+     }
 
 44.容器的成员函数优先于同名的算法。
 
