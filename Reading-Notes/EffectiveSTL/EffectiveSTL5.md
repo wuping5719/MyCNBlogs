@@ -46,9 +46,11 @@
      }
 
 44.容器的成员函数优先于同名的算法。
-
+```
+```c++
 45.正确区分 count、find、binary_search、lower_bound、upper_bound 和 equal_range。
-
+```
+```c++
 46.考虑使用函数对象而不是函数作为 STL 算法的参数。
 
 47.避免产生 “直写型” (write-only) 的代码。
