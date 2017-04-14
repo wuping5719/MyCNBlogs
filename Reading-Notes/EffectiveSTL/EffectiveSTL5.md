@@ -51,7 +51,7 @@
 45.正确区分 count、find、binary_search、lower_bound、upper_bound 和 equal_range。
 ```
 <table>
-  <tr style="rowspan:2">
+  <tr style="rowspan=2">
     <td>想知道什么</td>
     <td>使用算法</td>
     <td>使用成员函数</td>
