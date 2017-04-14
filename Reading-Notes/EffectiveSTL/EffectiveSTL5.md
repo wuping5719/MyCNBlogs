@@ -61,6 +61,25 @@
 
 ```c++
 46.考虑使用函数对象而不是函数作为 STL 算法的参数。
+   (1) 将一个集合中每个字符串对象的长度输出到 cout 中：
+      struct StringSize: public unary_function<string, string::size_type> {
+         string::size_type operator()(const string& s) const {
+            return s.size();
+         }
+      };
+      transform(s.begin(), s.end(), ostream_iterator<string::size_type>(cout, "\n"), StringSize());
+   (2) 一个函数模版的实例化名称并不完全等同于一个函数的名称：
+      template<typename FPType>
+      struct Average: public binary_function<FPType, FPType, FPType> {
+         FPType operator() (FPType val1, FPType val2) const {
+            return average(val1, val2);
+         }
+      };
+      template<typename InputIter1, typename InputIter2>
+      void writeAverages(InputIter1 begin1, InputIter1 end1, InputIter2 begin2, ostream& s) {
+         transform(begin1, end1, begin2, ostream_iterator<typename iterator_traits<InputIter1>::value_type>(s, "\n"), 
+               Average<typename iterator_traits<InputIter1>::value_type>());
+      }
 
 47.避免产生 “直写型” (write-only) 的代码。
 
