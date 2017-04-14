@@ -81,12 +81,32 @@
                ostream_iterator<typename iterator_traits<InputIter1>::value_type>(s, "\n"), 
                Average<typename iterator_traits<InputIter1>::value_type>());
       }
-      
+
 47.避免产生 “直写型” (write-only) 的代码。
+   有一个 vector<int>，删除其中所有值小于 x 的元素，但在最后一个其值不小于 y 的元素之前的所有元素都应该保留下来。
+    vector<int> v;
+    int x, y;
+    ...
+    typedef vector<int>::iterator VecIntIter;
+    // 初始化 rangeBegin，使它指向 v 中大于等于 y 的最后一个元素之后的元素
+    // 如果不存在这样的元素，则 rangeBegin 被初始化为 v.begin()
+    // 如果最后这样的元素正好是 v 的最后一个元素，则 rangeBegin 被初始化为 v.end()
+    VecIntIter rangeBegin = find_if(v.rbegin(), v.rend(), bind2nd(greater_equal<int>(), y)).base();
+    // 在从 rangeBegin 到 v.end() 的区间中，删除所有小于 x 的值
+    v.erase(remove_if(rangeBegin, v.end(), bind2nd(less<int>(), x)), v.end());
 
 48.总是包含 (#include) 正确的头文件。
-
+   (1) 几乎所有的标准 STL 容器都被声明在与之同名的头文件中，比如 vector 被声明在 <vector> 中，list 被声明
+在 <list> 中，等等。但是 <set> 和 <map> 是个例外，<set> 中声明了 set 和 multiset，<map> 中声明了 map 和 multimap。
+   (2) 除了 4 个 STL 算法以外，其他所有的算法都被声明在 <algorithm> 中，这 4 个算法是 accumulate、inner_product、
+adjacent_difference 和 partial_sum，它们被声明在头文件 <numeric> 中。
+   (3) 特殊类型的迭代器，包括 istream_iterator 和 istreambuf_iterator，被声明在 <iterator> 中。
+   (4) 标准的函数子 (比如 less<T>) 和函数子配接器 (比如 not1、bind2nd) 被声明在头文件 <functional> 中。
+   
 49.学会分析与 STL 相关的编译器诊断信息。
 
 50.熟悉与 STL 相关的 Web 站点。
+  (1) SGI STL 站点：http://www.sgi.com/tech/stl
+  (2) STLport 站点：http://www.stlport.org
+  (3) Boost 站点：http://www.boost.org
 ```
