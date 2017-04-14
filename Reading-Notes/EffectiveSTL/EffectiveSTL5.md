@@ -97,9 +97,10 @@
 
 48.总是包含 (#include) 正确的头文件。
    (1) 几乎所有的标准 STL 容器都被声明在与之同名的头文件中，比如 vector 被声明在 <vector> 中，list 被声明
-在 <list> 中，等等。但是 <set> 和 <map> 是个例外，<set> 中声明了 set 和 multiset，<map> 中声明了 map 和 multimap。
-   (2) 除了 4 个 STL 算法以外，其他所有的算法都被声明在 <algorithm> 中，这 4 个算法是 accumulate、inner_product、
-adjacent_difference 和 partial_sum，它们被声明在头文件 <numeric> 中。
+在 <list> 中，等等。但是 <set> 和 <map> 是个例外，<set> 中声明了 set 和 multiset，
+<map> 中声明了 map 和 multimap。
+   (2) 除了 4 个 STL 算法以外，其他所有的算法都被声明在 <algorithm> 中，这 4 个算法是 accumulate、
+inner_product、adjacent_difference 和 partial_sum，它们被声明在头文件 <numeric> 中。
    (3) 特殊类型的迭代器，包括 istream_iterator 和 istreambuf_iterator，被声明在 <iterator> 中。
    (4) 标准的函数子 (比如 less<T>) 和函数子配接器 (比如 not1、bind2nd) 被声明在头文件 <functional> 中。
    
