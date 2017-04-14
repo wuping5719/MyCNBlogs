@@ -77,10 +77,11 @@
       };
       template<typename InputIter1, typename InputIter2>
       void writeAverages(InputIter1 begin1, InputIter1 end1, InputIter2 begin2, ostream& s) {
-         transform(begin1, end1, begin2, ostream_iterator<typename iterator_traits<InputIter1>::value_type>(s, "\n"), 
+         transform(begin1, end1, begin2, 
+               ostream_iterator<typename iterator_traits<InputIter1>::value_type>(s, "\n"), 
                Average<typename iterator_traits<InputIter1>::value_type>());
       }
-
+      
 47.避免产生 “直写型” (write-only) 的代码。
 
 48.总是包含 (#include) 正确的头文件。
