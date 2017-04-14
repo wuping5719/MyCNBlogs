@@ -50,6 +50,7 @@
 45.正确区分 count、find、binary_search、lower_bound、upper_bound 和 equal_range。
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CPlusPlusSet.png" />
+
 ```c++
 46.考虑使用函数对象而不是函数作为 STL 算法的参数。
 
