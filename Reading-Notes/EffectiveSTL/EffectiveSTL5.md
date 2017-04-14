@@ -48,6 +48,14 @@
 44.容器的成员函数优先于同名的算法。
 
 45.正确区分 count、find、binary_search、lower_bound、upper_bound 和 equal_range。
+   判断一个 list 容器中是否存在某个特定的 Widget 对象值。
+     list<Widget> lw;    // list 容器
+     Widget w;           // 特定的 Widget 值
+     if (find(lw.begin(), lw.end(), w) != lw.end()) {
+        ...
+     } else {
+        ...
+     }
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CPlusPlusSet.png" />
 
