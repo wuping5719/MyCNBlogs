@@ -95,7 +95,7 @@
   </tr>
   <tr>
     <td><a href="http://www.codeceo.com/article/learning-javascript-part-9.html"><Strong>23.JavaScript学习总结</Strong></a></td>
-    <td></td>
+    <td><a href="http://www.unicode.org/emoji/charts/full-emoji-list.html">23.Emoji Charts</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/damonare/Sorts">24.JavaScript版经典排序算法</a></td>
