@@ -49,4 +49,16 @@
   (4) 虚引用也称幽灵引用或幻影引用，它是最弱的一种引用关系。一个对象是否有虚引用的存在，完全不会对其生存时间
 构成影响，也无法通过虚引用来取得一个对象实例。为一个对象设置虚引用关联的唯一目的就是能在这个对象被收集器回收时
 收到一个系统通知。在JDK 1.2 之后，提供 PhantomReference 类来实现虚引用。
+
+7.垃圾收集算法：
+  (1) 标记-清除算法 (Mark-Sweep)。
+  (2) 复制算法 (Copying)。
+  (3) 标记-整理算法 (Mark-Compact)。
+  (4) 分代收集算法 (Generational Collection)。
+
+8.垃圾收集器：
+```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_GC.png" />
+
+```java
 ```
