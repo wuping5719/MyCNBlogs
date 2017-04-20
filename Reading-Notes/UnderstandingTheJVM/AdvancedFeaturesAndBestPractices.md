@@ -23,7 +23,7 @@
 静态变量、即时编译器编译后的代码等数据。运行时常量池 (Runtime Constant Pool) 是方法区的一部分，用于存放编译期
 生成的各种字面量和符号引用。
 ```
-<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JavaVM.png" />
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_vm.png" />
 
 ```java
 ```
