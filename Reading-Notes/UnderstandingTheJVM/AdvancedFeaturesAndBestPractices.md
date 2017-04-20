@@ -24,5 +24,6 @@
 生成的各种字面量和符号引用。
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JavaVM.png" />
+
 ```java
 ```
