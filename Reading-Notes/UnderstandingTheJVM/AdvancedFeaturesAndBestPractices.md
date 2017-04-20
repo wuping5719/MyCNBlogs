@@ -57,6 +57,13 @@
   (4) 分代收集算法 (Generational Collection)。
 
 8.垃圾收集器：
+  (1) Serial 收集器。
+  (2) ParNew 收集器。
+  (3) Parallel Scavenge 收集器。
+  (4) Serial Old 收集器。
+  (5) Parallel Old 收集器。
+  (6) CMS 收集器。
+  (7) G1 收集器。
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_GC.png" />
 
