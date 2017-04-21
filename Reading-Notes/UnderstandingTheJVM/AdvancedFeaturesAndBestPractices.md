@@ -100,4 +100,13 @@
   命令格式：jstack [option] vmid
   (7) JConsole (Java Monitoring and Management Console)：Java 监视与管理控制台。
   (8) VisualVM (All-in-One Java Troubleshooting Tool)：多合一故障处理工具。
+
+11.调优案例分析：
+  (1) 高性能硬件上的程序部署策略：通过 64 位 JDK 来使用大内存；使用若干个 32 位虚拟机建立逻辑集群来利用硬件资源。
+  (2) 集群间同步导致的内存溢出。
+  (3) 堆外内存导致的溢出错误。
+  (4) 外部命令导致系统缓慢。
+  (5) 服务器 JVM 进程崩溃。
+  (6) 不恰当的数据结构导致内存占用过大。
+  (7) 由 Windows 虚拟内存导致的长时间停顿。
 ```
