@@ -57,13 +57,23 @@
   (4) 分代收集算法 (Generational Collection)。
 
 8.垃圾收集器：
-  (1) Serial 收集器。
-  (2) ParNew 收集器。
-  (3) Parallel Scavenge 收集器。
-  (4) Serial Old 收集器。
-  (5) Parallel Old 收集器。
-  (6) CMS 收集器。
-  (7) G1 收集器。
+  (1) Serial 收集器：虚拟机在 Client 模式下的默认新生代收集器。
+  (2) ParNew 收集器：Serial 收集器的多线程版本，除了使用多条线程进行垃圾收集之外，其余行为包括 Serial 收集器
+可用的所有控制参数 (如：-XX:SurvivorRatio、-XX:PretenureSizeThreshold、-XX:HandlePromotionFailure等)、
+收集算法、Stop The World、对象分配规则、回收策略等都与 Serial 收集器完全一样。
+运行在 Server 模式下的首选新生代收集器，目前只有它能与 CMS 收集器配合工作。
+  (3) Parallel Scavenge 收集器：目标是达到一个可控制的吞吐量 (Throughput)。
+      吞吐量 = 运行用户代码时间 / (运行用户代码时间 + 垃圾收集时间)
+   用两个参数精确控制吞吐量，分别是控制最大垃圾收集停顿时间 (-XX:MaxGCPauseMillis) 参数和直接设置吞吐量大小 
+(-XX:GCTimeRatio) 参数。
+  (4) Serial Old 收集器：Serial 收集器的老年代版本，使用“标记-整理”算法。
+  (5) Parallel Old 收集器：Parallel Scavenge 收集器的老年代版本，使用多线程和“标记-整理”算法。
+  (6) CMS 收集器 (Concurrent Mark Sweep)：一种以获取最短回收停顿时间为目标的收集器，基于“标记-清除”算法实现。
+包含 4 个运作步骤：初始标记(CMS initial mark)、并发标记(CMS concurrent mark)、重新标记(CMS remark)、
+并发清除(CMS concurrent sweep)。
+  (7) G1 收集器：一款面向服务端应用的垃圾收集器。G1 具备如下特点：并行与并发、分代收集、空间整合、可预测的停顿。
+如果不计维护 Remembered Set 操作，G1 收集器运作大致分为以下几个步骤：初始标记(Initial Marking)、
+并发标记(Concurrent Marking)、最终标记(Final Marking)、筛选回收(Live Data Counting and Evacuation)。
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_GC.png" />
 
