@@ -84,4 +84,20 @@
   (2) 老年代 GC (Major GC / Full GC)：指发生在老年代的 GC，出现了 Major GC，经常会伴随至少一次的 Minor GC
 (但非绝对，在 Parallel Scavenge 收集器的收集策略里就有直接进行 Major GC 的策略选择过程)。Major GC 的速度一般
 会比 Minor GC 慢 10 倍以上。
+
+10.JDK 监控和故障处理工具：
+  (1) jps (JVM Process Status Tool)：虚拟机进程状况工具，显示指定系统内所有的 HotSpot 虚拟机进程。
+  命令格式：jps [options] [hostid]    // options：-q，-m，-l，-v; hostid：RMI 注册表中注册的主机名
+  (2) jstat (JVM Statistics Monitoring Tool)：虚拟机统计信息监视工具，用于收集 HotSpot 虚拟机各方面的运行数据。
+  命令格式：jstat [option vmid [interval[s|ms] [count] ] ]      // interval：查询间隔；count：查询次数
+  (3) jinfo (Configuration Info for Java)：Java 配置信息工具，显示虚拟机配置信息。
+  命令格式：jinfo [option] pid      
+  (4) jmap (Memory Map for Java)：Java 内存映像工具，生成虚拟机的内存转储快照(heapdump文件)。
+  命令格式：jmap [option] vmid    // options：-dump，-finalizerinfo，-heap，-histo，-permstat，-F
+  (5) jhat (JVM Heap Analysis Tool)：虚拟机堆转储快照分析工具，用于分析 heapdump 文件，它会建立一个 HTTP/HTML 
+服务器，让用户可以在浏览器上查看分析结果。
+  (6) jstack (Stack Trace for Java)：Java 堆栈跟踪工具，显示虚拟机的线程快照(threaddump 或 javacore 文件)。
+  命令格式：jstack [option] vmid
+  (7) JConsole (Java Monitoring and Management Console)：Java 监视与管理控制台。
+  (8) VisualVM (All-in-One Java Troubleshooting Tool)：多合一故障处理工具。
 ```
