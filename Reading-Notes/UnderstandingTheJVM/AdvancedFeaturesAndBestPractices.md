@@ -169,4 +169,14 @@
 返回地址 (Return Address)、附加信息。
   (2) 方法调用：解析 (5 条方法调用指令：invokestatic、invokespecial、invokevirtual、invokeinterface、
 invokedynamic)、分派 (静态多分派，动态单分派)、动态类型语言支持 (java.lang.invoke 包，invokedynamic 指令)。
+
+16.早期(编译期)优化：
+  (1) 前端编译器：把 *.java 文件转变为 *.class 文件。Sun 的 Javac、Eclipse JDT 中的增量式编译器 (ECJ)。
+  (2) JIT 编译器(Just In Time Compiler)：把字节码转变为机器码。HotSpot VM 的 C1、C2 编译器。
+  (3) AOT 编译器(Ahead Of Time Compiler)：把 *.java 文件编译成本地机器代码。
+GNU Compiler for the Java (GCJ)、Excelsior JET。
+  从 Sun Javac 的代码来看，编译过程大致可分为 3 个过程：
+   ① 解析与填充符号表：词法、语法分析；填充符号表。
+   ② 插入式注解处理器的注解处理。
+   ③ 语义分析与字节码生成：标注检查；数据及控制流分析；解语法糖；字节码生成。
 ```
