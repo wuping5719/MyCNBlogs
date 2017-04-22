@@ -119,4 +119,11 @@
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Class.png" />
 
 ```java
+13.Java 虚拟机解释器的基本执行模型：
+   do {
+      自动计算 PC 寄存器的值加 1;
+      根据 PC 寄存器的指示位置，从字节码流中取出操作码;
+      if (字节码存在操作数) 从字节码流中取出操作数;
+      执行操作码所定义的操作;
+   } while (字节码流长度 > 0);
 ```
