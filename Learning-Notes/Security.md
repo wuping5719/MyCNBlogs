@@ -6,8 +6,8 @@
     <td><a href="http://rdcqii.hundsun.com/portal/article/421.html">2.有https就够安全了吗？</a></td>
   </tr>
   <tr>
-    <td><a href="http://drops.wooyun.org/tips/15826">3.漫谈流量劫持</a></td>
-    <td><a href="http://www.freebuf.com/sectool/105524.html">4.渗透测试工具实战技巧合集</a></td>
+    <td><a href="http://www.freebuf.com/sectool/105524.html">3.渗透测试工具实战技巧合集</a></td>
+    <td><a href="https://blog.chaitin.cn/">4.长亭科技</a></td>
   </tr>
   <tr>
     <td><a href="http://rdcqii.hundsun.com/portal/article/447.html">5.Web服务器在外网能裸奔多久？</a></td>
@@ -15,6 +15,6 @@
   </tr>
   <tr>
     <td><a href="http://stackoverflow.com/questions/7217969/how-to-disable-directory-listing-for-jettys-webappcontext">7.目录遍历漏洞：How to disable directory listing for Jetty's WebAppContext?</a></td>
-    <td><a href="https://blog.chaitin.cn/">8.长亭科技</a></td>
+    <td></td>
   </tr>
 </table>
