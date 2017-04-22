@@ -167,6 +167,6 @@
 15.虚拟机字节码执行引擎：
   (1) 运行时栈帧结构：局部变量表 (Local Variable Table)、操作栈 (Operand Stack)、动态连接 (Dynamic Linking)、
 返回地址 (Return Address)、附加信息。
-  (2) 方法调用：解析 (5 条方法调用指令：invokestatic、invokespecial、invokevirtual、invokeinterface、invokedynamic)、
-分派 (静态多分派，动态单分派)、动态类型语言支持 (java.lang.invoke 包，invokedynamic 指令)。
+  (2) 方法调用：解析 (5 条方法调用指令：invokestatic、invokespecial、invokevirtual、invokeinterface、
+invokedynamic)、分派 (静态多分派，动态单分派)、动态类型语言支持 (java.lang.invoke 包，invokedynamic 指令)。
 ```
