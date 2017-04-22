@@ -195,7 +195,7 @@
 <table>
   <tr>
     <td><a href="http://bbs.jointforce.com/topic/17240?f=jf_tg_zsjk">1.很全的Python面试题</a></td>
-    <td></td>
+    <td><a href="https://github.com/guoruibiao/sword-to-offer">2.Python版-剑指Offer</a></td>
   </tr>
 </table>
 
