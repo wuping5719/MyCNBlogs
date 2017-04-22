@@ -126,4 +126,41 @@
       if (字节码存在操作数) 从字节码流中取出操作数;
       执行操作码所定义的操作;
    } while (字节码流长度 > 0);
+   
+14.类的生命周期包括：加载 (Loading)、验证 (Verification)、准备 (Preparation)、解析 (Resolution)、
+初始化 (Initialization)、使用 (Using) 和卸载 (Unloading) 7 个阶段。其中验证、准备、解析 3 个部分
+统称为连接 (Linking)。
+  (1) 加载：
+    ① 通过一个类的全限定名来获取定义此类的二进制字节流。
+    ② 将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。
+    ③ 在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区这个类的各种数据的访问入口。
+  (2) 验证：确保 Class 文件的字节流中包含的信息符合当前虚拟机的要求。
+  验证阶段大致上会完成 4 个阶段的检验动作：文件格式验证、元数据验证、字节码验证、符号引用验证。
+  (3) 准备：正式为类变量分配内存并设置类变量初始值的阶段，这些变量所使用的内存都将在方法区中进行分配。
+  (4) 解析：将常量池内的符号引用替换为直接引用的过程。
+  (5) 初始化：类初始化阶段是类加载过程的最后一步。初始化阶段是执行类构造器 <clinit>() 方法的过程。
+双亲委派模型的实现：
+  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+     // 首先检查请求的类是否已经被加载过了
+     Class c = findLoadedClass(name);
+     if (c == null) {
+        try {
+           if (parent != null) {
+              c = parent.loadClass(name, false);
+           } else {
+              c = findBootstrapClassOrNull(name);
+           }
+        } catch (ClassNotFoundException e) {
+           // 如果父类加载器抛出 ClassNotFoundException，说明父类加载器无法完成加载请求
+        }
+        if (c == null) {
+           // 在父类加载器无法加载的时候，再调用本身的 findClass 方法进行类加载
+           c = findClass(name);
+        }
+     }
+     if (resolve) {
+        resolveClass(c);
+     }
+     return c;
+  }
 ```
