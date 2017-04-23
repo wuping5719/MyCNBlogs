@@ -179,4 +179,21 @@ GNU Compiler for the Java (GCJ)、Excelsior JET。
    ① 解析与填充符号表：词法、语法分析；填充符号表。
    ② 插入式注解处理器的注解处理。
    ③ 语义分析与字节码生成：标注检查；数据及控制流分析；解语法糖；字节码生成。
+
+17.晚期(运行期)优化：
+  (1) 分层编译根据编译器编译、优化的规模与耗时，划分出不同的编译层次，其中包括：
+   第 0 层，程序解释执行，解释器不开启性能监控功能 (Profiling)，可触发第 1 层编译。
+   第 1 层，也称为 C1 编译，将字节码编译为本地代码，进行简单、可靠的优化，如有必要将加入性能监控的逻辑。
+   第 2 层，也称为 C2 编译，也是将字节码编译为本地代码，但是会启用一些编译耗时较长的优化，甚至会根据性能监控信息
+进行一些不可靠的激进优化。
+  (2) Client Compiler 是一个简单快速的三段式编译器，主要关注点在于局部性的优化，
+放弃了许多耗时较长的全局优化手段。
+  (3) Server Compiler 是专门面向服务端的典型应用并为服务端的性能配置特别调整过的编译器。
+它会执行所有经典的优化动作，如无用代码消除 (Dead Code Elimination)、循环展开 (Loop Unrolling)、
+循环表达式外提 (Loop Expression Hoisting)、消除公共子表达式 (Common Subexpression Elimination)、
+常量传播 (Constant Propagation)、基本块重排序 (Basic Block Reordering) 等。
+```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ClientCompiler.png" />
+
+```java
 ```
