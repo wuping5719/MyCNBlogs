@@ -187,8 +187,8 @@ GNU Compiler for the Java (GCJ)、Excelsior JET。
    第 2 层，也称为 C2 编译，也是将字节码编译为本地代码，但是会启用一些编译耗时较长的优化，甚至会根据性能监控信息
 进行一些不可靠的激进优化。
   (2) Client Compiler 是一个简单快速的三段式编译器，主要关注点在于局部性的优化，
-放弃了许多耗时较长的全局优化手段。
-  (3) Server Compiler 是专门面向服务端的典型应用并为服务端的性能配置特别调整过的编译器。
+放弃了许多耗时较长的全局优化手段。Client Compiler 架构如下图所示：
+  (3) Server Compiler 是专门面向服务端的典型应用并为服务端的性能配置特别调整过的编译器。
 它会执行所有经典的优化动作，如无用代码消除 (Dead Code Elimination)、循环展开 (Loop Unrolling)、
 循环表达式外提 (Loop Expression Hoisting)、消除公共子表达式 (Common Subexpression Elimination)、
 常量传播 (Constant Propagation)、基本块重排序 (Basic Block Reordering) 等。
