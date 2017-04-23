@@ -196,4 +196,14 @@ GNU Compiler for the Java (GCJ)、Excelsior JET。
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ClientCompiler.png" />
 
 ```java
+18.相比 synchronized，ReentrantLock 增加了一些高级功能，主要有以下 3 项：等待可中断、可实现公平锁，
+以及锁可以绑定多个条件。
+   (1) 等待可中断是指持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，改为处理其他事情，可中断
+特性对处理执行时间非常长的同步块很有帮助。
+   (2) 公平锁是指多个线程在等待同一个锁时，必须按照申请锁的时间顺序依次获得锁；而非公平锁则不保证这一点，在锁
+被释放时，任何一个等待锁的线程都有机会获得锁。synchronized 中的锁是非公平的，ReentrantLock 默认情况下也是
+非公平的，但可以通过带布尔值的构造函数要求使用公平锁。
+   (3) 锁绑定多个条件是指一个 ReentrantLock 对象可以同时绑定多个 Condition 对象，而在 synchronized 中，
+锁对象的 wait() 和 notify() 或 notifyAll() 方法可以实现一个隐含的条件，如果要和多于一个的条件关联的时候，
+就不得额外地添加一个锁，而 ReentrantLock 则无须这样做，只需要多次调用 newCondition() 方法即可。
 ```
