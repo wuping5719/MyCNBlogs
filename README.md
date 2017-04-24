@@ -119,6 +119,9 @@
      <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/UnderstandingTheJVM/AdvancedFeaturesAndBestPractices.md">10.《深入理解 Java 虚拟机》</a>
      </td>
+     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MoreEffectiveCPlusPlus/MoreEffectiveCPlusPlus.md">11.《More Effective C++》</a>
+     </td>
    </tr>
 </table>
 
