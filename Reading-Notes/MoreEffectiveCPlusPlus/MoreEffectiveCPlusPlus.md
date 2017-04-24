@@ -39,4 +39,35 @@
     operator delete[](rawMemory);
 
 5.对定制的 “类型转换函数” 保持警觉。
+  允许编译器执行隐式类型转换，害处多过好处。所以不要提供转换函数，除非你确定你需要它们。
+
+6.区别 increment / decrement 操作符的前置 (prefix) 和后置 (postfix) 形式。
+    class UPInt {                        // "unlimited precision int"
+       public:
+          UPInt& operator++();           // 前置式 (prefix) ++
+          const UPInt operator++(int);   // 后置式 (postfix) ++
+          UPInt& operator--();           // 前置式 (prefix) --
+          const UPInt operator--(int);   // 后置式 (postfix) --
+          UPInt& operator+=(int)         // +=操作符，结合 UPInt 和 int
+          ...
+    };
+    // 前置式：累加然后取出 (increment and fetch)
+    UPInt& UPInt::operator++() {
+       *this += 1;      // 累加 (increment)
+       return *this;    // 取出 (fetch)
+    }
+    // 后置式：取出然后累加 (fetch and increment)
+    const UPInt UPInt::operator++(int) {
+       UPInt oldValue = *this;   // 取出 (fetch)
+       ++(*this);                // 累加 (increment)
+       return oldValue;          // 返回先前被取出的值
+    }
+
+7.千万不要重载 &&，|| 和 逗号(,)操作符。
+
+8.了解各种不同意义的 new 和 delete。
+
+9.利用 destructors 避免泄漏资源。
+
+10.在 constructors 内阻止资源泄漏 (resource leak)。
 ```
