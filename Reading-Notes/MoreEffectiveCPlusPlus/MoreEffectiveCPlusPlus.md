@@ -213,6 +213,38 @@
    }
 
 23.考虑使用其他程序库。
+   #ifdef STDIO
+   #include <stdio.h>
+   #else
+   #include <iostream>
+   #include <iomanip>
+   using namespace std;
+   #endif
+   const int VALUES = 30000;  // 读写的数值个数
+   int main() {
+      double d;
+      for (int n = 1; n <= VALUES; ++n) {
+   #ifdef STDIO
+         scanf("%lf", &d);
+         printf("%10.5f", d);
+   #else
+         cin >> d;
+         cout << setw(10)                      // 设定字段宽度
+              << setprecision(5)               // 设定浮点数的精度
+              << setiosflags(ios::showpoint)   // 显示浮点数的小数点
+              << setiosflags(ios::fixed)       // 以十进制显示浮点数
+              << d;
+   #endif
+         if (n % 5 == 0) {
+   #ifdef STDIO
+             printf("\n");
+   #else
+             cout << '\n'; 
+   #endif 
+         }
+      }
+      return 0;
+   }
 
 24.了解 virtual functions、multiple inheritance、virtual base classes、
 runtime type identification 的成本。
