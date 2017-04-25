@@ -139,4 +139,23 @@
 
 ```c++
 13.以 by reference 方式捕捉 exceptions。
+   void doSomething() {
+      try {
+         someFunction();
+      } catch (exception& ex) {
+         cerr << ex.what();     // 调用 Validation_error::what() 而非 exception::what()
+         ...
+      }
+   }
+
+14.明智运用 exception specifications。
+   所有非预期的 exceptions 都以 UnexpectedException objects 取而代之。
+   class UnexpectedException {};     
+   void convertUnexpected() {   // 如果有一个非预期的 exception 被抛出，便调用此函数
+       throw UnexpectedException();
+   }
+   set_unexpected(convertUnexpected);  // convertUnexpected 取代默认的 unexpected 函数
+
+15.了解异常处理 (exception handling) 的成本。
+   使用 try 语句块，代码大约整体膨胀 5% ~ 10%，执行速度亦大约下降这个数。
 ```
