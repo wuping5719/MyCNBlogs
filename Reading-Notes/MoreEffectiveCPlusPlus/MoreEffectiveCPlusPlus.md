@@ -93,8 +93,8 @@
   
 10.在 constructors 内阻止资源泄漏 (resource leak)。
    如果你以 auto_ptr 对象来取代 pointer class members，你便对你的 constructors 做了强化工事，
-免除了 “exception 出现时发生资源泄漏” 的危机，不再需要在 destructors 内亲自手动释放资源，并允许 const member pointers
-得以和 non-const member pointers 有着一样优雅的处理方式。
+免除了 “exception 出现时发生资源泄漏” 的危机，不再需要在 destructors 内亲自手动释放资源，
+并允许 const member pointers 得以和 non-const member pointers 有着一样优雅的处理方式。
    class BookEntry {     // 用来放置通信薄的每一个个人数据
       public:
          BookEntry(const string& name, const string& address = "",
