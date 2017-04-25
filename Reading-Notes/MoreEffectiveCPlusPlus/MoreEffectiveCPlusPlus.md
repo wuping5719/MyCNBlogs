@@ -92,4 +92,31 @@
    }
   
 10.在 constructors 内阻止资源泄漏 (resource leak)。
+   如果你以 auto_ptr 对象来取代 pointer class members，你便对你的 constructors 做了强化工事，
+免除了 “exception 出现时发生资源泄漏” 的危机，不再需要在 destructors 内亲自手动释放资源，并允许 const member pointers
+得以和 non-const member pointers 有着一样优雅的处理方式。
+   class BookEntry {     // 用来放置通信薄的每一个个人数据
+      public:
+         BookEntry(const string& name, const string& address = "",
+                   const string& imageFileName = "", const string& audioClipFileName = "");
+         ~BookEntry();
+         // 电话号码通过此函数加入
+         void addPhoneNumber(const PhoneNumber& number);
+         ...
+      private:
+         string theName;                 // 个人姓名
+         string theAddress;              // 个人地址
+         list<PhoneNumber> thePhones;    // 个人电话号码
+         const auto_ptr<Image> theImage;                // 个人相片
+         const auto_ptr<AudioClip> theAudioClip;        // 一段个人声音
+         
+   };
+   BookEntry::BookEntry(const string& name, const string& address, 
+                        const string& imageFileName, const string& audioClipFileName) 
+                  : theName(name), theAddress(address),
+                    theImage(imageFileName != "" ? new Image(imageFileName) : 0),
+                    theAudioClip(audioClipFileName != "" ? new AudioClip(audioClipFileName) : 0)
+   {}
+
+11.禁止异常 (exception) 流出 destructors 之外。
 ```
