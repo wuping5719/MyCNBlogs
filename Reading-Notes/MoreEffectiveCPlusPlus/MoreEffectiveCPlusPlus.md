@@ -187,4 +187,36 @@
     }
 
 19.了解临时对象的来源。
+   任何时候只要你看到一个 reference-to-const 参数，就极可能会有一个临时对象被产生出来绑定至该参数上。
+任何时候只要你看到函数返回一个对象，就会产生临时对象(并于稍后销毁)。
+
+20.协助完成 “返回值优化(RVO)”。
+   // 函数返回一个对象：最有效率的做法
+   inline const Rational operator*(const Rational& lhs, const Rational& rhs) {
+      return Rational(lhs.numerator() * rhs.numerator(), lhs.denominator() * rhs.denominator());
+   }
+
+21.利用重载技术 (overload) 避免隐式类型转换 (implicit type conversions)。
+   任何函数如果接受类型为 string，char*，complex 等自变量，都可以借由重载技术，合理消除类型转换。
+   const UPInt operator+(const UPInt& lhs, const UPInt& rhs);  // 将 UPInt 和 UPInt 相加
+   const UPInt operator+(const UPInt& lhs, int rhs);           // 将 UPInt 和 int 相加
+   const UPInt operator+(int lhs, const UPInt& rhs);           // 将 int 和 UPInt 相加
+
+22.考虑以操作符复合形式 (op=) 取代其独身形式 (op)。
+   template<class T>
+   const T operator+(const T& lhs, const T& rhs) {
+      return T(lhs) += rhs;
+   }
+   template<class T>
+   const T operator-(const T& lhs, const T& rhs) {
+      return T(lhs) -= rhs;
+   }
+
+23.考虑使用其他程序库。
+
+24.了解 virtual functions、multiple inheritance、virtual base classes、
+runtime type identification 的成本。
+
+25.将 constructor 和 non-member functions 虚化。
+
 ```
