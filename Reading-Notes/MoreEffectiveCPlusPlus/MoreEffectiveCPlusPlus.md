@@ -120,3 +120,7 @@
 
 11.禁止异常 (exception) 流出 destructors 之外。
 ```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_exceptions.png" />
+
+```c++
+```
