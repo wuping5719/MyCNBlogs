@@ -177,7 +177,7 @@
         CubicleMap::iterator it = cubes.find(employeeName);
         // 如果找不到任何吻合记录，迭代器的值将会是 cubes.end()。如果这样，则查询数据库，然后把它加进 cache 中
         if (it == cubes.end()) {
-           int cubicle = the result of looking up employeeName's cubicle number int the database;
+           int cubicle = the result of looking up employeeName`s cubicle number int the database;
            cubes[employeeName] = cubicle;
            return cubicle;
         } else {
