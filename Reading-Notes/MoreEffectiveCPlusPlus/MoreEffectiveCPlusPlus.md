@@ -158,4 +158,33 @@
 
 15.了解异常处理 (exception handling) 的成本。
    使用 try 语句块，代码大约整体膨胀 5% ~ 10%，执行速度亦大约下降这个数。
+   
+16.谨记 80 - 20 法则。
+   80 - 20 法则：一个程序 80% 的资源用于 20% 的代码身上。
+
+17.考虑使用 lazy evaluation (缓式评估)。
+   lazy evaluation 在许多领域中都可能有用途：可避免非必要的对象复制，可区别 operator[] 的读取和写动作，
+可避免非必要的数据库读取动作，可避免非必要的数值计算动作。
+
+18.分期摊还预期的计算成本。
+   可以通过超急评估 (over-eager evaluation) 如缓存 (caching) 和 预先取出 (prefetching) 
+等做法分期摊还预期运算成本。
+    int findCubicleNumber(const string& employeeName) {
+        // 定义一个 static map 以持有 (employee name, cubicle number) 数据对。这个 map 用来做局部缓存
+        typedef map<string, int> CubicleMap;
+        static CubicleMap cubes;
+        // 尝试在 cache 中针对 employeeName 找出一笔记录。如果确有一笔， 迭代器便会指向该笔找到的记录
+        CubicleMap::iterator it = cubes.find(employeeName);
+        // 如果找不到任何吻合记录，迭代器的值将会是 cubes.end()。如果这样，则查询数据库，然后把它加进 cache 中
+        if (it == cubes.end()) {
+           int cubicle = the result of looking up employeeName's cubicle number int the database;
+           cubes[employeeName] = cubicle;
+           return cubicle;
+        } else {
+           // 迭代器指向正确的 cache 记录，只需获取 (employee name, cubicle number) pair 的第二项数据
+           return (*it).second;
+        }
+    }
+
+19.了解临时对象的来源。
 ```
