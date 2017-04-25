@@ -66,8 +66,30 @@
 7.千万不要重载 &&，|| 和 逗号(,)操作符。
 
 8.了解各种不同意义的 new 和 delete。
-
+   如果你希望将对象产生于 heap，请使用 new operator。它不但分配内存而且为该对象调用一个 constructor。
+如果你只是打算分配内存，请调用 operator new，那就没有任何 constructor 会被调用。如果你打算在 heap objects 
+产生时自己决定内存分配方式，请写一个自己的 operator new，并使用 new operator，它将会自动调用你所写的 operator new。
+如果你打算在已分配(并拥有指针)的内存中构造对象，请使用 placement new。
+   new operator 和 delete operator 都是内建操作符，无法为你控制。
+  
 9.利用 destructors 避免泄漏资源。
-
+   class ALA {         // ALA：Adorable Little Animal
+      public:
+         virtual void processAdoption() = 0;
+         ...
+   };
+   class Puppy: public ALA {
+      public:
+         virtual void processAdoption();
+         ...
+   };
+   // ALA * readALA(istream& s);   //  从 s 读取动物信息，然后返回一个指针，指向一个新分配的对象，有着适当的类型
+   void processAdoptions(istream& dataSource) {
+      while (dataSource) {
+         auto_ptr<ALA> pa(readALA(dataSource));
+         pa->processAdoption();
+      }
+   }
+  
 10.在 constructors 内阻止资源泄漏 (resource leak)。
 ```
