@@ -11,6 +11,6 @@
   </tr>
   <tr>
     <td><a href="https://github.com/blogchong/my-docs"><strong>5.博客虫大数据技术文章合集</strong></a></td>
-    <td></td>
+    <td><a href="http://www.cstor.cn/textdetail_11608.html">6.十三个鲜为人知的大数据学习网站</a></td>
   </tr>
 </table>
