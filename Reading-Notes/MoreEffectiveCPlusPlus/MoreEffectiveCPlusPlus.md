@@ -119,8 +119,24 @@
    {}
 
 11.禁止异常 (exception) 流出 destructors 之外。
+   (1) 可以避免 terminate 函数在 exception 传播过程的栈展开 (stack-unwinding) 机制中被调用。
+   (2) 可以协助确保 destructors 完成其应该完成的所有事情。
+    Session::~Session() {
+       try {
+          logDestruction(this);
+       } catch (...) { }
+    }
+
+12.了解 “抛出一个 exception” 与 “传递一个参数” 或 “调用一个虚函数” 之间的差异。
+  “传递对象到函数去，或是以对象调用虚函数” 和 “将对象抛出成为一个 exception” 之间，有 3 个主要差异：
+   (1) exception objects 总是会被复制，如果以 by value 方式捕捉，它们甚至被复制两次。至于传递给函数参数的
+对象则不一定得复制。
+   (2) “被抛出成为 exceptions” 的对象，其被允许的类型转换动作，比 “被传递到函数去” 的对象少。
+   (3) catch 子句以其 “出现于源代码的顺序” 被编译器检验比对，其中第一个匹配成功者便执行；而当我们以某对象调用
+一个虚函数，被选中执行的是那个 “与对象类型最佳吻合” 的函数，不论它是不是源代码所列的第一个。
 ```
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_exceptions.png" />
 
 ```c++
+13.以 by reference 方式捕捉 exceptions。
 ```
