@@ -246,9 +246,11 @@
       return 0;
    }
 
-24.了解 virtual functions、multiple inheritance、virtual base classes、
-runtime type identification 的成本。
+24.了解虚函数(virtual functions)、多重继承(multiple inheritance)、虚拟基类(virtual base classes)、
+运行时期类型辨识(runtime type identification)的成本。
+```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RTTI.png" />
 
+```c++
 25.将 constructor 和 non-member functions 虚化。
-
 ```
