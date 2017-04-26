@@ -316,4 +316,43 @@
    };
 
 27.要求(或禁止)对象产生于 heap 之中。
+   判断某指针是否以 operator new 分配出来：
+   class HeapTracked {           // mixin class: 追踪并记录被 operator new 返回的指针
+      public:
+         class MissingAddress {};    
+         virtual ~HeapTracked() = 0;
+         static void *operator new(size_t size);
+         static void operator delete(void *ptr);
+         bool isOnHeap() const;
+      private:
+         typedef const void* RawAddress;
+         static list<RawAddress> addresses;
+   };
+   list<RawAddress> HeapTracked::addresses;     // static class member 的义务性定义
+   // HeapTracked 的 destructor 是个纯虚函数，使这个 class 成为抽象类
+   HeapTracked::~HeapTracked() {}          
+   void * HeapTracked::operator new(size_t size) {
+      void *memPtr = ::operator new(size);      // 取得内存地址
+      addresses.push_front(memPtr);             // 将其地址置于 list 头部
+      return memPtr;
+   }      
+   void HeapTracked::operator delete(void *ptr) {
+      // 获得一个 “iterator”，用以找出哪一笔 list 元素内含 ptr
+      list<RawAddress>::iterator it = find(addresses.begin(), addresses.end(), ptr);
+      if (it != addresses.end()) {   // 如果找到符合条件的元素
+         addresses.erase(it);        // 移除之，并释放内存
+         ::operator delete(ptr);
+      } else {                       // 否则表示 ptr 不是 operator new 所分配，抛出一个异常
+         throw MissingAddress();
+      }
+   }  
+   bool HeapTracked::isOnHeap() const {
+      // 取得一个指针，指向 *this 所占内存的起始处
+      const void *rawAddress = dynamic_cast<const void*>(this);
+      // 在地址链表中查找 “被 operator new 返回的指针”
+      list<RawAddress>::iterator it = find(addresses.begin(), addresses.end(), rawAddress);
+      return it != addresses.end();     // 返回 “找到与否” 信息
+   }
+
+28.Smart Pointers (智能指针)。
 ```
