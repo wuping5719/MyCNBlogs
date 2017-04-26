@@ -355,4 +355,39 @@
    }
 
 28.Smart Pointers (智能指针)。
+  某些 smart pointers 的用途受到诸如 “nullness 的测试、C++的内建指针(dumb pointers)的转换、以继承为本的转换、
+对 pointers-to-consts 的支持”等限制。
+  auto_ptr 的实现代码：
+    template<class T>
+    class auto_ptr {
+       public:
+          explicit auto_ptr(T *p = 0): pointee(p) {}
+          template<class U>
+          auto_ptr(auto_ptr<U>& rhs): pointee(rhs.release()) {}
+          ~auto_ptr() { delete pointee; }
+          template<class U>
+          auto_ptr<T>& operator=(auto_ptr<U>& rhs) {
+             if (this != &rhs) reset(rhs.release());
+             return *this;
+          }
+          T& operator*() const { return *pointee; }
+          T* operator->() const { return pointee; }
+          T* get() const { return pointee; }
+          T* release() { 
+             T *oldPointee = pointee;
+             pointee = 0;
+             return oldPointee;
+          }
+          void reset(T *p = 0) {
+             if (pointee != p) {
+                delete pointee;
+                pointee = p;
+             }
+          }
+       private:
+          T *pointee;
+       template<class U> friend class auto_ptr<U>;
+    };
+
+29.引用计数(Reference counting)。
 ```
