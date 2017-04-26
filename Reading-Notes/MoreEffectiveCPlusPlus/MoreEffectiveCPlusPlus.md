@@ -253,4 +253,67 @@
 
 ```c++
 25.将 constructor 和 non-member functions 虚化。
+   class NLComponent {
+      public:
+          // 声明 virtual copy constructor
+          virtual NLComponent * clone() const = 0;
+          virtual ostream& print(ostream& s) const = 0;
+          ... 
+   };
+   class TextBlock: public NLComponent {
+       public:
+          virtual TextBlock * clone() const {
+             return new TextBlock(*this);
+          }
+          virtual ostream& print(ostream& s) const;
+          ...
+   };
+   inline ostream& operator<<(ostream& s, const NLComponent& c) {
+       return c.print(s);
+   }
+
+26.限制某个 class 所能产生的对象数量。
+   一个用来计算对象个数的基类：
+   template<class BeingCounted>
+   class Counted {
+      public:
+         class TooManyObject {};  // 可能抛出的异常
+         static int objectCount() { return numObjects; }
+      protected:
+         Counted();
+         Counted(const Counted& rhs);
+         ~Counted() { --numObjects; }
+      private:
+         static int numObjects;
+         static const size_t maxObjects;
+         void init();
+   };
+   template<class BeingCounted>
+   Counted<BeingCounted>::Counted() { init(); }
+   template<class BeingCounted>
+   Counted<BeingCounted>::Counted(const Counted<BeingCounted>&) { init(); }
+   template<class BeingCounted>
+   void Counted<BeingCounted>::init() {
+      if (numObjects >= maxObjects) throw TooManyObject();
+      ++numObjects;
+   }
+   让 Printer 类运用 Counted 模版：
+   class Printer: private Counted<Printer> {
+      public:
+         // 伪构造函数 (pseudo-constructors)
+         static Printer * makePrinter();
+         static Printer * makePrinter(const Printer& rhs);
+         ~Printer();
+         void submitJob(const PrintJob& job);
+         void reset();
+         void performSelfTest();
+         ...
+         using Counted<Printer>::objectCount;
+         using Counted<Printer>::TooManyObjects;
+      private:
+         Printer();
+         Printer(const Printer& rhs);
+   };
+
+27.要求(或禁止)对象产生于 heap 之中。
 ```
