@@ -473,7 +473,7 @@
              ~StringValue();
           };
           RCPtr<StringValue> value;
-    }
+    };
     void String::StringValue::init(const char *initValue) {
        data = new char[strlen(initValue) + 1];
        strcpy(data, initValue);
