@@ -25,6 +25,16 @@
    };
 
 34.如何在同一个程序中结合 C++ 和 C。
+   (1) 确定你的 C++ 和 C 编译器产出兼容的目标文件 (object files)。
+   (2) 将双方都使用的函数声明为 extern "C"。
+   (3) 如果可能，尽量在 C++ 中撰写 main。
+   (4) 总是以 delete 删除 new 返回的内存；总是以 free 释放 malloc 返回的内存。
+   (5) 将两个语言间的 “数据结构传递” 限制于 C 所能了解的形式；C++ structs 如果内含非虚函数，倒是不受此限。
 
 35.让自己习惯标准 C++ 语言。
+   《The C++ Programming Language (Third Edition)》, Bajarne Stroustrup, Addison-Wesley, 1997.
+   《C++ Programming Style》, Tom Cargill, Addison-Wesley, 1992.
+   《Advanced C++: Programming Style and Idioms》, James Coplien, Addison-Wesley, 1992
+   《Design Patterns: Elements of Reusable Object-Oriented Software》, Erich Gamma, Richard Helm,
+Ralph Johnson, and John Vlissides,  Addison-Wesley, 1995
 ```
