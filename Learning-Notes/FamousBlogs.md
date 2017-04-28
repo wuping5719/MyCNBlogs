@@ -78,6 +78,8 @@
   </tr>
   <tr>
     <td><a href="http://www.cnblogs.com/vajoy/" >15.腾讯前端 VaJoy-蓝邦珏</a></td>
+    <td></td>
+    <td><a href="https://github.com/TeamStuQ/skill-map" ><strong>15.StuQ 程序员技能图谱</strong></a></td>
   </tr>
   <tr>
     <td><a href="http://chokcoco.github.io/magicCss/html/index.html" >16.ChokCoco</a></td>
