@@ -25,3 +25,7 @@
    #include <future>          // for errors with async() and futures (since C++11)
    #include <typeinfo>        // for bad_cast and bad_typeid
 ```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png" />
+
+```c++
+```
