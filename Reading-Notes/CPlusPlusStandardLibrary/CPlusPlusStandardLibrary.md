@@ -53,4 +53,11 @@
              ...
        };
     }
+    
+5.Smart Pointer (智能指针)。
+  (1) Class shared_ptr 实现共享式拥有 (shared ownership) 概念。多个 smart pointer 可以指向相同对象，
+该对象和其相关资源会在 “最后一个 reference 被销毁” 时被释放。标准库提供 weak_ptr、bad_weak_ptr 和
+enable_shared_from_this 等辅助类。
+  (2) Class unique_ptr 实现独占式拥有 (exclusive ownership) 或严格拥有 (strict ownership) 概念，
+保证同一时间只有一个 smart pointer 可以指向该对象。你可以移交拥有权。它对于避免资源泄漏特别有用。
 ```
