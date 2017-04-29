@@ -46,6 +46,11 @@
   (2) Tuple (不定数的值组)：它扩展了 pair 的概念，拥有任意数量的元素。
     namespace std {
        template <typename... Types>
-       class tuple;
+       class tuple {
+          public:
+             explicit tuple(const Types&...);
+             template <typename... UTypes> explicit tuple(UTypes&&...);
+             ...
+       };
     }
 ```
