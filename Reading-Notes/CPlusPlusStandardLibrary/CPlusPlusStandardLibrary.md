@@ -60,4 +60,20 @@
 enable_shared_from_this 等辅助类。
   (2) Class unique_ptr 实现独占式拥有 (exclusive ownership) 或严格拥有 (strict ownership) 概念，
 保证同一时间只有一个 smart pointer 可以指向该对象。你可以移交拥有权。它对于避免资源泄漏特别有用。
+
+6.数值的极值 (Numeric Limit)。
+  C++ 标准库借由 template numeric_limits 提供这些极值，用以取代传统 C 语言所采用的预处理器常量
+(preprocessor constant)。你仍然可以使用后者，其中整数常量定义于 <climits> 和 <limits.h> ，
+浮点常量定义于 <cfloat> 和 <float.h>。
+
+7.Type Trait 和 Type Utility。
+  (1) Type Trait 提供一种用来处理 type 属性的办法。它是个 template，是泛型代码的基石，可在编译器根据一或
+多个 template 实参 (通常也是 type) 产出一个 type 或 value。
+  (2) Reference Wrapper (外覆器)：声明于 <functional> 中的 class std::reference_wrapper<> 主要用来 “喂”
+reference 给 function template，后者原本以 by value 方式接受参数。对于一个给定类型 T，这个 class 提供 ref()
+用以隐式转换为 T&，一个 cref() 用以隐式转换为 const T&，这往往允许 function template 得以操作 reference 
+而不需要另写特化版本。
+  (3) Function Wrapper (外覆器)：class std::function_wrapper<>，声明于 <functional>，提供多态外覆器，
+可以慨括 function pointer 记号。这个 class 允许你把可调用对象 (callable object，如 function、member_function、
+function object 和 lambda) 当作最高级对象。
 ```
