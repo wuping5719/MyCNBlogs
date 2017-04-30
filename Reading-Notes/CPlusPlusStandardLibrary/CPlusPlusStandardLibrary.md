@@ -76,4 +76,18 @@ reference 给 function template，后者原本以 by value 方式接受参数。
   (3) Function Wrapper (外覆器)：class std::function_wrapper<>，声明于 <functional>，提供多态外覆器，
 可以慨括 function pointer 记号。这个 class 允许你把可调用对象 (callable object，如 function、member_function、
 function object 和 lambda) 当作最高级对象。
+
+8.Clock 和 Timer。
+  (1) Duration (时间段)：它是一个数值 (表现 tick 个数) 和一个分数 (表现时间单位，以秒计) 的组合。
+其中的分数由 class ratio 描述。
+   例：std::chrono::duration<long, std::ratio<1, 1000>> oneMillisecond(1);
+  (2) Clock 定义出一个 epoch (起始点) 和一个 tick 周期。Clock 提供的函数 now() 可以产出一个代表 “现在时刻”
+的 timepoint 对象。C++ 标准库提供三个 clock：system_clock、steady_clock、high_resolution_clock。
+  (3) Timepoint (时间点) 表现出某个特定时间点，关联至某个 clock 的某个正值或负值 duration。
+    namespace std {
+       namespace chrono {
+          template <typename Clock, typename Duration = typename Clock::duration>
+          class time_point;
+       }
+    }
 ```
