@@ -90,4 +90,18 @@ function object 和 lambda) 当作最高级对象。
           class time_point;
        }
     }
+    
+9.容器 (Container)。
+  (1) 序列式容器 (Sequence Container)：一种有序集合，其内每个元素均有确凿的位置—取决于插入时机和地点，
+与元素值无关。STL 提供了 5 个序列式容器：array、vector、deque、list 和 forward_list。
+序列式容器通常被实现为 array 或 linked list。
+  (2) 关联式容器 (Associative Container)：一种已排序集合，元素位置取决于其 value (或 key) 
+和给定的某个排序准则。STL 提供了 4 个关联式容器：set、multiset、map 和 multimap。
+关联式容器通常被实现为 binary tree。
+  (3) 无序容器 (Unordered Container)：一种无序集合，其内每个元素的位置无关紧要，唯一重要的是某特定元素
+是否位于此集合内。STL 提供了 4 个无序容器：unordered_set、unordered_multiset、
+unordered_map 和 unordered_multimap。无序容器通常被实现为 hash table。
+  (4) 容器适配器 (Container Adapter)：Stack、Queue 和 Priority Queue。
+  (5) 迭代器 (Iterator)：前向迭代器、双向迭代器、随机访问迭代器、输入型迭代器和输出型迭代器。
+    for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
 ```
