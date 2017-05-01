@@ -95,7 +95,7 @@ function object 和 lambda) 当作最高级对象。
   (1) 序列式容器 (Sequence Container)：一种有序集合，其内每个元素均有确凿的位置—取决于插入时机和地点，
 与元素值无关。STL 提供了 5 个序列式容器：array、vector、deque、list 和 forward_list。
 序列式容器通常被实现为 array 或 linked list。
-  (2) 关联式容器 (Associative Container)：一种已排序集合，元素位置取决于其 value (或 key) 
+  (2) 关联式容器 (Associative Container)：一种已排序集合，元素位置取决于其 value (或 key)
 和给定的某个排序准则。STL 提供了 4 个关联式容器：set、multiset、map 和 multimap。
 关联式容器通常被实现为 binary tree。
   (3) 无序容器 (Unordered Container)：一种无序集合，其内每个元素的位置无关紧要，唯一重要的是某特定元素
@@ -104,4 +104,14 @@ unordered_map 和 unordered_multimap。无序容器通常被实现为 hash table
   (4) 容器适配器 (Container Adapter)：Stack、Queue 和 Priority Queue。
   (5) 迭代器 (Iterator)：前向迭代器、双向迭代器、随机访问迭代器、输入型迭代器和输出型迭代器。
     for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
+  (6) 迭代器适配器(Iterator Adapter)：Insert Iterator、Stream Iterator、Reverse Iterator、Move Iterator。
+
+10.错误处理 (Error Handling)。
+   使用 STL，必须满足以下要求：
+   (1) 迭代器务必合法而有效。使用前必须先初始化。
+   (2) 迭代器如果指向 “逾尾” 位置，它并不指向任何对象，因此不能调用 operator * 或 operator ->。
+   (3) 区间必须合法：用以 “指出某个区间” 的前后迭代器，必须指向同一个容器；从第一个迭代器出发，必须可以
+到达第二个迭代器所指位置。
+   (4) 如果涉及的区间不止一个，第二区间及后继各区间必须拥有 “至少和第一个区间一样多” 的元素。
+   (5) 覆写动作中的 “标的区间” 必须拥有足够元素，否则就必须采用 Insert Iterator。
 ```
