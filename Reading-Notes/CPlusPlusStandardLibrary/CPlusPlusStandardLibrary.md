@@ -114,4 +114,28 @@ unordered_map 和 unordered_multimap。无序容器通常被实现为 hash table
 到达第二个迭代器所指位置。
    (4) 如果涉及的区间不止一个，第二区间及后继各区间必须拥有 “至少和第一个区间一样多” 的元素。
    (5) 覆写动作中的 “标的区间” 必须拥有足够元素，否则就必须采用 Insert Iterator。
+   
+11.各种容器的使用时机。
+   (1) 默认情况下应使用 vector。 vector 的内部结构最简单，并允许随机访问，所以数据的访问十分灵活，
+数据的处理也够快。
+   (2) 如果经常要在序列头部和尾部安插和移除元素，应该采用 deque。如果你希望元素被移除时，容器能够自动缩减
+内部内存用量，那么也该采用 deque。由于 vector 通常采用一个内存区块来存放元素，而 deque 采用多个区块，
+所以后者可内含更多元素。
+   (3) 如果需要经常在容器中段执行元素的安插、移除和移动，可考虑使用 list。list 提供特殊的成员函数，
+可以在常量时间内将元素从 A 容器转移到 B 容器。但由于 list 不支持随机访问，所以如果只知道 list 的头部
+却要造访 list 的中段元素，效能会大打折扣。
+   (4) 如果你要的容器对异常的处理使得 “每次操作若不成功便无任何作用”，那么应该选用 list (但是不调用其
+assignment 操作符和 sort()；而且如果元素比较过程中会抛出异常，就不要调用 merge()、remove()、remove_if()、
+和 unique() ) 或选用 associative/unordered 容器(但是不调用多元素安插动作，而且如果比较准则的复制/赋值动作
+可能抛出异常，就不要调用 swap() 或 erase())。
+   (5) 如果你经常需要根据某个准则查找元素，应当使用 “依据该准则进行 hash” 的 unordered set 或 multiset。
+hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应该使用 set 或 multiset，它们根据查找准则对元素
+排序。
+   (6) 如果想处理 key/value pair，请采用 unordered (multi)map。如果元素次序很重要，可采用 (multi)map。
+   (7) 如果需要关联式数组，应采用 unordered map。如果元素次序很重要，可采用 map。
+   (8) 如果需要字典结构，应采用 unordered multimap。如果元素次序很重要，可采用 multimap。
+```
+<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png" />
+
+```c++
 ```
