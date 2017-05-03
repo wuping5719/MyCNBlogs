@@ -140,4 +140,20 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
       for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
    (2) 迭代器适配器(Iterator Adapter)：Insert Iterator、Stream Iterator、Reverse Iterator、Move Iterator。
    (3) 迭代器相关的辅助函数：advance()、next()、prev()、distance() 和 iter_swap()。
+
+13.Lambda。
+   C++ 11 引入 lambda，允许 inline 函数的定义式被用作一个参数，或是一个 local 对象。
+   Capture (用以访问外部作用域)：
+     [=] 意味着外部作用域以 by value 方式传递给 lambda。因此当这个 lambda 被定义时，你可以读取所有可读数据，
+但不能改动它们。
+     [&] 意味着外部作用域以 by reference 方式传递给 lambda。因此当这个 lambda 被定义时，
+你对所有数据的涂写动作都合法。
+    #include <iostream>
+    using namespace std;
+    int main() {
+       auto pow3 = [] (int i) {
+           return i * i * i;
+       };
+       cout << "x*x*x: " << pow3(8) << endl;
+    }
 ```
