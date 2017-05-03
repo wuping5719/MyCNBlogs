@@ -102,9 +102,6 @@ function object 和 lambda) 当作最高级对象。
 是否位于此集合内。STL 提供了 4 个无序容器：unordered_set、unordered_multiset、
 unordered_map 和 unordered_multimap。无序容器通常被实现为 hash table。
   (4) 容器适配器 (Container Adapter)：Stack、Queue 和 Priority Queue。
-  (5) 迭代器 (Iterator)：前向迭代器、双向迭代器、随机访问迭代器、输入型迭代器和输出型迭代器。
-    for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
-  (6) 迭代器适配器(Iterator Adapter)：Insert Iterator、Stream Iterator、Reverse Iterator、Move Iterator。
 
 10.错误处理 (Error Handling)。
    使用 STL，必须满足以下要求：
@@ -138,4 +135,9 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
 <img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png" />
 
 ```c++
+12.STL 迭代器。
+   (1) 迭代器 (Iterator)：前向迭代器、双向迭代器、随机访问迭代器、输入型迭代器和输出型迭代器。
+      for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
+   (2) 迭代器适配器(Iterator Adapter)：Insert Iterator、Stream Iterator、Reverse Iterator、Move Iterator。
+   (3) 迭代器相关的辅助函数：advance()、next()、prev()、distance() 和 iter_swap()。
 ```
