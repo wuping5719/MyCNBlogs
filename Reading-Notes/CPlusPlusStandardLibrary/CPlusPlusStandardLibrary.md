@@ -166,7 +166,8 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
 algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algorithm)、已排序区间算法 
 (sorted-range algorithm)、数值算法 (numeric algorithm)。
 ```
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm2.png">非更易型算法 (nonmodifying algorithm)</a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm2.png"> 非更易型算法 (nonmodifying algorithm)</a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm.png"> 更易型算法 (modifying algorithm)</a>
 
 ```c++
 ```
