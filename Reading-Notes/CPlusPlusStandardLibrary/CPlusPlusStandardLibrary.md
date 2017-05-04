@@ -163,6 +163,6 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
   用于数值处理的算法需要包含头文件 <numeric>。
     #include <numeric>
   STL 算法分类：非更易型算法 (nonmodifying algorithm)、更易型算法 (modifying algorithm)、移除型算法 (removing
-algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algorithm)、已排序区间算法 (sorted-range algorithm)、
-数值算法 (numeric algorithm)。
+algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algorithm)、已排序区间算法 
+(sorted-range algorithm)、数值算法 (numeric algorithm)。
 ```
