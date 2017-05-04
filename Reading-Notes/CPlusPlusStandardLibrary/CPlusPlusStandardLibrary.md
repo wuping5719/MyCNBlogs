@@ -170,5 +170,15 @@ algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algori
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm.png">更易型算法 (modifying algorithm)</a>
 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm3.png">移除型算法 (removing algorithm)</a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm4.png">变序型算法 (mutating algorithm)</a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm5.png">排序算法 (sorting algorithm)</a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm6.png">已排序区间算法 (sorted-range algorithm)</a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm7.png">数值算法 (numeric algorithm)</a>
+
 ```c++
 ```
