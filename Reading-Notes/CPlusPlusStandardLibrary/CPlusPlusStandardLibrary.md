@@ -181,4 +181,47 @@ algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algori
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm7.png">数值算法 (numeric algorithm)</a>
 
 ```c++
+15.特殊容器。
+  容器适配器：stack、queue 和 priority queue。
+  class stack 的定义：
+     namespace std {
+        template <typename T, typename Container = deque<T>>
+        class stack;
+     }
+  class queue 的定义：
+     namespace std {
+        template <typename T, typename Container = deque<T>>
+        class queue;
+     }
+  class priority_queue 的定义：
+     namespace std {
+        template <typename T, typename Container = vector<T>, 
+                  typename Compare = less<typename Container::value_type>>
+        class priority_queue;
+     }
+
+16.字符串。
+   在 <string> 中，class basic_string<> 被定义为所有 string 类型的基础模版类：
+      namespace std {
+          template <typename charT, typename traits = char_traits<charT>, 
+                    typename Allocator = allocator<charT>>
+          class basic_string;
+      }
+   string 是针对 char 而预定义的特化版本：
+      namespace std {
+          typedef basic_string<char> string;
+      }
+   对于使用宽字符 (例如 Unicode 或某些亚洲字符集) 的 string，存在三个预定义的特化版本 
+(其中 u16string 和 u32string 始自 C++11):
+      namespace std {
+          typedef basic_string<wchar_t> wstring;
+          typedef basic_string<char16_t> u16string;
+          typedef basic_string<char32_t> u32string;
+      }
+
+17.正则表达式。
+   (1) Match：将整个输入拿来比对 (匹配) 某个正则表达式。
+   (2) Search：查找 “与正则表达式吻合” 的 pattern。
+   (3) Tokenize：根据 “被指定为正则表达式” 的切分器 (separator) 取得语汇单元 (token)。
+   (4) Replace：将与正则表达式吻合之第一个 (或后续所有) 子序列替换掉。
 ```
