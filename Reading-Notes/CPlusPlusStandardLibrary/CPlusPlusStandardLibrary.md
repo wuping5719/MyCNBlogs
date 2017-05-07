@@ -224,4 +224,18 @@ algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algori
    (2) Search：查找 “与正则表达式吻合” 的 pattern。
    (3) Tokenize：根据 “被指定为正则表达式” 的切分器 (separator) 取得语汇单元 (token)。
    (4) Replace：将与正则表达式吻合之第一个 (或后续所有) 子序列替换掉。
+   
+18.基本 Stream Class 及其层次体系。
+   (1) 基类 ios_base 定义了 stream class 的所有 “与字符类型及其相应之 char trait 无关” 的属性，
+主要包含状态和格式标志 (state and format flag) 等组件和函数。
+   (2) 由 ios_base 派生的 class template basic_ios<>，定义出 “与字符类型及其相应之 char trait 相依赖”
+的 stream class 共同属性，其中包括 stream 所用的缓冲器。缓冲器所属 class 派生自 
+class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。basic_streambuf<> 负责实际的读/写操作。
+   (3) class template basic_istream<> 和 basic_ostream<> 两者都以 virtual 方式继承自 basic_ios<>，
+分别定义出用于读/写的对象。和 basic_ios<> 一样，它们以字符类型及其 trait 作为参数。如果无关乎国际化议题，
+一般使用由字符类型 char 实例化出来的 istream 和 ostream 就够了。
+   (4) class template basic_iostream<> 派生 (多重继承) 自 basic_istream<> 和 basic_ostream<>，
+用来定义既可读亦可写的对象。
+   (5) class template basic_streambuf<> 是 IOStream 程序库的核心，定义出所有 “可写的 stream” 或 
+“可读的 stream” 的接口。其它 stream class 均利用它进行实际的字符读/写工作。
 ```
