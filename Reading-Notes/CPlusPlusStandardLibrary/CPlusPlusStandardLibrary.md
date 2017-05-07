@@ -3,6 +3,9 @@
 > [德] Nicolai M.Josuttis 著    电子工业出版社
  
 ```c++
+
+************* 声明:本书 1099 页，要看完需要不少时间，适合当作开发时手边的工具书 *************
+
 1.命名空间 (Namespace) std。
   (1) 以下 namespace 嵌套于 std 内，被 C++ 标准库使用：
    std::rel_ops, std::chrono, std::placeholders, std::regex_constants, std::this_thread.
@@ -238,4 +241,15 @@ class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。ba
 用来定义既可读亦可写的对象。
    (5) class template basic_streambuf<> 是 IOStream 程序库的核心，定义出所有 “可写的 stream” 或 
 “可读的 stream” 的接口。其它 stream class 均利用它进行实际的字符读/写工作。
+
+19.并发。
+  (1) 高级接口：async() 和 Future。
+   async() 提供一个接口，让一段机能或说一个 callable object 若是可能的话在后台运行，成为一个独立线程。
+   class future<> 允许你等待线程结束并获取其结果 (一个返回值，或者一个异常)。
+   如果你使用 async()，就应该以 by value 方式传递所有 “用来处理目标函数” 的必要 object，使 async() 只需
+使用局部拷贝 (local copy)。
+  (2) 低层接口：Thread 和 Promise。
+  (3) 互斥体 (Mutex) 和 锁 (Lock)。
+  (4) Condition Variable (条件变量)。
+  (5) Atomic。
 ```
