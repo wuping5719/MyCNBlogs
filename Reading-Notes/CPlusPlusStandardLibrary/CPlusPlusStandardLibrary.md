@@ -4,7 +4,7 @@
  
 ```c++
 
-************* 声明:本书 1099 页，要看完需要不少时间，适合当作开发时手边的工具书 *************
+************* 声明:本书 1099 页，要看完需要不少时间，适合作为手边的工具书 *************
 
 1.命名空间 (Namespace) std。
   (1) 以下 namespace 嵌套于 std 内，被 C++ 标准库使用：
@@ -221,7 +221,11 @@ algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algori
           typedef basic_string<char16_t> u16string;
           typedef basic_string<char32_t> u32string;
       }
+ 
+```
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_strings.png">String 的各项操作</a>
 
+```c++
 17.正则表达式。
    (1) Match：将整个输入拿来比对 (匹配) 某个正则表达式。
    (2) Search：查找 “与正则表达式吻合” 的 pattern。
