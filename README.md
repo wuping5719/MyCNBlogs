@@ -122,6 +122,9 @@
      <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MoreEffectiveCPlusPlus/MoreEffectiveCPlusPlus.md">11.《More Effective C++》</a>
      </td>
+     <td>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/CPlusPlusPrimerPlus/CPlusPlusPrimerPlus.md">12.《C++ Primer Plus》</a>
+     </td>
    </tr>
 </table>
 
