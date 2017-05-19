@@ -78,8 +78,8 @@ C++ 编译器将该函数视为内联函数。也就是说，编译器不是让�
     ④ 如果数据对象是类对象，则使用引用。
 
 6.第三代具体化 (ISO/ANSI C++ 标准)。
-   (1) 对于给定的函数名，可以有非模板函数 (non template function)、模板函数 (template prototype) 和显示具体化模板函数
-(explicit specialization) 以及它们的重载版本。
+   (1) 对于给定的函数名，可以有非模板函数 (non template function)、模板函数 (template prototype) 
+和显示具体化模板函数 (explicit specialization) 以及它们的重载版本。
    (2) 显示具体化的原型和定义应以 template<> 打头，并通过名称来指出类型。
    (3) 具体化优先于常规模版，而非模版函数优先于具体化和常规模板。
    // 非模板函数 (non template function)
