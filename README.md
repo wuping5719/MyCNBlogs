@@ -89,14 +89,16 @@
     <td>
     <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/TechnologyArchitecture.md">2.《大型网站技术架构-核心原理与案例分析》</a>
     </td>
-    <td>
-    <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/WebMiddleware.md">3.《大型网站系统与Java中间件实践》</a>
-    </td>
   </tr>
   <tr>
     <td>
+    <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/WebMiddleware.md">3.《大型网站系统与Java中间件实践》</a>
+    </td>
+    <td>
      <a href="https://github.com/wuping5719/MyCNBlogs/tree/master/Reading-Notes/MachineLearning.md">4.《机器学习》</a>
     </td>
+  </tr>
+  <tr>
     <td>
      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/JavaConcurrencyInPractice/ConcurrencyInPractice.md">5.《Java 并发编程实战》</a>
     </td>
@@ -111,14 +113,16 @@
      <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveSTL/EffectiveSTL.md">8.《Effective STL》</a>
      </td>
-     <td>
-       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/CPlusPlusStandardLibrary/CPlusPlusStandardLibrary.md">9.《C++ 标准库》</a>
-     </td>
   </tr>
   <tr>
      <td>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/CPlusPlusStandardLibrary/CPlusPlusStandardLibrary.md">9.《C++ 标准库》</a>
+     </td>
+     <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/UnderstandingTheJVM/AdvancedFeaturesAndBestPractices.md">10.《深入理解 Java 虚拟机》</a>
      </td>
+  </tr>
+  <tr>
      <td>
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MoreEffectiveCPlusPlus/MoreEffectiveCPlusPlus.md">11.《More Effective C++》</a>
      </td>
