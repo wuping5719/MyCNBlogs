@@ -11,3 +11,8 @@
 (如 CSS、JS 或者图片) 时又会发起另外的 HTTP 请求，而这些请求很可能会在 CDN 上，那么 CDN 服务器又会处理这个
 用户的请求，大体上一个用户请求会涉及这么多的操作。
 ```
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDN.png"> CDN 架构图 </a>
+
+```java
+```
