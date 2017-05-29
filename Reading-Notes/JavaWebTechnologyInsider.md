@@ -25,4 +25,19 @@
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Javac.png"> Javac 组件 </a>
 
 ```java
+3.GC 日志格式：
+  [GC [<collector>: <starting occupancy1> -> <ending occupancy1> (total size1), <pause time1> secs]
+                   <starting occupancy2> -> <ending occupancy2> (total size2), <pause time2> secs]
+格式说明：
+  (1) <collector> 表示收集器的名称。
+  (2) <starting occupancy1> 表示 Young 区在 GC 前占用的内存。
+  (3) <ending occupancy1> 表示 Young 区在 GC 后占用的内存。
+  (4) <pause time1> 表示 Young 区局部收集时 JVM 暂停处理的时间。
+  (5) <starting occupancy2> 表示 JVM Heap 在 GC 前占用的内存。
+  (6) <ending occupancy2> 表示 JVM Heap 在 GC 后占用的内存。
+  (7) <pause time2> 表示 GC 过程中 JVM 暂停处理的总时间。
+可以根据日志判断是否有内存泄漏，如果 <ending occupancy1> - <starting occupancy1> = 
+<ending occupancy2> - <starting occupancy2>，则表明这次 GC 对象 100% 被回收，没有对象进入 Old 区或者 Perm 区。
+如果等号左边的值大于等号右边的值，那么差值就是这次回收对象进入 Old 区或者 Perm 区的大小。如果随着时间的延长
+<ending occupancy2> 的值一直在增长，而且 Full GC 很频繁，那么很可能就是内存泄露了。
 ```
