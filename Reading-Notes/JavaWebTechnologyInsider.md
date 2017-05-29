@@ -19,4 +19,10 @@
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDNs.png"> CDN 架构 </a>
 
 ```java
+2.Javac 编译器主要有四大模块：词法分析器、语法分析器、语义分析器和代码生成器。
+```
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Javac.png"> Javac 组件 </a>
+
+```java
 ```
