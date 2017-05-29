@@ -14,5 +14,7 @@
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDN.png"> CDN 架构图 </a>
 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_DNS.png"> DNS 域名解析 </a>
+
 ```java
 ```
