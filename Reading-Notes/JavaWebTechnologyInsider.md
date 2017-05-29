@@ -12,9 +12,11 @@
 用户的请求，大体上一个用户请求会涉及这么多的操作。
 ```
 
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDN.png"> CDN 架构图 </a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDN.png"> B/S 网络架构 </a>
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_DNS.png"> DNS 域名解析 </a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDNs.png"> CDN 架构 </a>
 
 ```java
 ```
