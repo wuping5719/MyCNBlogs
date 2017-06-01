@@ -59,6 +59,13 @@
        <decrypt>false</decrypt>
        <httpOnly>false</httpOnly>
     </cookie>
+  (3) 跨域名共享 Cookie (跨域名同步 Session):
+  需要一个跳转应用，这个应用可以被一个或多个域名访问，它的主要功能是从一个域名下取得 sessionID，然后将这个
+sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cookie，相当于我们经常遇到的 JSESSIONID，
+所以要实现两个域名下的 Session 同步，必须要将同一个 sessionID 作为 Cookie 写到两个域名下。
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_SessionFrame.png"> 分布式 Session 框架的架构 </a>
+
+```java
+```
