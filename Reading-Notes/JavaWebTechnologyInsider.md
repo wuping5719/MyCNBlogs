@@ -40,4 +40,25 @@
 <ending occupancy2> - <starting occupancy2>，则表明这次 GC 对象 100% 被回收，没有对象进入 Old 区或者 Perm 区。
 如果等号左边的值大于等号右边的值，那么差值就是这次回收对象进入 Old 区或者 Perm 区的大小。如果随着时间的延长
 <ending occupancy2> 的值一直在增长，而且 Full GC 很频繁，那么很可能就是内存泄露了。
+
+4.分布式 Session 框架。
+ (1) Session 的配置：
+    <session>
+       <key>sessinonID</key>
+       <cookiekey>sessinonID</cookiekey>
+       <lifeCycle>9000</lifeCycle>
+       <base64>true</base64>
+    </session>
+  (2) Cookie 的配置：
+    <cookie>
+       <key>cookie</key>
+       <lifeCycle></lifeCycle>
+       <type>1</type>
+       <path>/wp<path>
+       <domain>xulingbo.net</domain>
+       <decrypt>false</decrypt>
+       <httpOnly>false</httpOnly>
+    </cookie>
 ```
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_SessionFrame.png"> 分布式 Session 框架的架构 </a>
