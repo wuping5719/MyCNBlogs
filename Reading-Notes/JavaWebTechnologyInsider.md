@@ -67,5 +67,14 @@ sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cook
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_SessionFrame.png"> 分布式 Session 框架的架构 </a>
 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JVM.png"> JVM 体系结构 </a>
+
 ```java
+5.JVM 的体系结构：
+  JVM 的结构基本上由 4 部分组成：
+  (1) 类加载器，在 JVM 启动时或者在类运行时将需要的 class 加载到 JVM 中。
+  (2) 执行引擎，任务是负责执行 class 文件中包含的字节码指令，相当于实际机器上的 CPU。
+  (3) 内存区，将内存划分成若干个区模拟实际机器上的存储、记录和调度功能模块，如实际机器上的各种功能的寄存器
+或者　PC 指针的记录器等。
+  (4) 本地方法调用，调用 C 或 C++ 实现的本地方法代码返回结果。
 ```
