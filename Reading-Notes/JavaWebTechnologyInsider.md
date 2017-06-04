@@ -68,6 +68,8 @@ sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cook
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_SessionFrame.png"> 分布式 Session 框架的架构 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JVM.png"> JVM 体系结构 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Request.png"> Request 在容器中的路由 </a>
 
 ```java
 5.JVM 的体系结构：
