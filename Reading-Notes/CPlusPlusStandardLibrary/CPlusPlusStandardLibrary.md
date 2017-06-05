@@ -242,13 +242,13 @@ class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。ba
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm2.png">非更易型算法 (nonmodifying algorithm)</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm.png">更易型算法 (modifying algorithm)</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm3.png">移除型算法 (removing algorithm)</a>
 
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm4.png">变序型算法 (mutating algorithm)</a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm3.png">移除型算法 (removing algorithm)</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm4.png">变序型算法 (mutating algorithm)</a>
+
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm5.png">排序算法 (sorting algorithm)</a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm6.png">已排序区间算法 (sorted-range algorithm)</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm7.png">数值算法 (numeric algorithm)</a>
