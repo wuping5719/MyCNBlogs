@@ -82,3 +82,6 @@ sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cook
 或者　PC 指针的记录器等。
   (4) 本地方法调用，调用 C 或 C++ 实现的本地方法代码返回结果。
 ```
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_NIO.png"> NIO 相关类图 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
