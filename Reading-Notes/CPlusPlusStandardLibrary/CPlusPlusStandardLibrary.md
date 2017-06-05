@@ -27,10 +27,7 @@
    #include <ios>             // for I/O exceptions
    #include <future>          // for errors with async() and futures (since C++11)
    #include <typeinfo>        // for bad_cast and bad_typeid
-```
-<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png" />
 
-```c++
 4.Pair 和 Tuple。
   (1) Struct pair 定义于 <utility>，可以对 pair<> 执行 create、copy/assign/swap 及 compare 操作。
 它提供 first_type 和 second_type 类型定义式，用来表示第一 value 和第二 value 的类型。
@@ -134,10 +131,7 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
    (6) 如果想处理 key/value pair，请采用 unordered (multi)map。如果元素次序很重要，可采用 (multi)map。
    (7) 如果需要关联式数组，应采用 unordered map。如果元素次序很重要，可采用 map。
    (8) 如果需要字典结构，应采用 unordered multimap。如果元素次序很重要，可采用 multimap。
-```
-<img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png" />
 
-```c++
 12.STL 迭代器。
    (1) 迭代器 (Iterator)：前向迭代器、双向迭代器、随机访问迭代器、输入型迭代器和输出型迭代器。
       for (auto pos = coll.begin(); pos != coll.end(); ++pos) { ... }
@@ -257,3 +251,7 @@ class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。ba
   (4) Condition Variable (条件变量)。
   (5) Atomic。
 ```
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png"> B/S 网络架构 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png> DNS 域名解析 </a>
