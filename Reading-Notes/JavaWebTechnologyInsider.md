@@ -88,4 +88,5 @@ sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cook
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Parser.png"> 词法分析器设计的类图 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ClassLoader.png"> ClassLoader 的类层次结构 </a>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JettyClass.png"> Jetty 的主要组件的类图 </a>
