@@ -252,6 +252,6 @@ class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。ba
   (5) Atomic。
 ```
 
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png"> B/S 网络架构 </a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png"> 标准异常之层次体系 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png> DNS 域名解析 </a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png"> DNS 域名解析 </a>
