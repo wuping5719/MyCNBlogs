@@ -13,12 +13,14 @@
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDN.png"> B/S 网络架构 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_DNS.png"> DNS 域名解析 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDNs.png"> CDN 架构 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Javac.png"> Javac 组件 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_BeanFactory.png"> Bean 工厂的继承层次关系 </a>
 
 ```java
 2.Javac 编译器主要有四大模块：词法分析器、语法分析器、语义分析器和代码生成器。
