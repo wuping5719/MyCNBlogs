@@ -17,14 +17,12 @@
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_DNS.png"> DNS 域名解析 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_CDNs.png"> CDN 架构 </a>
-
-```java
-2.Javac 编译器主要有四大模块：词法分析器、语法分析器、语义分析器和代码生成器。
-```
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Javac.png"> Javac 组件 </a>
 
 ```java
+2.Javac 编译器主要有四大模块：词法分析器、语法分析器、语义分析器和代码生成器。
+
 3.GC 日志格式：
   [GC [<collector>: <starting occupancy1> -> <ending occupancy1> (total size1), <pause time1> secs]
                    <starting occupancy2> -> <ending occupancy2> (total size2), <pause time2> secs]
@@ -70,6 +68,10 @@ sessionID 同步到另一个域名下。这个 sessionID 其实就是一个 Cook
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_JVM.png"> JVM 体系结构 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Request.png"> Request 在容器中的路由 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Tomcat.png"> Tomcat 的总体架构 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Jetty.png"> Jetty 的基本架构 </a>
 
 ```java
 5.JVM 的体系结构：
