@@ -162,22 +162,7 @@ hash 容器内是无序的，如果你必须依赖元素的次序 (order)，应�
   STL 算法分类：非更易型算法 (nonmodifying algorithm)、更易型算法 (modifying algorithm)、移除型算法 (removing
 algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algorithm)、已排序区间算法 
 (sorted-range algorithm)、数值算法 (numeric algorithm)。
-```
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm2.png">非更易型算法 (nonmodifying algorithm)</a>
 
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm.png">更易型算法 (modifying algorithm)</a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm3.png">移除型算法 (removing algorithm)</a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm4.png">变序型算法 (mutating algorithm)</a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm5.png">排序算法 (sorting algorithm)</a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm6.png">已排序区间算法 (sorted-range algorithm)</a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm7.png">数值算法 (numeric algorithm)</a>
-
-```c++
 15.特殊容器。
   容器适配器：stack、queue 和 priority queue。
   class stack 的定义：
@@ -216,10 +201,6 @@ algorithm)、变序型算法 (mutating algorithm)、排序算法 (sorting algori
           typedef basic_string<char32_t> u32string;
       }
  
-```
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_strings.png">String 的各项操作</a>
-
-```c++
 17.正则表达式。
    (1) Match：将整个输入拿来比对 (匹配) 某个正则表达式。
    (2) Search：查找 “与正则表达式吻合” 的 pattern。
@@ -254,4 +235,20 @@ class template basic_streambuf<>，其实例化实参和 basic_ios<> 一致。ba
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_StandardExceptions.png"> 标准异常之层次体系 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png"> DNS 域名解析 </a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_STL.png"> STL 容器对比 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_strings.png">String 的各项操作</a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm2.png">非更易型算法 (nonmodifying algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm.png">更易型算法 (modifying algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm3.png">移除型算法 (removing algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm4.png">变序型算法 (mutating algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm5.png">排序算法 (sorting algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm6.png">已排序区间算法 (sorted-range algorithm)</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_algorithm7.png">数值算法 (numeric algorithm)</a>
