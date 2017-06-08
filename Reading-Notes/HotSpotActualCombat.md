@@ -30,3 +30,4 @@ Perf Data 计数器。
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VMLifeCycle.png"> 虚拟机生命周期 </a>
