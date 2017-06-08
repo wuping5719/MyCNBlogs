@@ -3,7 +3,7 @@
 > 陈涛 著       人民邮电出版社
 
 ```java
-1.HotSpot 内核﻿的顶层模块：
+1.HotSpot 内核的顶层模块：
   (1) Adlc：平台描述文件。
   (2) Libadt：抽象数据结构。
   (3) Asm：汇编器。
@@ -20,7 +20,7 @@
   (14) Memory：内存管理。
   (15) Oops：JVM 内部对象表示。
   (16) Prims：HotSpot 对外接口。
-     Prims 主要包括 4 个模块：JNI (Java Native Interface) 模块，Java 本地接口；JVM 模块，标准 JNI 接口的补充；
+   Prims 主要包括 4 个模块：JNI (Java Native Interface) 模块，Java 本地接口；JVM 模块，标准 JNI 接口的补充；
 JVMTI 模块，Java 虚拟机工具接口，一种编程接口；Perf 模块，JDK 中 sun.misc.Perf 类的底层实现，监控虚拟机内部的
 Perf Data 计数器。
   (17) Runtime：运行时。
