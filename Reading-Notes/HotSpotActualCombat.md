@@ -26,8 +26,17 @@ Perf Data 计数器。
   (17) Runtime：运行时。
   (18) Services：JMX 接口。
   (19) Utilizes：内部工具类和公共函数。
+  
+2.对象表示机制：
+  OOP-Klass 二分模型：
+  (1) OOP：ordinary object pointer。即普通对象指针，用来描述对象实例信息。
+  (2) Klass：Java 类的 C++ 对等体，用来描述 Java 类。
+  HotSpot 对象访问机制的要点：在对象引用中存放的是指向对象 (instanceOop) 的指针，对象本身则持有类 (instanceKlass)
+的指针。
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VMLifeCycle.png"> 虚拟机生命周期 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_OOPKlass.png"> 基于 OOP-Klass 的对象访问定位 </a>
