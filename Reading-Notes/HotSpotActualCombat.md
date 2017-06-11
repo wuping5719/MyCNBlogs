@@ -33,6 +33,21 @@ Perf Data 计数器。
   (2) Klass：Java 类的 C++ 对等体，用来描述 Java 类。
   HotSpot 对象访问机制的要点：在对象引用中存放的是指向对象 (instanceOop) 的指针，对象本身则持有类 (instanceKlass)
 的指针。
+
+3.链接：
+  符号引用转换成直接引用的过程，称为解析，也叫常量池解析。
+  在 instanceKlass 类中定义了链接过程 link_class_impl()，主要步骤如下：
+  (1) 若该 class 处于出错状态，则抛出 NoClassDefFoundError 异常。
+  (2) 若该 class 已链接，则退出此流程并返回链接成功。
+  (3) 在开始对该 class 对象链接前，对超类递归地执行这一过程，进行链接。
+  (4) 对该 class 对象实现的所有接口递归地执行这一过程，进行链接。
+  (5) 如果在链接超类的过程中，该 class 对象已链接，则退出此流程并返回链接成功。
+  (6) 验证 (verfication)，即字节码验证。
+  (7) 重写、重定位和方法链接。重写是为支持更好的解释器运行性能，向常量池添加缓存，并调整相应字节码的常量池索引
+重新指向常量池 Cache 索引；重定位是 relocate_and_link_methods()，其中包含方法链接，是为 Java 方法配置编译器
+或解释器入口。
+  (8) 由于方法被重写后会产生新的 methodOops，在这里需呀初始化虚函数表 vtable 和接口表 itable。
+  (9) 设置该类状态为已链接并返回。
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
