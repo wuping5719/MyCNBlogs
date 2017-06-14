@@ -71,3 +71,5 @@ Perf Data 计数器。
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Linked.png"> 链接流程 </a>
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_FastAndSlow.png"> 实例的创建流程 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RuntimeData.png"> 运行时数据区的职能划分 </a>
