@@ -2,6 +2,20 @@
 
 > 陈涛 著       人民邮电出版社
 
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VMLifeCycle.png"> 虚拟机生命周期 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_OOPKlass.png"> 基于 OOP-Klass 的对象访问定位 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ClassLoaders.png"> 类加载流程 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Linked.png"> 链接流程 </a>
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_FastAndSlow.png"> 实例的创建流程 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RuntimeData.png"> 运行时数据区的职能划分 </a>
+
 ```c++
 1.HotSpot 内核的顶层模块：
   (1) Adlc：平台描述文件。
@@ -113,17 +127,3 @@ CMS 收集器算法快很多。
 了所有字节码到机器码的关联信息。模版解释器拥有两张转发表，一张是正常模式表，另一张表用来使解释器进入 SafePoint。
 转发表最大 256 个条目，这也是由单字节表示的字节码最大数量。
 ```
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VMLifeCycle.png"> 虚拟机生命周期 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_OOPKlass.png"> 基于 OOP-Klass 的对象访问定位 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ClassLoaders.png"> 类加载流程 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_Linked.png"> 链接流程 </a>
-
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_FastAndSlow.png"> 实例的创建流程 </a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RuntimeData.png"> 运行时数据区的职能划分 </a>
