@@ -126,4 +126,22 @@ CMS 收集器算法快很多。
   (4) 转发表 (Dispatch table)：为方便快速找到与字节码对应的机器码，模版解释器使用了转发表。它按照字节码顺序，包含
 了所有字节码到机器码的关联信息。模版解释器拥有两张转发表，一张是正常模式表，另一张表用来使解释器进入 SafePoint。
 转发表最大 256 个条目，这也是由单字节表示的字节码最大数量。
+
+10.JIT 编译器 (Just in Time Compiler)：
+   客户端编译器 (Client Compiler，C1 编译器)；服务端编译器 (Server Compiler，C2 编译器)。
+   编译器实现了 3 个模块，分别是 C1、Opto 和 Shark。C1 模块实现了 C1 编译器；Opto 模块实现了 C2 编译器；
+Shark 模块实现了一个基于 LLVM 的编译器。
+   C1 模块主要由以下几个子模块构成：
+   (1) Compiler 模块：每个 CompilerThread 的编译器实例。
+   (2) Compilation 模块：记录编译过程的工具组件。
+   (3) MacroAssembler 模块：宏汇编器。
+   (4) CFGPrinter 模块：用来输出控制流图。
+   (5) CodeStubs 模块：用来管理生成的 code 片段。
+   (6) Instruction 模块：定义了指令的类型层次。
+   (7) IR (中间表示) 模块：实现中间描述 IR。
+   (8) LIR 模块：实现低级中间描述 LIR。
+   (9) LIRGenerator 模块：LIR 生成器。
+   (10) LIRAssembler 模块：LIR 汇编器。
+   (11) LinearScan 模块：实现线性扫描寄存器分配算法。
+   (12) Runtime1 模块：运行时模块。
 ```
