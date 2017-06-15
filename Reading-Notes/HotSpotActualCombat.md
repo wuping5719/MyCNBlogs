@@ -15,6 +15,8 @@
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_FastAndSlow.png"> 实例的创建流程 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RuntimeData.png"> 运行时数据区的职能划分 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_InterpreterAndCompiler.png"> 解释器与 JIT 编译器 </a>
 
 ```c++
 1.HotSpot 内核的顶层模块：
