@@ -28,5 +28,20 @@ Spring 对 JDBC 数据访问进行封装的所有类。
 和 XStream。
    ④ JMS (Java Messaging Service) 模块主要包含了一些制造和消费消息的特性。
    ⑤ Transaction 模块支持编程和声明性的事务管理，这些事务类必须实现特定的接口，并且对所有的 POJO 都适用。
-  (3) Web：Web 上下文模块
+  (3) Web：Web 上下文模块建立在应用程序上下文模块之上，为基于 Web 的应用程序提供了上下文。Spring 框架支持与
+Jakarta Struts 的集成。Web 层包含了 Web、Web-Servlet、Web-Struts 和 Web-Porlet 模块。
+   ① Web 模块：提供了基础的面向 Web 的集成特性。例如：多文件上传、使用 servlet listeners 初始化 IoC 容器以及
+一个面向 Web 的应用上下文。它还包含 Spring 远程支持中 Web 的相关部分。
+   ② Web-Servlet 模块 web.servlet.jar：该模块包含 Spring 的 model-view-controller (MVC) 实现。Spring 的
+MVC 框架使得模型范围内的代码和 web forms 之间能够清楚地分离开来，并与 Spring 框架的其它特性集成在一起。
+   ③ Web-Struts 模块：该模块提供了对 Struts 的支持，使得类在 Spring 应用中能够与一个典型的 Struts Web 层集成
+在一起。注意：该支持在 Spring 3.0 是 deprecated 的。
+   ④ Web-Porlet 模块：提供了用于 Porlet 环境和 Web-Servlet 模块的 MVC 的实现。
+  (4) AOP：AOP 模块提供了一个符合 AOP 联盟标准的面向切面编程的实现，它让你可以定义方法拦截点和切点，
+从而将逻辑代码分开，降低它们之间的耦合性。利用 source-level 的元数据功能，还可以将各种行为信息合并到你的代码中，
+这有点像 .Net 技术中的 attribute 概念。
+   ① Aspects 模块提供了对 AspectJ 的集成支持。
+   ② Instrumentation 模块提供了 class instrumentation 支持和 classloader 实现，使得可以在特定的
+应用服务器上使用。
+  (5) Test：Test 模块支持使用 JUnit 和 TestNG 对 Spring 组件进行测试。
 ```
