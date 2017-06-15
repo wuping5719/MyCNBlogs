@@ -78,6 +78,29 @@ Perf Data 计数器。
 组成，Java 程序在运行时，根据方法的调用会产生新的栈帧，并在程序运行期间不断的执行入栈和出栈操作，以实现
 演算过程。在 JVM 内部调用 Java 方法都是通过 CallStub 模块来完成的。栈顶缓存是通过将最频繁使用的栈顶元素
 缓存到硬件寄存器中，以减少对内存的访问的技术。
+
+7.CMS (并发标记-清除，Concurrent Mark-Sweep) 收集器的完整收集过程：
+  (1) 初始标记 (initial-mark)：从根对象节点仅扫描与根节点直接关联的对象并标记，这个过程必须 STW
+(Stop The World)，但由于根对象数量有限，所以这个过程很短暂。
+  (2) 并发标记 (concurrent-marking)：与用户线程并发进行。这个阶段紧随初始标记阶段，在初始标记的基础上
+继续向下追溯标记。并发标记阶段，应用程序的线程和并发标记的线程并发执行，所以用户不会感到停顿。
+  (3) 并发预清理 (concurrent-precleaning)：与应用线程并发进行。由于上一阶段执行期间，会出现一些趁机 “晋升”
+到老年代的对象。在该阶段通过重新扫描，减少下一阶段 “重新标记” 的工作，因为下一阶段会 STW。
+  (4) 重新标记 (remark)：STW，但很短暂。暂停工作线程，由 GC 线程扫描在 CMS 堆中的对象。
+  (5) 并发清理 (concurrent-sweeping)：清理垃圾对象，这个阶段 GC 线程和应用线程并发执行。
+  (6) 并发重置 (concurrent-reset)：这个阶段，重置 CMS 收集器的数据结构，做好下一次执行 GC 任务的准备工作。
+
+8.G1 (Gabage First) 收集器的工作过程：
+  (1) 初始标记 (Initial Mark)：STW。G1 将这个过程伴随在一次普通的新生代 GC 中完成。该阶段标记的是幸存区 Regions
+(Root Regions)。当然，该区域仍有可能引用老年代的对象。
+  (2) 根区域扫描 (Root Region Scanning)：扫描幸存区中引用老年代的 Regions。该阶段与应用程序并发进行。这一过程
+必须能够在新生代 GC 发生前完成。
+  (3) 并发标记 (Concurrent Marking)：找出全堆中存活对象。该阶段与应用程序并发进行。这一过程允许被新生代 GC 打断。
+  (4) 重新标记 (Remark)：STW，完成堆中存活对象的标记。重新标记基于 SATB (snapshot-at-the-beginning) 算法，比
+CMS 收集器算法快很多。
+  (5) 清理 (Cleanup)：包括 3 个阶段：首先，计算活跃对象并完全释放自由 Regions (STW)；
+然后，处理 Remembered Sets (STW)；最后，重置空闲 Regions 并将它们放回空闲列表 (并发)。
+  (6) 复制 (Copying)：STW。将存活对象疏散或复制至新的未使用区域内。
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
