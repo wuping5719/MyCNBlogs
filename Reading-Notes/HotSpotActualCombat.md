@@ -101,6 +101,17 @@ CMS 收集器算法快很多。
   (5) 清理 (Cleanup)：包括 3 个阶段：首先，计算活跃对象并完全释放自由 Regions (STW)；
 然后，处理 Remembered Sets (STW)；最后，重置空闲 Regions 并将它们放回空闲列表 (并发)。
   (6) 复制 (Copying)：STW。将存活对象疏散或复制至新的未使用区域内。
+
+9.在 HotSpot 的实现中，解释器的主要组成部分：
+  (1) 解释器 (Interpreter)：解释执行的功能组件。在 HotSpot 中，实现了两种解释器，一种是虚拟机默认使用的模版解释器
+(TemplateInterpreter)；另一种是 C++ 解释器 (CppInterpreter)。
+  (2) 代码生成器 (Code Generator)：利用解释器的宏汇编器 (MASM) 向代码缓存空间写入生成的代码。
+  (3) InterpreterCodelet：由解释器运行的代码片段。在 HotSpot 中，所有由代码生成器生成的代码都由一个 Codelet 来
+表示。面向解释器的 Codelet 称为 InterpreterCodelet，由解释器进行维护。利用这些 Codelet，JVM 可完成在内部空间
+中存储、定位和执行代码的任务。
+  (4) 转发表 (Dispatch table)：为方便快速找到与字节码对应的机器码，模版解释器使用了转发表。它按照字节码顺序，包含
+了所有字节码到机器码的关联信息。模版解释器拥有两张转发表，一张是正常模式表，另一张表用来使解释器进入 SafePoint。
+转发表最大 256 个条目，这也是由单字节表示的字节码最大数量。
 ```
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_VM2.png"> VM 与外界的通信方式 </a>
