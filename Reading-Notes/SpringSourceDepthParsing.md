@@ -1,7 +1,10 @@
 <h2>《Spring 源码深度解析》 :books: </h2> 
 
 > 郝佳 著       人民邮电出版社
- 
+
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RelatedBeanFactory.png"> 容器加载相关类 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 ```java
 1.Spring 的整体架构：
   (1) Core Container：核心容器包含有 Core、Beans、Context 和 Expression Language 模块。
