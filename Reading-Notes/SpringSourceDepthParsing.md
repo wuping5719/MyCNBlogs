@@ -2,7 +2,7 @@
 
 > 郝佳 著       人民邮电出版社
 
-<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RelatedBeanFactory.png"> 容器加载相关类 </a>
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RelatedBeanFactory.png"> Spring 容器加载相关类 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ```java
