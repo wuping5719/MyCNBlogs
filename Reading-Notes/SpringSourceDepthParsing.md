@@ -4,6 +4,7 @@
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RelatedBeanFactory.png"> Spring 容器加载相关类 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RelatedXmlReader.png"> Spring 配置文件读取相关类 </a>
 
 ```java
 1.Spring 的整体架构：
