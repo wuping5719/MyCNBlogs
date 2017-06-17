@@ -142,6 +142,9 @@
      <td>
        <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringSourceDepthParsing.md">15.《Spring 源码深度解析》</a>
      </td>
+     <td>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DistributedServiceFramework.md">16.《分布式服务框架-原理与实践》</a>
+     </td>
    </tr>
 </table>
 
