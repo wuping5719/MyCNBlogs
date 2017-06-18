@@ -49,7 +49,7 @@ MVC 框架使得模型范围内的代码和 web forms 之间能够清楚地分�
 应用服务器上使用。
   (5) Test：Test 模块支持使用 JUnit 和 TestNG 对 Spring 组件进行测试。
   
-2.容器加载相关类：
+2.Spring 容器加载相关类：
   (1) AliasRegistry：定义对 alias 的简单增删改等操作。
   (2) SimpleAliasRegistry：主要使用 map 作为 alias 的缓存，并对接口 AliasRegistry 进行实现。
   (3) SingletonBeanRegistry：定义对单例的注册及获取。
@@ -68,4 +68,12 @@ MVC 框架使得模型范围内的代码和 web forms 之间能够清楚地分�
   (14) ConfigurableListableBeanFactory：BeanFactory 配置清单，指定忽略类型及接口等。
   (15) DefaultListableBeanFactory：综合上面所有功能，主要是对 Bean 注册后的处理。
 
+3.Spring 配置文件相关类：
+  (1) ResourceLoader：定义资源加载器，主要应用于根据给定的资源文件地址返回对应的 Resource。
+  (2) BeanDefinitionReader：主要定义资源文件读取并转换为 BeanDefinition 的各个功能。
+  (3) EnvironmentCapable：定义获取 Environment 方法。
+  (4) DocumentLoader：定义从资源文件加载到转换为 Document 的功能。
+  (5) AbstractBeanDefinitionReader：对 EnvironmentCapable、BeanDefinitionReader 类定义的功能进行实现。
+  (6) BeanDefinitionDocumentReader：定义读取 Document 并注册 BeanDefinition 功能。
+  (7) BeanDefinitionParserDelegate：定义解析 Element 的各种方法。
 ```
