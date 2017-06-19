@@ -4,6 +4,7 @@
 
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RPCFramework.png"> RPC 框架原理 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ServiceArchitecture.png"> 分布式服务框架的逻辑架构 </a>
 
 ```java
 1.分布式服务框架的架构可以抽象为 3 层：
