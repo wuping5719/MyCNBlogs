@@ -5,6 +5,8 @@
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_RPCFramework.png"> RPC 框架原理 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ServiceArchitecture.png"> 分布式服务框架的逻辑架构 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_ZookeeperProcess.png"> 基于 Zookeeper 的服务注册中心流程设计 </a>
 
 ```java
 1.分布式服务框架的架构可以抽象为 3 层：
