@@ -94,7 +94,7 @@
     <td><a href="http://blog.didispace.com/springcloud-sourcecode-eureka/">22.Spring Cloud源码分析</a></td>
   </tr>
   <tr>
-    <td></td>
+    <td><a href="http://www.jianshu.com/p/08789f8adf60"><strong>23.Java领域从传统行业向互联网转型...</strong></a></td>
     <td><a href="https://github.com/dyc87112/SpringCloud-Learning"><strong>23.SpringCloud-Learning</strong></a></td>
   </tr>
 </table>
