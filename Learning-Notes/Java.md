@@ -97,4 +97,8 @@
     <td><a href="http://www.jianshu.com/p/08789f8adf60"><strong>23.Java领域从传统行业向互联网转型...</strong></a></td>
     <td><a href="https://github.com/dyc87112/SpringCloud-Learning"><strong>23.SpringCloud-Learning</strong></a></td>
   </tr>
+  <tr>
+    <td><a href="http://how2j.cn/">24.Java 全栈工程师</a></td>
+    <td></td>
+  </tr>
 </table>
