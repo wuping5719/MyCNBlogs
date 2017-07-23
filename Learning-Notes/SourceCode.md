@@ -55,5 +55,6 @@
   </tr>
   <tr>
     <td><a href="http://www.allitebooks.com" ><Strong>27.All IT eBooks</Strong></a></td>
+    <td><a href="http://www.shouce.ren/post/project" ><Strong>28.手册网-优质项目</Strong></a></td>
   </tr>
 </table>
