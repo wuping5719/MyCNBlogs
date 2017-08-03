@@ -146,6 +146,12 @@
        <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DistributedServiceFramework.md">16.《分布式服务框架-原理与实践》</a>
      </td>
    </tr>
+   <tr>
+     <td>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveC%23.md">17.《Effective C#》</a>
+     </td>
+     <td></td>
+   </tr>
 </table>
 
 <h3>Top Company GitHub</h3>
