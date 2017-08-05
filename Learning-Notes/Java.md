@@ -101,4 +101,8 @@
     <td><a href="http://how2j.cn/">24.Java 全栈工程师</a></td>
     <td></td>
   </tr>
+  <tr>
+    <td><a href="http://www.jianshu.com/p/e401d6d5af58">25.快速高效学习 Java 编程在线资源 Top 20</a></td>
+    <td></td>
+  </tr>
 </table>
