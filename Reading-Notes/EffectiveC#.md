@@ -9,15 +9,20 @@
 2.为你的常量选择 readonly 而不是 const。
  Prefer readonly to const.
 
-3.Prefer the is or as Operators to Casts. 
+3.选择 is 或者 as 操作符而不是做强制类型转换。
+ Prefer the is or as Operators to Casts. 
 
-4.Use Conditional Attributes Instead of # if. 
+4.用条件属性而不是 # if。
+ Use Conditional Attributes Instead of # if. 
 
-5.Always Provide To String(). 
+5.始终提供 ToString()。
+ Always Provide ToString(). 
 
-6.Distinguish Between Value Types and Reference Types.
+6.区别值类型数据和引用类型数据。
+  Distinguish Between Value Types and Reference Types.
 
-7.Prefer Immutable Atomic Value Types. 
+7.选择恒定的原子值类型数据。
+ Prefer Immutable Atomic Value Types. 
 
 8.Ensure that 0 Is a Valid State for Value Types.
 
