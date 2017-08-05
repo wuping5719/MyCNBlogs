@@ -75,28 +75,41 @@
  Prefer Defining and Implementing Interfaces to Inheritance. 
 
 20.明辨接口实现和虚函数重载的区别。
-
+ Distinguish Between Implementing Interface and Overriding Virtual Functions.
+ 
 21.用委托来表示回调。
+ Express Callbacks with Delegates.
 
 22.用事件定义对外接口。
+ Defing Outgoing Interfaces with Events.
 
 23.避免返回内部类对象的引用。
+ Avoid Returning References to Internal Class Object. 
 
 24.选择声明式编程而不是命令式编程。
-
+ Prefer Declaration to Imperative Programming.
+  
 25.让你的类型支持序列化。
-
+ Prefer Serializable Types.
+ 
 26.用 IComparable 和 IComparer 实现对象的顺序关系。
-
+ Implement Ordering Relations with IComparable and IComparer.
+  
 27.避免使用 ICloneable。
+ Avoid ICloneable.
 
 28.避免转换操作。
+ Avoid Conversion Operators.
 
 29.仅在对基类进行强制更新时才使用 new 修饰符。
+ Use the new Modifier Only When Base class Updates Mandate It.
 
 30.选择与 CLS 兼容的程序集。
-
+ Prefer CLS-Compliant Assemblies.
+ 
 31.选择小而简单的函数。
-
+ Prefer Small, Simple Funcitons.
+ 
 32.选择小而内聚的程序集。
+ Prefer Smaller, Cohesive Assemblies.
 ```
