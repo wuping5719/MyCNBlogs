@@ -112,4 +112,5 @@
  
 32.选择小而内聚的程序集。
  Prefer Smaller, Cohesive Assemblies.
+ 
 ```
