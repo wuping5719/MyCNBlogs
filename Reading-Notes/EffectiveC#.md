@@ -112,4 +112,35 @@
  
 32.选择小而内聚的程序集。
  Prefer Smaller, Cohesive Assemblies.
+ 
+33.限制类型的访问。
+ Limit Visibility of Your Types.
+ ArrayList 包含一个 ArrayListEnumerator，哈希表 (Hashtable) 包含一个私有的 HashtableEnumerator，
+队列 (Queue) 包含一个 QueueEnumerator。
+ public class ArrayList : IEnumerable
+ {
+     private class ArrayListEnumerator : IEnumerator
+     {
+        // Contains specific implementation of MoveNext(), Reset() and Current.
+     }
+     public IEnumerator GetEnumerator() 
+     {
+        return new ArrayListEnumerator(this);
+     }
+ }
+ 
+34.创建大容量的 Web API。
+  Create Large-Grain Web APIs.
+
+35.选择重写函数而不是使用事件句柄。
+  Prefer Overrides to Event Handlers.
+
+36.利用 .NET 运行时诊断。
+  Leverage .NET Runtime Diagnostics.
+  
+37.使用标准的配置机制。
+  Use the Standard Configuration Mechanism.
+  
+38.使用和支持数据绑定。
+  Utilize and Support Data Binding.
 ```
