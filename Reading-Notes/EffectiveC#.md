@@ -143,4 +143,41 @@
   
 38.使用和支持数据绑定。
   Utilize and Support Data Binding.
+  
+39.使用 .Net 验证。
+  Use .Net Validation。
+  
+40.根据需求选择集合。
+  Match Your Collection to Your Needs.
+
+41.选择 DataSet 而不是自定义的数据结构。
+  Prefer DataSet to Custom Structures.
+  
+42.使用特性进行简单的反射。
+  Utilize Attributes to Simplify Reflection.
+
+43.请勿滥用反射。
+  Don't Overuse Reflection.
+  
+44.创建应用程序特定的异常类。
+  Create Complete Application-Specific Exception Classes.
+  
+45.选择强异常来保护程序。
+  Prefer the Strong Exception Guarantee.
+  
+46.最小化与其它非托管代码的交互。
+  Minimize Interop.
+
+47.选择安全的代码。
+  Prefer Safe Code.
+  
+48.了解更多的工具和资源。
+  Learn About Tools and Resources.
+  NUnit (www.nunit.org) 自动化单元测试;  FXCop;  ILDasm (IL 反汇编器);  GotDotNet.
+
+49.为 C# 2.0 做好准备。 	
+  Prepare for C# 2.0.
+
+50.了解 ECMA 标准。
+  Learn About the ECMA Standard.
 ```
