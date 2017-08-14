@@ -150,7 +150,9 @@
      <td>
        <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/EffectiveC%23.md">17.《Effective C#》</a>
      </td>
-     <td></td>
+     <td>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MoreEffectiveC%23.md">18.《More Effective C#》</a>
+     </td>
    </tr>
 </table>
 
