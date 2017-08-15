@@ -78,4 +78,15 @@
 4.使用泛型强制编译期类型推断。
 
 5.确保泛型类型支持可销毁对象。
+ public void GetThingsDone()
+ {
+    T driver = new T();
+    using(driver as IDiposable)
+    {
+       driver.DoWork();
+    }
+ }
+ 
+6.使用委托定义类型参数上的方法约束。
+
 ```
