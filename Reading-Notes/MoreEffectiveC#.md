@@ -88,5 +88,14 @@
  }
  
 6.使用委托定义类型参数上的方法约束。
-
+  public static IEnumerable<TOutput> Merge<T1, T2, TOutput>(IEnumerable<T1> left, 
+                                           IEnumerable<T2> right, Func<T1, T2, TOutput> generator)
+  {
+      IEnumerator<T1> leftSequence = left.GetEnumerator();
+      IEnumerator<T2> rightSequence = right.GetEnumerator();
+      while (leftSequence.MoveNext() && rightSequence.MoveNext())
+      {
+         yield return generator(leftSequence.Current, rightSequence.Current);
+      }
+  }
 ```
