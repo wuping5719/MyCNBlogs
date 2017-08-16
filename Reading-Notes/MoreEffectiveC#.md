@@ -98,4 +98,14 @@
          yield return generator(leftSequence.Current, rightSequence.Current);
       }
   }
+  
+7.不要为基类或接口创建泛型的特殊实现。
+ // 不是最好的解决方案，使用了运行时类型检查
+ static void WriteMessage <T> (T obj)
+ {
+    if (obj is MyBase)
+       WriteMessage(obj as MyBase);
+    else if (obj is IMessageWriter)
+       
+ }
 ```
