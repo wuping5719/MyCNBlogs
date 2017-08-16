@@ -15,6 +15,6 @@
   </tr>
   <tr>
     <td><a href="http://stackoverflow.com/questions/7217969/how-to-disable-directory-listing-for-jettys-webappcontext">7.目录遍历漏洞：How to disable directory listing for Jetty's WebAppContext?</a></td>
-    <td></td>
+    <td><a href="https://github.com/Hack-with-Github/Awesome-Hacking"><strong>8.黑客成长技术清单</strong></a></td></td>
   </tr>
 </table>
