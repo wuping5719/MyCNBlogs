@@ -106,6 +106,13 @@
     if (obj is MyBase)
        WriteMessage(obj as MyBase);
     else if (obj is IMessageWriter)
-       
+       WriteMessage((IMessageWriter) obj);
+    else
+    {
+       Console.Write("Inside WriteMessage<T>(T): ");
+       Console.WriteLine(obj.ToString());
+    }
  }
+ 
+ 8.尽可能使用泛型方法，除非需要将泛型参数用于实例的字段中。
 ```
