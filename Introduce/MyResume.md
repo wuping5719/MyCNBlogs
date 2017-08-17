@@ -96,7 +96,7 @@
     <td> ○ 熟练脚本语言 Python，Web 后台开发语言 Java, PHP, Asp.Net，熟练 C#.Net 和 VB.Net 软件开发. </td>
   </tr>
   <tr>
-    <td> ○ 熟练关系型数据库(Oracle，MySQL，DB2, SQLServer)；非关系型数据库(Redis，MongoDB，HBase). 熟练使用消息中间件. </td>
+    <td> ○ 熟练关系型数据库(Oracle, MySQL, DB2, SQLServer)；非关系型数据库(Redis, MongoDB, HBase). 熟练使用消息中间件. </td>
   </tr>
   <tr>
     <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB 图像处理和三维建模 Maya 的使用. 对数据结构有较深理解. </td>
