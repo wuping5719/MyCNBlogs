@@ -115,4 +115,43 @@
  }
  
  8.尽可能使用泛型方法，除非需要将泛型参数用于实例的字段中。
+   public static class Utils 
+   {
+       public static T Max<T> (T left, T right)
+       {
+          return Comparer<T>.Default.Compare(left, right) < 0 ? right : left;
+       }
+       public static double Max(double left, double right)
+       {
+          return Math.Max(left, right);
+       }
+       public static T Min<T> (T left, T right)
+       {
+          return return Comparer<T>.Default.Compare(left, right) < 0 ? left : right;
+       }
+       public static double Min(double left, double right)
+       {
+          return Math.Min(left, right);
+       }
+   }
+ 
+ 9.使用泛型元组替代 out 和 ref 参数。
+   public struct Tuple<T1, T2> : IEquatable <Tuple<T1, T2>>
+   {
+      private readonly T1 first;
+      public T1 first 
+      {
+         get { return first; }
+      }
+      private readonly T2 second;
+      public T2 second 
+      {
+         get { return second; }
+      }
+      public Tuple(T1 f, T2 s)
+      {
+         first = f;
+         second = s;
+      }
+   }
 ```
