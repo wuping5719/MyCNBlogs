@@ -90,24 +90,24 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 熟练Java开源Web框架(Spring, Spring MVC, MyBatis, Dubbo, Struts2, Hibernate, Spring Boot, Spring Cloud). </td>
+    <td> ○ 熟练 Java 开源 Web 框架(Spring, Spring MVC, MyBatis, Hibernate, Dubbo, ElasticSearch, Spring Boot, Spring Cloud). </td>
   </tr>
   <tr>
-    <td> ○ 熟练关系型数据库(Oracle，MySQL，SQLServer)；非关系型数据库(Redis，MongoDB，HBase). </td>
+    <td> ○ 熟练脚本语言 Python，Web 后台开发语言 Java, PHP, Asp.Net，熟练 C#.Net 和 VB.Net 软件开发. </td>
   </tr>
   <tr>
-    <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB图像处理和三维建模Maya的使用. 对数据结构有较深理解. </td>
+    <td> ○ 熟练关系型数据库(Oracle，MySQL，DB2, SQLServer)；非关系型数据库(Redis，MongoDB，HBase). </td>
   </tr>
   <tr>
-    <td> ○ 熟练基本Linux Web服务器管理。熟练使用IDE:VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
+    <td> ○ 熟练C\C++语言，了解游戏开发, MATLAB 图像处理和三维建模 Maya 的使用. 对数据结构有较深理解. </td>
   </tr>
   <tr>
-    <td> ○ 熟练前端网页开发(Handlebars，JavaScript，CSS3，HTML5，JSP，PHP).</td>
+    <td> ○ 熟练基本 Linux Web 服务器管理。熟练使用IDE: VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
-    <td> ○ 熟练.Net软件开发，了解视频接入，曲线显示，地图导航等功能的实现，软件项目实施. </td>
+    <td> ○ 熟练前端网页开发 (Handlebars，JavaScript，CSS3，HTML5，JSP，PHP).</td>
   </tr>
   <tr>
-    <td> ○ 熟练智能化仪表采集程序开发，家电制造领域实验室检测软件开发. </td>
+    <td> ○ 熟练智能仪表采集程序开发，家电制造领域实验室检测软件开发，机房监控软件开发，金融领域软件开发.</td>
   </tr>
 </table>
