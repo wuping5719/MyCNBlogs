@@ -19,10 +19,10 @@
 <h3>★	学习经历</h3>                                                        
 <table>
   <tr>
-    <td>①2014年9月-2017年7月，硕士，中国海洋大学-信息科学与工程学院，计算机技术.</td>
+    <td>①2014年9月-2017年6月，硕士，中国海洋大学-信息科学与工程学院，计算机技术.</td>
   </tr>
   <tr>
-    <td>②2010年9月-2014年7月，本科，中国海洋大学-信息科学与工程学院，计算机科学与技术.</td>
+    <td>②2010年9月-2014年6月，本科，中国海洋大学-信息科学与工程学院，计算机科学与技术.</td>
   </tr>
 </table>
 
@@ -90,7 +90,7 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 熟练 Java 开源 Web 框架(Spring, Spring MVC, MyBatis, Hibernate, Dubbo, ElasticSearch, Spring Boot, Spring Cloud). </td>
+    <td> ○ 熟练 Java 开源 Web 框架(Spring, Spring MVC, MyBatis, Hibernate, Dubbo, Zookeeper, Nginx, ElasticSearch, Spring Boot, Spring Cloud). </td>
   </tr>
   <tr>
     <td> ○ 熟练脚本语言 Python，Web 后台开发语言 Java, PHP, Asp.Net，熟练 C#.Net 和 VB.Net 软件开发. </td>
@@ -105,7 +105,7 @@
     <td> ○ 熟练基本 Linux Web 服务器管理。熟练使用IDE: VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
-    <td> ○ 熟练前端网页开发 (Handlebars，JavaScript，CSS3，HTML5，JSP，PHP).</td>
+    <td> ○ 熟练前端网页开发 (Handlebars，JavaScript，CSS3，HTML5，JSP).</td>
   </tr>
   <tr>
     <td> ○ 熟练智能仪表采集程序开发，家电制造领域实验室检测软件开发，机房监控软件开发，金融领域软件开发.</td>
