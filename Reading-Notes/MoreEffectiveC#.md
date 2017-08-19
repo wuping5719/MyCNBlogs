@@ -193,5 +193,79 @@
   void backgroundWorkerExample_DoWork(object sender, DoWorkEventArgs e) { ... }
   
 13.让 lock() 作为同步的第一选择。
+  public sealed class LockHolder <T> : IDisposable where T class 
+  {
+     private T handle;
+     private bool holdsLock;
+     public LockHolder (T handle int milliSecondTimeout)
+     {
+        this.handle = handle;
+        holdsLock = System.Threading.Monitor.TryEnter(handle, milliSecondTimeout);
+     }
+     public bool LockSuccessful 
+     {
+        get { return holdsLock; }
+     }
+     #region IDisposable Members 
+     public void Dispose()
+     {
+        if (holdsLock)
+           System.Threading.Monitor.Exit(handle);
+        // 不要重复释放
+        holdsLock = false;
+     }
+     #endregion
+  }
+  object lockHandle = new object();
+  using (LockHolder<object> lockObj = new LockHolder<object>(lockHandle, 1000))
+  {
+     if (lockObj.lockSuccessful) { ... }
+  }
+  // 在此处析构
   
+14.尽可能地减小锁对象的作用范围。
+  private object syncHandle;
+  private object GetSyncHandle() 
+  {
+     System.Threading.Interlocked.CompareExchange(ref syncHandle, new object(), null);
+     return syncHandle;
+  }
+  public void AnotherMethod() 
+  {
+     lock (GetSyncHandle()) { ... }
+  }
+  
+15.避免在锁定区域内调用外部代码。
+  public void DoWork()
+  {
+      for(int count = 0; count < 100; count++)
+      {
+          lock (syncHandle)
+          {
+             System.Threading.Thread.Sleep(100);
+             progressCounter++;
+          }
+          if (RaiseProgress != null)
+             RaiseProgress(this, EventArgs.Empty);
+      }
+  }
+  
+16.理解 Windows 窗体和 WPF 中的跨线程调用。
+  public static class ControlExtensions
+  {
+     public static void InvokeIfNeeded(this Control ctl, Action doit)
+     {
+        if (ctl.InvokeRequired)
+           ctl.Invoke(doit);
+        else
+           doit();
+     }
+     public static void InvokeIfNeeded<T>(this Control ctl, Action<T> doit, T args)
+     {
+        if (ctl.InvokeRequired)
+           ctl.Invoke(doit, args);
+        else
+           doit(args);
+     }
+  }
 ```
