@@ -154,4 +154,44 @@
          second = s;
       }
    }
+   
+10.在实现泛型接口的同时也实现传统接口。
+  public static bool operator <= (Name left, Name right)
+  {
+     if (left == null)
+         return ture;
+     return left.CompareTo(right) <= 0;
+  }
+  public static bool operator >= (Name left, Name right)
+  {
+     if (left == null)
+         return right == null;
+     return left.CompareTo(right) >= 0;
+  }
+  
+11.使用线程池而不是创建线程。
+  System.Threading.ThreadPool.QueueUserWorkItem (delegate (object X) 
+  {
+     for (int i = lowerBound; i < UpperBound; i++)
+     {
+        if (i % numThreads == thread)
+        {
+           double answer = Hero.FindRoot(i);
+        }
+     }
+     // 减少计数器的值
+     if (Interlocked.Decrement (ref workerThreads) == 0)
+     {
+        e.Set();   // 设置事件
+     }
+   });
+   
+12.使用 BackgroundWorker 实现线程间通信。
+  BackgroundWorker backgroundWorkerExample = new BackgroundWorker();
+  backgroundWorkerExample.DoWork += new DoWorkEventHandler(backgroundWorkerExample_DoWork);
+  backgroundWorkerExample.RunWorkAsync();
+  void backgroundWorkerExample_DoWork(object sender, DoWorkEventArgs e) { ... }
+  
+13.让 lock() 作为同步的第一选择。
+  
 ```
