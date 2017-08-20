@@ -268,4 +268,62 @@
            doit(args);
      }
   }
+  
+17.为序列创建可组合的 API。
+  public static IEnumerable<T> UniqueV3<T>(IEnumerable<T> sequence)
+  {
+     Dictionary<T, T> uniqueVals = new Dictionary<T, T>();
+     foreach (T item in sequence)
+     {
+        if (!uniqueVals.ContainsKey(item))
+        {
+           uniqueVals.Add(item, item);
+           yield return item;
+        }
+     }
+  }
+
+18.将遍历和操作、谓词以及函数分开。
+  public delegate T Transformer<T>(T element);
+  public static IEnumerable<T> Transform<T>(IEnumerable<T> sequence, Transformer<T> method)
+  {
+     foreach(T element in sequence)
+        yield return method(element);
+  }
+  // 使用匿名委托语法的 Transform
+  foreach (int i in Transform(myInts, delegate(int Value)
+  {
+     return value * value;
+  }));
+  Console.WriteLine(i);
+  // 使用 lambda 表达式语法的 Transform
+  foreach (int i in Transform (myInts, (value) => value * value));
+  Console.WriteLine(i);
+
+19.根据需要生成序列中的元素。
+
+20.使用函数参数降低耦合。
+  public static IEnumerable<TResult> Join<T1, T2, TResult> (IEnumerable<T1> first,
+                     IEnumerable<T2> second, Func<T1, T2, TResult> joinFunc)
+  {
+     using (IEnumerator<T1> firstSequence = first.GetEnumerator())
+     {
+         using (IEnumerator<T2> secondSequence = second.GetEnumerator())
+         {
+            while (firstSequence.MoveNext() && secondSequence.MoveNext())
+            {
+               yield return joinFunc(firstSequence.Current, secondSequence.Current);
+            }
+         }
+     }
+  }
+  IEnumerable<string> result = Join(first, second, (one, two) => string.Format("{0} {1}", one, two));
+  
+21.让重载方法组尽可能清晰、最小化且完整。
+
+22.定义方法后再重载操作符。
+
+23.理解事件是如何增加对象间运行时耦合的。
+
+24.仅声明非虚的事件。
 ```
