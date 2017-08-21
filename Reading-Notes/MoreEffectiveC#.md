@@ -326,4 +326,98 @@
 23.理解事件是如何增加对象间运行时耦合的。
 
 24.仅声明非虚的事件。
+  public abstract class WorkerEngineBase
+  {
+     public virtual event EventHandler <WorkerEventArgs> OnProgress;
+     protected virtual WorkerEventArgs RaiseEvent(WorkerEventArgs args)
+     {
+        EventHandler<WorkerEventArgs> progHandler = OnProgress;
+        if (progHandler != null)
+        {
+            progHandler(this, args);
+        }
+        return args;
+     }
+     public void DoLotsOfStuff()
+     {
+        for (int i = 0; i < 100; i++)
+        {
+            SomeWork();
+            WorkerEventArgs args = new WorkerEventArgs();
+            args.Percent = i;
+            RaiseEvent(args);
+            if (args.Cancel)
+               return;
+        } 
+     }
+     protected abstract void SomeWork();
+  }
+  public class WorkEngineDerived : WorkerEngineBase
+  {
+     protected override void SomeWork()
+     {
+         Thread.Sleep(50);
+     }
+     public override event EventHandler<WorkerEventArgs> OnProgress;
+     protected override WorkerEventArgs RaiseEvent(WorkerEventArgs args)
+     {
+        EventHandler<WorkerEventArgs> progHandler = OnProgress;
+        if (progHandler != null)
+        {
+            progHandler(this, args);
+        }
+        return args;
+     }
+  }
+
+25.使用异常来报告方法的调用失败。
+  public class DoesWorkThatMightFail
+  {
+      public bool TryDoWork()
+      {
+         if (!TestConditions())
+            return false;
+         Work();  // 仍有可能由于失败抛出异常，不过可能性很小
+         return true;
+      }
+      public void DoWork()
+      {
+          Work(); // 在失败时抛出异常
+      }
+      private bool TestConditions()
+      {
+         // 实现省略
+         return true;
+      }
+      private void Work()
+      {
+         // 执行实际操作
+      }
+  }
+
+26.确保属性的行为与数据类似。
+
+27.区分继承与组合。
+  在你需要让类型重用其它类型的实现时，应该使用组合。若类型表示的是 Is A 关系，那么继承是更好的选择。
+
+28.使用扩展方法增强现有接口。
+
+29.使用扩展方法增强现有类型。
+  public static IEnumerable<Customer> LostProspects(IEnumerable<Customer> targetList)
+  {
+     IEnumerable<Customer> answer = from c in targetList
+                                    where DateTime.Now - c.LastOrderDate > TimeSpan.FormDays(30)
+                                    select c;
+     return answer;
+  }
+
+30.推荐使用隐式类型局部变量。
+  public IEnumerable <string> FindCustomersStartingWith (string start)
+  {
+     var q = from c in db.Customers
+             select c.ContactName;
+     var q2 = q.Where (s => s.StartsWith(start));
+     return q2;
+  }
 ```
+ 
