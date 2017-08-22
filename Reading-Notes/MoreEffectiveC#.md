@@ -419,5 +419,19 @@
      var q2 = q.Where (s => s.StartsWith(start));
      return q2;
   }
+  
+31.使用匿名类型限制类型的作用域。
+  static T Transform <T> (T element, Func<T, T> transformFunc)
+  {
+     return transformFunc(element);
+  }
+  var aPoint = new { x = 5; Y = 65 };
+  var anotherPoint = Transform(aPoint, (p) => new { X = p.x * 2, Y = p.y * 2 });
+  
+32.为外部组件创建可组合的 API。
+  public static IEnumerable<T> Reverse<T> (this IList<T> sequence)
+  {
+     for (int index = sequence.Count - 1; index >= 0; index--)
+        yield return sequence[index];
+  }
 ```
- 
