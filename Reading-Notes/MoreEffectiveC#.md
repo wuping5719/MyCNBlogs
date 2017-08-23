@@ -434,4 +434,40 @@
      for (int index = sequence.Count - 1; index >= 0; index--)
         yield return sequence[index];
   }
+
+33.避免修改绑定变量。
+  public class ModFilter 
+  {
+     private readonly int modulus;
+     public ModFilter(int mod)
+     {
+        modulus = mod;
+     }
+     public IEnumerable<int> FindValues(IEnumerable<int> sequence)
+     {
+        return from n in sequence
+               where n % modulus == 0
+               select n * n;
+     }
+  }
+
+34.为匿名类型定义局部函数。
+
+35.不要在不同命名空间中声明同名的扩展方法。
+
+36.理解查询表达式与方法调用之间的映射。
+
+37.推荐使用延迟求值查询。
+
+38.推荐使用 Lambda 表达式而不是方法。
+
+39.避免在函数或操作中抛出异常。
+
+40.区分早期执行和延迟执行。
+
+41.避免在闭包中捕获昂贵的外部资源。
+
+42.区分 IEnumerable 和 IQueryable 数据源。
+
+43.使用 single() 和 first() 来明确给出对查询结果的期待。
 ```
