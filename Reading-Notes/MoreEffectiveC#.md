@@ -470,4 +470,20 @@
 42.区分 IEnumerable 和 IQueryable 数据源。
 
 43.使用 single() 和 first() 来明确给出对查询结果的期待。
+
+44.推荐保存 Expression<> 而不是 Func<>。
+
+45.最小化可空类型的可见范围。
+  var result1 = NullableObject ?? 0;
+  var result2 = NullableObject.GetValueOrDefault(0);
+
+46.为部分类的构造函数、修改方法以及事件处理程序提供部分方法。
+
+47.仅在需要 parms 数组时才使用数组作为参数。
+
+48.避免在构造函数中调用虚方法。
+
+49.考虑为大型对象使用弱引用。
+
+50.使用隐式属性表示可变但不可序列化的数据。
 ```
