@@ -452,10 +452,55 @@
   }
 
 34.为匿名类型定义局部函数。
+  public static IEnumerable<TResult> Map<TSource, TResult>(this IEnumerable<TSource> source,
+                                            Func<TSource, TResult> mapFunc)
+  {
+     foreach (TSource s in source)
+         yield return mapFunc(s);
+  }
+  var sequence = (from x in Func.Generator(100,
+        () => randomNumbers.NextDouble() * 100)
+        let y = randomNumbers.NextDouble() * 100
+        select new { x, y }).TakeWhile(point => point.x < 75);
+  var scaled = sequence.Map(p => new { x = p.x * 5, y = p.y * 5 });
+  var translated = scaled.Map(p => new { x = p.x - 20, y = p.y - 20 });
+  var distances = translated.Map(p => new { p.x, p.y, distances = Math.Sqrt(p.x * p.x + p.y * p.y)});
+  var filtered = from location in distances
+                 where location.distances < 500.0
+                 select location;
 
 35.不要在不同命名空间中声明同名的扩展方法。
 
 36.理解查询表达式与方法调用之间的映射。
+  delegate R Func<T1, R>(T1 arg1);
+  delegate R Func<T1, T2, R>(T1 arg1, T2 arg2);
+  class C 
+  {
+     public C<T> Cast<T>();
+  }
+  class C<T> : C
+  {
+     public C<T> Where(Func<T, bool> predicate);
+     public C<U> Select<U>(Func<T, U> selector);
+     public C<U> SelectMany<U, V>(Func<T>, C<U>> selector, Func<T, U, V> resultSelector);
+     public C<V> Join<U, K, V>(C<U> inner, Func<T, K> outerKeySelector, Func<U, K> innerKeySelector,
+                                           Func<T, U, V> resultSelector);
+     public C<V> GroupJoin<U, K, V>(C<U> inner, Func<T, K> outerKeySelector, Func<U, K> innerKeySelector,
+                                           Func<T, C<U>, V> resultSelector);     
+     public O<T> OrderBy<K>(Func<T, K> keySelector);
+     public O<T> OrderByDescending<K>(Func<T, K> keySelector);
+     public C<G<K, T>> GroupBy<K>(Func<T, K> keySelector);
+     public C<G<K, E>> GroupBy<K, E>(Func<T, K> keySelector, Func<T, E> elementSelector);        
+  }
+  class O<T> : C<T> 
+  {
+     public O<T> ThenBy<K>(Func <T, K> keySelector);
+     public O<T> ThenByDescending<K>(Func<T, K> keySelector);
+  }
+  class G<K, T> : C<T>
+  {
+     public K key { get; }
+  }
 
 37.推荐使用延迟求值查询。
 
@@ -469,10 +514,23 @@
 
 42.区分 IEnumerable 和 IQueryable 数据源。
 
-43.使用 single() 和 first() 来明确给出对查询结果的期待。
+43.使用 single() 和 First() 来明确给出对查询结果的期待。
+  var answer = (from p in Forwards
+                where p.GoalsScored > 0;
+                Orderby p.GoalsScored
+                select p).Skip(2).First();
 
 44.推荐保存 Expression<> 而不是 Func<>。
-
+  Expression<Func<int, bool>> IsOdd = val => val % 2 == 1;
+  Expression<Func<int, bool>> IsLargeNumber = val => val > 300;
+  InvocationExpression callLeft = Expression.Invoke(IsOdd, Expression.ConStant(5));
+  InvocationExpression callRight = Expression.Invoke(IsLargeNumber, Expression.ConStant(5)); 
+  BinaryExpression Combined = Expression.MakeBinary(ExpressionType.And, callLeft, callRight);
+  // 转换成强类型表达式
+  Expression<Func<int, bool>> typeCombined = Expression.Lambda<Func<bool>>(Combined);
+  Func<bool> compiled = typeCombined.Compile();
+  bool answer = compiled();
+ 
 45.最小化可空类型的可见范围。
   var result1 = NullableObject ?? 0;
   var result2 = NullableObject.GetValueOrDefault(0);
