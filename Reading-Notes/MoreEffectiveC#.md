@@ -484,6 +484,15 @@
 48.避免在构造函数中调用虚方法。
 
 49.考虑为大型对象使用弱引用。
+   WeakReference w = new WeakReference(myLargeObject);
+   myLargeObject = null;
+   myLargeObject = w.Target as MyLargeClass;
+   if (myLargeObject == null)
+      myLargeObject = new MyLargeClass();
 
 50.使用隐式属性表示可变但不可序列化的数据。
+  public string Name { get; protected set; }
+  public string Name { get; internal set; }
+  public string Name { get; protected internal set; }
+  public string Name { get; private set; }
 ```
