@@ -13,4 +13,13 @@ Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
      PaymentService payService = (PaymentService) Naming.lookup(payServiceUrl);
      return payService;
   }
+  引用一个 RMI PaymentService 的配置：
+  <bean id="paymentService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+     <property name="serviceUrl">
+         <value>rmi://${paymenthost}/PayService</value>
+     </property>
+     <property name="serviceInterface">
+         <value>com.springinaction.payment.PaymentService</value>
+     </property>
+  </bean>
 ```
