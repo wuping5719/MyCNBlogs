@@ -3,7 +3,7 @@
 > [美] 沃尔斯 ● 布雷登巴赫 著    人民邮电出版社
 
 ```Java
-1.Spring 远程调用支持6种不同的 RPC 模式：远程方法调用（RMI）、Caucho 的 Hessian 和 Burlap、
+1.Spring 远程调用支持 6 种不同的 RPC 模式：远程方法调用（RMI）、Caucho 的 Hessian 和 Burlap、
 Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
 
 2.连接 RMI 服务。
