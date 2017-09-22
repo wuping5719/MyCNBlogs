@@ -22,4 +22,20 @@ Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
          <value>com.springinaction.payment.PaymentService</value>
      </property>
   </bean>
+  
+3.输出 RMI 服务。
+  用传统方式 (非 Spring) 实现作为 RMI 服务的支付服务。
+  public class PaymentServiceImpl extends UnicastRemoteObject implements PaymentService {
+     public PaymentServiceImpl() throws RemoteException {}
+     public String authorizeCreditCard(String creditCardNumber, String cardHolderName, int expirationMonth,
+                       int expirationYear, float amount) throws AuthorizationException, RemoteException {
+        String authCode = ...;
+        // implement authorization
+        return authCode;
+     }
+     public void settlePayment(String authCode, int accountNumber,
+                        float amount) throws SettlementException, RemoteException {
+        // implement settlement
+     }
+  }
 ```
