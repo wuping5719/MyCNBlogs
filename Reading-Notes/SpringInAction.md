@@ -9,7 +9,8 @@ Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
 2.连接 RMI 服务。
   访问支付服务的一种方法是写一个工厂方法，用传统的 RMI 方法取得对支付服务的引用。
   private String payServiceUrl = "rmi:/creditswitch/PaymentService";
-  public PaymentService lookupPaymentService() throws RemoteException, NotBoundException, MalformedURLException {
+  public PaymentService lookupPaymentService() throws RemoteException, NotBoundException, 
+                MalformedURLException {
      PaymentService payService = (PaymentService) Naming.lookup(payServiceUrl);
      return payService;
   }
@@ -167,7 +168,8 @@ Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
    ① LocalStatelessSessionProxyFactoryBean —— 用来访问本地 EJB（EJB 和它的客户端在同一个容器中）。
    ② SimpleRemoteStatelessSessionProxyFactoryBean —— 用来访问远程 EJB（EJB 和它的客户端在独立的容器中）。
 
-  <bean id="paymentService" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean" lazy-init="true">
+  <bean id="paymentService" class="org.springframework.ejb.access.LocalStatelessSessionProxyFactoryBean" 
+                         lazy-init="true">
       <property name="jndiName">
          <value>payService</value>
       </property>
