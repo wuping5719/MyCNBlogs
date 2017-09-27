@@ -185,4 +185,55 @@ Spring 自己的 HTTP invoker、EJB 和使用 JAX-RPC 的 Web Services。
      </property>
      …
   </bean>
+  
+  <bean id="paymentService" class="org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean"
+                  lazy-init="true">
+     <property name="jndiName">
+         <value>payService</value>
+     </property>
+     <property name="businessInterface">
+        <value>com.springinaction.payment.PaymentService</value>
+     </property>
+  </bean>
+
+8.用 Spring 开发 EJB。
+  Spring 提供了 4 种抽象支持类:
+   (1) AbstractMessageDrivenBean —— 对开发从 JMS 之外的其他消息源接收消息的 message-driven Bean 有帮助。
+   (2) AbstractJmsMessageDrivenBean —— 对开发从 JMS 源接收消息的 message-driven Beans 有帮助。
+   (3) AbstractStatefulSessionBean —— 对开发有状态 EJB 有用。
+   (4) AbstractStatelessSessionBean —— 对开发无状态 EJB 有用。
+  这些抽象类通过两种方式简化 EJB 开发：
+   a.它们提供了 EJB 生命周期方法的默认的空的实现（例如：ejbActivate()，ejbPassivate()，ejbRemove()）。
+这些方法在每个 EJB 规范中都需要，但是通常都是作为空方法实现的。
+   b.它们提供了对 Spring Bean 工厂的访问。这让你有可能把 EJB 实现成一个代理，
+由 EJB 将业务逻辑的责任委托给由 Spring 配置的 POJO 来做。
+
+public class CourseServiceEjb extends AbstractStatelessSessionBean implements CourseService {
+   private CourseService courseService;
+   
+   protected void onEjbCreate() {
+      courseService = (CourseService) getBeanFactory().getBean("courseService");
+   }
+   
+   public Course getCourse(Integer id) {
+      return courseService.getCourse(id);
+   }
+   
+   public void createCourse(Course course) {
+      courseService.createCourse(course);
+   }
+
+   public Set getAllCourses() {
+      return courseService.getAllCourses();
+   }
+
+   public void enrollStudentInCourse(Course course, Student student) throws CourseException {
+      courseService.enrollStudentInCourse(course, student);
+   }
+}
+
+public void setSessionContext(SessionContext sessionContext) {
+    super.setSessionContext(sessionContext);
+    setBeanFactoryLocatorKey("java:comp/env/ejb/MyBeanFactory");
+}
 ```
