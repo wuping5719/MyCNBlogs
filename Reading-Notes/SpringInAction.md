@@ -236,4 +236,63 @@ public void setSessionContext(SessionContext sessionContext) {
     super.setSessionContext(sessionContext);
     setBeanFactoryLocatorKey("java:comp/env/ejb/MyBeanFactory");
 }
+
+9.用 JAX-RPC 应用一个 Web Service。
+  Bable Fish web service 的远程服务接口:
+  import java.rmi.Remote;
+  import java.rmi.RemoteException;
+  public interface BabelFishRemote extends Remote {
+    public String BabelFish(String translationMode, String sourceData) throws RemoteException;
+  }
+
+  String wsdlDocumentUrl = "http://www.xmethods.com/sd/2001/BabelFishService.wsdl";
+  String namespaceUri = "http://www.xmethods.net/sd/BabelFishService.wsdl";
+  String serviceName = "BabelFishService";
+  String portName = "BabelFishPort";
+  QName serviceQN = new QName(namespaceUri, serviceName);
+  QName portQN = new QName(namespaceUri, portName);
+  ServiceFactory sf = ServiceFactory.newInstance();
+  Service service = sf.createService(new URL(wsdlDocumentUrl), serviceQN);
+  BabelFishRemote babelFish = (BabelFishRemote) service.getPort(BabelFishRemote.class, portQN);
+
+  String translated1 = babelFish.BabelFish("en_es", "Hello World");
+  String translated2 = babelFish.BabelFish("es_fr", "Hola Mundo");
+  String translated3 = babelFish.BabelFish("fr_de", "Bonjour Monde");
+
+  Context ic = new InitialContext();
+  BabelFishService babelFishService = (BabelFishService) ic.lookup("java:comp/env/service/BabelFish");
+  BabelFishRemote babelFish = (BabelFishRemote) babelFishService.getBabelFishPort();
+
+10.在 Spring 里置入一个 Web Service。
+  <bean id="babelFish" class="org.springframework.remoting.jaxrpc.JaxRpcPortProxyFactoryBean">
+     <property name="wsdlDocumentUrl">
+         <value>http://www.xmethods.com/sd/2001/BabelFishService.wsdl</value>
+     </property>
+     <property name="serviceInterface">
+         <value>com.springinaction.chapter06.babelfish.BabelFishService</value>
+     </property>
+     <property name="portInterface">
+         <value>com.habuma.remoting.client.BabelFishRemote</value>
+     </property>
+     <property name="namespaceUri">
+         <value>http://www.xmethods.net/sd/BabelFishService.wsdl</value>
+     </property>
+     <property name="serviceName">
+         <value>BabelFishService</value>
+     </property>
+     <property name="portName">
+         <value>BabelFishPort</value>
+     </property>
+     <property name="serviceFactoryClass">
+         <value>org.apache.axis.client.ServiceFactory</value>
+     </property>
+  </bean>
+
+  public interface BabelFishService {
+    public String BabelFish(String translationMode, String sourceData);
+  }
+  
+  ApplicationContext context = new FileSystemXmlApplicationContext("babelFish.xml");
+  BabelFishService babelFish = (BabelFishService) context.getBean(babelFish);
+  String translated = babelFish.BabelFish("en_es", "Hello World");
 ```
