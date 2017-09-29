@@ -269,7 +269,7 @@ public void setSessionContext(SessionContext sessionContext) {
          <value>http://www.xmethods.com/sd/2001/BabelFishService.wsdl</value>
      </property>
      <property name="serviceInterface">
-         <value>com.springinaction.chapter06.babelfish.BabelFishService</value>
+         <value>com.springinaction.babelfish.BabelFishService</value>
      </property>
      <property name="portInterface">
          <value>com.habuma.remoting.client.BabelFishRemote</value>
