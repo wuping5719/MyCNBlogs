@@ -295,4 +295,76 @@ public void setSessionContext(SessionContext sessionContext) {
   ApplicationContext context = new FileSystemXmlApplicationContext("babelFish.xml");
   BabelFishService babelFish = (BabelFishService) context.getBean(babelFish);
   String translated = babelFish.BabelFish("en_es", "Hello World");
+
+11.代理 JNDI 对象。
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate.LocalSessionFactoryBean">
+     <property name="dataSource">
+        <ref bean="dataSource"/>
+     </property>
+     …
+  </bean>
+  
+12.发送电子邮件。
+  <bean id="mailSession" class="org.springframework.jndi.JndiObjectFactoryBean">
+     <property name="jndiName">
+        <value>java:comp/env/mail/Session</value>
+     </property>
+  </bean>
+  <bean id="mailSender" class="org.springrframework.mail.javamail.JavaMailSenderImpl">
+     <property name="session"><ref bean="mailSession"/></property>
+  </bean>
+  <bean id="enrollmentMailMessage" class="org.springframework.mail.SimpleMailMessage">
+    <property name="to">
+       <value>coursedirector@springtraining.com</value>
+    </property>
+    <property name="from">
+       <value>system@springtraining.com</value>
+    </property>
+    <property name="subject">
+       <value>Course enrollment report</value>
+    </property>
+  </bean>
+
+  public class CourseServiceImpl implements CourseService {
+    …
+    private MailSender mailSender;
+    public void setMailSender(MailSender mailSender) {
+      this.mailSender = mailSender;
+    }
+    private SimpleMailMessage mailMessage;
+    public void setMailMessage(SimpleMailMessage mailMessage) {
+      this.mailMessage = mailMessage;
+    }
+    …
+  }
+
+  public void sendCourseEnrollmentReport() {
+    Set courseList = courseDao.findAll();
+    SimpleMailMessage message = new SimpleMailMessage(this.mailMessage);
+    StringBuffer messageText = new StringBuffer();
+    messageText.append("Current enrollment data is as follows:\n\n");
+    for(Iterator iter = courseList.iterator(); iter.hasNext(); ) {
+      Course course = (Course) iter.next();
+      messageText.append(course.getId() + " ");
+      messageText.append(course.getName() + " ");
+      int enrollment = courseDao.getEnrollment(course);
+      messageText.append(enrollment);
+    }
+    message.setText(messageText.toString());
+    try {
+      mailSender.send(message);
+    } catch (MailException e) {
+      LOGGER.error(e.getMessage());
+    }
+  }
+
+  <bean id="courseService" class="com.springinaction.training.service.CourseServiceImpl">
+    …
+    <property name="mailMessage">
+      <ref bean="enrollmentMailMessage"/>
+    </property>
+    <property name="mailSender">
+      <ref bean="mailSender"/>
+    </property>
+  </bean>
 ```
