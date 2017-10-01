@@ -367,4 +367,36 @@ public void setSessionContext(SessionContext sessionContext) {
       <ref bean="mailSender"/>
     </property>
   </bean>
+  
+13.使用 Java Timer 调度任务。
+public class EmailReportTask extends TimerTask {
+  public EmailReportTask() {}
+  public void run() {
+    courseService.sendCourseEnrollmentReport();
+  }
+  private CourseService courseService;
+  public void setCourseService(CourseService courseService) {
+    this.courseService = courseService;
+  }
+}
+
+  <bean id="reportTimerTask" class="com.springinaction.training.schedule.EmailReportTask">
+     <property name="courseService">
+        <ref bean="courseService"/>
+     </property>
+  </bean>
+
+  <bean id="scheduledReportTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+     <property name="timerTask">
+        <ref bean="reportTimerTask"/>
+     </property>
+     <property name="period">
+        <value>86400000</value>
+     </property>
+     <property name="delay">
+        <value>3600000</value>
+    </property>
+  </bean>
+
+14.使用 Quartz 调度器。
 ```
