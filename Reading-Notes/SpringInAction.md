@@ -399,4 +399,77 @@ public class EmailReportTask extends TimerTask {
   </bean>
 
 14.使用 Quartz 调度器。
+public class EmailReportJob extends QuartzJobBean {
+  public EmailReportJob() {}
+  protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
+    courseService.sendCourseEnrollmentReport();
+  }
+  private CourseService courseService;
+  public void setCourseService(CourseService courseService) {
+    this.courseService = courseService;
+  }
+}
+
+ <bean id="reportJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+   <property name="jobClass">
+     <value>com.springinaction.training.schedule.EmailReportJob</value>
+   </property>
+   <property name="jobDataAsMap">
+     <map>
+       <entry key="courseService">
+         <ref bean="courseService"/>
+       </entry>
+     </map>
+   </property>
+ </bean>
+
+ <bean id="simpleReportTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+    <property name="jobDetail">
+      <ref bean="reportJob"/>
+    </property>
+    <property name="startDelay">
+      <value>3600000</value>
+    </property>
+    <property name="repeatInterval">
+      <value>86400000</value>
+    </property>
+ </bean>
+
+ <bean id="cronReportTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+    <property name="jobDetail">
+      <ref bean="reportJob"/>
+    </property>
+    <property name="cronExpression">
+      <value>0 0 6 * * ?</value>
+    </property>
+ </bean>
+
+ <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+      <list>
+        <ref bean="cronReportTrigger"/>
+      </list>
+    </property>
+ </bean>
+
+15.按调度计划调用方法。
+ <bean id="scheduledReportTask" 
+      class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+   <property name="targetObject">
+     <ref bean="courseService"/>
+   </property>
+   <property name="targetMethod">
+     <value>sendCourseEnrollmentReport</value>
+   </property>
+ </bean>
+
+ <bean id="courseServiceInvokingJobDetail" 
+         class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject">
+      <ref bean="courseService"/>
+    </property>
+    <property name="targetMethod">
+      <value>sendCourseEnrollmentReport</value>
+    </property>
+ </bean>
 ```
