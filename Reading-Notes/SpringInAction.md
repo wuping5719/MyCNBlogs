@@ -1,6 +1,6 @@
 <h2>《Spring In Action》 :books: </h2> 
 
-> [美] 沃尔斯 ● 布雷登巴赫 著    人民邮电出版社
+> [美] Craig Walls 著    人民邮电出版社
 
 ```java
 1.Spring 远程调用支持 6 种不同的 RPC 模式：远程方法调用（RMI）、Caucho 的 Hessian 和 Burlap、
