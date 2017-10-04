@@ -528,4 +528,75 @@ public class EmailReportJob extends QuartzJobBean {
      <value>true</value>
    </property>
  </bean>
+
+17.消费消息。
+public PaySettlement processSettlementMessages() {
+  Message msg = jmsTemplate.receive("creditCardQueue");
+  try {
+    MapMessage mapMessage = (MapMessage) msg;
+    PaySettlement paySettlement = new PaySettlement();
+    paySettlement.setAuthCode(mapMessage.getString("authCode"));
+    paySettlement.setCreditCardNumber(mapMessage.getString("creditCardNumber"));
+    paySettlement.setCustomerName(mapMessage.getString("customerName"));
+    paySettlement.setExpirationMonth(mapMessage.getInt("expirationMonth"));
+    paySettlement.setExpirationYear(mapMessage.getInt("expirationYear"));
+    return paySettlement;
+  } catch (JMSException e) {
+    throw JmsUtils.convertJmsAccessException(e);
+  }
+}
+
+<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+  <property name="receiveTimeout">
+      <value>10000</value>
+  </property>
+</bean>
+
+18.转换消息。
+public class PaySettlementConverter implements MessageConverter {
+   public PaySettlementConverter() {}
+
+   public Object fromMessage(Message message) throws MessageConversionException {
+     MapMessage mapMessage = (MapMessage) message;
+     PaySettlement settlement = new PaySettlement();
+     try {
+       settlement.setAuthCode(mapMessage.getString("authCode"));
+       settlement.setCreditCardNumber(mapMessage.getString("creditCardNumber"));
+       settlement.setCustomerName(mapMessage.getString("customerName"));
+       settlement.setExpirationMonth(mapMessage.getInt("expirationMonth"));
+       settlement.setExpirationYear(mapMessage.getInt("expirationYear"));
+     } catch (JMSException e) {
+       throw new MessageConversionException(e.getMessage());
+     }
+     return settlement;
+   }
+
+   public Message toMessage(Object object, Session session) throws JMSException,
+        MessageConversionException {
+     PaySettlement settlement = (PaySettlement) object;
+     MapMessage message = session.createMapMessage();
+     message.setString("authCode", settlement.getAuthCode());
+     message.setString("customerName", settlement.getCustomerName());
+     message.setString("creditCardNumber", settlement.getCreditCardNumber());
+     message.setInt("expirationMonth", settlement.getExpirationMonth());
+     message.setInt("expirationYear", settlement.getExpirationYear());
+     return message;
+   }
+ }
+
+ <bean id="settlementConverter" class="com.springinaction.training.service.PaySettlementConverter">
+    …
+ </bean>
+
+ <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+    …
+    <property name="messageConverter">
+      <ref bean="settlementConverter"/>
+    </property>
+ </bean>
+
+ public void sendSettlementMessage(PaySettlement settlement) {
+     jmsTemplate.convertAndSend(settlement);
+ }
+ PaySettlement settlement = (PaySettlement) jmsTemplate.receiveAndConvert("creditCardQueue");
 ```
