@@ -472,4 +472,60 @@ public class EmailReportJob extends QuartzJobBean {
       <value>sendCourseEnrollmentReport</value>
     </property>
  </bean>
+ 
+16.使用 JMS 模板发送消息。
+ private JmsTemplate jmsTemplate;
+ public void setJmsTemplate(JmsTemplate jmsTemplate) {
+   this.jmsTemplate = jmsTemplate;
+ }
+
+ public void sendSettlementMessage(final PaySettlement settlement) {
+   jmsTemplate.send(
+     new MessageCreator() {
+       public Message createMessage(Session session) throws JMSException {
+           MapMessage message = session.createMapMessage();
+           message.setString("authCode", settlement.getAuthCode());
+           message.setString("customerName", settlement.getCustomerName());
+           message.setString("creditCardNumber", settlement.getCreditCardNumber());
+           message.setInt("expirationMonth", settlement.getExpirationMonth());
+           message.setInt("expirationYear", settlement.getExpirationYear());
+           return message;
+         }
+       }
+   );
+ }
+
+ <bean id="paymentService" class="com.springinaction.training.service.PaymentServiceImpl">
+    …
+    <property name="jmsTemplate">
+      <ref bean="jmsTemplate"/>
+    </property>
+ <bean>
+ <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+    <property name="connectionFactory">
+      <ref bean="jmsConnectionFactory"/>
+    </property>
+    <property name="defaultDestination">
+      <ref bean="destination"/>
+    </property>
+ </bean>
+ <bean id="jmsConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName">
+      <value>connectionFactory</value>
+    </property>
+ </bean>
+ <bean id="destination" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName">
+      <value>creditCardQueue</value>
+    </property>
+ </bean>
+
+ jmsTemplate.send("creditCardQueue", new MessageCreator() { … });
+
+ <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+   …
+   <property name="pubSubDomain">
+     <value>true</value>
+   </property>
+ </bean>
 ```
