@@ -97,4 +97,76 @@
        <value>true</value>
     </property>
   </bean>
+  
+25.构造一个 FreeMarker 视图: http://freemarker.sourceforge.net
+  使用 FreeMarker 的模板语言列举课程：courseList.ftl
+  <html>
+    <head>
+      <title>Course List</title>
+    </head>
+    <body>
+      <h2>COURSE LIST</h2>
+      <table width="600" border="1" cellspacing="1" cellpadding="1">
+        <tr bgcolor="#999999">
+          <td>Course ID</td>
+          <td>Name</td>
+          <td>Instructor</td>
+          <td>Start</td>
+          <td>End</td>
+        </tr>
+       <#list courses as course>
+        <tr>
+          <td><a href="displayCourse.htm?id=${course.id}">${course.id?string("000000")}</a></td>
+          <td>${course.name}</td>
+          <td>${course.instructor.lastName}</td>
+          <td>${course.startDate?string.long}</td>
+          <td>${course.endDate?string.long}</td>
+        </tr>
+       </#list>
+      </table>
+    </body>
+  </html>
+
+26.配置 FreeMarker 引擎。
+ <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+    <property name="templateLoaderPath">
+       <value>WEB-INF/freemarker/</value>
+    </property>
+    <property name="freemarkerSettings">
+      <props>
+        <prop key="template_update_delay">3600</prop>
+      </props>
+    </property>
+ </bean>
+
+27.解析 FreeMarker 视图。
+ <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+    <property name="suffix"><value>.ftl</value></property>
+    <property name="exposeRequestAttributes">
+       <value>true</value>
+    </property>
+    <property name="exposeSessionAttributes">
+       <value>true</value>
+    </property>
+ </bean>
+
+28.在 FreeMarker 中绑定表单域。
+  <#import "/spring.ftl" as spring />
+  
+  <@spring.bind "command.phone" />
+  phone: <input type="text" name="${spring.status.expression}" value="${spring.status.value}">
+         <font color="#FF0000">${spring.status.errorMessage}</font><br>
+
+  <@spring.bind "command.email" />
+  email: <input type="text" name="${spring.status.expression}" value="${spring.status.value}">
+         <font color="#FF0000">${spring.status.errorMessage}</font><br>
+
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+     …
+     <property name="exposeSpringMacroHelpers">
+        <value>true</value>
+     </property>
+  </bean>
+
+29.Tile 视图。
 ```
