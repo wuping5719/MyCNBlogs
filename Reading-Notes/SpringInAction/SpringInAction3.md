@@ -1,3 +1,8 @@
+<h2>《Spring In Action》 :books: </h2> 
+
+> [美] Craig Walls / Ryan Breidenbach  著    人民邮电出版社
+
+```java
 19.定义 Velocity 视图: http://jakarta.apache.org/velocity.
   基于 Velocity 的课程列表: courseList.vm
   <html>
@@ -44,3 +49,4 @@
  <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
     <property name="suffix"><value>.vm</value></property>
  </bean>
+```
