@@ -151,6 +151,8 @@
  </bean>
 
 28.在 FreeMarker 中绑定表单域。
+  <#import "/spring.ftl" as spring />
+  
   <@spring.bind "command.phone" />
   phone: <input type="text" name="${spring.status.expression}" value="${spring.status.value}">
          <font color="#FF0000">${spring.status.errorMessage}</font><br>
@@ -165,8 +167,6 @@
         <value>true</value>
      </property>
   </bean>
-  
-  <#import "/spring.ftl" as spring />
-  
+ 
 29.Tile 视图。
 ```
