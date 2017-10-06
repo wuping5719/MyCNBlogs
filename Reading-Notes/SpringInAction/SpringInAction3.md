@@ -169,4 +169,93 @@
   </bean>
  
 29.Tile 视图。
+ <%@ taglib prefix="tiles" uri="http://jakarta.apache.org/struts/tags-tiles" %>
+ <html>
+   <head>
+     <title><tiles:getAsString name="title"/></title>
+   </head>
+   <body
+     <table width="100%" border="0">
+       <tr>
+         <td><tiles:insert name="header"/></td>
+       </tr>
+       <tr>
+         <td valign="top" align="left">
+           <tiles:insert name="content"/>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           <tiles:insert name="footer"/>
+         </td>
+       </tr>
+     </table>
+   </body>
+ </html>
+
+ training-defs.xml
+ <tiles-definitions>
+    <definition name="template" page="/tiles/mainTemplate.jsp">
+      <put name="title" value="Default title"/>
+      <put name="header" value="/tiles/header.jsp"/>
+      <put name="content" value="/tiles/defaultContentPage.jsp"/>
+      <put name="footer" value="/tiles/footer.jsp"/>
+    </definition>
+    <definition name="courseDetail" extends="template">
+      <put name="title" value="Course Detail" />
+      <put name="content" value="/tiles/courseDetail.jsp"/>
+    </definition>
+    ......
+ </tiles-definitions>
+
+ 配置 Tiles
+ <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles.TilesConfigurer">
+    <property name="definitions">
+      <list>
+        <value>/WEB-INF/tiledefs/training-defs.xml</value>
+      </list>
+    </property>
+ </bean>
+
+ 解析 Tiles 视图
+ <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+   <property name="viewClass">
+     <value>org.springframework.web.servlet.view.tiles.TilesView</value>
+   </property>
+ </bean>
+
+ return new ModelAndView("courseDetail", "course", course);
+
+30.Tile 控制器。
+ Student student = (Student) request.getSession().getAttribute("student");
+ if(student != null) {
+   int courseCount = studentService.getCompletedCourses(student).size();
+   modelMap.add("courseCount", courseCount);
+   modelMap.add("studentName", student.getFirstName());
+ }
+ 
+ Hello ${studentName}, you have completed ${courseCount} courses.
+
+ 使用 Tiles 控制器获取课程数量:
+ public class HeaderTileController extends ComponentControllerSupport {
+    protected void doPerform(ComponentContext componentContext,
+        HttpServletRequest request, HttpServletResponse response) throws Exception {
+      ApplicationContext context = getApplicationContext();
+      StudentService studentService = (StudentService) context.getBean("studentService"); 
+      Student student = (Student) request.getSession().getAttribute("student");
+      int courseCount = studentService.getCompletedCourses(student).size();
+      componentContext.putAttribute("courseCount",new Integer(courseCount));
+      componentContext.putAttribute("studentname",student.getFirstName());
+    }
+ }
+
+ training-defs.xml
+ <definition name=".header" page="/tiles/header.jsp" 
+          controllerClass="com.springinaction.training.tiles.HeaderTileController"/>
+ <definition name="template" page="/tiles/mainTemplate.jsp">
+    <put name="title" value="Default title"/>
+    <put name="header" value=".header"/>
+    <put name="content" value="/tiles/defaultContentPage.jsp"/>
+    <put name="footer" value="/tiles/footer.jsp"/>
+ </definition>
 ```
