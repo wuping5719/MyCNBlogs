@@ -52,5 +52,49 @@
 
  return new ModelAndView("courseList", "courses", allCourses);
  
+22.格式化日期和数字。
+ <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    …
+    <property name="dateToolAttribute">
+       <value>dateTool</value>
+    </property>
+    <property name="numberToolAttribute">
+       <value>numberTool</value>
+    </property>
+  </bean>
 
+  $numberTool.format("000000", course.id)
+
+  $dateTool.format("FULL", course.startDate)
+  $dateTool.format("FULL", course.endDate)
+
+23.暴露请求和会话属性。
+ <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    …
+    <property name="exposeRequestAttributes">
+       <value>true</value>
+    </property>
+    <property name="exposeSessionAttributes">
+       <value>true</value>
+    </property>
+ </bean>
+
+24.在 Velocity 中绑定表单域。
+  在 Velocity 模板中使用 #springBind.
+  #springBind("command.phone")
+  phone: <input type="text" name="${status.expression}" value="$!status.value">
+         <font color="#FF0000">${status.errorMessage}</font><br>
+
+  #springBind("command.email")
+  email: <input type="text" name="${status.expression}" value="$!status.value">
+         <font color="#FF0000">${status.errorMessage}</font><br>
+
+  #springBindEscaped("command.email", true)
+
+  <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+    …
+    <property name="exposeSpringMacroHelpers">
+       <value>true</value>
+    </property>
+  </bean>
 ```
