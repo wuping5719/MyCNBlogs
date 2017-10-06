@@ -49,4 +49,8 @@
  <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
     <property name="suffix"><value>.vm</value></property>
  </bean>
+
+ return new ModelAndView("courseList", "courses", allCourses);
+ 
+
 ```
