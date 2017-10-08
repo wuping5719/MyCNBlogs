@@ -35,7 +35,6 @@
      </property>
   </bean>
 
-  /*是所有 Acegi 过滤器推荐的 URL 模式。
   <filter-mapping>
      <filter-name>Acegi-Authentication</filter-name>
      <url-pattern>/*</url-pattern>
@@ -147,4 +146,82 @@
     <filter-name>Acegi-Authentication</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
+  (4) 基于表单的身份验证:
+  Acegi 的 AuthenticationProcessingFilterEntryPoint 是一个提供给用户基于 HTML 的登录表单的认证入口点。
+  <bean id="authenticationEntryPoint" 
+      class="net.sf.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+    <property name="loginFormUrl">
+      <value>/jsp/login.jsp</value>
+    </property>
+    <property name="forceHttps"><value>true</value></property>
+  </bean>
+
+  login.jsp
+  <form method="POST" action="j_acegi_security_check">
+    <input type="text" name="j_username"><br>
+    <input type="password" name="j_password"><br>
+    <input type="submit">
+  </form>
+
+  AuthenticationProcessingFilter 是处理基于表单身份验证的过滤器。
+  <bean id="authenticationProcessingFilter" 
+      class="net.sf.acegisecurity.ui.webapp.AuthenticationProcessingFilter">
+    <property name="filterProcessesUrl">
+      <value>/j_acegi_security_check</value>
+    </property>
+    <property name="authenticationFailureUrl">
+      <value>/jsp/login.jsp?failed=true</value>
+    </property>
+    <property name="defaultTargetUrl">
+      <value>/</value>
+    </property>
+    <property name="authenticationManager">
+      <ref bean="authenticationManager"/>
+    </property>
+  </bean>
+
+  配置一个 FilterToBeanProxy，它能够将过滤处理委托给 authenticationProcessingFilter Bean：
+  <filter>
+    <filter-name>Acegi-Authentication</filter-name>
+    <filter-class>net.sf.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetClass</param-name>
+      <param-value>net.sf.acegisecurity.ui.webapp.AuthenticationProcessingFilter</param-value>
+    </init-param>
+  </filter>
+  …
+  <filter-mapping>
+    <filter-name>Acegi-Authentication</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  (5) CAS 身份验证:
+  Acegi 的 CasProcessingFilterEntryPoint 是一个能够将用户送到 CAS 服务器进行登录的认证入口点。
+  <bean id="authenticationEntryPoint" class="net.sf.acegisecurity.ui.cas.CasProcessingFilterEntryPoint">
+    <property name="loginUrl">
+      <value>https://localhost:8443/cas/login</value>
+    </property>
+    <property name="serviceProperties">
+      <ref bean="serviceProperties"/>
+    </property>
+  </bean>
+
+  CasProcessingFilter 是一个认证处理过滤器，它会拦截来自 CAS 服务器的包含待验证票据的请求。
+  <bean id="authenticationProcessingFilter" class="net.sf.acegisecurity.ui.cas.CasProcessingFilter">
+    <property name="filterProcessesUrl">
+      <value>/j_acegi_cas_security_check</value>
+    </property>
+    <property name="authenticationManager">
+      <ref bean="authenticationManager"/>
+    </property>
+    <property name="authenticationFailureUrl">
+      <value>/authenticationfailed.jsp</value>
+    </property>
+    <property name="defaultTargetUrl">
+      <value>/</value>
+    </property>
+  </bean>
+
+45.设置一个安全上下文。
 ```
