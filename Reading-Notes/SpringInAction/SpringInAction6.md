@@ -104,4 +104,47 @@
  </filter-mapping>
 
 44.处理登录。
+  (1) 认证入口点的主要目的是提示用户登录。Acegi 提供了三个现成的认证入口点：
+   BasicProcessingFilterEntryPoint —— 通过向浏览器发送一个 HTTP 401（未授权）消息，
+由浏览器弹出登录对话框，提示用户登录；
+   AuthenticationProcessingFilterEntryPoint —— 将用户重定向到一个基于 HTML 表单的登录页面；
+   CasProcessingFilterEntryPoint —— 将用户重定向至一个 Yale CAS 登录页面。
+   
+  (2) 处理认证请求的工作由认证处理过滤器负责完成。Acegi 提供了三个认证处理过滤器：
+   BasicProcessingFilter —— 处理 HTTP 基本身份验证请求；
+   AuthenticationProcessingFilter —— 处理基于表单的身份验证请求；
+   CasProcessingFilter —— 基于CAS服务票据的存在性和有效性验证用户身份。
+
+  (3) 基本身份验证:
+  <bean id="authenticationEntryPoint" 
+      class="net.sf.acegisecurity.ui.basicauth.BasicProcessingFilterEntryPoint">
+    <property name="realmName">
+       <value>Spring Training</value>
+    </property>
+  </bean>
+
+  BasicProcessFilter 取得用户名和密码并进行处理。
+  <bean id="basicProcessingFilter" class="net.sf.acegisecurity.ui.basicauth.BasicProcessingFilter">
+    <property name="authenticationManager">
+      <ref bean="authenticationManager"/>
+    </property>
+    <property name="authenticationEntryPoint">
+      <ref bean="authenticationEntryPoint"/>
+    </property>
+  </bean>
+
+  BasicProcessingFilter 需要一个在 web.xml 中配置的 FilterToBeanProxy：
+  <filter>
+    <filter-name>Acegi-Authentication</filter-name>
+    <filter-class>net.sf.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetBean</param-name>
+      <param-value>net.sf.acegisecurity.ui.basicauth.BasicProcessingFilter</param-value>
+    </init-param>
+  </filter>
+  …
+  <filter-mapping>
+    <filter-name>Acegi-Authentication</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 ```
