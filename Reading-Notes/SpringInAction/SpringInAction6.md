@@ -34,7 +34,8 @@
         <ref bean="bar"/>
      </property>
   </bean>
-
+  
+  /*是所有 Acegi 过滤器推荐的 URL 模式。
   <filter-mapping>
      <filter-name>Acegi-Authentication</filter-name>
      <url-pattern>/*</url-pattern>
