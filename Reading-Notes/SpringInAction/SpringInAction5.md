@@ -196,7 +196,8 @@
 
   Acegi 只提供了一个 CasAuthoritiesPopulator 的实现。
   DaoCasAuthoritiesPopulator 使用一个认证 DAO 从数据库中加载用户明细信息。
-  <bean id="casAuthoritiesPopulator" class="net.sf.acegisecurity.providers.cas.populator.DaoCasAuthoritiesPopulator">
+  <bean id="casAuthoritiesPopulator" 
+     class="net.sf.acegisecurity.providers.cas.populator.DaoCasAuthoritiesPopulator">
     <property name="authenticationDao">
       <ref bean="inMemoryDaoImpl"/>
     </property>
