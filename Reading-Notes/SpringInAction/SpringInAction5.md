@@ -148,7 +148,7 @@
   </bean>
 
 37.基于 Acegi 和 Yale CAS 实现单次登录。
-  CAS: http://tp.its.yale.edu/tiki/tiki-index.php?page=CentralAuthenticationService
+  (1) CAS: http://tp.its.yale.edu/tiki/tiki-index.php?page=CentralAuthenticationService
   
   <bean id="casAuthenticationProvider" class="net.sf.acegisecurity.providers.cas.CasAuthenticationProvider">
     <property name="ticketValidator">
@@ -183,19 +183,19 @@
     </property>
   </bean>
 
-  Acegi 提供了 CasProxyDecider 的三个实现类：
+  (2) Acegi 提供了 CasProxyDecider 的三个实现类：
     AcceptAnyCasProxy —— 接受来自任何服务的代理请求；
     NamedCasProxyDecider —— 接受来自一个已命名服务的列表的代理请求；
     RejectProxyTickets —— 拒绝任何代理请求。
 
   <bean id="casProxyDecider" class="net.sf.acegisecurity.providers.cas.proxy.RejectProxyTickets"/>
 
-  属性 statelessTicketCache 用于支持无状态的客户端（比如远程服务的客户端），它们无法在 HttpSession 中存储 CAS 票据。
+  (3) 属性 statelessTicketCache 用于支持无状态的客户端（比如远程服务的客户端），它们无法在 HttpSession 中存储 CAS 票据。
   <bean id="statelessTicketCache" class="net.sf.acegisecurity.providers.cas.cache.EhCacheBasedTicketCache">
     <property name="minutesToIdle"><value>20</value></property>
   </bean>
 
-  Acegi 只提供了一个 CasAuthoritiesPopulator 的实现。
+  (4) Acegi 只提供了一个 CasAuthoritiesPopulator 的实现。
   DaoCasAuthoritiesPopulator 使用一个认证 DAO 从数据库中加载用户明细信息。
   <bean id="casAuthoritiesPopulator" 
      class="net.sf.acegisecurity.providers.cas.populator.DaoCasAuthoritiesPopulator">
