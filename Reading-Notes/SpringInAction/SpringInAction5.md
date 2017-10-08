@@ -112,4 +112,93 @@
   </bean>
 
 36.根据 LDAP 仓库进行身份验证。
+ <bean id="authenticationProvider" class="net.sf.acegisecurity.providers.dao.PasswordDaoAuthenticationProvider">
+    <property name="passwordAuthenticationDao">
+       <ref bean="passwordAuthenticationDao"/>
+    </property>
+ </bean>
+
+ public interface PasswordAuthenticationDao {
+    public UserDetails loadUserByUsernameAndPassword(String username,
+         String password) throws DataAccessException, BadCredentialsException;
+ }
+
+ LdapPasswordAuthenticationDao 有一些用于指导它根据 LDAP 服务器进行身份验证的属性。
+其中，惟一必须指定的属性是 host，它指定了 LDAP 服务器的主机名。
+ <bean id="passwordAuthenticationDao" class="net.sf.acegisecurity.providers.dao.ldap.LdapPasswordAuthenticationDao">
+    <property name="host">
+       <value>security.springinaction.com</value>
+    </property>
+    <property name="port">
+       <value>389</value>
+    </property>
+    <property name="rootContext">
+       <value>DC=springtraining,DC=com</value>
+    </property>
+    <property name="userContext">
+       <value>CN=user</value>
+    </property>
+    <property name="rolesAttributes">
+       <list>
+          <value>memberOf</value>
+          <value>roles</value>
+       </list>
+    </property>
+  </bean>
+
+37.基于 Acegi 和 Yale CAS 实现单次登录。
+  CAS: http://tp.its.yale.edu/tiki/tiki-index.php?page=CentralAuthenticationService
+  
+  <bean id="casAuthenticationProvider" class="net.sf.acegisecurity.providers.cas.CasAuthenticationProvider">
+    <property name="ticketValidator">
+      <ref bean="ticketValidator"/>
+    </property>
+    <property name="casProxyDecider">
+      <ref bean="casProxyDecider"/>
+    </property>
+    <property name="statelessTicketCache">
+      <ref bean="statelessTicketCache"/>
+    </property>
+    <property name="casAuthoritiesPopulator">
+      <ref bean="casAuthoritiesPopulator"/>
+    </property>
+    <property name="key">
+      <value>some_unique_key</value>
+    </property>
+  </bean>
+
+  <bean id="ticketValidator" class="net.sf.acegisecurity.providers.cas.ticketvalidator.CasProxyTicketValidator">
+    <property name="casValidate">
+      <value>https://localhost:8443/cas/proxyValidate</value>
+    </property>
+    <property name="serviceProperties">
+      <ref bean="serviceProperties"/>
+    </property>
+  </bean>
+
+  <bean id="serviceProperties" class="net.sf.acegisecurity.ui.cas.ServiceProperties">
+    <property name="service">
+      <value>https://localhost:8443/training/j_acegi_cas_security_check</value>
+    </property>
+  </bean>
+
+  Acegi 提供了 CasProxyDecider 的三个实现类：
+    AcceptAnyCasProxy —— 接受来自任何服务的代理请求；
+    NamedCasProxyDecider —— 接受来自一个已命名服务的列表的代理请求；
+    RejectProxyTickets —— 拒绝任何代理请求。
+
+  <bean id="casProxyDecider" class="net.sf.acegisecurity.providers.cas.proxy.RejectProxyTickets"/>
+
+  属性 statelessTicketCache 用于支持无状态的客户端（比如远程服务的客户端），它们无法在 HttpSession 中存储 CAS 票据。
+  <bean id="statelessTicketCache" class="net.sf.acegisecurity.providers.cas.cache.EhCacheBasedTicketCache">
+    <property name="minutesToIdle"><value>20</value></property>
+  </bean>
+
+  Acegi 只提供了一个 CasAuthoritiesPopulator 的实现。
+  DaoCasAuthoritiesPopulator 使用一个认证 DAO 从数据库中加载用户明细信息。
+  <bean id="casAuthoritiesPopulator" class="net.sf.acegisecurity.providers.cas.populator.DaoCasAuthoritiesPopulator">
+    <property name="authenticationDao">
+      <ref bean="inMemoryDaoImpl"/>
+    </property>
+  </bean>
 ```
