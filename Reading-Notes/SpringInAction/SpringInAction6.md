@@ -87,4 +87,66 @@
   </filter-mapping>
 
 43.强制 Web 安全性。
+  (1) 安全强制过滤器是通过以下方式在 Spring 配置文件中声明的：
+  <bean id="securityEnforcementFilter" class="net.sf.acegisecurity.intercept.web.SecurityEnforcementFilter">
+    <property name="securityInterceptor">
+       <ref bean="securityInterceptor"/>
+    </property>
+    <property name="authenticationEntryPoint">
+      <ref bean="authenticationEntryPoint"/>
+    </property>
+  </bean>
+
+  (2) 使用一个过滤器安全拦截器:
+  Acegi 的 FilterSecurityInterceptor 类负责执行安全拦截器的工作。
+  <bean id="securityInterceptor" class="net.sf.acegisecurity.intercept.web.FilterSecurityInterceptor">
+    <property name="authenticationManager">
+      <ref bean="authenticationManager"/>
+    </property>
+    <property name="accessDecisionManager">
+      <ref bean="accessDecisionManager"/>
+    </property>
+    <property name="objectDefinitionSource">
+      <value>
+        CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+        \A/admin/.*\Z=ROLE_ADMIN
+        \A/student/.*\Z=ROLE_STUDENT,ROLE_ALUMNI
+        \A/instruct/.*\Z=ROLE_INSTRUCTOR
+      </value>
+    </property>
+  </bean>
+
+  (3) securityInterceptor Bean 的 objectDefinitionSource 属性定义了：
+    /admin/reports.htm 要求用户拥有 ROLE_ADMIN 权限；
+    /student/manageSchedule.htm 要求用户拥有 ROLE_STUDENT 或 ROLE_ALUMNI 权限；
+    /instruct/postCourseNotes.htm 要求用户拥有 ROLE_INSTUCTOR 权限。
+
+  (4) 以下的 objectDefinitionSource 属性定义与上面给出的那个定义是等价的：
+  <property name="objectDefinitionSource">
+    <value>
+      CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+      PATTERN_TYPE_APACHE_ANT
+      /admin/**=ROLE_ADMIN
+      /student/**=ROLE_STUDENT,ROLE_ALUMNI
+      /instruct/**=ROLE_INSTRUCTOR
+    </value>
+  </property>
+
+  (5) 配置一个安全强制过滤器的第一步是在应用的 web.xml 文件中为 FilterToBeanProxy 
+增加 <filter> 和 <filter-mapping> 元素：
+ <filter>
+    <filter-name>Acegi-Security</filter-name>
+    <filter-class>net.sf.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetBean</param-name>
+      <param-value>securityEnforcementFilter</param-value>
+    </init-param>
+ </filter>
+ …
+ <filter-mapping>
+  <filter-name>Acegi-Security</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+
+44.处理登录。
 ```
