@@ -225,4 +225,145 @@
   </bean>
 
 45.设置一个安全上下文。
+  (1) Acegi 提供了若干个集成过滤器，其中 HttpSessionIntegrationFilter 适用于大多数情形。
+  <bean id="integrationFilter" class="net.sf.acegisecurity.ui.webapp.HttpSessionIntegrationFilter"/>
+
+  (2) 在 web.xml 中配置一个 FilterToBeanProxy 过滤器:
+  <filter>
+    <filter-name>Acegi-Integration</filter-name>
+    <filter-class>net.sf.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetClass</param-name>
+      <param-value>net.sf.acegisecurity.ui.AutoIntegrationFilter</param-value>
+    </init-param>
+  </filter>
+  …
+  <filter-mapping>
+    <filter-name>Acegi-Integration</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  要把集成过滤器的 <filter-mapping> 配置项放到所有其他 Acegi 过滤器的 <filter-mapping> 的后面。
+
+46.确保通道安全性。
+  (1) 在 Web 应用的 web.xml 文件中再增加一个 FilterToBeanProxy 配置：
+  <filter>
+    <filter-name>Acegi-Channel</filter-name>
+    <filter-class>net.sf.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetClass</param-name>
+      <param-value>
+        net.sf.acegisecurity.securechannel.ChannelProcessingFilter
+      </param-value>
+    </init-param>
+  </filter>
+  …
+  <filter-mapping>
+    <filter-name>Acegi-Channel</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  ChannelProcessingFilter 的 <filter-mapping> 定义必须出现在任何其他的 <filter-mapping> 之前。
+
+  (2) 在 Spring 配置文件中声明受委托的过滤器 Bean：
+  <bean id="channelProcessingFilter" class="net.sf.acegisecurity.securechannel.ChannelProcessingFilter">
+    <property name="filterInvocationDefinitionSource">
+      <value>
+        CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+        \A/secure/.*\Z=REQUIRES_SECURE_CHANNEL
+        \A/login.jsp.*\Z=REQUIRES_SECURE_CHANNEL
+        \A/j_acegi_security_check.*\Z=REQUIRES_SECURE_CHANNEL
+        \A.*\Z=REQUIRES_INSECURE_CHANNEL
+      </value>
+    </property>
+    <property name="channelDecisionManager">
+      <ref bean="channelDecisionManager"/>
+    </property>
+  </bean>
+
+  (3) 在 URL 模式之上可以应用两种通道规则：
+   REQUIRES_SECURE_CHANNEL —— 规定与该模式匹配的 URL 必须经过一个安全通道传输（例如，HTTPS）；
+   REQUIRES_INSECURE_CHANNEL —— 规定与该模式匹配的 URL 必须经过一个非安全的通道传输（例如，HTTP）。
+
+  (4) 通道决策管理器 ChannelDecisionManagerImpl 轮询它的所有通道处理器，给予他们重载请求通道的机会。
+  <bean id="channelDecisionManager" 
+        class="net.sf.acegisecurity.securechannel.ChannelDecisionManagerImpl">
+   <property name="channelProcessors">
+     <list>
+       <ref bean="secureChannelProcessor"/>
+       <ref bean="insecureChannelProcessor"/>
+     </list>
+   </property>
+ </bean>
+
+ (5) ChannelDecisionManagerImpl 的通道处理器是通过 channelProcessors 属性提供的。
+ <bean id="secureChannelProcessor" class="net.sf.acegisecurity.securechannel.SecureChannelProcessor"/>
+ <bean id="insecureChannelProcessor" class="net.sf.acegisecurity.securechannel.InsecureChannelProcessor"/>
+
+47.使用 Acegi 的标签库。
+  <authz:authorize> 标签能够根据当前用户是否拥有恰当权限来决定显示或隐藏 Web 页面的内容。
+  <authz:authorize> 是一个流程控制标签，能够在满足特定安全需求的条件下显示它的内容体。它有三个互斥的参数：
+    ifAllGranted —— 是一个由逗号分隔的权限列表，用户必须拥有所有列出的权限才能渲染标签体；
+    ifAnyGranted —— 是一个由逗号分隔的权限列表，用户必须至少拥有其中的一个才能渲染标签体；
+    ifNotGranted —— 是一个由逗号分隔的权限列表，用户必须不拥有其中的任何一个才能渲染标签体。
+    
+  使用 <authz:authorize> 标签，在用户没有管理员权限的情况下，可以避免渲染到课程编辑页面的链接：
+  <authz:authorize ifAllGranted="ROLE_ADMINISTRATOR">
+    <a href="admin/editCourse.htm?courseId=${course.id}">Edit Course</a>
+  </authz:authorize>
+
+48.创建一个安全切面。
+  (1) 设置一个 AOP 代理的最简单的方式是使用 Spring 的 BeanNameAutoProxyCreator。
+  <bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    <property name="interceptorNames">
+      <list>
+        <value>securityInterceptor</value>
+      </list>
+    </property>
+    <property name="beanNames">
+      <list>
+        <value>courseService</value>
+        <value>billingService</value>
+      </list>
+    </property>
+  </bean>
+
+  (2) 自动代理创建器 autoProxyCreator 通过一个名为 securityInterceptor 拦截器代理它的 Bean。
+  <bean id="securityInterceptor" class="net.sf.acegisecurity.intercept.method.MethodSecurityInterceptor">
+    <property name="authenticationManager">
+      <ref bean="authenticationManager"/>
+    </property>
+    <property name="accessDecisionManager">
+      <ref bean="accessDecisionManager"/>
+    </property>
+    <property name="objectDefinitionSource">
+      <value>
+        com.springinaction.springtraining.service.CourseService.createCourse=ROLE_ADMIN
+        com.springinaction.springtraining.service.CourseService.enroll*=ROLE_ADMIN,ROLE_REGISTRAR
+      </value>
+    </property>
+  </bean>
+
+49.使用元数据保护方法。
+  (1) 声明一个元数据实现以告诉 Spring 如何装载元数据。
+  <bean id="attributes" class="org.springframework.metadata.commons.CommonsAttributes"/>
+
+  (2) Acegi 的 MethodDefinitionAttributes 是一个对象定义源，它能够从受保护对象的元数据中获取它的安全属性：
+  <bean id="objectDefinitionSource" 
+       class="net.sf.acegisecurity.intercept. method.MethodDefinitionAttributes">
+    <property name="attributes"><ref bean="attributes"/></property>
+  </bean>
+
+  (3) 把 objectDefinitionSource 装配到 MethodSecurityInterceptor 的 objectDefinitionSource 属性中。
+  <bean id="securityInterceptor" class="net.sf.acegisecurity.intercept.method.MethodSecurityInterceptor">
+  …
+    <property name="objectDefinitionSource">
+      <ref bean="objectDefinitionSource"/>
+    </property>
+  </bean>
+
+  (4) 标记 CourseService 的 enrollStudentInCourse() 方法，声明它需要 ROLE_ADMIN 或 ROLE_REGISTRAR 属性：
+  /**
+   * @@net.sf.acegisecurity.SecurityConfig("ROLE_ADMIN")
+   * @@net.sf.acegisecurity.SecurityConfig("ROLE_REGISTRAR")
+   */
+  public void enrollStudentInCourse(Course course,Student student) throws CourseException;
 ```
