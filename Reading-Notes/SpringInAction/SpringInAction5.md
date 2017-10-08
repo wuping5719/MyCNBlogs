@@ -125,7 +125,8 @@
 
  LdapPasswordAuthenticationDao 有一些用于指导它根据 LDAP 服务器进行身份验证的属性。
 其中，惟一必须指定的属性是 host，它指定了 LDAP 服务器的主机名。
- <bean id="passwordAuthenticationDao" class="net.sf.acegisecurity.providers.dao.ldap.LdapPasswordAuthenticationDao">
+ <bean id="passwordAuthenticationDao" 
+        class="net.sf.acegisecurity.providers.dao.ldap.LdapPasswordAuthenticationDao">
     <property name="host">
        <value>security.springinaction.com</value>
     </property>
