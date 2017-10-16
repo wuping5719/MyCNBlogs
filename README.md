@@ -156,7 +156,7 @@
    </tr>
    <tr>
      <td>
-       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringCloud.md">19.《Spring Cloud》</a>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework.md">19.《Spring 2.5开发手册》</a>
      </td>
      <td></td>
    </tr>
