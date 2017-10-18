@@ -19,5 +19,6 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
   (2) 使用容器：
     Resource res = new FileSystemResource("beans.xml");
     BeanFactory factory = new XmlBeanFactory(res);
-
+  (3) 依赖注入（DI）:
+    DI 主要有两种注入方式，即 Setter 注入和构造器注入。
 ```
