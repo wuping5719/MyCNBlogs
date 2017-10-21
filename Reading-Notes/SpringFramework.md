@@ -69,4 +69,23 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
         this.beanFactory = beanFactory;
      }
   }
+
+3.Bean 的作用域。
+  (1) Singleton 作用域：
+    <bean id="accountService" class="com.foo.DefaultAccountService"/>
+    <!-- the following is equivalent, though redundant (singleton scope is the default); -->
+    <bean id="accountService" class="com.foo.DefaultAccountService" scope="singleton"/>
+    <!-- the following is equivalent and preserved for backward compatibility in spring-beans.dtd -->
+    <bean id="accountService" class="com.foo.DefaultAccountService" singleton="true"/>
+  (2) Prototype 作用域：
+    <!-- using spring-beans-2.0.dtd -->
+    <bean id="accountService" class="com.foo.DefaultAccountService" scope="prototype"/>
+    <!-- the following is equivalent and preserved for backward compatibility in spring-beans.dtd -->
+    <bean id="accountService" class="com.foo.DefaultAccountService" singleton="false"/>
+  (3) Request 作用域：
+    <bean id="loginAction" class="com.foo.LoginAction" scope="request"/>
+  (4) Session 作用域：
+    <bean id="userPreferences" class="com.foo.UserPreferences" scope="session"/>
+  (5) Global Session 作用域：
+    <bean id="userPreferences" class="com.foo.UserPreferences" scope="globalSession"/>
 ```
