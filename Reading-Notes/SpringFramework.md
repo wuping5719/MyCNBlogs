@@ -20,8 +20,7 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
     Resource res = new FileSystemResource("beans.xml");
     BeanFactory factory = new XmlBeanFactory(res);
     
-2.依赖注入（DI）:
-    DI 主要有两种注入方式，即 Setter 注入和构造器注入。
+2.依赖注入（DI）: DI 主要有两种注入方式，即 Setter 注入和构造器注入。
   (1) 使用 p 名称空间配置属性:
      <beans xmlns="http://www.springframework.org/schema/beans" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
