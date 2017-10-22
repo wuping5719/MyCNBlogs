@@ -98,6 +98,7 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
         // do some initialization work
       }
    }
+   
   (2) 析构回调: org.springframework.beans.factory.DisposableBean.
    void destroy() throws Exception;  
    <bean id="exampleDestroyBean" class="examples.ExampleBean" destroy-method="cleanup"/>
@@ -106,6 +107,7 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
         // do some destruction work (like releasing pooled connections)
       }
    }
+   
   (3) 缺省的初始化和析构方法。
    public class DefaultBlogService implements BlogService {
       private BlogDao blogDao;
