@@ -88,4 +88,81 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
     <bean id="userPreferences" class="com.foo.UserPreferences" scope="session"/>
   (5) Global Session 作用域：
     <bean id="userPreferences" class="com.foo.UserPreferences" scope="globalSession"/>
+    
+4.定制 bean 特性。
+  (1) 初始化回调: org.springframework.beans.factory.InitializingBean.
+   void afterPropertiesSet() throws Exception;
+   <bean id="exampleInitBean" class="examples.ExampleBean" init-method="init"/>
+   public class ExampleBean {
+      public void init() {
+        // do some initialization work
+      }
+   }
+  (2) 析构回调: org.springframework.beans.factory.DisposableBean.
+   void destroy() throws Exception;  
+   <bean id="exampleDestroyBean" class="examples.ExampleBean" destroy-method="cleanup"/>
+   public class ExampleBean {
+      public void cleanup() {
+        // do some destruction work (like releasing pooled connections)
+      }
+   }
+  (3) 缺省的初始化和析构方法。
+   public class DefaultBlogService implements BlogService {
+      private BlogDao blogDao;
+      
+      public void setBlogDao(BlogDao blogDao) {
+         this.blogDao = blogDao;
+      }
+
+      // this is (unsurprisingly) the initialization callback method
+      public void init() {
+         if (this.blogDao == null) {
+             throw new IllegalStateException("The [blogDao] property must be set.");
+         }
+      }
+   }
+   
+   <beans default-init-method="init">
+      <bean id="blogService" class="com.foo.DefaultBlogService">
+         <property name="blogDao" ref="blogDao" />
+      </bean>
+   </beans>
+
+  (4) 在非 web 应用中优雅地关闭 Spring IoC 容器:
+   注册“关闭钩子”，调用在 AbstractApplicationContext 实现中的 registerShutdownHook() 方法。
+    import org.springframework.context.support.AbstractApplicationContext;
+    import org.springframework.context.support.ClassPathXmlApplicationContext;
+    
+    public final class Boot {
+       public static void main(final String[] args) throws Exception {
+           AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(new String []{"beans.xml"});
+
+           // add a shutdown hook for the above context... 
+           ctx.registerShutdownHook();
+
+           // app runs here...
+					 // main method exits, hook is called prior to the app shutting down...
+       }
+    }
+
+  (5) bean 定义的继承:
+   <bean id="inheritedTestBean" abstract="true" class="org.springframework.beans.TestBean">
+      <property name="name" value="parent"/>
+      <property name="age" value="1"/>
+   </bean>
+   <bean id="inheritsWithDifferentClass" class="org.springframework.beans.DerivedTestBean"
+          parent="inheritedTestBean" init-method="initialize">
+      <property name="name" value="override"/>
+      <!-- the age property value of 1 will be inherited from  parent -->
+   </bean>
+
+   <bean id="inheritedTestBeanWithoutClass" abstract="true">
+      <property name="name" value="parent"/>
+      <property name="age" value="1"/>
+   </bean>
+   <bean id="inheritsWithClass" class="org.springframework.beans.DerivedTestBean"
+           parent="inheritedTestBeanWithoutClass" init-method="initialize">
+      <property name="name" value="override"/>
+      <!-- age will inherit the value of 1 from the parent bean definition-->
+   </bean>
 ```
