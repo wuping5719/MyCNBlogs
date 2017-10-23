@@ -63,4 +63,79 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
  -->
+
+7.基于注解（Annotation-based）的配置。
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-2.5.xsd">       
+     <context:annotation-config/>
+  </beans>
+
+  (1) @Autowired：
+  public class MovieRecommender {
+     @Autowired
+     private MovieCatalog movieCatalog;
+
+     private CustomerPreferenceDao customerPreferenceDao;
+
+     @Autowired
+     public MovieRecommender(CustomerPreferenceDao customerPreferenceDao) {
+        this.customerPreferenceDao = customerPreferenceDao;
+     }
+  }
+
+  (2) 基于注解的自动连接微调:
+  @Target({ElementType.FIELD, ElementType.PARAMETER})
+  @Retention(RetentionPolicy.RUNTIME)
+  @Qualifier
+  public @interface Genre {
+    String value();
+  }
+
+  public class MovieRecommender {
+    @Autowired
+    @Genre("Action")
+    private MovieCatalog actionCatalog;
+    private MovieCatalog comedyCatalog;
+    @Autowired
+    public void setComedyCatalog(@Genre("Comedy") MovieCatalog comedyCatalog) {
+        this.comedyCatalog = comedyCatalog;
+    }
+  }
+
+  (3) CustomAutowireConfigurer：
+  <bean id="customAutowireConfigurer" 
+      class="org.springframework.beans.factory.annotation.CustomAutowireConfigurer">
+     <property name="customQualifierTypes">
+        <set>
+            <value>example.CustomQualifier</value>
+        </set>
+     </property>
+  </bean>
+
+  (4) @Resource：
+  public class SimpleMovieLister {
+    private MovieFinder movieFinder;
+    @Resource(name="myMovieFinder")
+    public void setMovieFinder(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+    }
+  }
+
+  (5) @PostConstruct 与 @PreDestroy：
+  public class CachingMovieLister {
+    @PostConstruct
+    public void populateMovieCache() {
+      // populates the movie cache upon initialization...
+    }
+    @PreDestroy
+    public void clearMovieCache() {
+      // clears the movie cache upon destruction...
+    }
+  }
 ```
