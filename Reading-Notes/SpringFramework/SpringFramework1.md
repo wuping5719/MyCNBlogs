@@ -165,4 +165,39 @@ IoC 容器负责容纳 bean，并对 bean 进行管理。
       <property name="name" value="override"/>
       <!-- age will inherit the value of 1 from the parent bean definition-->
    </bean>
+
+5.容器扩展点。
+  (1) 用 BeanPostProcessor 定制 bean：org.springframework.beans.factory.config.BeanPostProcessor.
+   package scripting;
+   import org.springframework.beans.factory.config.BeanPostProcessor;
+   import org.springframework.beans.BeansException;
+   
+   public class InstantiationTracingBeanPostProcessor implements BeanPostProcessor {
+      // simply return the instantiated bean as-is
+      public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+          return bean; // we could potentially return any object reference here...
+      }
+
+      public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+          System.out.println("Bean '" + beanName + "' created : " + bean.toString());
+          return bean;
+      }
+   }
+    
+  (2) PropertyPlaceholderConfigurer 是个 bean 工厂后置处理器的实现，
+可以将 BeanFactory 定义中的一些属性值放到另一个单独的标准 Java Properties 文件中。
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+     <property name="locations">
+        <value>classpath:com/foo/jdbc.properties</value>
+     </property>
+  </bean>
+
+  <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
+     <property name="driverClassName" value="${jdbc.driverClassName}"/>
+     <property name="url" value="${jdbc.url}"/>
+     <property name="username" value="${jdbc.username}"/>
+     <property name="password" value="${jdbc.password}"/>
+  </bean>
+
+  <context:property-placeholder location="classpath:com/foo/jdbc.properties"/>
 ```
