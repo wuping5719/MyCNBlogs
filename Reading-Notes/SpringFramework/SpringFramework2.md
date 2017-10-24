@@ -138,4 +138,6 @@
       // clears the movie cache upon destruction...
     }
   }
+
+8.对受管组件的 Classpath 扫描。
 ```
