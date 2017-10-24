@@ -140,4 +140,25 @@
   }
 
 8.对受管组件的 Classpath 扫描。
+  (1) 自动检测组件:
+  @Service
+  public class SimpleMovieLister {
+     private MovieFinder movieFinder;
+     @Autowired
+     public SimpleMovieLister(MovieFinder movieFinder) {
+        this.movieFinder = movieFinder;
+     }
+  }
+
+  @Repository
+  public class JpaMovieFinder implements MovieFinder {
+     // implementation elided for clarity
+  }
+
+  (2) 为自动检测的组件提供一个作用域:
+  @Scope("prototype")
+  @Repository
+  public class MovieFinderImpl implements MovieFinder {
+    // ...
+  }
 ```
