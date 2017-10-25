@@ -12,4 +12,12 @@
      String getDescription();  // 返回资源的描述，一般在与此资源相关的错误输出时使用
      InputStream getInputStream() throws IOException; // 定位并打开资源，返回读取此资源的一个 InputStream
   }
+
+10.内置 Resource 实现。
+   (1) UrlResource：封装了 java.net.URL。
+   (2) ClassPathResource：标识从 classpath 获得的资源。
+   (3) FileSystemResource：为处理 java.io.File 而准备的 Resource 实现。
+   (4) ServletContextResource：为 ServletContext 资源提供的 Resource 实现。
+   (5) InputStreamResource：为给定的 InputStream 而准备的 Resource 实现。
+   (6) ByteArrayResource：为给定的 byte 数组准备的 Resource 实现。
 ```
