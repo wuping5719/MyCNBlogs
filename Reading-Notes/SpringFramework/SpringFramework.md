@@ -4,3 +4,4 @@
 
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework1.md">IoC(控制反转)容器 (1-4条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework2.md">IoC(控制反转)容器 (5-8条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework3.md">资源 (9-12条)</a>
