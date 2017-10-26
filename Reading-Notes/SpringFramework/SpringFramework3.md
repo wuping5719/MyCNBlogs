@@ -20,4 +20,21 @@
    (4) ServletContextResource：为 ServletContext 资源提供的 Resource 实现。
    (5) InputStreamResource：为给定的 InputStream 而准备的 Resource 实现。
    (6) ByteArrayResource：为给定的 byte 数组准备的 Resource 实现。
+   
+11.ResourceLoader 接口。
+  public interface ResourceLoader {
+     Resource getResource(String location);
+  }
+  Resource template = ctx.getResource("classpath:some/resource/path/myTemplate.txt");
+  Resource template = ctx.getResource("file:/some/resource/path/myTemplate.txt");
+  Resource template = ctx.getResource("http://myhost.com/resource/path/myTemplate.txt");
+
+12.ResourceLoaderAware 接口。
+  public interface ResourceLoaderAware {
+     void setResourceLoader(ResourceLoader resourceLoader);
+  }
+  只要属性、构造方法或者方法被 @Autowired 注解修饰，
+ResourceLoader 就会被装配到需要 ResourceLoader 类型的属性、构造方法参数或者方法参数中。
+
+13.ApplicationContext 和 Resource 路径。
 ```
