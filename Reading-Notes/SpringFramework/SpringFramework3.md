@@ -37,4 +37,7 @@
 ResourceLoader 就会被装配到需要 ResourceLoader 类型的属性、构造方法参数或者方法参数中。
 
 13.ApplicationContext 和 Resource 路径。
+  (1) 创建 ClassPathXmlApplicationContext：
+   ApplicationContext ctx = new ClassPathXmlApplicationContext(
+       new String[] {"services.xml", "daos.xml"}, MessengerService.class);
 ```
