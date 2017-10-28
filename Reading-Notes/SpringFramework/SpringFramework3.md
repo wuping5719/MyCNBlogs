@@ -40,4 +40,9 @@ ResourceLoader 就会被装配到需要 ResourceLoader 类型的属性、构造�
   (1) 创建 ClassPathXmlApplicationContext：
    ApplicationContext ctx = new ClassPathXmlApplicationContext(
        new String[] {"services.xml", "daos.xml"}, MessengerService.class);
+  (2) classpath*: 前缀.
+   ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:conf/appContext.xml");
+  (3) FileSystemResource：
+  // force this FileSystemXmlApplicationContext to load it's definition via a UrlResource
+  ApplicationContext ctx = new FileSystemXmlApplicationContext("file:/conf/context.xml");
 ```
