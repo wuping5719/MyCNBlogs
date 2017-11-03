@@ -99,4 +99,51 @@
      @Before(com.xyz.myapp.SystemArchitecture.businessService())
      public void recordServiceUsage() { }
   }
+
+20.基于 Schema 的 AOP 支持。
+  (1) 声明一个切面:
+  <aop:config>
+     <aop:aspect id="myAspect" ref="aBean"> ... </aop:aspect>
+  </aop:config>
+
+  <bean id="aBean" class="..."> ... </bean>
+
+  (2) 声明一个切入点:
+  <aop:config>
+     <aop:pointcut id="businessService" expression="execution(* com.xyz.myapp.service.*.*(..))" />
+  </aop:config>
+
+  (3) 声明通知: 前置通知.
+  <aop:aspect id="beforeExample" ref="aBean">
+     <aop:before pointcut="execution(* com.xyz.myapp.dao.*.*(..))" method="doAccessCheck" />      
+     ...
+  </aop:aspect>
+
+  (4) 声明通知: 后置通知.
+  <aop:aspect id="afterReturningExample" ref="aBean">
+     <aop:after-returning pointcut-ref="dataAccessOperation" returning="retVal" method="doAccessCheck"/>  
+     ...
+  </aop:aspect>
+ 
+  (5) 引入:
+  <aop:aspect id="usageTrackerAspect" ref="usageTracking">
+    <aop:declare-parents types-matching="com.xzy.myapp.service.*+" 
+       implement-interface="com.xyz.myapp.service.tracking.UsageTracked"
+       default-impl="com.xyz.myapp.service.tracking.DefaultUsageTracked" />
+       
+    <aop:before pointcut="com.xyz.myapp.SystemArchitecture.businessService() and this(usageTracked)"
+       method="recordUsage"/>
+  </aop:aspect>
+
+  (6) Advisor:
+  <aop:config>
+    <aop:pointcut id="businessService" expression="execution(* com.xyz.myapp.service.*.*(..))"/>
+    <aop:advisor pointcut-ref="businessService" advice-ref="tx-advice"/>  
+  </aop:config>
+
+  <tx:advice id="tx-advice">
+    <tx:attributes>
+       <tx:method name="*" propagation="REQUIRED"/>
+    </tx:attributes>
+  </tx:advice>
 ```
