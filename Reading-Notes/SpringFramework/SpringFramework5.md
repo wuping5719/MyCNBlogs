@@ -74,4 +74,29 @@
       return retVal;
     }
   }
+
+18.引入(Introduction)。
+ 使用 @DeclareParents 注解来定义引入。
+ @Aspect
+ public class UsageTracking {
+   @DeclareParents(value="com.xzy.myapp.service.*+", defaultImpl=DefaultUsageTracked.class)
+   public static UsageTracked mixin;
+   
+   @Before("com.xyz.myapp.SystemArchitecture.businessService() &&" + "this(usageTracked)")
+   public void recordUsage(UsageTracked usageTracked) {
+      usageTracked.incrementUseCount();
+   }
+ }
+
+ UsageTracked usageTracked = (UsageTracked) context.getBean("myService");
+
+19.切面实例化模型。
+  AspectJ 的 perthis 和 pertarget 实例化模型。
+  @Aspect("perthis(com.xyz.myapp.SystemArchitecture.businessService())")
+  public class MyAspect {
+     private int someState;
+
+     @Before(com.xyz.myapp.SystemArchitecture.businessService())
+     public void recordServiceUsage() { }
+  }
 ```
