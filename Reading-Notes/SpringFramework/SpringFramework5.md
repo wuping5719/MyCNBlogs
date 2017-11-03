@@ -146,4 +146,57 @@
        <tx:method name="*" propagation="REQUIRED"/>
     </tx:attributes>
   </tx:advice>
+  
+21.代理机制。
+  <aop:config proxy-target-class="true">
+     <!-- other beans defined here... -->
+  </aop:config>
+
+  <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+  public class Main {
+    public static void main(String[] args) {
+       ProxyFactory factory = new ProxyFactory(new SimplePojo());
+       factory.addInterface(Pojo.class);
+       factory.addAdvice(new RetryAdvice());
+       factory.setExposeProxy(true);
+       
+       Pojo pojo = (Pojo) factory.getProxy();
+       // this is a method call on the proxy!
+       pojo.foo();
+    }
+  }
+
+22.以编程方式创建 @AspectJ 代理。
+   // create a factory that can generate a proxy for the given target object
+   AspectJProxyFactory factory = new AspectJProxyFactory(targetObject); 
+   // add an aspect, the class must be an @AspectJ aspect
+   // you can call this as many times as you need with different aspects
+   factory.addAspect(SecurityManager.class);
+   // you can also add existing aspect instances, the type of the object supplied must be an @AspectJ aspect
+   factory.addAspect(usageTracker);	
+   // now get the proxy object...
+   MyInterfaceType proxy = factory.getProxy();
+
+23.在 Spring 应用中使用 AspectJ。
+  <context:spring-configured />
+  
+  <bean class="org.springframework.beans.factory.aspectj.AnnotationBeanConfigurerAspect" 
+      factory-method="aspectOf"/>
+
+  <bean id="myService" class="com.xzy.myapp.service.MyService"
+      depends-on="org.springframework.beans.factory.aspectj.AnnotationBeanConfigurerAspect">
+  </bean>
+
+24.在 Spring 应用中使用 AspectJ 加载时织入(LTW)。
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+   <context:load-time-weaver weaver-class="org.springframework.instrument.classloading.ReflectiveLoadTimeWeaver"/>
+</beans>
 ```
