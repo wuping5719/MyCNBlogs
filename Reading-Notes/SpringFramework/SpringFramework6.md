@@ -44,4 +44,20 @@
   
   (2) 动态切入点：控制流切入点。
   控制流切入点是由 org.springframework.aop.support.ControlFlowPointcut 类声明的。
+  
+27.Spring 的通知 API。
+  (1) 拦截环绕通知: 实现环绕通知的 MethodInterceptor 应当实现下面的接口：
+  public interface MethodInterceptor extends Interceptor {
+     // invoke() 方法的 MethodInvocation 参数暴露了被调用的方法、目标连接点、AOP 代理以及传递给方法的参数。
+     Object invoke(MethodInvocation invocation) throws Throwable;
+  }
+  
+  public class DebugInterceptor implements MethodInterceptor {
+     public Object invoke(MethodInvocation invocation) throws Throwable {
+        System.out.println("Before: invocation=[" + invocation + "]");
+        Object rval = invocation.proceed();
+        System.out.println("Invocation returned");
+        return rval;
+     }
+  }
 ```
