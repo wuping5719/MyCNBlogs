@@ -150,4 +150,48 @@
                 
    <bean id="global_debug" class="org.springframework.aop.interceptor.DebugInterceptor"/>
    <bean id="global_performance" class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor"/>
+
+29.简化代理定义。
+   <bean id="txProxyTemplate" abstract="true" 
+       class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+     <property name="transactionManager" ref="transactionManager"/>
+     <property name="transactionAttributes">
+        <props>
+          <prop key="*">PROPAGATION_REQUIRED</prop>
+        </props>
+     </property>
+   </bean>
+
+   <bean id="mySpecialService" parent="txProxyTemplate">
+      <property name="target">
+        <bean class="org.springframework.samples.MySpecialServiceImpl"></bean>
+      </property>
+      <property name="transactionAttributes">
+        <props>
+           <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+           <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+           <prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+           <prop key="store*">PROPAGATION_REQUIRED</prop>
+        </props>
+      </property>
+   </bean>
+
+30.使用 ProxyFactory 通过编程创建 AOP 代理。
+   ProxyFactory factory = new ProxyFactory(myBusinessInterfaceImpl);
+   factory.addInterceptor(myMethodInterceptor);
+   factory.addAdvisor(myAdvisor);
+   MyBusinessInterface tb = (MyBusinessInterface) factory.getProxy();
+
+31.操作被通知对象。
+   任何 AOP 代理都能够被转型为接口 org.springframework.aop.framework.Advised, 接口包括下面的方法：
+   Advisor[] getAdvisors();
+   void addAdvice(Advice advice) throws AopConfigException;
+   void addAdvice(int pos, Advice advice) throws AopConfigException;
+   void addAdvisor(Advisor advisor) throws AopConfigException;
+   void addAdvisor(int pos, Advisor advisor) throws AopConfigException;
+   int indexOf(Advisor advisor);
+   boolean removeAdvisor(Advisor advisor) throws AopConfigException;
+   void removeAdvisor(int index) throws AopConfigException;
+   boolean replaceAdvisor(Advisor a, Advisor b) throws AopConfigException;
+   boolean isFrozen();
 ```
