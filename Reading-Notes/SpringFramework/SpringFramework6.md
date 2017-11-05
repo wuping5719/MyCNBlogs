@@ -60,4 +60,69 @@
         return rval;
      }
   }
+
+ (2) 前置通知：MethodBeforeAdvice 接口。
+ public interface MethodBeforeAdvice extends BeforeAdvice {
+    void before(Method m, Object[] args, Object target) throws Throwable;
+ }
+ public class CountingBeforeAdvice implements MethodBeforeAdvice {
+    private int count;
+
+    public void before(Method m, Object[] args, Object target) throws Throwable {
+       ++count;
+    }
+                
+    public int getCount() { 
+       return count; 
+    }
+  }
+
+  (3) 异常通知: org.springframework.aop.ThrowsAdvice 接口不包含任何方法。
+  public class ServletThrowsAdviceWithArguments implements ThrowsAdvice {
+    public void afterThrowing(Method m, Object[] args, Object target, ServletException ex) {
+      // Do something with all arguments
+    }
+  }
+
+  (4) 后置通知：org.springframework.aop.AfterReturningAdvice 接口。
+  public interface AfterReturningAdvice extends Advice {
+     void afterReturning(Object returnValue, Method m, Object[] args, Object target) throws Throwable;
+  }
+  
+  (5) 引入通知：引入通知需要一个 IntroductionAdvisor, 和一个 IntroductionInterceptor, 后者实现下面的接口：
+  public interface IntroductionInterceptor extends MethodInterceptor {
+     boolean implementsInterface(Class intf);
+  }
+  public interface IntroductionAdvisor extends Advisor, IntroductionInfo {
+     ClassFilter getClassFilter();  // getInterfaces() 方法返回这个通知器所引入的接口。  
+     void validateInterfaces() throws IllegalArgumentException;
+  }
+  public interface IntroductionInfo {
+     Class[] getInterfaces();
+  }
+  
+  public interface Lockable {
+      void lock();
+      void unlock();
+      boolean locked();
+  }
+  public class LockMixin extends DelegatingIntroductionInterceptor implements Lockable {
+     private boolean locked;              
+     public void lock() {
+        this.locked = true;
+     }
+     public void unlock() {
+        this.locked = false;
+     }
+     public boolean locked() {
+        return this.locked;
+     }
+     public Object invoke(MethodInvocation invocation) throws Throwable {
+        if (locked() && invocation.getMethod().getName().indexOf("set") == 0)
+           throw new LockedException();
+        return super.invoke(invocation);
+     }
+  }
+
+28.使用 ProxyFactoryBean 创建 AOP 代理。
 ```
