@@ -125,4 +125,29 @@
   }
 
 28.使用 ProxyFactoryBean 创建 AOP 代理。
+  (1) 对接口进行代理:
+   <bean id="person" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="proxyInterfaces"><value>com.mycompany.Person</value></property>
+      <property name="target"><ref local="personTarget"/></property>
+      <property name="interceptorNames">
+         <list>
+            <value>myAdvisor</value>
+            <value>debugInterceptor</value>
+         </list>
+      </property>
+   </bean>
+
+  (2) 使用“全局”通知器:
+   通过在一个拦截器名后添加一个星号，所有 bean 名字与星号之前部分相匹配的通知都将被加入到通知器链中。
+   <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+      <property name="target" ref="service"/>
+      <property name="interceptorNames">
+         <list>
+            <value>globa *</value>
+         </list>
+      </property>
+   </bean>
+                
+   <bean id="global_debug" class="org.springframework.aop.interceptor.DebugInterceptor"/>
+   <bean id="global_performance" class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor"/>
 ```
