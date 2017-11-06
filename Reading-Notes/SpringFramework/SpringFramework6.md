@@ -181,28 +181,4 @@
    factory.addInterceptor(myMethodInterceptor);
    factory.addAdvisor(myAdvisor);
    MyBusinessInterface tb = (MyBusinessInterface) factory.getProxy();
-
-31.操作被通知对象。
-   任何 AOP 代理都能够被转型为接口 org.springframework.aop.framework.Advised, 接口包括下面的方法：
-   Advisor[] getAdvisors();
-   void addAdvice(Advice advice) throws AopConfigException;
-   void addAdvice(int pos, Advice advice) throws AopConfigException;
-   void addAdvisor(Advisor advisor) throws AopConfigException;
-   void addAdvisor(int pos, Advisor advisor) throws AopConfigException;
-   int indexOf(Advisor advisor);
-   boolean removeAdvisor(Advisor advisor) throws AopConfigException;
-   void removeAdvisor(int index) throws AopConfigException;
-   boolean replaceAdvisor(Advisor a, Advisor b) throws AopConfigException;
-   boolean isFrozen();
-   
-32.自动代理 bean 定义。
-   BeanNameAutoProxyCreator 为名字匹配字符串或者通配符的 bean 自动创建 AOP 代理。
-   <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
-      <property name="beanNames"><value>jdk*,onlyJdk</value></property>
-      <property name="interceptorNames">
-         <list>
-            <value>myInterceptor</value>
-         </list>
-      </property>
-  </bean>
 ```
