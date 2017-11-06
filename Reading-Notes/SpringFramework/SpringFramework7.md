@@ -49,4 +49,47 @@
      </property>
   </bean>    
   <bean id="attributes" class="org.springframework.metadata.commons.CommonsAttributes"/>
+
+34.热交换目标源。
+  org.springframework.aop.target.HotSwappableTargetSource 允许当调用者保持引用的时候，切换一个 AOP 代理的目标。 
+
+  HotSwappableTargetSource swapper = (HotSwappableTargetSource) beanFactory.getBean("swapper");
+  Object oldTarget = swapper.swap(newTarget);
+
+  <bean id="initialTarget" class="mycompany.OldTarget"/>
+  <bean id="swapper" class="org.springframework.aop.target.HotSwappableTargetSource">
+     <constructor-arg ref="initialTarget"/>
+  </bean>
+  <bean id="swappable" class="org.springframework.aop.framework.ProxyFactoryBean">
+     <property name="targetSource" ref="swapper"/>
+  </bean>
+
+35.池化目标源。
+  Spring 对 Jakarta Commons Pool 1.3 提供了开箱即用的支持，后者提供了一个相当有效的池化实现。
+  
+  <bean id="businessObjectTarget" class="com.mycompany.MyBusinessObject" scope="prototype"></bean>
+  <bean id="poolTargetSource" class="org.springframework.aop.target.CommonsPoolTargetSource">
+     <property name="targetBeanName" value="businessObjectTarget"/>
+     <property name="maxSize" value="25"/>
+  </bean>
+  <bean id="businessObject" class="org.springframework.aop.framework.ProxyFactoryBean">
+     <property name="targetSource" ref="poolTargetSource"/>
+     <property name="interceptorNames" value="myInterceptor"/>
+  </bean>
+  
+  可以配置 Spring 来把任何被池化对象转型到 org.springframework.aop.target.PoolingConfig 接口。
+  <bean id="poolConfigAdvisor" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+     <property name="targetObject" ref="poolTargetSource"/>
+     <property name="targetMethod" value="getPoolingConfigMixin"/>
+  </bean>
+
+36.原型目标源。
+  <bean id="prototypeTargetSource" class="org.springframework.aop.target.PrototypeTargetSource">
+     <property name="targetBeanName" ref="businessObjectTarget"/>
+  </bean>
+
+37.ThreadLocal 目标源。
+  <bean id="threadlocalTargetSource" class="org.springframework.aop.target.ThreadLocalTargetSource">
+     <property name="targetBeanName" value="businessObjectTarget"/>
+  </bean>
 ```
