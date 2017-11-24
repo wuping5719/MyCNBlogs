@@ -45,4 +45,9 @@
    </bean>
 
    <bean id="txManager" class="org.springframework.transaction.jta.JtaTransactionManager"/>
+   
+44.使用资源同步的事务。
+   在 JDBC 环境下，不再使用传统的调用 DataSource 的 getConnection() 方法的方式，
+而是使用 Spring 的 org.springframework.jdbc.datasource.DataSourceUtils。
+   Connection conn = DataSourceUtils.getConnection(dataSource);
 ```
