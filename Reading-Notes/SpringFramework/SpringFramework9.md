@@ -50,4 +50,27 @@
    在 JDBC 环境下，不再使用传统的调用 DataSource 的 getConnection() 方法的方式，
 而是使用 Spring 的 org.springframework.jdbc.datasource.DataSourceUtils。
    Connection conn = DataSourceUtils.getConnection(dataSource);
+
+45.声明式事务管理。
+  (1) 回滚.
+  <tx:advice id="txAdvice">
+     <tx:attributes>
+        <tx:method name="*" rollback-for="Throwable" no-rollback-for="InstrumentNotFoundException"/>
+     </tx:attributes>
+  </tx:advice>
+  (2) 使用 @Transactional.
+  @Transactional(readOnly = true)
+  public class DefaultFooService implements FooService {
+     public Foo getFoo(String fooName) {
+         // do something
+     }
+
+     // these settings have precedence for this method
+     @Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+     public void updateFoo(Foo foo) {
+        // do something
+     }
+  }
+
+46.编程式事务管理。
 ```
