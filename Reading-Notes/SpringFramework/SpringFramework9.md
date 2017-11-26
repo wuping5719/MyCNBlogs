@@ -73,4 +73,41 @@
   }
 
 46.编程式事务管理。
+   Spring 提供两种方式的编程式事务管理：
+   (1) 使用 TransactionTemplate;
+   public class SimpleService implements Service {
+      // single TransactionTemplate shared amongst all methods in this instance
+      private final TransactionTemplate transactionTemplate;
+
+      // use constructor-injection to supply the PlatformTransactionManager
+      public SimpleService(PlatformTransactionManager transactionManager) {
+         Assert.notNull(transactionManager, "The 'transactionManager' argument must not be null.");
+         this.transactionTemplate = new TransactionTemplate(transactionManager);
+      }
+
+      public Object someServiceMethod() {
+          return transactionTemplate.execute(new TransactionCallback() {
+               // the code in this method executes in a transactional context
+               public Object doInTransaction(TransactionStatus status) {
+                  updateOperation1();
+                  return resultOfUpdateOperation2();
+               }
+         });
+     }
+   }
+
+   (2) 直接使用一个 PlatformTransactionManager 实现.
+   DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+   // explicitly setting the transaction name is something that can only be done programmatically
+   def.setName("SomeTxName");
+   def.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+ 
+   TransactionStatus status = txManager.getTransaction(def);
+   try {
+      // execute your business logic here
+   } catch (MyException ex) {
+      txManager.rollback(status);
+      throw ex;
+   }
+   txManager.commit(status);
 ```
