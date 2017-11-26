@@ -110,4 +110,12 @@
       throw ex;
    }
    txManager.commit(status);
+
+47.一致的 DAO 支持抽象类。
+  (1) JdbcDaoSupport - JDBC数据访问对象的基类。 需要一个DataSource，同时为子类提供 JdbcTemplate。 
+  (2) HibernateDaoSupport - Hibernate 数据访问对象的基类。 需要一个 SessionFactory，
+同时为子类提供 HibernateTemplate。也可以选择直接通过提供一个 HibernateTemplate 来初始化，
+这样就可以重用后者的设置，例如 SessionFactory， flush模式，异常翻译器（exception translator）等等。 
+  (3) JdoDaoSupport - JDO 数据访问对象的基类。 需要设置一个 PersistenceManagerFactory， 同时为子类提供 JdoTemplate。 
+  (4) JpaDaoSupport - JPA 数据访问对象的基类。 需要一个 EntityManagerFactory，同时为子类提供 JpaTemplate。
 ```
