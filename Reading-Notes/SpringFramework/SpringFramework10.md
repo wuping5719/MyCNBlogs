@@ -77,7 +77,7 @@
       return this.simpleJdbcTemplate.queryForObject(sql, mapper, id);
    }
    
-   (4) DataSource 接口:
+  (4) DataSource 接口:
    DriverManagerDataSource dataSource = new DriverManagerDataSource();
    dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
    dataSource.setUrl("jdbc:hsqldb:hsql://localhost:");
