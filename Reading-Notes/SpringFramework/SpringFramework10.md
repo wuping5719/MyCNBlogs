@@ -76,4 +76,21 @@
       };
       return this.simpleJdbcTemplate.queryForObject(sql, mapper, id);
    }
+   
+   (4) DataSource 接口:
+   DriverManagerDataSource dataSource = new DriverManagerDataSource();
+   dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
+   dataSource.setUrl("jdbc:hsqldb:hsql://localhost:");
+   dataSource.setUsername("sa");
+   dataSource.setPassword("");
+
+  (5) SQLExceptionTranslator 接口:
+   public class MySQLErrorCodesTranslator extends SQLErrorCodeSQLExceptionTranslator {
+      protected DataAccessException customTranslate(String task, String sql, SQLException sqlex) {
+         if (sqlex.getErrorCode() == -12345) {
+            return new DeadlockLoserDataAccessException(task, sqlex);
+         }
+         return null;
+      }
+   }
 ```
