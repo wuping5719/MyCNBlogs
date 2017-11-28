@@ -93,4 +93,64 @@
          return null;
       }
    }
+   
+  (6) 执行 SQL 语句:
+   import javax.sql.DataSource;
+   import org.springframework.jdbc.core.JdbcTemplate;
+   public class ExecuteStatement {
+      private JdbcTemplate jdbcTemplate;
+      public void setDataSource(DataSource dataSource) {
+         this.jdbcTemplate = new JdbcTemplate(dataSource);
+      }
+      public void doExecute() {
+         this.jdbcTemplate.execute("create table mytable (id integer, name varchar(100))");
+      }
+   }
+
+  (7) 执行查询:
+   import javax.sql.DataSource;
+   import org.springframework.jdbc.core.JdbcTemplate;
+   public class RunQuery {
+      private JdbcTemplate jdbcTemplate;
+      public void setDataSource(DataSource dataSource) {
+         this.jdbcTemplate = new JdbcTemplate(dataSource);
+      }
+      public int getCount() {
+         return this.jdbcTemplate.queryForInt("select count(*) from mytable");
+      }
+      public String getName() {
+         return (String) this.jdbcTemplate.queryForObject("select name from mytable", String.class);
+      }
+      public void setDataSource(DataSource dataSource) {
+         this.dataSource = dataSource;
+      }
+   }
+
+  (8) 更新数据库:
+   import javax.sql.DataSource;
+   import org.springframework.jdbc.core.JdbcTemplate;
+   public class ExecuteUpdate {
+      private JdbcTemplate jdbcTemplate;
+      public void setDataSource(DataSource dataSource) {
+         this.jdbcTemplate = new JdbcTemplate(dataSource);
+      }
+      public void setName(int id, String name) {
+         this.jdbcTemplate.update("update mytable set name = ? where id = ?", 
+              new Object[] {name, new Integer(id)});
+      }
+   }
+
+  (9) 获取自动生成的主键:
+   final String INSERT_SQL = "insert into my_test (name) values(?)";
+   final String name = "Rob";
+   KeyHolder keyHolder = new GeneratedKeyHolder();
+   jdbcTemplate.update(
+      new PreparedStatementCreator() {
+         public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+            PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] {"id"});
+            ps.setString(1, name);
+            return ps;
+         }
+      },
+      keyHolder);
 ```
