@@ -153,4 +153,18 @@
          }
       },
       keyHolder);
+
+49.控制数据库连接。
+  (1) DataSourceUtils 类: 提供支持线程绑定的数据库连接。
+  (2) SmartDataSource 接口: DataSource 接口的一个扩展，用来提供数据库连接。
+  (3) AbstractDataSource 类: AbstractDataSource 是一个实现了 DataSource 接口的 abstract 基类。
+  (4) SingleConnectionDataSource 类: SmartDataSource 接口的一个实现，其内部包装了一个单连接。
+  (5) DriverManagerDataSource 类: 实现了 SmartDataSource接口。
+可以使用 bean properties 来设置 JDBC Driver 属性，该类每次返回的都是一个新的连接。 
+  (6) TransactionAwareDataSourceProxy 类: 目标 DataSource 的一个代理， 
+在对目标 DataSource 包装的同时，还增加了 Spring 的事务管理能力。
+  (7) DataSourceTransactionManager 类: PlatformTransactionManager 接口的一个实现，用于处理单 JDBC 数据源。
+  (8) NativeJdbcExtractor: SimpleNativeJdbcExtractor、C3P0NativeJdbcExtractor、
+CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、WebLogicNativeJdbcExtractor、
+WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
 ```
