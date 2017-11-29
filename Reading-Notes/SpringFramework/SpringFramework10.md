@@ -167,4 +167,29 @@
   (8) NativeJdbcExtractor: SimpleNativeJdbcExtractor、C3P0NativeJdbcExtractor、
 CommonsDbcpNativeJdbcExtractor、JBossNativeJdbcExtractor、WebLogicNativeJdbcExtractor、
 WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
+
+50.JDBC 批量操作。
+  (1) 使用 JdbcTemplate 进行批量操作:
+   public class JdbcActorDao implements ActorDao {
+     private JdbcTemplate jdbcTemplate;
+     public void setDataSource(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+     }
+     public int[] batchUpdate(final List actors) {
+        int[] updateCounts = jdbcTemplate.batchUpdate(
+              "update t_actor set first_name = ?, last_name = ? where id = ?",
+               new BatchPreparedStatementSetter() {
+                   public void setValues(PreparedStatement ps, int i) throws SQLException {
+                       ps.setString(1, ((Actor)actors.get(i)).getFirstName());
+                       ps.setString(2, ((Actor)actors.get(i)).getLastName());
+                       ps.setLong(3, ((Actor)actors.get(i)).getId().longValue());
+                   }
+                   public int getBatchSize() {
+                       return actors.size();
+                   }
+               } );
+         return updateCounts;
+     }
+   }
+  (2) 使用 SimpleJdbcTemplate 进行批量操作:
 ```
