@@ -204,4 +204,94 @@ WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
          return updateCounts;
       }
    }
+   
+51.通过使用 SimpleJdbc 类简化 JDBC 操作。
+  (1) 使用 SimpleJdbcInsert 插入数据:
+   public class JdbcActorDao implements ActorDao {
+      private SimpleJdbcTemplate simpleJdbcTemplate;
+      private SimpleJdbcInsert insertActor;
+      public void setDataSource(DataSource dataSource) {
+         this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+         this.insertActor = new SimpleJdbcInsert(dataSource).withTableName("t_actor");
+      }
+      public void add(Actor actor) {
+         Map<String, Object> parameters = new HashMap<String, Object>(3);
+         parameters.put("id", actor.getId());
+         parameters.put("first_name", actor.getFirstName());
+         parameters.put("last_name", actor.getLastName());
+         insertActor.execute(parameters);
+      }
+   }
+   
+  (2) 使用 SimpleJdbcInsert 来获取自动生成的主键:
+   public class JdbcActorDao implements ActorDao {
+      private SimpleJdbcTemplate simpleJdbcTemplate;
+      private SimpleJdbcInsert insertActor;
+      public void setDataSource(DataSource dataSource) {
+         this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+         this.insertActor = new SimpleJdbcInsert(dataSource).withTableName("t_actor")
+                       .usingGeneratedKeyColumns("id");
+      }
+      public void add(Actor actor) {
+         Map<String, Object> parameters = new HashMap<String, Object>(2);
+         parameters.put("first_name", actor.getFirstName());
+         parameters.put("last_name", actor.getLastName());
+         Number newId = insertActor.executeAndReturnKey(parameters);
+         actor.setId(newId.longValue());
+      }
+   }
+
+  (3) 指定 SimpleJdbcInsert 所使用的字段:
+   public class JdbcActorDao implements ActorDao {
+     private SimpleJdbcTemplate simpleJdbcTemplate;
+     private SimpleJdbcInsert insertActor;
+     public void setDataSource(DataSource dataSource) {
+        this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+        this.insertActor = new SimpleJdbcInsert(dataSource).withTableName("t_actor")
+                       .usingColumns("first_name", "last_name").usingGeneratedKeyColumns("id");
+     }
+     public void add(Actor actor) {
+        Map<String, Object> parameters = new HashMap<String, Object>(2);
+        parameters.put("first_name", actor.getFirstName());
+        parameters.put("last_name", actor.getLastName());
+        Number newId = insertActor.executeAndReturnKey(parameters);
+        actor.setId(newId.longValue());
+     }
+   }
+
+  (4) 使用 SqlParameterSource 提供参数值:
+    // 前面的方法与 (3) 相同...
+    public void add(Actor actor) {
+       SqlParameterSource parameters = new BeanPropertySqlParameterSource(actor);
+       Number newId = insertActor.executeAndReturnKey(parameters);
+       actor.setId(newId.longValue());
+    }
+
+    public void add(Actor actor) {
+        SqlParameterSource parameters = new MapSqlParameterSource()
+                .addValue("first_name", actor.getFirstName())
+                .addValue("last_name", actor.getLastName());
+        Number newId = insertActor.executeAndReturnKey(parameters);
+        actor.setId(newId.longValue());
+    }
+
+  (5) 使用 SimpleJdbcCall 调用存储过程:
+    public class JdbcActorDao implements ActorDao {
+       private SimpleJdbcTemplate simpleJdbcTemplate;
+       private SimpleJdbcCall procReadActor;
+       public void setDataSource(DataSource dataSource) {
+          this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+          this.procReadActor = new SimpleJdbcCall(dataSource).withProcedureName("read_actor");
+       }
+       public Actor readActor(Long id) {
+          SqlParameterSource in = new MapSqlParameterSource().addValue("in_id", id); 
+          Map out = procReadActor.execute(in);
+          Actor actor = new Actor();
+          actor.setId(id);
+          actor.setFirstName((String) out.get("out_first_name"));
+          actor.setLastName((String) out.get("out_last_name"));
+          actor.setBirthDate((Date) out.get("out_birth_date"));
+          return actor;
+       }
+    }
 ```
