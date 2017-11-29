@@ -192,4 +192,16 @@ WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
      }
    }
   (2) 使用 SimpleJdbcTemplate 进行批量操作:
+   public class JdbcActorDao implements ActorDao {
+      private SimpleJdbcTemplate simpleJdbcTemplate;
+      public void setDataSource(DataSource dataSource) {
+         this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+      }
+      public int[] batchUpdate(final List<Actor> actors) {
+         SqlParameterSource[] batch = SqlParameterSourceUtils.createBatch(actors.toArray());
+         int[] updateCounts = simpleJdbcTemplate.batchUpdate(
+               "update t_actor set first_name = :firstName, last_name = :lastName where id = :id", batch);
+         return updateCounts;
+      }
+   }
 ```
