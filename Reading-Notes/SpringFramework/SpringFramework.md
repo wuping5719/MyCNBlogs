@@ -11,4 +11,5 @@
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework7.md">Spring AOP APIs (31-37条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework8.md">测试 (38-42条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework9.md">事务管理 (43-47条)</a>
-* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework10.md">使用 JDBC 进行数据访问 (48-55条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework10.md">使用 JDBC 进行数据访问 (48-50条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework11.md">使用 JDBC 进行数据访问 (51-53条)</a>
