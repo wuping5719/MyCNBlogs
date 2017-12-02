@@ -208,4 +208,51 @@
      sf.compile();
      return sf.run();
   }
+
+53.参数和数据处理的基本原则。
+  (1) 为参数设置 SQL 类型信息: SqlParameterSource、BeanPropertySqlParameterSource 或者 MapSqlParameterSource 类。
+  (2) 处理 BLOB 和 CLOB 对象。
+   final File blobIn = new File("spring2004.jpg");
+   final InputStream blobIs = new FileInputStream(blobIn);
+   final File clobIn = new File("large.txt");
+   final InputStream clobIs = new FileInputStream(clobIn);
+   final InputStreamReader clobReader = new InputStreamReader(clobIs);
+   jdbcTemplate.execute("INSERT INTO lob_table (id, a_clob, a_blob) VALUES (?, ?, ?)",
+       new AbstractLobCreatingPreparedStatementCallback(lobhandler) {
+          protected void setValues(PreparedStatement ps, LobCreator lobCreator) throws SQLException {
+             ps.setLong(1, 1L);
+             lobCreator.setClobAsCharacterStream(ps, 2, clobReader, (int)clobIn.length());
+             lobCreator.setBlobAsBinaryStream(ps, 3, blobIs, (int)blobIn.length());
+          }
+       }
+   );
+   blobIs.close();
+   clobReader.close();
+  (3) 在 IN 语句中传入一组参数值。
+  (4) 处理复杂类型的存储过程调用。
+   declareParameter(new SqlOutParameter("item", OracleTypes.STRUCT, "ITEM_TYPE",
+      new SqlReturnType() {
+         public Object getTypeValue(CallableStatement cs, int colIndx, int sqlType, String typeName) 
+            throws SQLException {
+           STRUCT struct = (STRUCT) cs.getObject(colIndx);
+           Object[] attr = struct.getAttributes();
+           TestItem item = new TestItem();
+           item.setId(((Number) attr[0]).longValue());
+           item.setDescription((String)attr[1]);
+           item.setExpirationDate((java.util.Date)attr[2]);
+           return item;
+        }
+   }));
+   通过 Java 代码调用存储过程使用 SqlTypeValue 来传入一个 TestItem 作为参数。
+   SqlTypeValue value = new AbstractSqlTypeValue() {
+     protected Object createTypeValue(Connection conn, int sqlType, String typeName) throws SQLException {
+        StructDescriptor itemDescriptor = new StructDescriptor(typeName, conn);
+        Struct item = new STRUCT(itemDescriptor, conn,
+            new Object[] {
+               testItem.getId(),
+               testItem.getDescription(),
+               new java.sql.Date(testItem.getExpirationDate().getTime())
+            });
+       return item;
+   }
 ```
