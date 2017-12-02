@@ -294,4 +294,60 @@ WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
           return actor;
        }
     }
+    
+   (6) 声明 SimpleJdbcCall 使用的参数:
+    public class JdbcActorDao implements ActorDao {
+       private SimpleJdbcCall procReadActor;
+       public void setDataSource(DataSource dataSource) {
+          JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+          jdbcTemplate.setResultsMapCaseInsensitive(true);
+          this.procReadActor =
+               new SimpleJdbcCall(jdbcTemplate)
+                       .withProcedureName("read_actor")
+                       .withoutProcedureColumnMetaDataAccess()
+                       .useInParameterNames("in_id")
+                       .declareParameters(
+                               new SqlParameter("in_id", Types.NUMERIC),
+                               new SqlOutParameter("out_first_name", Types.VARCHAR),
+                               new SqlOutParameter("out_last_name", Types.VARCHAR),
+                               new SqlOutParameter("out_birth_date", Types.DATE)
+                       );
+       }
+    }
+
+   (7) 使用 SimpleJdbcCall 调用内置函数:
+    public class JdbcActorDao implements ActorDao {
+       private SimpleJdbcTemplate simpleJdbcTemplate;
+       private SimpleJdbcCall funcGetActorName;
+       public void setDataSource(DataSource dataSource) {
+          this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+          JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+          jdbcTemplate.setResultsMapCaseInsensitive(true);
+          this.funcGetActorName = new SimpleJdbcCall(jdbcTemplate)
+                       .withFunctionName("get_actor_name");
+       }
+       public String getActorName(Long id) {
+          SqlParameterSource in = new MapSqlParameterSource().addValue("in_id", id); 
+          String name = funcGetActorName.executeFunction(String.class, in);
+          return name;
+       }
+    }
+
+  (8) 使用 SimpleJdbcCall 返回的 ResultSet/REF Cursor:
+    public class JdbcActorDao implements ActorDao {
+       private SimpleJdbcTemplate simpleJdbcTemplate;
+       private SimpleJdbcCall procReadAllActors;
+       public void setDataSource(DataSource dataSource) {
+          this.simpleJdbcTemplate = new SimpleJdbcTemplate(dataSource);
+          JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+          jdbcTemplate.setResultsMapCaseInsensitive(true);
+          this.procReadAllActors = new SimpleJdbcCall(jdbcTemplate)
+                      .withProcedureName("read_all_actors")
+                      .returningResultSet("actors", ParameterizedBeanPropertyRowMapper.newInstance(Actor.class));
+       }
+       public List getActorsList() {
+          Map m = procReadAllActors.execute(new HashMap<String, Object>(0));
+          return (List) m.get("actors");
+       }
+   }
 ```
