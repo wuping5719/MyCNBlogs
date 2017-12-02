@@ -350,4 +350,66 @@ WebSphereNativeJdbcExtractor、XAPoolNativeJdbcExtractor。
           return (List) m.get("actors");
        }
    }
+  
+52.用 Java 对象来表达 JDBC 操作。
+  (1) SqlQuery 类: 可重用、线程安全的类，它封装了一个 SQL 查询。
+其子类必须实现 newResultReader() 方法，该方法用来在遍历 ResultSet 的时候能使用一个类来保存结果。 
+  (2) MappingSqlQuery 类: 可重用的查询抽象类，其具体类必须实现 mapRow(ResultSet, int) 抽象方法
+来将结果集中的每一行转换成 Java 对象。
+   private class CustomerMappingQuery extends MappingSqlQuery {
+      public CustomerMappingQuery(DataSource ds) {
+         super(ds, "SELECT id, name FROM customer WHERE id = ?");
+         super.declareParameter(new SqlParameter("id", Types.INTEGER));
+         compile();
+      }
+      public Object mapRow(ResultSet rs, int rowNumber) throws SQLException {
+         Customer cust = new Customer();
+         cust.setId((Integer) rs.getObject("id"));
+         cust.setName(rs.getString("name"));
+         return cust;
+      } 
+  }
+ (3) SqlUpdate 类: 封装了一个可重复使用的 SQL 更新操作。
+  import java.sql.Types;
+  import javax.sql.DataSource;
+  import org.springframework.jdbc.core.SqlParameter;
+  import org.springframework.jdbc.object.SqlUpdate;
+  public class UpdateCreditRating extends SqlUpdate {
+     public UpdateCreditRating(DataSource ds) {
+        setDataSource(ds);
+        setSql("update customer set credit_rating = ? where id = ?");
+        declareParameter(new SqlParameter(Types.NUMERIC));
+        declareParameter(new SqlParameter(Types.NUMERIC));
+        compile();
+     }
+     public int run(int id, int rating) {
+        Object[] params = new Object[] { new Integer(rating), new Integer(id) };
+        return update(params);
+     }
+  }
+ (4) StoredProcedure 类: 抽象基类，它是对 RDBMS 存储过程的一种抽象。
+  import oracle.jdbc.driver.OracleTypes;
+  import org.springframework.jdbc.core.SqlOutParameter;
+  import org.springframework.jdbc.object.StoredProcedure;
+  import javax.sql.DataSource;
+  import java.util.HashMap;
+  import java.util.Map;
+  public class TitlesAndGenresStoredProcedure extends StoredProcedure {
+     private static final String SPROC_NAME = "AllTitlesAndGenres";
+     public TitlesAndGenresStoredProcedure(DataSource dataSource) {
+        super(dataSource, SPROC_NAME);
+        declareParameter(new SqlOutParameter("titles", OracleTypes.CURSOR, new TitleMapper()));
+        declareParameter(new SqlOutParameter("genres", OracleTypes.CURSOR, new GenreMapper()));
+        compile();
+     }
+     public Map execute() {
+       return super.execute(new HashMap());
+     }
+  }
+ (5) SqlFunction 类: RDBMS 操作类封装了一个 SQL“ 函数”包装器(wrapper), 该包装器适用于查询并返回一个单行结果集。
+  public int countRows() {
+     SqlFunction sf = new SqlFunction(dataSource, "select count(*) from mytable");
+     sf.compile();
+     return sf.run();
+  }
 ```
