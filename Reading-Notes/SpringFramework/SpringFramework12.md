@@ -112,4 +112,72 @@ HibernateInterceptor / JdoInterceptor 以及一个 Hibernate / JDO 事务管理�
 PlatformTransactionManager 实例来处理。
   对于横跨多个 Hibernate SessionFacotry 的分布式事务，只需简单地将 JtaTransactionManager 同多个
 LocalSessionFactoryBean 的定义结合起来作为事务策略。
+
+55.JDO。
+  (1) 建立 PersistenceManagerFactory。
+  <beans>
+     <bean id="myPmf" class="org.springframework.orm.jdo.LocalPersistenceManagerFactoryBean">
+        <property name="configLocation" value="classpath:kodo.properties"/>
+     </bean>
+  </beans>
+
+  (2) JdoTemplate 和 JdoDaoSupport。
+  每一个基于 JDO 的 DAO 类都需要通过 IoC 来注入一个 PersistenceManagerFactory。
+  public class ProductDaoImpl implements ProductDao {
+     private JdoTemplate jdoTemplate;
+     public void setPersistenceManagerFactory(PersistenceManagerFactory pmf) {
+        this.jdoTemplate = new JdoTemplate(pmf);
+     }
+     public Collection loadProductsByCategory(final String category) throws DataAccessException {
+        return (Collection) this.jdoTemplate.execute(new JdoCallback() {
+            public Object doInJdo(PersistenceManager pm) throws JDOException {
+                Query query = pm.newQuery(Product.class, "category = pCategory");
+                query.declareParameters("String pCategory");
+                List result = query.execute(category);
+                // do some further stuff with the result list
+                return result;
+            }
+        });
+     }
+   }
+
+  (3) 基于原生的 JDO API 实现 DAO。
+  public class ProductDaoImpl implements ProductDao {
+     private PersistenceManagerFactory persistenceManagerFactory;
+     public void setPersistenceManagerFactory(PersistenceManagerFactory pmf) {
+        this.persistenceManagerFactory = pmf;
+     }
+     public Collection loadProductsByCategory(String category) {
+        PersistenceManager pm = this.persistenceManagerFactory.getPersistenceManager();
+        try {
+           Query query = pm.newQuery(Product.class, "category = pCategory");
+           query.declareParameters("String pCategory"); 
+           return query.execute(category);
+        } finally {
+           pm.close();
+        }
+     }
+  }
+
+  (4) 事务管理。
+   <bean id="myTxManager" class="org.springframework.orm.jdo.JdoTransactionManager">
+      <property name="persistenceManagerFactory" ref="myPmf"/>
+   </bean>
+   <bean id="myProductService" class="product.ProductServiceImpl">
+      <property name="productDao" ref="myProductDao"/>
+   </bean>
+   <tx:advice id="txAdvice" transaction-manager="txManager">
+      <tx:attributes>
+         <tx:method name="increasePrice*" propagation="REQUIRED"/>
+         <tx:method name="someOtherBusinessMethod" propagation="REQUIRES_NEW"/>
+         <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+      </tx:attributes>
+   </tx:advice>
+   <aop:config>
+      <aop:pointcut id="productServiceMethods" expression="execution(* product.ProductService.*(..))"/>
+      <aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods"/>
+   </aop:config>
+
+  (5) JdoDialect。
+  JdoTemplate 和 interfacename 都支持一个用户自定义的 JdoDialect 作为 “jdoDialect” 的 bean 属性进行注入。
 ```
