@@ -180,4 +180,92 @@ LocalSessionFactoryBean 的定义结合起来作为事务策略。
 
   (5) JdoDialect。
   JdoTemplate 和 interfacename 都支持一个用户自定义的 JdoDialect 作为 “jdoDialect” 的 bean 属性进行注入。
+
+56.Oracle TopLink。
+  (1) SessionFactory 抽象层。
+  <bean id="mySessionFactory" class="org.springframework.orm.toplink.LocalSessionFactoryBean">
+    <property name="configLocation" value="toplink-sessions.xml"/>
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+
+  <toplink-configuration>
+    <session>
+      <name>Session</name>
+      <project-xml>toplink-mappings.xml</project-xml>
+      <session-type>
+         <server-session/>
+      </session-type>
+      <enable-logging>true</enable-logging>
+      <logging-options/>
+    </session>
+  </toplink-configuration>
+
+  (2) TopLinkTemplate 和 TopLinkDaoSupport。
+  public class TopLinkProductDao implements ProductDao {
+    private TopLinkTemplate tlTemplate;
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.tlTemplate = new TopLinkTemplate(sessionFactory);
+    }
+    public Collection loadProductsByCategory(final String category) throws DataAccessException {
+        return (Collection) this.tlTemplate.execute(new TopLinkCallback() {
+            public Object doInTopLink(Session session) throws TopLinkException {
+                ReadAllQuery findOwnersQuery = new ReadAllQuery(Product.class);
+                findOwnersQuery.addArgument("Category");
+                ExpressionBuilder builder = this.findOwnersQuery.getExpressionBuilder();
+                findOwnersQuery.setSelectionCriteria(
+                    builder.get("category").like(builder.getParameter("Category")));
+                Vector args = new Vector();
+                args.add(category);
+                List result = session.executeQuery(findOwnersQuery, args);
+                // do some further stuff with the result list
+                return result;
+            }
+        });
+    }
+  }
+
+  public class ProductDaoImpl extends TopLinkDaoSupport implements ProductDao {
+     public Collection loadProductsByCategory(String category) throws DataAccessException {
+        ReadAllQuery findOwnersQuery = new ReadAllQuery(Product.class);
+        findOwnersQuery.addArgument("Category");
+        ExpressionBuilder builder = this.findOwnersQuery.getExpressionBuilder();
+        findOwnersQuery.setSelectionCriteria(
+            builder.get("category").like(builder.getParameter("Category")));
+        return getTopLinkTemplate().executeQuery(findOwnersQuery, new Object[] {category});
+     }
+  }
+  
+  (3) 基于原生的 TopLink API 的 DAO 实现。
+   直接使用一个注入的 Session 而无需对 Spring 产生的任何依赖。
+   它通常基于一个由 LocalSessionFactoryBean 定义的 SessionFactory，
+   并通过 Spring 的 TransactionAwareSessionAdapter 暴露成为一个 Session 类型的引用。 
+   <beans>
+     <bean id="mySessionAdapter"
+          class="org.springframework.orm.toplink.support.TransactionAwareSessionAdapter">
+        <property name="sessionFactory" ref="mySessionFactory"/>
+     </bean>
+     <bean id="myProductDao" class="product.ProductDaoImpl">
+        <property name="session" ref="mySessionAdapter"/>
+     </bean>
+   </beans>
+
+  (4) 事务管理。
+  TopLinkTransactionManager 能够将一个 TopLink 事务暴露给访问相同的 JDBC DataSource 的 JDBC 访问代码。
+  <bean id="myTxManager" class="org.springframework.orm.toplink.TopLinkTransactionManager">
+    <property name="sessionFactory" ref="mySessionFactory"/>
+  </bean>
+  <bean id="myProductService" class="product.ProductServiceImpl">
+    <property name="productDao" ref="myProductDao"/>
+  </bean>
+  <aop:config>
+    <aop:pointcut id="productServiceMethods" expression="execution(* product.ProductService.*(..))"/>
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods"/>
+  </aop:config>
+  <tx:advice id="txAdvice" transaction-manager="myTxManager">
+    <tx:attributes>
+      <tx:method name="increasePrice*" propagation="REQUIRED"/>
+      <tx:method name="someOtherBusinessMethod" propagation="REQUIRES_NEW"/>
+      <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+    </tx:attributes>
+  </tx:advice>
 ```
