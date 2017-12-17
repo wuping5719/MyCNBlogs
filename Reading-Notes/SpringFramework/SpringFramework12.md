@@ -317,4 +317,66 @@ LocalSessionFactoryBean 的定义结合起来作为事务策略。
         }
      }
   }
+
+58.JPA。
+  (1) 在 Spring 环境中建立 JPA。
+  Spring JPA 提供了三种方法创建 JPA EntityManagerFactory：LocalEntityManagerFactoryBean,
+从 JNDI 中获取 EntityManagerFactory, LocalContainerEntityManagerFactoryBean。
+  <beans>
+     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="someDataSource"/>
+        <property name="loadTimeWeaver">
+           <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+        </property>
+     </bean>
+  </beans>
+
+  (2) 处理多持久化单元。
+  <bean id="pum" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+     <property name="persistenceXmlLocation">
+        <list>
+           <value>org/springframework/orm/jpa/domain/persistence-multi.xml</value>
+           <value>classpath:/my/package/**/custom-persistence.xml</value>
+           <value>classpath*:META-INF/persistence.xml</value>
+        </list>
+     </property>
+     <property name="dataSources">
+        <map>
+           <entry key="localDataSource" value-ref="local-db"/>
+           <entry key="remoteDataSource" value-ref="remote-db"/>
+        </map>
+     </property>
+     <!-- if no datasource is specified, use this one -->
+     <property name="defaultDataSource" ref="remoteDataSource"/>
+  </bean>
+  <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+     <property name="persistenceUnitManager" ref="pum"/>
+  </bean>
+
+  (3) JpaTemplate 和 JpaDaoSupport。
+  public class ProductDaoImpl extends JpaDaoSupport implements ProductDao {
+     public Collection loadProductsByCategory(String category) throws DataAccessException {
+        Map<String, String> params = new HashMap<String, String>();
+        params.put("category", category);
+        return getJpaTemplate().findByNamedParams("from Product as p where p.category = :category", params);
+     }
+  }
+
+  (4) 基于原生的 JPA 实现 DAO。
+  public class ProductDaoImpl implements ProductDao {
+     @PersistenceContext
+     private EntityManager em;
+     public Collection loadProductsByCategory(String category) {
+        Query query = em.createQuery("from Product as p where p.category = :category");
+        query.setParameter("category", category);
+        return query.getResultList(); 
+     }
+  }
+
+  (5) 异常转化。
+  <beans>
+     <!-- Exception translation bean post processor -->
+     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+     <bean id="myProductDao" class="product.ProductDaoImpl"/>
+  </beans>
 ```
