@@ -268,4 +268,53 @@ LocalSessionFactoryBean 的定义结合起来作为事务策略。
       <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
     </tx:attributes>
   </tx:advice>
+
+57.iBATIS SQL Maps。 
+  (1) 创建 SqlMapClient。
+   <sqlMap namespace="Account">
+      <resultMap id="result" class="examples.Account">
+         <result property="name" column="NAME" columnIndex="1"/>
+         <result property="email" column="EMAIL" columnIndex="2"/>
+      </resultMap>
+      <select id="getAccountByEmail" resultMap="result">
+          select ACCOUNT.NAME, ACCOUNT.EMAIL
+          from ACCOUNT
+          where ACCOUNT.EMAIL = #value#
+      </select>
+      <insert id="insertAccount">
+          insert into ACCOUNT (NAME, EMAIL) values (#name#, #email#)
+      </insert>
+   </sqlMap>
+
+  (2) 使用 SqlMapClientTemplate 和 SqlMapClientDaoSupport。
+  public class SqlMapAccountDao extends SqlMapClientDaoSupport implements AccountDao {
+     public Account getAccount(String email) throws DataAccessException {
+        return (Account) getSqlMapClientTemplate().queryForObject("getAccountByEmail", email);
+     }
+     public void insertAccount(Account account) throws DataAccessException {
+        getSqlMapClientTemplate().update("insertAccount", account);
+     }
+  }
+
+  (3) 基于原生的 iBATIS API 的 DAO 实现。
+  public class SqlMapAccountDao implements AccountDao {
+     private SqlMapClient sqlMapClient;
+     public void setSqlMapClient(SqlMapClient sqlMapClient) {
+        this.sqlMapClient = sqlMapClient;
+     }
+     public Account getAccount(String email) {
+        try {
+            return (Account) this.sqlMapClient.queryForObject("getAccountByEmail", email);
+        } catch (SQLException ex) {
+            throw new MyDaoException(ex);
+        }
+     }
+     public void insertAccount(Account account) throws DataAccessException {
+        try {
+            this.sqlMapClient.update("insertAccount", account);
+        } catch (SQLException ex) {
+            throw new MyDaoException(ex);
+        }
+     }
+  }
 ```
