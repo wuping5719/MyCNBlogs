@@ -73,7 +73,6 @@ Spring 的 Web 框架中缺省的处理器是 Controller 接口，这是一个�
    // 'anyMeaningfulName' 指任意方法名
    public [ModelAndView | Map | void] anyMeaningfulName(HttpServletRequest,
                                           HttpServletResponse [,HttpSession] [,AnyObject])
-
    (4) 命令控制器。
    AbstractCommandController － 可以使用该抽象命令控制器来创建自己的命令控制器，
 它能够将请求参数绑定到指定的命令对象。这个类并不提供任何表单功能，
@@ -93,4 +92,38 @@ setPages() 的参数是一个 String 数组，这个数组包含了组成向导�
 setCommandName() 的参数是一个 String，该参数将用来在视图中调用你的命令对象。
 
 62.处理器映射(Handler Mapping)。
+   (1) BeanNameUrlHandlerMapping。
+    <beans>
+      <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+      <bean name="/editaccount.form" class="org.springframework.web.servlet.mvc.SimpleFormController">
+         <property name="formView" value="account"/>
+         <property name="successView" value="account-created"/>
+         <property name="commandName" value="account"/>
+         <property name="commandClass" value="samples.Account"/>
+      </bean>
+    <beans>
+
+  (2) SimpleUrlHandlerMapping。
+   <beans>
+      <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+         <property name="mappings">
+             <value>
+               /*/account.form=editAccountFormController
+               /*/editaccount.form=editAccountFormController
+               /ex/view*.html=helpController
+               /**/help.html=helpController
+             </value>
+         </property>
+      </bean>
+      <bean id="helpController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+      <bean id="editAccountFormController" class="org.springframework.web.servlet.mvc.SimpleFormController">
+         <property name="formView" value="account"/>
+         <property name="successView" value="account-created"/>
+         <property name="commandName" value="Account"/>
+         <property name="commandClass" value="samples.Account"/>
+      </bean>
+   <beans>
+
+  (3) 拦截器(HandlerInterceptor)。
+    处理器映射中的拦截器必须实现 org.springframework.web.servlet 包中的 HandlerInterceptor 接口。
 ```
