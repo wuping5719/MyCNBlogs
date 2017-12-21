@@ -130,4 +130,5 @@ setCommandName() 的参数是一个 String，该参数将用来在视图中调�
 63.视图与视图解析。
    ViewResolver 和 View 是 Spring 的视图处理方式中特别重要的两个接口。 
 ViewResolver 提供了从视图名称到实际视图的映射。View 处理请求的准备工作，并将该请求提交给某种具体的视图技术。
+   (1) 视图解析器(ViewResolver)。
 ```
