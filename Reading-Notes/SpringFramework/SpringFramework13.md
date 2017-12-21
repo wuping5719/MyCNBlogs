@@ -126,4 +126,8 @@ setCommandName() 的参数是一个 String，该参数将用来在视图中调�
 
   (3) 拦截器(HandlerInterceptor)。
     处理器映射中的拦截器必须实现 org.springframework.web.servlet 包中的 HandlerInterceptor 接口。
+
+63.视图与视图解析。
+   ViewResolver 和 View 是 Spring 的视图处理方式中特别重要的两个接口。 
+ViewResolver 提供了从视图名称到实际视图的映射。View 处理请求的准备工作，并将该请求提交给某种具体的视图技术。
 ```
