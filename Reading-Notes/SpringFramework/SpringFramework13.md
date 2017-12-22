@@ -129,6 +129,32 @@ setCommandName() 的参数是一个 String，该参数将用来在视图中调�
 
 63.视图与视图解析。
    ViewResolver 和 View 是 Spring 的视图处理方式中特别重要的两个接口。 
-ViewResolver 提供了从视图名称到实际视图的映射。View 处理请求的准备工作，并将该请求提交给某种具体的视图技术。
+ViewResolver 提供了从视图名称到实际视图的映射。View 处理请求的准备工作，并将该请求提交给某种具体的视图技术。 
    (1) 视图解析器(ViewResolver)。
+    ① AbstractCachingViewResolver：抽象视图解析器实现了对视图的缓存。在视图被使用之前，通常需要进行一些准备工作。
+从它继承的视图解析器将对要解析的视图进行缓存。 
+    ② XmlViewResolver：XmlViewResolver 实现 ViewResolver，支持XML格式的配置文件。 
+该配置文件必须采用与 Spring XML Bean Factory 相同的 DTD。默认的配置文件是 /WEB-INF/views.xml。 
+    ③ ResourceBundleViewResolver：ResourceBundleViewResolver 实现 ViewResolver， 在一个 ResourceBundle 中寻找所需 bean 的定义。 
+这个 bundle 通常定义在一个位于 classpath 中的属性文件中。默认的属性文件是 views.properties。
+    ④ UrlBasedViewResolver：UrlBasedViewResolver 实现 ViewResolver， 将视图名直接解析成对应的 URL，不需要显式的映射定义。 
+如果你的视图名和视图资源的名字是一致的，就可使用该解析器，而无需进行映射。
+    ⑤ InternalResourceViewResolver：作为 UrlBasedViewResolver 的子类， 它支持 InternalResourceView(对 Servlet 和 JSP 的包装)， 
+以及其子类 JstlView 和 TilesView。 通过 setViewClass 方法，可以指定用于该解析器生成视图使用的视图类。 
+    ⑥ VelocityViewResolver / FreeMarkerViewResolver: 作为 UrlBasedViewResolver 的子类， 
+它能支持 VelocityView(对 Velocity 模版的包装)和 FreeMarkerView 以及它们的子类。
+   (2) 视图解析链。
+   <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+       <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+       <property name="prefix" value="/WEB-INF/jsp/"/>
+       <property name="suffix" value=".jsp"/>
+   </bean>
+   <bean id="excelViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+       <property name="order" value="1"/>
+       <property name="location" value="/WEB-INF/views.xml"/>
+   </bean>
+   (3) 重定向(Rediret)到另一个视图。
+    RedirectView 会调用 HttpServletResponse.sendRedirect()方法， 其结果是给用户的浏览器发回一个HTTP redirect。
+    ① redirect:前缀。
+    ② forward:前缀。
 ```
