@@ -135,12 +135,14 @@ ViewResolver 提供了从视图名称到实际视图的映射。View 处理请�
 从它继承的视图解析器将对要解析的视图进行缓存。 
     ② XmlViewResolver：XmlViewResolver 实现 ViewResolver，支持XML格式的配置文件。 
 该配置文件必须采用与 Spring XML Bean Factory 相同的 DTD。默认的配置文件是 /WEB-INF/views.xml。 
-    ③ ResourceBundleViewResolver：ResourceBundleViewResolver 实现 ViewResolver， 在一个 ResourceBundle 中寻找所需 bean 的定义。 
-这个 bundle 通常定义在一个位于 classpath 中的属性文件中。默认的属性文件是 views.properties。
+    ③ ResourceBundleViewResolver：ResourceBundleViewResolver 实现 ViewResolver， 
+在一个 ResourceBundle 中寻找所需 bean 的定义。 这个 bundle 通常定义在一个位于 classpath 中的属性文件中。
+默认的属性文件是 views.properties。
     ④ UrlBasedViewResolver：UrlBasedViewResolver 实现 ViewResolver， 将视图名直接解析成对应的 URL，不需要显式的映射定义。 
 如果你的视图名和视图资源的名字是一致的，就可使用该解析器，而无需进行映射。
-    ⑤ InternalResourceViewResolver：作为 UrlBasedViewResolver 的子类， 它支持 InternalResourceView(对 Servlet 和 JSP 的包装)， 
-以及其子类 JstlView 和 TilesView。 通过 setViewClass 方法，可以指定用于该解析器生成视图使用的视图类。 
+    ⑤ InternalResourceViewResolver：作为 UrlBasedViewResolver 的子类， 
+它支持 InternalResourceView(对 Servlet 和 JSP 的包装)， 以及其子类 JstlView 和 TilesView。 
+通过 setViewClass 方法，可以指定用于该解析器生成视图使用的视图类。 
     ⑥ VelocityViewResolver / FreeMarkerViewResolver: 作为 UrlBasedViewResolver 的子类， 
 它能支持 VelocityView(对 Velocity 模版的包装)和 FreeMarkerView 以及它们的子类。
    (2) 视图解析链。
