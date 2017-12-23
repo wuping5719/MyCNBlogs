@@ -194,4 +194,38 @@ org.springframework.ui.context.support.ResourceBundleThemeSource。
 在每个 Session 中，这个主题只需要被设置一次，但是每个新 Session 的主题都要重新设置。
    ③ CookieThemeResolver: 用户所选择的主题以 Cookie 的形式存在客户端的机器上面。
    Spring 也支持一个叫 ThemeChangeInterceptor 的请求拦截器。它可以根据请求中包含的参数来动态地改变主题。 
+
+66.Spring 对分段文件上传(multipart file upload)的支持。
+   (1) 使用 MultipartResolver。
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+      <!-- one of the properties available; the maximum file size in bytes -->
+      <property name="maxUploadSize" value="100000"/>
+   </bean>
+   <bean id="multipartResolver" class="org.springframework.web.multipart.cos.CosMultipartResolver">
+      <property name="maxUploadSize" value="100000"/>
+   </bean>
+
+   (2) 在表单中处理分段文件上传。
+   <form method="post" action="upload.form" enctype="multipart/form-data">
+      <input type="file" name="file"/>
+      <input type="submit"/>
+   </form>
+   
+   <beans>
+	   <!-- lets use the Commons-based implementation of the MultipartResolver interface -->
+     <bean id="multipartResolver"
+         class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                /upload.form=fileUploadController
+            </value>
+        </property>
+     </bean>
+     <bean id="fileUploadController" class="examples.FileUploadController">
+        <property name="commandClass" value="examples.FileUploadBean"/>
+        <property name="formView" value="fileuploadform"/>
+        <property name="successView" value="confirmation"/>
+     </bean>
+   </beans>
 ```
