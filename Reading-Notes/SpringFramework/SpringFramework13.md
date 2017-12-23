@@ -162,4 +162,36 @@ ViewResolver 提供了从视图名称到实际视图的映射。View 处理请�
     RedirectView 会调用 HttpServletResponse.sendRedirect()方法， 其结果是给用户的浏览器发回一个HTTP redirect。
     ① redirect:前缀。
     ② forward:前缀。
+
+64.本地化解析器。
+   本地化解析器和拦截器都定义在 org.springframework.web.servlet.i18n 包中，可以在应用的上下文中配置它们。
+   (1) AcceptHeaderLocaleResolver: 检查请求中客户端浏览器发送的 accept-language 头信息， 
+通常这个 HTTP Header 包含客户端操作系统的本地化信息。
+   (2) CookieLocaleResolver: 检查客户端中的 Cookie 是否包含本地化信息。
+当配置这个解析器的时候，可以指定 Cookie 名，以及 Cookie 的最长生存期(Max Age)。 
+   (3) SessionLocaleResolver: 允许从用户请求相关的 Session 中获取本地化信息。
+   (4) LocaleChangeInterceptor: 可以侦测请求中某个特定的参数，
+然后调用上下文中的 LocaleResolver 中的 setLocale() 方法，相应地修改本地化信息。 
+
+65.使用主题。
+   (1) 如何定义主题?
+   为了在 Web 应用中使用主题，需要设置 org.springframework.ui.context.ThemeSource。 
+WebApplicationContext 是从 ThemeSource 扩展而来，但是它本身并没有实现 ThemeSource 定义的方法，
+它把这些任务转交给别的专用模块。如果没有明确设置，真正实现 ThemeSource 的类是 
+org.springframework.ui.context.support.ResourceBundleThemeSource。 
+   <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+   <html>
+   <head>
+      <link rel="stylesheet" href="<spring:theme code="styleSheet"/>" type="text/css"/>
+   </head>
+   <body background="<spring:theme code="background"/>"></body>
+   </html>
+
+   (2) 主题解析器。
+   ThemeResolver 的实现:
+   ① FixedThemeResolver: 选用一个固定的主题，这个主题由 “defaultThemeName” 属性决定。
+   ② SessionThemeResolver: 主题保存在用户的 HTTP Session。
+在每个 Session 中，这个主题只需要被设置一次，但是每个新 Session 的主题都要重新设置。
+   ③ CookieThemeResolver: 用户所选择的主题以 Cookie 的形式存在客户端的机器上面。
+   Spring 也支持一个叫 ThemeChangeInterceptor 的请求拦截器。它可以根据请求中包含的参数来动态地改变主题。 
 ```
