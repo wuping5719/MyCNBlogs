@@ -60,4 +60,40 @@ Login 方法，但对于不同的对象，拥有不同的操作。
 一种能力，接口也应该是高度内聚的。
   2) 迪米特法则：迪米特法则又叫最少知识原则，一个对象应当对其他对象有尽可能少的了解。
   3) 项目中用到的原则: 单一职责、开放封闭、合成聚合复用(最简单的例子就是 String 类)、接口隔离。
+
+5.static 和 final 的区别和用途？
+  (1) static
+   修饰变量：静态变量随着类加载时被完成初始化，内存中只有一个，且 JVM 也只会为它分配一次内存，所有类共享静态变量。
+   修饰方法：在类加载的时候就存在，不依赖任何实例；static 方法必须实现，不能用 abstract 修饰。
+   修饰代码块：在类加载完之后就会执行代码块中的内容。
+   父类静态代码块 -> 子类静态代码块 -> 父类非静态代码块 -> 父类构造方法 -> 子类非静态代码块 -> 子类构造方法
+  (2) final
+   修饰变量：
+     编译期常量：类加载的过程完成初始化，编译后带入到任何计算式中。只能是基本类型。
+     运行时常量：基本数据类型或引用数据类型。引用不可变，但引用的对象内容可变。
+     修饰方法：不能被继承，不能被子类修改。
+     修饰类：不能被继承。
+     修饰形参：final 形参不可变。
+
+6.Hash Map 和 Hash Table 的区别，Hash Map 中的 key 可以是任何对象或数据类型吗？HashTable 是线程安全的么？
+   (1) Hash Map 和 Hash Table 的区别：
+    Hashtable 的方法是同步的，HashMap 未经同步，所以在多线程场合要手动同步 HashMap 这个区别就像 Vector 和
+ArrayList 一样。
+    Hashtable 不允许 null 值( key 和 value 都不可以)，HashMap 允许 null 值( key 和 value 都可以)。
+    两者的遍历方式大同小异，Hashtable 仅仅比 HashMap 多一个 elements 方法。
+    Hashtable 和 HashMap 都能通过 values() 方法返回一个 Collection，然后进行遍历处理。
+    两者也都可以通过 entrySet() 方法返回一个 Set， 然后进行遍历处理。
+    HashTable 使用 Enumeration，HashMap 使用 Iterator。
+    哈希值的使用不同，Hashtable 直接使用对象的 hashCode。而 HashMap 重新计算 hash 值，而且用于代替求模。
+    Hashtable 中 hash 数组默认大小是 11，增加的方式是 old*2 + 1。HashMap 中 hash 数组的默认大小是 16，
+而且一定是 2 的指数。
+    HashTable 基于 Dictionary 类，而 HashMap 基于 AbstractMap 类。
+   (2) Hash Map 中的 key 可以是任何对象或数据类型吗?
+    可以为 null，但不能是可变对象，如果是可变对象的话，对象中的属性改变，则对象 HashCode 也进行相应的改变，
+导致下次无法查找到已存在 Map 中的数据。
+    如果可变对象在 HashMap 中被用作键，那就要小心在改变对象状态的时候，不要改变它的哈希值了。我们只需要保证
+成员变量的改变能保证该对象的哈希值不变即可。
+   (3) HashTable 是线程安全的么？
+    HashTable 是线程安全的，其实现是在对应的方法上添加了 synchronized 关键字进行修饰，由于在执行此方法的时候
+需要获得对象锁，则执行起来比较慢。所以现在如果为了保证线程安全的话，使用 ConcurrentHashMap。
 ```
