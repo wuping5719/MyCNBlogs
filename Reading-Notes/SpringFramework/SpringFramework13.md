@@ -228,4 +228,28 @@ org.springframework.ui.context.support.ResourceBundleThemeSource。
         <property name="successView" value="confirmation"/>
      </bean>
    </beans>
+
+67.使用 Spring 的表单标签库。
+   (1) 配置。
+   Spring 的表单标签库包含在 spring.jar 中。 这个库的描述符(Descriptor)叫做 spring-form.tld。 
+   要使用这个库中的标签，在 JSP 页面的开头加入下面声明：
+   <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ 
+   (2) form 标签。
+   (3) input 标签。
+   (4) checkbox 标签。
+   (5) checkboxes 标签。
+   这个标签生成多个 “checkbox” 类型的 HTML “input” 标签。
+   (6) radiobutton 标签。
+   (7) radiobuttons 标签。
+   这个标签生成多个 “radio” 类型的 HTML “input” 标签。
+   (8) password 标签。
+   (9) select 标签。
+   (10) option 标签。
+   (11) options 标签。
+   (12) textarea 标签。
+   (13) hidden 标签。
+   (14) errors 标签。
+
+68.惯例优先原则(Convention Over Configuration)。
 ```
