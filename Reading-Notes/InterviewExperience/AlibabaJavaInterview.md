@@ -96,4 +96,38 @@ ArrayList 一样。
    (3) HashTable 是线程安全的么？
     HashTable 是线程安全的，其实现是在对应的方法上添加了 synchronized 关键字进行修饰，由于在执行此方法的时候
 需要获得对象锁，则执行起来比较慢。所以现在如果为了保证线程安全的话，使用 ConcurrentHashMap。
+
+7.HashMap 和 ConcurrentHashMap 的区别，ConcurrentHashMap 线程安全吗? ConcurrentHashMap 如何保证线程安全？
+   (1) HashMap 和 ConcurrentHashMap 区别？
+    HashMap 是非线程安全的，CurrentHashMap 是线程安全的。
+    ConcurrentHashMap 将整个 Hash 桶进行了分段 Segment，也就是将这个大的数组分成了几个小的片段 Segment，
+而且每个小的片段 Segment 上面都有锁存在，那么在插入元素的时候就需要先找到应该插入到哪一个片段 Segment，
+然后再在这个片段上面进行插入，而且这里还需要获取 Segment 锁。
+    ConcurrentHashMap 让锁的粒度更精细一些，并发性能更好。
+   (2) ConcurrentHashMap 线程安全吗，ConcurrentHashMap 如何保证线程安全？
+    HashTable 容器在竞争激烈的并发环境下表现出效率低下的原因是所有访问 HashTable 的线程都必须竞争同一把锁，
+那假如容器里有多把锁，每一把锁用于锁容器其中一部分数据，那么当多线程访问容器里不同数据段的数据时，线程间就
+不会存在锁竞争，从而可以有效的提高并发访问效率，这就是 ConcurrentHashMap 所使用的锁分段技术，首先将数据
+分成一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据的时候，其他段的数据也能
+被其他线程访问。
+    get 操作的高效之处在于整个 get 过程不需要加锁，除非读到的值是空的才会加锁重读。get 方法里将要使用的共享变量
+都定义成 volatile，如用于统计当前 Segement 大小的 count 字段和用于存储值的 HashEntry 的 value。
+定义成 volatile 的变量，能够在线程之间保持可见性，能够被多线程同时读，并且保证不会读到过期的值，
+但是只能被单线程写(有一种情况可以被多线程写，就是写入的值不依赖于原值)，
+在 get 操作里只需要读不需要写共享变量 count 和 value，所以可以不用加锁。
+    put 方法首先定位到 Segment，然后在 Segment 里进行插入操作。插入操作需要经历两个步骤，第一步判断是否需要
+对 Segment 里的 HashEntry 数组进行扩容，第二步定位添加元素的位置然后放在 HashEntry 数组里。
+
+8.因为别人知道源码怎么实现的，故意构造相同 hash 的字符串进行攻击，怎么处理？那 jdk7 怎么办？
+   1) 怎么处理构造相同 hash 的字符串进行攻击?
+    当客户端提交一个请求并附带参数的时候，Web 应用服务器会把我们的参数转化成一个 HashMap 存储，
+这个 HashMap 的逻辑结构如下：key1 --> value1;
+    但是物理存储结构是不同的，key 值会被转化成 hashcode，这个 hashcode 会被转成数组的下标：0 --> value1；
+    不同的 string 就会产生相同 hashcode 而导致碰撞，碰撞后的物理存储结构可能如下：0 --> value1 --> value2;
+   2) 怎么处理？
+     (1) 限制 Post 和 Get 的参数个数，越少越好;
+     (2) 限制 Post 数据包的大小;
+     (3) WAF。
+   3) Jdk7 如何处理 hashcode 字符串攻击？
+    HashMap 会动态的使用一个专门的 treemap 实现来替换掉它。
 ```
