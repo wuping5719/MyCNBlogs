@@ -262,4 +262,20 @@ org.springframework.ui.context.support.ResourceBundleThemeSource。
 确定一个逻辑的 View 名称。这个接口只有一个实现，精明的命名为 DefaultRequestToViewNameTranslator。 
 
 69.基于注解的控制器配置。
+   (1) 建立 dispatcher 实现注解支持。
+   自定义 HandlerMappings 或 HandlerAdapters， 
+需要自定义对应的 DefaultAnnotationHandlerMapping 或 AnnotationMethodHandlerAdapter。
+   (2) 使用 @Controller 定义一个控制器。
+   注解 @Controller 指明一个特定的类承担控制器的职责，而没有扩展任何控制器基类或者引用S ervlet API 的必要。
+   (3) 使用 @RequestMapping 映射请求。
+   注解 @RequestMapping 被用于映射如 “/editPet.do” 这样的 URL 到一个完整的类或者一个特定的处理方法。 
+   (4) 使用 @RequestParam 绑定请求参数到方法参数。
+   @RequestParam 注解是用于在控制器中绑定请求参数到方法参数。
+   (5) 使用 @ModelAttribute 提供一个从模型到数据的链接。
+   当作为一个方法参数时，@ModelAttribute 用于映射一个模型属性到特定的注解的方法参数。
+这是控制器获得持有表单数据对象引用的方法。@ModelAttribute 也用于在方法级别为模型提供引用数据。
+   (6) 使用 @SessionAttributes 指定存储在会话中的属性。
+    类型级别的 @SessionAttributes 注解使用一个特定的句柄声明会话属性。 
+   (7) 自定义 WebDataBinder 初始化。
+   使用 @InitBinder 自定义数据绑定；配置一个定制的 WebBindingInitializer。
 ```
