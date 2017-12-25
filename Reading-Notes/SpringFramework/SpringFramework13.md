@@ -252,4 +252,14 @@ org.springframework.ui.context.support.ResourceBundleThemeSource。
    (14) errors 标签。
 
 68.惯例优先原则(Convention Over Configuration)。
+   (1) 对控制器的支持：ControllerClassNameHandlerMapping。
+   ControllerClassNameHandlerMapping 类是 HandlerMapping 接口的一个实现。
+它使用惯例来确定请求的 URL 和用于处理它们的 Controller 实例间的映射关系。
+   (2) 对模型的支持：ModelMap(ModelAndView)。
+   ModelMap 类首先是一个绚丽的 Map 实现，它可以使新增的将要显示在 View 中(或上)的对象也遵循同一命名规范。
+   (3) 对视图的支持：RequestToViewNameTranslator。
+   RequestToViewNameTranslator 接口的功能是当没有显式的提供这样一个逻辑视图名称的时候，
+确定一个逻辑的 View 名称。这个接口只有一个实现，精明的命名为 DefaultRequestToViewNameTranslator。 
+
+69.基于注解的控制器配置。
 ```
