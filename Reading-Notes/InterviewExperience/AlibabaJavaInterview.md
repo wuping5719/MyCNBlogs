@@ -130,4 +130,22 @@ ArrayList 一样。
      (3) WAF。
    3) Jdk7 如何处理 hashcode 字符串攻击？
     HashMap 会动态的使用一个专门的 treemap 实现来替换掉它。
+
+9.String、StringBuffer、StringBuilder 以及对 String 不变性的理解。
+   (1) String、StringBuffer、StringBuilder。
+    都是 final 类, 都不允许被继承;
+    String 长度是不可变的, StringBuffer、StringBuilder 长度是可变的;
+    StringBuffer 是线程安全的, StringBuilder 不是线程安全的，但它们两个中的所有方法都是相同的，
+StringBuffer 在 StringBuilder 的方法之上添加了 synchronized 修饰，保证线程安全。
+    StringBuilder 比 StringBuffer 拥有更好的性能。
+    如果一个 String 类型的字符串，在编译时就可以确定是一个字符串常量，则编译完成之后，
+字符串会自动拼接成一个常量。此时 String 的速度比 StringBuffer 和 StringBuilder 的性能好的多。
+   (2) String 不变性的理解。
+    String 类是被 final 进行修饰的，不能被继承。
+    在用 + 号链接字符串的时候会创建新的字符串。
+    String s = new String("Hello world"); 可能创建两个对象也可能创建一个对象。
+    如果静态区中有 “Hello world” 字符串常量对象的话，则仅仅在堆中创建一个对象。
+    如果静态区中没有 “Hello world” 对象，则堆上和静态区中都需要创建对象。
+    在 java 中, 通过使用 "+" 符号来串联字符串的时候, 
+实际上底层会转成通过 StringBuilder 实例的 append() 方法来实现。
 ```
