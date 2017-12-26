@@ -148,4 +148,16 @@ StringBuffer 在 StringBuilder 的方法之上添加了 synchronized 修饰，�
     如果静态区中没有 “Hello world” 对象，则堆上和静态区中都需要创建对象。
     在 java 中, 通过使用 "+" 符号来串联字符串的时候, 
 实际上底层会转成通过 StringBuilder 实例的 append() 方法来实现。
+
+10.String 有重写 Object 的 hashCode 和 toString 吗？如果重写 equals 不重写 hashCode 会出现什么问题？
+   (1) String 有重写 Object 的 hashCode 和 toString 吗？
+     String 重写了 Object 类的 hashCode 和 toString 方法。
+     当方法 equals 被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，
+该协定相对等的两个对象必须有相同的 hashCode。
+     object1.equals(object2) 为 true 时，object1.hashCode() == object2.hashSode() 为 true。
+     object1.hashCode() == object2.hashCode() 为 false 时，object1.equals(object2) 必定为 false。
+     object1.hashCode() == object2.hashCode() 为 true 时，object1.equals(object2) 不一定为 true。
+   (2) 重写 equals 不重写 hashCode 会出现什么问题？
+      在存储散列集合时(如 Set 类)，如果原对象.equals(新对象)，但没有对 hashCode 重写，即两个对象拥有
+不同的 hashCode，则在集合中将存储两个值相同的对象，从而导致混淆。因此在重写 equals 方法时，必须重写 hashCode 方法。
 ```
