@@ -164,7 +164,7 @@
    </tr>
    <tr>
      <td>
-     <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/Oracle/Procedures.md">21.［Oracle 存储过程］</a>
+     <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/Oracle/Procedures.md">21.［Oracle 存储过程］</a>
      </td>
    </tr>
 </table>
