@@ -160,4 +160,8 @@ StringBuffer 在 StringBuilder 的方法之上添加了 synchronized 修饰，�
    (2) 重写 equals 不重写 hashCode 会出现什么问题？
       在存储散列集合时(如 Set 类)，如果原对象.equals(新对象)，但没有对 hashCode 重写，即两个对象拥有
 不同的 hashCode，则在集合中将存储两个值相同的对象，从而导致混淆。因此在重写 equals 方法时，必须重写 hashCode 方法。
+
+11.Java 序列化，如何实现序列化和反序列化，常见的序列化协议有哪些？
+   (1) Java 序列化定义：将那些实现了 Serializable 接口的对象转换成一个字节序列，并能够在以后将这个字节序列
+完全恢复为原来的对象，序列化可以弥补不同操作系统之间的差异。
 ```
