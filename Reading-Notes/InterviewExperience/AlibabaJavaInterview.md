@@ -166,6 +166,15 @@ StringBuffer 在 StringBuilder 的方法之上添加了 synchronized 修饰，�
 完全恢复为原来的对象，序列化可以弥补不同操作系统之间的差异。
    2) Java 序列化的作用：Java 远程方法调用 (RMI)；对 JavaBeans 进行序列化。
    3) 如何实现序列化和反序列化？
-   实现序列化方法：
-    (1) 实现 Serializable 接口。
+    (1) 实现序列化方法：
+     实现 Serializable 接口。
+     该接口只是一个可序列化的标志，并没有包含实际的属性和方法。
+     如果不在改方法中添加 readObject() 和 writeObject() 方法，则采取默认的序列化机制。如果添加了这两个
+方法之后还想利用 Java 默认的序列化机制，则在这两个方法中分别调用 defaultReadObject() 和 
+defaultWriteObject() 两个方法。
+     为了保证安全性，可以使用 transient 关键字进行修饰不必序列化的属性。因为在反序列化时，private 修饰
+的属性也能查看到。
+     实现 ExternalSerializable 方法。
+     自己对要序列化的内容进行控制，控制哪些属性能被序列化，哪些不能被序列化。
+    (2) 反序列化：
 ```
