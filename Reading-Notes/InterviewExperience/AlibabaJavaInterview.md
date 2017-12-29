@@ -170,11 +170,41 @@ StringBuffer 在 StringBuilder 的方法之上添加了 synchronized 修饰，�
      实现 Serializable 接口。
      该接口只是一个可序列化的标志，并没有包含实际的属性和方法。
      如果不在改方法中添加 readObject() 和 writeObject() 方法，则采取默认的序列化机制。如果添加了这两个
-方法之后还想利用 Java 默认的序列化机制，则在这两个方法中分别调用 defaultReadObject() 和 
+方法之后还想利用 Java 默认的序列化机制，则在这两个方法中分别调用 defaultReadObject() 和
 defaultWriteObject() 两个方法。
      为了保证安全性，可以使用 transient 关键字进行修饰不必序列化的属性。因为在反序列化时，private 修饰
 的属性也能查看到。
      实现 ExternalSerializable 方法。
      自己对要序列化的内容进行控制，控制哪些属性能被序列化，哪些不能被序列化。
     (2) 反序列化：
+    实现 Serializable 接口的对象在反序列化时不需要调用对象所在类的构造方法，完全基于字节。
+    实现 ExternalSerializable 接口的方法在反序列化时会调用构造方法。
+    (3) 注意事项：
+    被 static 修饰的属性不会被序列化。
+    对象的类名、属性都会被序列化，方法不会被序列化。
+    要保证序列化对象所在类的属性也是可以序列化的。
+    当通过网络、文件进行序列化时，必须按照写入的顺序读取对象。
+    反序列化时必须有序列化对象的 class 文件。
+    最好显示的声明 serializableID，因为在不同的 JVM 之间，默认生成 serializableID 可能不同，
+可能造成反序列化失败。
+   4) 常见的序列化协议有哪些？
+    (1) COM 主要用于 Windows 平台，并没有真正实现跨平台，另外 COM 的序列化的原理利用了编译器中虚表，
+使得其学习成本巨大。
+    (2) CORBA 是早期比较好的实现了跨平台，跨语言的序列化协议。CORBA 的主要问题是参与方过多带来的版本
+过多，版本之间的兼容性较差，以及使用复杂晦涩。
+    (3) XML & SOAP：
+    XML 是一种常用的序列化和反序列化协议，具有跨机器、跨语言等优点。
+    SOAP(Simple Object Access Protocol) 是一种被广泛应用的，基于 XML 为序列化和反序列化协议的结构化
+消息传递协议。SOAP 具有安全、可扩展、跨语言、跨平台并支持多种传输层协议。
+    (4) JSON(JavaScript Object Notation):
+    这种 Associative array 格式非常符合工程师对对象的理解。
+    它保持了 XML 的人眼可读(Human-readable)的优点。
+    相对于 XML 而言，序列化后的数据更加简洁。
+    它具备 JavaScript 的先天性支持，所以被广泛应用于 Web Browser 的应用场景中，是 Ajax 的事实标准协议。
+    与 XML 相比，其协议比较简单，解析速度比较快。
+    松散的 Associative array 使得其具有良好的可扩展性和兼容性。
+    (5) Thrift 是 Facebook 开源提供的一个高性能，轻量级 RPC 服务框架，其产生正是为了满足当前大数据量、
+分布式、跨语言、跨平台数据通讯的需求。Thrift 在空间开销和解析性能上有了比较大的提升，对于性能要求比较高
+的分布式系统，它是一个优秀的 RPC 解决方案。但是由于 Thrift 的序列化被嵌入到 Thrift 框架里面，Thrift 框架
+本身并没有透出序列化和反序列化接口，这导致其很难和其他传输层协议共同使用。
 ```
