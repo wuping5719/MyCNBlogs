@@ -26,4 +26,35 @@ InternalResourceViewResolver 和 ResourceBundleViewResolver。
 不但应用 Spring 的容器回调而且应用配置 Spring BeanPostProcessors。
   指定 SpringBeanPreparerFactory 来操作指定 preparer 名称，而不是类，
 从 DispatcherServlet 的应用上下文获取相应的 Spring bean。  
+
+72.Velocity 和 FreeMarker。
+   (1) Context 配置:
+   <!--  该 bean 使用一个存放模板文件的根路径来配置 Velocity 环境。 -->
+   <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+      <property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
+   </bean>
+   <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+      <property name="cache" value="true"/>
+      <property name="prefix" value=""/>
+      <property name="suffix" value=".vm"/>
+   </bean>
+   
+   <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+      <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
+   </bean>
+
+   (2) 高级配置:
+   <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+      <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
+      <property name="freemarkerVariables">
+         <map>
+            <entry key="xml_escape" value-ref="fmXmlEscape"/>
+         </map>
+      </property>
+   </bean>
+   <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+
+   (3) 绑定支持和表单处理:
+   用于绑定的宏: org.springframework.web.servlet.view.velocity 包中的 spring.vm 文件和 
+org.springframework.web.servlet.view.freemarker 包中的 spring.ftl 文件。 
 ```
