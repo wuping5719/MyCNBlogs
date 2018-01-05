@@ -57,4 +57,24 @@ InternalResourceViewResolver 和 ResourceBundleViewResolver。
    (3) 绑定支持和表单处理:
    用于绑定的宏: org.springframework.web.servlet.view.velocity 包中的 spring.vm 文件和 
 org.springframework.web.servlet.view.freemarker 包中的 spring.ftl 文件。 
+
+73.XSLT。
+   XSLT 是一种用于 XML 的转换语言，并作为一种在 web 应用中使用的 view 层技术广为人知。
+   把模型数据转化为 XML:
+   public class HomePage extends AbstractXsltView {
+      protected Source createXsltSource(Map model, String rootName, HttpServletRequest
+        request, HttpServletResponse response) throws Exception {
+          Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
+          Element root = document.createElement(rootName);
+          List words = (List) model.get("wordList");
+          for (Iterator it = words.iterator(); it.hasNext();) {
+             String nextWord = (String) it.next();
+             Element wordNode = document.createElement("word");
+             Text textNode = document.createTextNode(nextWord);
+             wordNode.appendChild(textNode);
+             root.appendChild(wordNode);
+          }
+          return new DOMSource(root);
+      }
+   }
 ```
