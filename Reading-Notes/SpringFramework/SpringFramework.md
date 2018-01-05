@@ -15,4 +15,5 @@
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework11.md">使用 JDBC 进行数据访问 (51-53条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework12.md">使用 ORM 工具进行数据访问 (54-58条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework13.md">Web MVC framework Web 框架(59-69条)</a>
-* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework14.md">集成视图技术(70-78条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework14.md">集成视图技术(70-73条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework15.md">集成其它 Web 框架(74-80条)</a>
