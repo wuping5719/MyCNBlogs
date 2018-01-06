@@ -305,7 +305,7 @@ addXXXListener() 等方法来增加监听器，但往往在释放的时候却没
    (3) 物理连接：一些物理连接，比如数据库连接和网络连接，除非其显式的关闭了连接，否则是不会自动被 GC 回收的。
 Java 数据库连接一般用 DataSource.getConnection() 来创建，当不再使用时必须用 close() 方法来释放，因为这些连接是独立于
 JVM 的。对于 Resultset 和 Statement 对象可以不进行显式回收，但 Connection 一定要显式回收，因为 Connection 在任
-何时候都无法自动回收，而 Connection 一旦回收，Resultset 和 Statement 对象就会立即为 NULL。但是如果使用连接池，
+何时候都无法自动回收，而 Connection 一旦回收，Resultset 和 Statement 对象就会立即为 null。但是如果使用连接池，
 情况就不一样了，除了要显式地关闭连接，还必须显式地关闭 Resultset Statement 对象(关闭其中一个，另外一个也会关闭)，
 否则就会造成大量的 Statement 对象无法释放，从而引起内存泄漏。一般情况下，在 try 代码块里创建连接，在
 finally 里释放连接，就能够避免此类内存泄漏。
