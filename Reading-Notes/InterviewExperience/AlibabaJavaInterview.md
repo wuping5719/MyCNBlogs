@@ -365,4 +365,32 @@ finally 里释放连接，就能够避免此类内存泄漏。
    wait() 是 Object 类的方法，调用对象的 wait() 方法导致当前线程放弃对象的锁(线程暂停执行)，进入对象的等待池
 (wait pool)，只有调用对象的 notify() 方法(或 notifyAll() 方法)时才能唤醒等待池中的线程进入等锁池(lock pool)，
 如果线程重新获得对象的锁就可以进入就绪状态。
+
+21.synchronized 与 lock 的区别，使用场景。看过 synchronized 的源码没？
+  synchronized 与 lock 的区别:
+  (用法) synchronized(隐式锁)：在需要同步的对象中加入此控制，synchronized 可以加在方法上，也可以加在特定
+代码块中，括号中表示需要锁的对象。
+  (用法) lock(显示锁)：需要显示指定起始位置和终止位置。一般使用 ReentrantLock 类做为锁，多个线程中必须要
+使用一个 ReentrantLock 类做为对象才能保证锁的生效。且在加锁和解锁处需要通过 lock() 和 unlock() 显示指出。
+所以一般会在 finally 块中写 unlock() 以防死锁。
+  (性能) synchronized 是托管给 JVM 执行的，而 lock 是 java 写的控制锁的代码。在 Java1.5 中，synchronized 是性能低
+效的。因为这是一个重量级操作，需要调用操作接口，导致有可能加锁消耗的系统时间比加锁以外的操作还多。
+相比之下使用 Java 提供的 Lock 对象，性能更高一些。但是到了 Java1.6，发生了变化。synchronized 在语义上很清晰，
+可以进行很多优化，有适应自旋，锁消除，锁粗化，轻量级锁，偏向锁等等。导致在 Java1.6 上 synchronized 的性能并不比 Lock 差。
+  (机制) synchronized 原始采用的是 CPU 悲观锁机制，即线程获得的是独占锁。独占锁意味着其他线程只能依靠阻塞
+来等待线程释放锁。Lock 用的是乐观锁方式。所谓乐观锁就是，每次不加锁而是假设没有冲突而去完成某项操作，如果
+因为冲突失败就重试，直到成功为止。乐观锁实现的机制就是 CAS 操作(Compare and Swap)。
+
+22.synchronized 底层如何实现的？用在代码块和方法上有什么区别？
+   (1) synchronized 底层如何实现的? 用在代码块和方法上有什么区别？
+   synchronized 用在代码块锁的是调用该方法的对象(this)，也可以选择锁住任何一个对象。
+   synchronized 用在方法上锁的是调用该方法的对象，
+   synchronized 用在代码块可以减小锁的粒度，从而提高并发性能。
+   无论用在代码块上还是用在方法上，都是获取对象的锁；每一个对象只有一个锁与之相关联；实现同步需要很大的系统
+开销作为代价，甚至可能造成死锁，所以尽量避免无谓的同步控制。
+   (2) synchronized 与 static synchronized 的区别:
+   synchronized 是对类的当前实例进行加锁，防止其他线程同时访问该类的该实例的所有 synchronized 块，同一个类的
+两个不同实例就没有这种约束了。
+   那么 static synchronized 恰好就是要控制类的所有实例的访问，static synchronized 是限制线程同时访问 JVM 中该类
+的所有实例同时访问对应的代码块。
 ```
