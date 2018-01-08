@@ -393,4 +393,16 @@ finally 里释放连接，就能够避免此类内存泄漏。
 两个不同实例就没有这种约束了。
    那么 static synchronized 恰好就是要控制类的所有实例的访问，static synchronized 是限制线程同时访问 JVM 中该类
 的所有实例同时访问对应的代码块。
+
+23.常见异常分为哪两种(Exception，Error)，常见异常的基类以及常见的异常?
+   Throwable 是 java 语言中所有错误和异常的超类。它有两个子类：Error、Exception。
+   异常种类: Error：Error 为错误，是程序无法处理的，如 OutOfMemoryError、ThreadDeath 等，
+出现这种情况你唯一能做的就是听之任之，交由 JVM 来处理，不过 JVM 在大多数情况下会选择终止线程。
+   Exception：Exception 是程序可以处理的异常。它又分为两种 CheckedException(受检异常)，
+一种是 UncheckedException(不受检异常)。
+   CheckException 发生在编译阶段，必须要使用 try … catch (或者 throws ) 否则编译不通过。
+   UncheckedException 发生在运行期，具有不确定性，主要是由于程序的逻辑问题所引起的，难以排查，我们一
+般都需要纵观全局才能够发现这类的异常错误，所以在程序设计中我们需要认真考虑，好好写代码，尽量处理异常，
+即使产生了异常，也能尽量保证程序朝着有利方向发展。
+   常见异常的基类: IOException, RuntimeException。
 ```
