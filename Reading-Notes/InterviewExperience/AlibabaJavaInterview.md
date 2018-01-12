@@ -556,7 +556,7 @@ Committed 就可以了)。
 
 35.数据库中的分页查询语句怎么写？
    MySQL的 limit 用法:
-     SELECT * FROM table LIMIT [offset,] rows | rows offset
+     SELECT * FROM table LIMIT [offset,] rows | rows OFFSET offset
    LIMIT 接受一个或两个数字参数。参数必须是一个整数常量。如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，
 第二个参数指定返回记录行的最大数目。初始记录行的偏移量是 0 (而不是 1)。
    最基本的分页方式：SELECT ... FROM ... WHERE ... ORDER BY ... LIMIT ...
