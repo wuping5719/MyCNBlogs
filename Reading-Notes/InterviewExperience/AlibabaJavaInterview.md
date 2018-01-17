@@ -674,4 +674,25 @@ MyISAM 是更好的选择。
     Sun HotSpot 虚拟机把方法区叫做永久代(Permanent Generation)。
    (6) 运行时常量池。
     受到方法区的限制，抛出 OutOfMemoryError。
+
+46.JVM 如何加载一个类的过程，双亲委派模型中有哪些方法?有没有可能父类加载器和子类加载器加载同一个类？如果加
+载同一个类，该使用哪一个类？
+   (1) 双亲委派机制图: 启动类加载器(Bootstrap ClassLoader) -> 扩展类加载器(Extension ClassLoader)
+   -> 应用程序类加载器(Application ClassLoader) -> 自定义类加载器(User ClassLoader)。
+   (2) 双亲委派概念:
+    如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，
+每一个层次的加载器都是如此，因此所有的类加载请求都会传给顶层的启动类加载器，只有当父加载器反馈自己无法完成该加载请求
+(该加载器的搜索范围中没有找到对应的类)时，子加载器才会尝试自己去加载。
+   (3) 加载器:
+    启动(Bootstrap)类加载器：是用本地代码实现的类装入器，它负责将 <Java_Runtime_Home>/lib 下面
+的类库加载到内存中(比如 rt.jar)。由于引导类加载器涉及到虚拟机本地实现细节，开发者无法直接获取到
+启动类加载器的引用，所以不允许直接通过引用进行操作。
+    标准扩展(Extension)类加载器：是由 Sun 的 ExtClassLoader(sun.misc.Launcher$ExtClassLoader)实现的。
+它负责将 < Java_Runtime_Home >/lib/ext 或者由系统变量 java.ext.dir 指定位置中的类库加载到内存中。
+开发者可以直接使用标准扩展类加载器。
+    系统(System)类加载器：由 Sun 的 AppClassLoader(sun.misc.Launcher$AppClassLoader) 实现的。
+它负责将系统类路径 (CLASSPATH) 中指定的类库加载到内存中。开发者可以直接使用系统类加载器。
+除了以上列举的三种类加载器，还有一种比较特殊的类型 — 线程上下文类加载器。
+   (4) 如果加载同一个类，该使用哪一个类？
+    父类的。
 ```
