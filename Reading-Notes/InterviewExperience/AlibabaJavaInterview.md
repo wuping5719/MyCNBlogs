@@ -711,9 +711,12 @@ MyISAM 是更好的选择。
    通过构造方法对学生对象的成员变量赋值。
    学生对象初始化完毕，把对象地址赋值给 s 变量。
 
-50.了解过 JVM 调优没，基本思路是什么？
+50.用什么工具调试程序？JConsole 用过吗？
+   JConsole 中，您将能够监视 JVM 内存的使用情况、线程堆栈跟踪、已装入的类和 VM 信息以及 CE MBean。
 
-51.Servlet 的生存周期。
+51.了解过 JVM 调优没，基本思路是什么？
+
+52.Servlet 的生存周期。
    Servlet 接口定义了 5 个方法，其中前三个方法与 Servlet 生命周期相关：
    void init(ServletConfig config) throws ServletException
    void service(ServletRequest req, ServletResponse resp) throws ServletException, java.io.IOException
