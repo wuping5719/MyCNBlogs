@@ -710,4 +710,17 @@ MyISAM 是更好的选择。
    对学生对象的成员变量进行显示初始化。
    通过构造方法对学生对象的成员变量赋值。
    学生对象初始化完毕，把对象地址赋值给 s 变量。
+
+50.了解过 JVM 调优没，基本思路是什么？
+
+51.Servlet 的生存周期。
+   Servlet 接口定义了 5 个方法，其中前三个方法与 Servlet 生命周期相关：
+   void init(ServletConfig config) throws ServletException
+   void service(ServletRequest req, ServletResponse resp) throws ServletException, java.io.IOException
+   void destory()
+   java.lang.String getServletInfo()
+   ServletConfig getServletConfig()
+   Web 容器加载 Servlet 并将其实例化后，Servlet 生命周期开始，容器运行其 init() 方法进行 Servlet 的初始化；
+请求到达时调用 Servlet 的 service() 方法，service() 方法会根据需要调用与请求对应的 doGet 或 doPost 等方法；
+当服务器关闭或项目被卸载时服务器会将 Servlet 实例销毁，此时会调用 Servlet 的 destroy() 方法。
 ```
