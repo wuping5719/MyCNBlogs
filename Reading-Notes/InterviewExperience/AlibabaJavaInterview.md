@@ -734,4 +734,26 @@ Servlet 和 JSP 最主要的不同点在于：Servlet 的应用逻辑是在 Java
 而 JSP 的情况是 Java 和 HTML 可以组合成一个扩展名为.jsp 的文件。有人说，Servlet 就是在 Java 中写 HTML，
 而 JSP 就是在 HTML 中写 Java 代码，当然这个说法是很片面且不够准确的。JSP 侧重于视图，Servlet 更侧重于控制逻辑，
 在 MVC 架构模式中，JSP 适合充当视图(View)而 Servlet 适合充当控制器。
+
+54.保存会话状态，有哪些方式、区别如何?
+   由于 HTTP 协议本身是无状态的，服务器为了区分不同的用户，就需要对用户会话进行跟踪，简单的说就是为用户进行登记，
+为用户分配唯一的 ID，下一次用户在请求中包含此 ID，服务器据此判断到底是哪一个用户。
+   ① URL 重写：在 URL 中添加用户会话的信息作为请求的参数，或者将唯一的会话 ID 添加到 URL 结尾以标识一个会话。
+   ② 设置表单隐藏域：将和会话跟踪相关的字段添加到隐式表单域中，这些信息不会在浏览器中显示但是提交表单时会提
+交给服务器。
+   这两种方式很难处理跨越多个页面的信息传递，因为如果每次都要修改 URL 或在页面中添加隐式表单域来存储用户会话相关
+信息，事情将变得非常麻烦。
+   ③ Web Storage 技术：HTML5 中可以使用 Web Storage 技术通过 JavaScript 来保存数据，例如可以使用 localStorage
+和 sessionStorage 来保存用户会话的信息，也能够实现会话跟踪。
+
+55.Cookie 和 Session 的区别。
+   Session 在服务器端，Cookie 在客户端(浏览器)。
+   Session 的运行依赖 Session id，而 Session id 是存在 Cookie 中的，也就是说，如果浏览器禁用了 Cookie，
+同时 Session 也会失效(但是可以通过其它方式实现，比如在 url 中传递 session_id)。
+   Session 可以放在文件、数据库、或内存中都可以。
+   用户验证这种场合一般会用 Session。
+   Cookie 不是很安全，别人可以分析存放在本地的 Cookie 并进行 Cookie 欺骗, 考虑到安全应当使用 Session。
+   Session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，
+应当使用 Cookie。
+   单个 Cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存 20 个 Cookie。
 ```
