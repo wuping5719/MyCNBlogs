@@ -52,8 +52,8 @@
 ```
 * 12.一条 sql 语句搞定数据库分页.
 ```sql
-   select top 10 b.* from (select top 20 主键字段, 排序字段 from 表名 order by 
-   排序字段 desc) a, 表名b where b.主键字段 = a.主键字段 order by a.排序字段;
+   select top 10 b.* from (select top 20 主键字段, 排序字段 from 表名 order by 排序字段 desc) a, 表名b
+   where b.主键字段 = a.主键字段 order by a.排序字段;
 
    关于数据库分页：
    declare @start int, @end int
