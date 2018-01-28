@@ -14,7 +14,7 @@
   insert into b(a, b, c) select d,e,f from b in ‘具体数据库’ where 条件;
   例子：... from b in '"&Server.MapPath(".")&"\data.mdb" &"' where ...
 ```
-*4.子查询(表名1：a, 表名2：b)
+* 4.子查询(表名1：a, 表名2：b)
 ```sql
   select i,j,k from a where i IN (select d from b);
   或者: select i,j,k from a where i IN (1,2,3);
