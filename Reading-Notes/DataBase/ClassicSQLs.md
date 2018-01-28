@@ -5,7 +5,7 @@
   法一：select * into table2 from table1 where 1<>1; (仅用于 SQlServer)
   法二：select top 0 * into table2 from table1;
 ```
-* 2.拷贝表(拷贝数据, 源表名：a, 目标表名：b) (Access可用)
+* 2.拷贝表(拷贝数据, 源表名：table1, 目标表名：table2) (Access可用)
 ```sql
   insert into table2(a, b, c) select d,e,f from table1;
 ```
