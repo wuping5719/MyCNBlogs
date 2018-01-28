@@ -65,3 +65,16 @@
    Rid 为一个标识列，如果 top 后还有具体的字段，这样做是非常有好处的。因为这样可以避免 top 的字段如果是逻辑索引，
  查询结果后实际表中的不一致(逻辑索引中的数据有可能和数据表中的不一致，而查询时如果处在索引则首先查询索引).
  ```
+* 13.前 10 条记录.
+```sql
+   select top 10 * form table1 where 范围;
+```
+* 14.选择在每一组 b 值相同的数据中对应的 a 最大的记录的所有信息(类似这样的用法可以用于论坛每月排行榜, 
+每月热销产品分析, 按科目成绩排名, 等等.)
+```sql
+   select a, b, c from tablename ta where a = (select max(a) from tablename tb where tb.b = ta.b);
+```
+* 15.包括所有在 TableA 中但不在 TableB 和 TableC 中的行并消除所有重复行而派生出一个结果表.
+```sql
+   (select a from tableA ) except (select a from tableB) except (select a from tableC);
+```
