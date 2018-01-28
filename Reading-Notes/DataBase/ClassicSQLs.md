@@ -40,3 +40,28 @@
 ```sql
    delete from table1 where not exists ( select * from table2 where table1.field1 = table2.field1 );
 ```
+* 10.四表联查.
+```sql
+  select * from table1 left inner join table2 on table1.a = table2.b 
+  right inner join table3 on table1.a = table3.c 
+  inner join table4 on table1.a = table4.d where ...
+```
+* 11.日程安排提前五分钟提醒.
+```sql
+   select * from 日程安排 where datediff('minute', f开始时间, getdate()) > 5;
+```
+* 12.一条 sql 语句搞定数据库分页.
+```sql
+   select top 10 b.* from (select top 20 主键字段, 排序字段 from 表名 order by 
+   排序字段 desc) a, 表名b where b.主键字段 = a.主键字段 order by a.排序字段;
+
+   关于数据库分页：
+   declare @start int, @end int
+   @sql nvarchar(600)
+   set @sql = ’select top ’ + str(@end - @start + 1) + ’ + from T where rid not in(
+   select top ’ + str(@str - 1) + ’ Rid from T where Rid > -1)’
+   exec sp_executesql @sql
+   注意：在 top 后不能直接跟一个变量，所以在实际应用中只有这样的进行特殊的处理。
+   Rid 为一个标识列，如果 top 后还有具体的字段，这样做是非常有好处的。因为这样可以避免 top 的字段如果是逻辑索引，
+ 查询结果后实际表中的不一致(逻辑索引中的数据有可能和数据表中的不一致，而查询时如果处在索引则首先查询索引).
+ ```
