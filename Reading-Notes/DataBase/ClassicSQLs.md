@@ -78,3 +78,41 @@
 ```sql
    (select a from tableA ) except (select a from tableB) except (select a from tableC);
 ```
+* 16.随机取出 10 条数据.
+```sql
+   select top 10 * from tablename order by newid();
+```
+* 17.随机选择记录.
+```sql
+   select newid();
+```
+* 18.删除重复记录.
+```sql
+  (1) delete from tablename where id not in (select max(id) from tablename group by col1, col2, ...);
+  (2) select distinct * into temp from tablename;
+      delete from tablename;
+      insert into tablename select * from temp;
+   评价： 这种操作牵连大量数据的移动，这种做法不适合大容量的数据操作.
+  (3) 例如：在一个外部表中导入数据，由于某些原因第一次只导入了一部分，但很难判断具体位置，这样只有在下一次全部导入，
+这样也就产生好多重复的字段，怎样删除重复字段?
+      alter table tablename;
+      -- 添加一个自增列
+      add column_b int identity(1, 1);
+      delete from tablename where column_b not in(
+         select max(column_b) from tablename group by column1, column2, ...);
+      alter table tablename drop column column_b;
+```
+* 19.列出数据库里所有的表名.
+```sql
+   select name from sysobjects where type = 'U';  // U 代表用户
+```
+* 20.列出表里的所有的列名.
+```sql
+   select name from syscolumns where id = object_id('TableName');
+```
+* 21.列示 type、vender、pcs 字段，以 type 字段排列，case 可以方便地实现多重选择，
+  类似 select 中的 case。
+```sql
+  select type, sum(case vender when 'A' then pcs else 0 end), sum(case vender when 'C' then pcs else 0 end), 
+sum(case vender when 'B' then pcs else 0 end) FROM tablename group by type;
+```
