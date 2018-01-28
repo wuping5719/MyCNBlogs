@@ -27,3 +27,16 @@
 ```sql
   select * from (SELECT i, j, k FROM a) t where t.i > 1;
 ```
+* 7.between 的用法, between 限制查询数据范围时包括了边界值, not between 不包括.
+```sql
+  select * from table1 where time between time1 and time2;
+  select a, b, c, from table1 where a not between 数值1 and 数值2;
+```
+* 8.in 的使用方法.
+```sql
+  select * from table1 where a [not] in (‘值1’, ’值2’, ’值4’, ’值6’);
+```
+* 9.两张关联表，删除主表中已经在副表中没有的信息.
+```sql
+   delete from table1 where not exists ( select * from table2 where table1.field1 = table2.field1 );
+```
