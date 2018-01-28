@@ -19,3 +19,11 @@
   select i,j,k from a where i IN (select d from b);
   或者: select i,j,k from a where i IN (1,2,3);
 ```
+* 5.外连接查询(表名1：a, 表名2：b)
+```sql
+  select a.i, a.j, a.k, b.m, b.n, b.q from a LEFT OUT JOIN b ON a.i = b.m;
+```
+* 6.在线视图查询(表名1：a)
+```sql
+  select * from (SELECT i, j, k FROM a) t where t.i > 1;
+```
