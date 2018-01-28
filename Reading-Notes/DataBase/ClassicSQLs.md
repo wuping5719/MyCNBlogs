@@ -70,7 +70,7 @@
    select top 10 * form table1 where 范围;
 ```
 * 14.选择在每一组 b 值相同的数据中对应的 a 最大的记录的所有信息(类似这样的用法可以用于论坛每月排行榜, 
-每月热销产品分析, 按科目成绩排名, 等等.)
+每月热销产品分析, 按科目成绩排名, 等等).
 ```sql
    select a, b, c from tablename ta where a = (select max(a) from tablename tb where tb.b = ta.b);
 ```
