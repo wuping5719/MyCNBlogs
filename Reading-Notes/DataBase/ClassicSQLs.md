@@ -116,3 +116,11 @@
   select type, sum(case vender when 'A' then pcs else 0 end), sum(case vender when 'C' then pcs else 0 end), 
 sum(case vender when 'B' then pcs else 0 end) FROM tablename group by type;
 ```
+* 22.初始化表 table1。
+```sql
+   truncate table table1;
+```
+* 23.选择从 10 到 15 的记录。
+```sql
+   select top 5 * from (select top 15 * from table order by id asc) table_别名 order by id desc;
+```
