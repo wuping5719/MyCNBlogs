@@ -124,3 +124,13 @@ sum(case vender when 'B' then pcs else 0 end) FROM tablename group by type;
 ```sql
    select top 5 * from (select top 15 * from table order by id asc) table_别名 order by id desc;
 ```
+* 24.SQL SERVER 中直接循环写入数据.
+```sql
+   declare @i int
+   set @i=1
+   while @i<30
+   begin
+     insert into test (userid) values(@i)
+     set @i=@i+1
+   end
+```
