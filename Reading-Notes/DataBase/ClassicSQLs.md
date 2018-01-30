@@ -134,3 +134,11 @@ sum(case vender when 'B' then pcs else 0 end) FROM tablename group by type;
      set @i=@i+1
    end
 ```
+* 25.查看与某一个表相关的视图、存储过程、函数.
+```sql
+   select a.* from sysobjects a, syscomments b where a.id = b.id and b.text like '%表名%';
+```
+* 26.查看当前数据库中所有存储过程.
+```sql
+   select name as 存储过程名称 from sysobjects where xtype = 'P';
+```
