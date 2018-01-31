@@ -142,3 +142,7 @@ sum(case vender when 'B' then pcs else 0 end) FROM tablename group by type;
 ```sql
    select name as 存储过程名称 from sysobjects where xtype = 'P';
 ```
+* 27.查询某一个表的字段和数据类型.
+```sql
+   select column_name, data_type from information_schema.columns where table_name = '表名';
+```
