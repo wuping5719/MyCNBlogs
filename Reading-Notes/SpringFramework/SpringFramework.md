@@ -17,3 +17,4 @@
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework13.md">Web MVC framework Web 框架(59-69条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework14.md">集成视图技术(70-73条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework15.md">集成其它 Web 框架(74-76条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework16.md">使用 Spring 进行远程访问与 Web 服务(77-80条)</a>
