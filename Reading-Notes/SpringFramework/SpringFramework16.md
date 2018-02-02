@@ -15,4 +15,21 @@
     (1) JAX RPC。Spring 通过 JAX-RPC(J2EE 1.4's wweb service API)为 Web services 提供远程服务支持。
     (2) JAX-WS。 Spring 通过(在Java EE 5 和 Java 6 中引入的 JAX-RPC 继承)为远程 Web Services 提供支持。
    4) JMS。通过 JmsInvokerServiceExporter 和 JmsInvokerProxyFactoryBean 使用 JMS 做为底层协议提供远程服务。
+
+78.使用 RMI 暴露服务。
+   (1) 使用 RmiServiceExporter 暴露服务。
+   RmiServiceExporter 显式地支持使用 RMI 调用器暴露任何非 RMI 的服务。
+   <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+      <!-- 不一定要与要输出的 bean 同名 -->
+      <property name="serviceName" value="AccountService"/>
+      <property name="service" ref="accountService"/>
+      <property name="serviceInterface" value="example.AccountService"/>
+      <!--  默认为 1199 -->
+      <property name="registryPort" value="1199" />
+   </bean>
+   (2) 在客户端链接服务。
+   <bean id="accountService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+      <property name="serviceUrl" value="rmi://HOST:1199/AccountService"/>
+      <property name="serviceInterface" value="example.AccountService"/>
+   </bean>
 ```
