@@ -32,4 +32,33 @@
       <property name="serviceUrl" value="rmi://HOST:1199/AccountService"/>
       <property name="serviceInterface" value="example.AccountService"/>
    </bean>
+
+79.使用 Hessian 或者 Burlap 通过 HTTP 远程调用服务。
+   (1) 为 Hessian 配置 DispatcherServlet。
+   (2) 使用 HessianServiceExporter 暴露你的 Bean。
+   <bean name="accountExporter" class="org.springframework.remoting.caucho.HessianServiceExporter">
+      <property name="service" ref="accountService"/>
+      <property name="serviceInterface" value="example.AccountService"/>
+   </bean>
+   (3) 在客户端连接服务。
+   (4) 对通过 Hessian 或 Burlap 暴露的服务使用 HTTP Basic 认证。
+   <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+      <property name="interceptors" ref="authorizationInterceptor"/>
+   </bean>
+   <bean id="authorizationInterceptor"
+            class="org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor">
+      <property name="authorizedRoles" value="administrator,operator"/>
+   </bean>
+
+80.使用 HTTP 调用器暴露服务。
+   (1) Exposing the service object.
+   <bean name="accountExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+      <property name="service" ref="accountService"/>
+      <property name="serviceInterface" value="example.AccountService"/>
+   </bean>
+   (2) 在客户端连接服务。
+   <bean id="httpInvokerProxy" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+      <property name="serviceUrl" value="http://remotehost:8080/remoting/AccountService"/>
+      <property name="serviceInterface" value="example.AccountService"/>
+   </bean>
 ```
