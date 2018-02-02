@@ -61,4 +61,66 @@
       <property name="serviceUrl" value="http://remotehost:8080/remoting/AccountService"/>
       <property name="serviceInterface" value="example.AccountService"/>
    </bean>
+
+81.Web Services。
+   (1) 使用 JAX-RPC 暴露基于 Servlet 的 Web 服务。
+   Spring 为 JAX-RPC Servlet 的端点实现提供了一个方便的基类(ServletEndpointSupport)。
+   (2) 使用 JAX-RPC 访问 Web 服务。
+   Spring 提供了两个工厂 Bean 用来创建 Web 服务代理，LocalJaxRpcServiceFactoryBean 和 JaxRpcPortProxyFactoryBean。
+   <bean id="accountWebService" class="org.springframework.remoting.jaxrpc.JaxRpcPortProxyFactoryBean">
+      <property name="serviceInterface" value="example.RemoteAccountService"/>
+      <property name="wsdlDocumentUrl" value="http://localhost:8080/account/services/accountService?WSDL"/>
+      <property name="namespaceUri" value="http://localhost:8080/account/services/accountService"/>
+      <property name="serviceName" value="AccountService"/>
+      <property name="portName" value="AccountPort"/>
+   </bean>
+   (3) 注册 JAX-RPC Bean 映射。
+   public class AxisPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean {
+      protected void postProcessJaxRpcService(Service service) {
+         TypeMappingRegistry registry = service.getTypeMappingRegistry();
+         TypeMapping mapping = registry.createTypeMapping();
+         registerBeanMapping(mapping, Account.class, "Account");
+         registry.register("http://schemas.xmlsoap.org/soap/encoding/", mapping);
+      }
+      protected void registerBeanMapping(TypeMapping mapping, Class type, String name) {
+         QName qName = new QName("http://localhost:8080/account/services/accountService", name);
+         mapping.register(type, qName, new BeanSerializerFactory(type, qName),
+                new BeanDeserializerFactory(type, qName));
+      }
+   }
+   (4) 注册自己的 JAX-RPC 处理器。
+   public class AccountHandler extends GenericHandler {
+      public QName[] getHeaders() {
+         return null;
+      }
+      public boolean handleRequest(MessageContext context) {
+         SOAPMessageContext smc = (SOAPMessageContext) context;
+         SOAPMessage msg = smc.getMessage();
+         try {
+            SOAPEnvelope envelope = msg.getSOAPPart().getEnvelope();
+            SOAPHeader header = envelope.getHeader();
+            ...
+         } catch (SOAPException ex) {
+            throw new JAXRPCException(ex);
+         }
+         return true;
+      }
+   }
+   (5) 使用 JAX-WS 暴露基于 Servlet 的 Web 服务。
+   Spring 为 JAX-WS Servlet 端点实现提供了一个方便的基类(SpringBeanAutowiringSupport)。
+   import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+   @WebService(serviceName="AccountService")
+   public class AccountServiceEndpoint extends SpringBeanAutowiringSupport {
+      @Autowired
+      private AccountService biz;
+      @WebMethod
+      public void insertAccount(Account acc) {
+         biz.insertAccount(acc);
+      }
+      @WebMethod
+      public Account[] getAccounts(String name) {
+         return biz.getAccounts(name);
+      }
+   }
+   (6) 使用 JAX-WS 暴露单独 Web 服务。
 ```
