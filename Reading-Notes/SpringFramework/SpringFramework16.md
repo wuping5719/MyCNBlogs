@@ -123,4 +123,31 @@
       }
    }
    (6) 使用 JAX-WS 暴露单独 Web 服务。
+   Spring 的 SimpleJaxWsServiceExporter 类检测所有在 Spring 应用上下文中配置的 @WebService 注解 bean，
+然后通过默认的 JAX-WS 服务器(JDK 1.6 HTTP服务器)来暴露它们。
+   <bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
+      <property name="baseAddress" value="http://localhost:9999/"/>
+   </bean>
+   (7) 使用 Spring 支持的 JAX-WS RI 来暴露服务。
+   (8) 使用 JAX-WS 访问 web 服务。
+   类似 JAX-RPC 支持，Spring 提供了 2 个工厂 bean 来创建 JAX-WS web 服务代理，
+它们是 LocalJaxWsServiceFactoryBean 和 JaxWsPortProxyFactoryBean。
+   <bean id="accountWebService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+      <property name="serviceInterface" value="example.AccountService"/>
+      <property name="wsdlDocumentUrl" value="http://localhost:8080/account/services/accountService?WSDL"/>
+      <property name="namespaceUri" value="http://localhost:8080/account/services/accountService"/>
+      <property name="serviceName" value="AccountService"/>
+      <property name="portName" value="AccountPort"/>
+   </bean>
+   (9) 使用 XFire 来暴露 Web 服务。
+   <beans>
+      <bean name="/Echo" class="org.codehaus.xfire.spring.remoting.XFireExporter">
+        <property name="serviceInterface" value="org.codehaus.xfire.spring.Echo"/>
+        <property name="serviceBean">
+    	       <bean class="org.codehaus.xfire.spring.EchoImpl"/>
+        </property>
+        <!-- the XFire bean is defined in the xfire.xml file -->
+        <property name="xfire" ref="xfire"/>
+      </bean>
+   </beans>
 ```
