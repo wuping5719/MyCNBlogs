@@ -150,4 +150,25 @@
         <property name="xfire" ref="xfire"/>
       </bean>
    </beans>
+
+82.JMS。
+   (1) 服务端配置。
+   <bean id="checkingAccountService" class="org.springframework.jms.remoting.JmsInvokerServiceExporter">
+        <property name="serviceInterface" value="com.foo.CheckingAccountService"/>
+        <property name="service">
+            <bean class="com.foo.SimpleCheckingAccountService"/>
+        </property>
+   </bean>
+   <bean class="org.springframework.jms.listener.SimpleMessageListenerContainer">
+       <property name="connectionFactory" ref="connectionFactory"/>
+       <property name="destination" ref="queue"/>
+       <property name="concurrentConsumers" value="3"/>
+       <property name="messageListener" ref="checkingAccountService"/>
+   </bean>
+   (2) 客户端配置。
+   <bean id="checkingAccountService" class="org.springframework.jms.remoting.JmsInvokerProxyFactoryBean">
+        <property name="serviceInterface" value="com.foo.CheckingAccountService"/>
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="queue" ref="queue"/>
+   </bean>
 ```
