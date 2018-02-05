@@ -22,4 +22,48 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
    (5) 事务管理: Spring 提供了 JmsTransactionManager 为单个 JMS ConnectionFactory 管理事务。
 
 85.发送消息。
+   (1) 使用 1.0.2 版的 JMS 实现发送消息到一个队列。
+   import javax.jms.ConnectionFactory;
+   import javax.jms.JMSException;
+   import javax.jms.Message;
+   import javax.jms.Queue;
+   import javax.jms.Session;
+   import org.springframework.jms.core.MessageCreator;
+   import org.springframework.jms.core.JmsTemplate;
+   import org.springframework.jms.core.JmsTemplate102;
+   public class JmsQueueSender {
+      private JmsTemplate jmsTemplate;
+      private Queue queue;
+      public void setConnectionFactory(ConnectionFactory cf) {
+         this.jmsTemplate = new JmsTemplate102(cf, false);
+      }
+      public void setQueue(Queue queue) {
+         this.queue = queue;
+      }
+      public void simpleSend() {
+         this.jmsTemplate.send(this.queue, new MessageCreator() {
+             public Message createMessage(Session session) throws JMSException {
+               return session.createTextMessage("hello queue world");
+             }
+         });
+      }
+   }
+
+   (2) 使用消息转换器：缺省的实现 SimpleMessageConverter 支持 String 和 TextMessage，byte[] 和 BytesMesssage，
+以及 java.util.Map 和 MapMessage 之间的转换。
+    public void sendWithConversion() {
+       Map map = new HashMap();
+       map.put("Name", "Nick");
+       map.put("Age", new Integer(47));
+       jmsTemplate.convertAndSend("testQueue", map, new MessagePostProcessor() {
+          public Message postProcessMessage(Message message) throws JMSException {
+             message.setIntProperty("AccountID", 1234);
+             message.setJMSCorrelationID("123-00001");
+             return message;
+          }
+       });
+    }
+
+   (3) SessionCallback 和 ProducerCallback: 接口 SessionCallback 和 ProducerCallback 分别提供了 JMS Session
+和 Session / MessageProducer 对。JmsTemplate 上的 execute() 方法执行这些回调方法。 
 ```
