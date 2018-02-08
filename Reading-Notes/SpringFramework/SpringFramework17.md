@@ -66,4 +66,36 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
 
    (3) SessionCallback 和 ProducerCallback: 接口 SessionCallback 和 ProducerCallback 分别提供了 JMS Session
 和 Session / MessageProducer 对。JmsTemplate 上的 execute() 方法执行这些回调方法。 
+
+86.接收消息。
+   (1) 同步接收: 可重载的 receive(..) 方法提供同步接收消息功能。
+   (2) 异步接收-消息驱动的 POJO: 类似于 EJB 世界里流行的消息驱动 Bean(MDB)，消息驱动 POJO(MDP) 作为 JMS 消息的接收器。
+   import javax.jms.JMSException;
+   import javax.jms.Message;
+   import javax.jms.MessageListener;
+   import javax.jms.TextMessage;
+   public class ExampleListener implements MessageListener {
+      public void onMessage(Message message) {
+          if (message instanceof TextMessage) {
+             try {
+                System.out.println(((TextMessage) message).getText());
+             } catch (JMSException ex) {
+                throw new RuntimeException(ex);
+             }
+          } else {
+             throw new IllegalArgumentException("Message must be of type TextMessage");
+          }
+      }
+   }
+   (3) SessionAwareMessageListener 接口: 是一个 Spring 专门用来提供类似于 JMS MessageListener 的接口，
+也提供了从接收 Message 来访问 JMS Session 的消息处理方法。
+   (4) MessageListenerAdapter: 是 Spring 的异步支持消息类中的不变类(final class)：简而言之，
+它允许你几乎将任意 一个类做为 MDP 显露出来(当然有某些限制)。
+   (5) 事务中的消息处理: 通过监听器容器定义中的 sessionTransacted 标记可以轻松的激活本地资源事务。
+   <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+      <property name="connectionFactory" ref="connectionFactory"/>
+      <property name="destination" ref="destination"/>
+      <property name="messageListener" ref="messageListener"/>
+      <property name="sessionTransacted" value="true"/>
+   </bean>
 ```
