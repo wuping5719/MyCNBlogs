@@ -122,4 +122,28 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
            <bean class="org.springframework.jca.work.SimpleTaskWorkManager"/>
        </property>
    </bean>
+
+88.将 Bean 暴露为 JMX。
+   Spring 的 JMX 框架的核心类是 MBeanExporter。这个类负责获取 Spring Bean，然后将其注册到一个 JMX MBeanServer 上。
+   <bean id="exporter" class="org.springframework.jmx.export.MBeanExporter" lazy-init="false">
+      <property name="beans">
+         <map>
+            <entry key="bean:name=testBean1" value-ref="testBean"/>
+         </map>
+      </property>
+   </bean>
+   (1) 创建 MBeanServer。
+   声明式地将 org.springframework.jmx.support.MBeanServerFactoryBean 实例添加到你的配置里。
+   (2) 重用原有的 MBeanServer。
+   (3) 延迟初始化的 MBean。
+   (4) MBean 的自动注册。
+   (5) 控制注册行为：REGISTRATION_FAIL_ON_EXISTING，REGISTRATION_IGNORE_EXISTING，REGISTRATION_REPLACE_EXISTING。
+   <bean id="exporter" class="org.springframework.jmx.export.MBeanExporter">
+      <property name="beans">
+          <map>
+             <entry key="bean:name=testBean1" value-ref="testBean"/>
+          </map>
+      </property>
+      <property name="registrationBehaviorName" value="REGISTRATION_REPLACE_EXISTING"/>
+   </bean>
 ```
