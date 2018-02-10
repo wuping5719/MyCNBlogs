@@ -98,4 +98,28 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
       <property name="messageListener" ref="messageListener"/>
       <property name="sessionTransacted" value="true"/>
    </bean>
+
+87.JCA 消息端点的支持。
+   Spring 提供了基于 JCA MessageListener 容器的支持。JmsMessageEndpointManager 将根据供应者 ResourceAdapter 
+的类名自动地决定 ActivationSpec 类名。
+   <bean class="org.springframework.jms.listener.endpoint.JmsMessageEndpointManager">
+      <property name="resourceAdapter" ref="resourceAdapter"/>
+      <property name="jmsActivationSpecConfig">
+         <bean class="org.springframework.jms.listener.endpoint.JmsActivationSpecConfig">
+            <property name="destinationName" value="myQueue"/>
+         </bean>
+      </property>
+      <property name="messageListener" ref="myMessageListener"/>
+   </bean>
+   
+   <bean id="resourceAdapter" class="org.springframework.jca.support.ResourceAdapterFactoryBean">
+       <property name="resourceAdapter">
+           <bean class="org.apache.activemq.ra.ActiveMQResourceAdapter">
+               <property name="serverUrl" value="tcp://localhost:61616"/>
+           </bean>
+       </property>
+       <property name="workManager">
+           <bean class="org.springframework.jca.work.SimpleTaskWorkManager"/>
+       </property>
+   </bean>
 ```
