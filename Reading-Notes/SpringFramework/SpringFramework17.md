@@ -154,4 +154,19 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
    缺省实现是 org.springframework.jmx.export.assembler.SimpleReflectiveMBeanInfoAssembler，
 它仅定义了一个暴露所有 public 属性，public 方法的管理接口。
    (2) 使用源码级元数据。
+   使用 MetadataMBeanInfoAssembler，你能够用源码级元数据给你的 Bean 定义管理接口。
+org.springframework.jmx.export.metadata.JmxAttributeSource 封装了元数据的读取。
+   (3) 使用 JDK 5.0 的注解。
+   Spring 提供了一套相当于 Commons Attribute 注解和一个策略接口 JmxAttributeSource 的实现类
+AnnotationsJmxAttributeSource，这个类可以让 MBeanInfoAssembler 读取这些注解。 
+   (4) 源代码级的元数据类型: 将类的所有实例标识为 JMX 受控资源: @ManagedResource；
+将方法标识为 JMX 操作：@ManagedOperation；将 getter 或者 setter 标识为部分 JMX 属性：@ManagedAttribute；
+定义操作参数说明：@ManagedOperationParameter 和 @ManagedOperationParameters。
+   (5) AutodetectCapableMBeanInfoAssembler 接口。
+   AutodetectCapableMBeanInfo 现成的唯一实现是 MetadataMBeanInfoAssembler，
+它“表决”将所有标识了 ManagedResource 属性的 Bean 包含在内。
+   (6) 用 Java 接口定义管理接口。
+   Spring 包含了 InterfaceBasedMBeanInfoAssembler，它可以根据一组接口定义的方法限定要暴露的方法和属性。 
+   (7) 使用 MethodNameBasedMBeanInfoAssembler。
+   MethodNameBasedMBeanInfoAssembler 允许你指定要暴露成 JMX 属性和操作的方法名称列表。
 ```
