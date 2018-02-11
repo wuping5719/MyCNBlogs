@@ -150,7 +150,8 @@ DefaultMessageListenerContainer、ServerSessionMessageListenerContainer。
 89.控制 Bean 的管理接口。
    (1) MBeanInfoAssembler 接口。
    MBeanExporter 在后台委托给了负责定义 Bean 管理接口的 org.springframework.jmx.export.assembler.MBeanInfoAssembler
-的一个实现来管理暴露 Bean 的信息。缺省实现是 org.springframework.jmx.export.assembler.SimpleReflectiveMBeanInfoAssembler，
+的一个实现来管理暴露 Bean 的信息。
+   缺省实现是 org.springframework.jmx.export.assembler.SimpleReflectiveMBeanInfoAssembler，
 它仅定义了一个暴露所有 public 属性，public 方法的管理接口。
    (2) 使用源码级元数据。
 ```
