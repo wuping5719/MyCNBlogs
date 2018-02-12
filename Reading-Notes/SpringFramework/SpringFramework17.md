@@ -182,4 +182,22 @@ KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对�
    MetadataNamingStrategy 用每个 Bean 上 ManagedResource 属性的 objectName 属性来构建 objectName。
    (3) <context:mbean-export/> 元素。
    <context:mbean-export server="myMBeanServer" default-domain="myDomain"/>
+
+91.JSR-160 连接器。
+   Spring JMX 模块在 org.springframework.jmx.support 包内提供了两个 FactoryBean 实现，
+用来构建服务器端和客户端的连接器。
+   (1) 服务器端连接器。
+   使 Spring JMX 构建，启动和暴露一个 JSR-160 JMXConnectorServer，要使用以下配置：
+   <bean id="serverConnector" class="org.springframework.jmx.support.ConnectorServerFactoryBean"/>
+   (2) 客户端连接器。
+   要构建一个 MBeanServerConnection 到一个远程的 JSR-160 MBeanServer，
+使用以下所示的 MBeanServerConnectionFactoryBean。 
+   <bean id="clientConnector" class="org.springframework.jmx.support.MBeanServerConnectionFactoryBean">
+      <property name="serviceUrl" value="service:jmx:rmi://localhost:9875"/>
+   </bean>
+   (3) 基于 Burlap/Hessian/SOAP 的 JMX。
+   <bean id="serverConnector" class="org.springframework.jmx.support.ConnectorServerFactoryBean">
+      <property name="objectName" value="connector:name=burlap"/>
+      <property name="serviceUrl" value="service:jmx:burlap://localhost:9874"/>
+   </bean>
 ```
