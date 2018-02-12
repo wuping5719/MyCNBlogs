@@ -169,4 +169,17 @@ AnnotationsJmxAttributeSource，这个类可以让 MBeanInfoAssembler 读取这�
    Spring 包含了 InterfaceBasedMBeanInfoAssembler，它可以根据一组接口定义的方法限定要暴露的方法和属性。 
    (7) 使用 MethodNameBasedMBeanInfoAssembler。
    MethodNameBasedMBeanInfoAssembler 允许你指定要暴露成 JMX 属性和操作的方法名称列表。
+
+90.控制 Bean 的 ObjectName。
+   对于每个 Bean 的注册，MBeanExporter 在后台委派给了 ObjectNamingStrategy 的一个实现来获取 ObjectName。 
+缺省实现是 KeyNamingStrategy，它将默认使用 beans 上 Map 的键值作为 ObjectName。
+KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对应，以此解析 ObjectName。
+除了 KeyNamingStrategy 之外，Spring 还提供了另外两个 ObjectNamingStrategy 的实现： 
+基于 bean 的 JVM 标识构建 ObjectName 的 IdentityNamingStrategy；
+利用源代码级元数据获取 ObjectName 的 MetadataNamingStrategy。 
+   (1) 从 Properties 读取 Properties。
+   (2) 使用 MetadataNamingStrategy。
+   MetadataNamingStrategy 用每个 Bean 上 ManagedResource 属性的 objectName 属性来构建 objectName。
+   (3) <context:mbean-export/> 元素。
+   <context:mbean-export server="myMBeanServer" default-domain="myDomain"/>
 ```
