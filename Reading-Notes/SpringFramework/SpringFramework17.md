@@ -200,4 +200,12 @@ KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对�
       <property name="objectName" value="connector:name=burlap"/>
       <property name="serviceUrl" value="service:jmx:burlap://localhost:9874"/>
    </bean>
+
+92.通知。
+   (1) 为通知注册监听器。
+   Spring 的 JMX 支持使得用任意数量 MBean 注册任意数量的 NotificationListeners 监听器
+(包括由 Spring 的 MBeanExporter 输出和其他机制注册的 MBean)都非常容易。
+   (2) 发布通知。
+   Spring 的 JMX 通知发布支持中的关键接口是 NotificationPublisher。任意要通过 MBeanExporter 实例输出为 MBean
+的 Bean 都可以实现 NotificationPublisherAware 接口来获得对 NotificationPublisher 实例的访问。
 ```
