@@ -208,4 +208,19 @@ KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对�
    (2) 发布通知。
    Spring 的 JMX 通知发布支持中的关键接口是 NotificationPublisher。任意要通过 MBeanExporter 实例输出为 MBean
 的 Bean 都可以实现 NotificationPublisherAware 接口来获得对 NotificationPublisher 实例的访问。
+
+93.配置 CCI。
+   JCA(Java Connector Architecture)规范来标准化对 EIS(Enterprise Information System)的访问。
+   SPI(Service Provider Interfaces)是连接器提供者(Connector Provider)必须实现的接口。
+   CCI(Common Client Interface)是应用程序用来与连接器交互并与 EIS 通信的接口。
+   (1) 在 Spring 中配置 ConnectionFactory。
+   <bean id="eciConnectionFactory" class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName" value="eis/cicseci"/>
+   </bean>
+   (2) 配置 CCI 连接。
+   JCA CCI 允许开发者使用自己的连接器的 ConnectionSpec 接口实现来配置到 EIS 的连接。
+为了配置该连接的属性，需要用一个指定的 ConnectionSpecConnectionFactoryAdapter 适配器来封装目标连接工厂。
+   (3) 使用一个 CCI 单连接。
+   SingleConnectionFactory 适配器类将延迟打开一个单独的连接并在应用程序销毁这个 Bean 的时候关闭它。
+这个类将暴露出特殊 Connection 的相应代理，并共享同一个底层的物理连接。 
 ```
