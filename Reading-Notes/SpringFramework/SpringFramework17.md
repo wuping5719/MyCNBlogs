@@ -223,4 +223,23 @@ KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对�
    (3) 使用一个 CCI 单连接。
    SingleConnectionFactory 适配器类将延迟打开一个单独的连接并在应用程序销毁这个 Bean 的时候关闭它。
 这个类将暴露出特殊 Connection 的相应代理，并共享同一个底层的物理连接。 
+
+94.使用 Spring 的 CCI 访问支持。
+   (1) 记录转换。
+   通过使用 Spring 的 CciTemplate 来指定创建记录并从记录中提取数据的策略。 
+   (2) CciTemplate 类。
+   CciTemplate 类是 CCI 核心支持包(org.springframework.jca.cci.core)中主要的类。 
+   CciTemplate.execute(..) 可以以下列两种方式使用：
+   ① 在提供直接的 Record 参数的情况下，只需要传递输入记录给 CCI，而返回的对象就是对应的 CCI 输出记录。
+   ② 在提供使用记录映射的应用对象的情况下，需要提供相应的 RecordCreator 和 RecordExtractor 实例。
+   (3) DAO 支持: Spring 的 CCI 支持为 DAO 提供了一个抽象类 CciDaoSupport，支持 ConnectionFactory
+或 CciTemplate 实例的注入。
+   (4) 自动输出记录生成。
+   设定 CciTemplate 类的 outputRecordCreator 属性来自动生成一个输出记录，当接收到响应时 JCA 连接器
+(JCA connector)将填充该记录并返回给模板的调用者。 
+   (5) 直接使用一个 CCI Connection 接口和 Interaction 接口。
+   ConnectionCallback 接口提供以 CCI Connection 作为参数，为了在它上面执行自定义动作，添加了创建 Connection 
+的 CCI ConnectionFactory。后者在获取相关 RecordFactory 实例和创建 indexed/mapped records 时很有用。
+
+95.建模 CCI 访问为操作对象。
 ```
