@@ -242,4 +242,11 @@ KeyNamingStrategy 可以将该键值与 Properties 文件中的一个条目对�
 的 CCI ConnectionFactory。后者在获取相关 RecordFactory 实例和创建 indexed/mapped records 时很有用。
 
 95.建模 CCI 访问为操作对象。
+   (1) MappingRecordOperation。
+   提供了两个模板方法来指明如何将一个输入对象转换为输入记录，以及如何将一个输出记录转换为输出对象(记录映射)： 
+   createInputRecord(..) 指定了如何将一个输入对象转换为输入 Record;
+   extractOutputData(..) 指定了如何从输出 Record 中提取输出对象。
+   (2) MappingCommAreaOperation。
+   扩展了 MappingRecordOperation 类以提供这种专门的 CommArea 支持。 它隐含地使用了 CommAreaRecord 类
+作为输入和输出 Record 类型， 并提供了两个新的方法来转换输入对象到输入CommArea，以及转换输出 CommArea 到输出对象。
 ```
