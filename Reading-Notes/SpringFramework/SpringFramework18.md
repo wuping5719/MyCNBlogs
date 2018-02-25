@@ -83,4 +83,15 @@
    </bean>
    (3) 使用 triggers 和 SchedulerFactoryBean 来包装任务。
    Spring 提供两个子类 triggers，分别为 CronTriggerBean 和 SimpleTriggerBean。
+
+100.使用 JDK Timer 支持类。
+    (1) 创建定制的 timers。
+    (2) 使用 MethodInvokingTimerTaskFactoryBean 类。
+    (3) 使用 TimerFactoryBean 来设置任务。
+
+101.Spring TaskExecutor 抽象。
+    (1) TaskExecutor 接口。
+    Spring 的 TaskExecutor 接口等同于 java.util.concurrent.Executor 接口。
+    (2) TaskExecutor 类型：SimpleAsyncTaskExecutor 类、SyncTaskExecutor 类、ConcurrentTaskExecutor 类、
+SimpleThreadPoolTaskExecutor 类、ThreadPoolTaskExecutor 类、TimerTaskExecutor 类、WorkManagerTaskExecutor 类。
 ```
