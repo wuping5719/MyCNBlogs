@@ -19,4 +19,4 @@
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework15.md">集成其它 Web 框架(74-76条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework16.md">使用 Spring 进行远程访问与 Web 服务(77-82条)</a>
 * <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework17.md">JMS、JMX、JCA CCI(83-95条)</a>
-* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework18.md">Spring 邮件抽象层、定时调度 (Scheduling) 和线程池 (Thread Pooling)(96-108条)</a>
+* <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/SpringFramework/SpringFramework18.md">Spring 邮件抽象层、定时调度 (Scheduling) 和线程池 (Thread Pooling)(96-101条)</a>
