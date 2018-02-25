@@ -71,4 +71,16 @@
    sender.send(message);
 
    (2) 使用模板来创建邮件内容。
+
+99.使用 OpenSymphony Quartz 调度器。
+   (1) 使用 JobDetailBean。
+   JobDetail 对象保存运行一个任务所需的全部信息。Spring 提供一个叫作 JobDetailBean 的类让 JobDetail 
+能对一些有意义的初始值进行初始化。
+   (2) 使用 MethodInvokingJobDetailFactoryBean。
+   <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+      <property name="targetObject" ref="exampleBusinessObject" />
+      <property name="targetMethod" value="doIt" />
+   </bean>
+   (3) 使用 triggers 和 SchedulerFactoryBean 来包装任务。
+   Spring 提供两个子类 triggers，分别为 CronTriggerBean 和 SimpleTriggerBean。
 ```
