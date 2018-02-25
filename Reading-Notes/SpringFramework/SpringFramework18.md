@@ -55,4 +55,20 @@
    }
 
 98.使用 MimeMessageHelper。
+   org.springframework.mail.javamail.MimeMessageHelper 是处理 JavaMail 邮件时比较顺手组件之一。
+   (1) 发送附件和嵌入式资源(inline resources)。
+   JavaMailSenderImpl sender = new JavaMailSenderImpl();
+   sender.setHost("mail.host.com");
+   MimeMessage message = sender.createMimeMessage();
+   // use the true flag to indicate you need a multipart message
+   MimeMessageHelper helper = new MimeMessageHelper(message, true);
+   helper.setTo("test@host.com");
+   helper.setText("Check out this image!");
+   // let's attach the infamous windows Sample file (this time copied to c:/)
+   FileSystemResource file = new FileSystemResource(new File("c:/Sample.jpg"));
+   helper.addAttachment("CoolImage.jpg", file);
+   // helper.addInline("identifier1234", file);
+   sender.send(message);
+
+   (2) 使用模板来创建邮件内容。
 ```
