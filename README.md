@@ -167,7 +167,7 @@
      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/DataBase.md">21.［数据库知识点集锦］</a>
      </td>
      <td>
-       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MachineLearning.md">22.《机器学习》</a>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MachineLearning.md">22.《机器学习》</a>
      </td>
    </tr>
 </table>
