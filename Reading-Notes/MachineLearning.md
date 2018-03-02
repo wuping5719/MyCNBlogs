@@ -58,6 +58,6 @@
   对于某个算法 a，它在训练集以外的所有样本的误差，就是它所能产生的所有假设 h，在训练集以外的所有样本上的误判率的和。
   对于某个假设 h，“h 在某个数据集上的误差”与“在某个数据集中抽取一个能让 h 误判的样本的概率”是等价的问题。
 ```
-  NFL(No Free Lunch)定理的具体证明详见：<a href="https://www.jianshu.com/p/cbe8e0fe7b2c">url</a>
+> NFL(No Free Lunch)定理的具体证明详见：<a href="https://www.jianshu.com/p/cbe8e0fe7b2c">url</a>
 ```html
 ```
