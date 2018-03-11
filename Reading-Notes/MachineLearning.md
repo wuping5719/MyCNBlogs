@@ -1,3 +1,8 @@
+<h2>《机器学习》 :books: </h2> 
+
+> 周志华 著  清华大学出版社 
+
+```html
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 formula1: $$n==x$$
 
@@ -11,11 +16,6 @@ formula5: \(k==z\)
 
 formula6: \[k!=z\]
 
-<h2>《机器学习》 :books: </h2> 
-
-> 周志华 著  清华大学出版社 
-
-```html
 1.机器学习的本质任务是预测。
   “机器学习”也是一门学科，研究怎样使得计算机更好地学习，亦即，是一门研究“学习算法”的学科，主要任务是评估“学习算法”的好坏
 以及开发新的“学习算法”。这里的“学习算法”是计算机的学习方法，本质上是一种基于现有的数据产生预测模型的算法。
