@@ -1,5 +1,3 @@
-<h2>《机器学习》 :books: </h2> 
-
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 formula1: $$n==x$$
 
@@ -12,6 +10,8 @@ formula4: [m!=y]
 formula5: \(k==z\)
 
 formula6: \[k!=z\]
+
+<h2>《机器学习》 :books: </h2> 
 
 > 周志华 著  清华大学出版社 
 
