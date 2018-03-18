@@ -170,6 +170,12 @@
        <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MachineLearning.md">22.《机器学习》</a>
      </td>
    </tr>
+   <tr>
+     <td>
+       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MachineLearningInAction.md">23.《机器学习实战》</a>
+     </td>
+     <td></td>
+   </tr>
 </table>
 
 <h3>Top Company GitHub</h3>
