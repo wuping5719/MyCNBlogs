@@ -29,15 +29,33 @@
    ⑤ 测试算法：计算错误率。
    ⑥ 使用算法：首先需要输入样本数据和结构化的输出结果，然后运行 k 近邻算法。判定输入数据分别属于哪个分类，
 最后应用对计算出的分类执行后续的处理。
-
-6.使用 Python 导入数据。
-  科学计算包 NumPy；运算符模块: kNN.py
 ```
 ```python
+6.使用 Python 导入数据。
+  科学计算包 NumPy；运算符模块: kNN.py
   from numpy import *
   import operator
   def createDataSet() :
      group = array ([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
      labels = ['A', 'A', 'B', 'B']
      return group, labels
+
+7.实施 kNN 分类算法: classify0()。
+  def classify0(inX,dataSet,labels,k):
+    dataSetSize = dataSet.shape[0]
+    # (以下三行)距离计算
+    diffMat = tile(inX,(dataSetSize,1)) - dataSet
+    sqDiffMat = diffMat**2
+    sqDisstances = sqDiffMat.sum(axis=1)
+    distances = sqDisstances**0.5
+    sortedDistIndicies = distances.argsort()
+    classCount = {}
+    # (以下两行)选择距离最小的k个点
+    for i in range(k):
+        voteIlable = labels[sortedDistIndicies[i]]
+        classCount[voteIlable] = classCount.get(voteIlable, 0) + 1
+    sortedClassCount = sorted(classCount.iteritems(), 
+    # 排序
+        key = operator.itemgetter(1), reverse=True)
+    return sortedClassCount[0][0]
 ```
