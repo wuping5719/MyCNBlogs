@@ -58,4 +58,6 @@
     # 排序
         key = operator.itemgetter(1), reverse=True)
     return sortedClassCount[0][0]
+  classify0() 函数有 4 个输入参数：用于分类的输入向量是 inX，输入的训练样本集为 dataSet，标签向量为labels，
+最后的参数 k 表示用于选择最近邻居的数目，其中标签向量的元素数目和矩阵 dataSet 的行数相同。
 ```
