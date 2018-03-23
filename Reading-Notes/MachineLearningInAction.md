@@ -60,4 +60,25 @@
     return sortedClassCount[0][0]
   classify0() 函数有 4 个输入参数：用于分类的输入向量是 inX，输入的训练样本集为 dataSet，标签向量为labels，
 最后的参数 k 表示用于选择最近邻居的数目，其中标签向量的元素数目和矩阵 dataSet 的行数相同。
+
+8.准备数据：从文本文件中解析数据。
+  def file2matrix(filename) :
+     fr = open(filename)
+     arrayOlines = fr.readlines()
+     numberOfLines = len(arrayOlines)
+     # 得到文件行数
+     returnMat = zeros((numberOfLines, 3))
+     # 创建返回的 Numpy 矩阵
+     classLabelVector = []
+     returnMat = zeros((numberOfLines, 3))  
+     classLabelVector = []  
+     index =0  
+     # 解析文件数据到列表  
+     for line in arrayOlines:  
+         line = line.strip()  
+         listFormLine = line.split('\t')  
+         returnMat[index,:] = listFormLine[0:3]  
+         classLabelVector.append(int(listFormLine[-1]))  
+         index += 1  
+     return returnMat, classLabelVector
 ```
