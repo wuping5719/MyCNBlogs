@@ -54,7 +54,7 @@
     for i in range(k):
         voteIlable = labels[sortedDistIndicies[i]]
         classCount[voteIlable] = classCount.get(voteIlable, 0) + 1
-    sortedClassCount = sorted(classCount.iteritems(), 
+    sortedClassCount = sorted(classCount.items(), 
     # 排序
         key = operator.itemgetter(1), reverse=True)
     return sortedClassCount[0][0]
