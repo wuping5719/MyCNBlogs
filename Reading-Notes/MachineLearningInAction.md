@@ -93,4 +93,25 @@
      normDataSet = normDataSet / tile(ranges, (m,1))   # 特征值相除
      # 再除以幅度值，实现归一化，tile 功能是创建一定规模的指定数组
      return normDataSet, ranges, minVals
+
+10.测试分类器效果。
+   def datingClassTest():     # 分类器针对约会网站的测试代码
+     hoRatio = 0.10
+     datingDataMat, datingLabels = file2matrix('datingTestSet.txt') # load data set from file
+     normMat, ranges, minVals = autoNorm(datingDataMat)
+     # 计算测试向量的数量，此步决定哪些数据用于分类器的测试和训练样本
+     m = normMat.shape[0]
+     numTestVecs = int(m * hoRatio)
+     errorCount = 0.0
+     # 计算错误率，并输出结果
+     for i in range(numTestVecs):
+        classifierResult = classify0(normMat[i,:], normMat[numTestVecs:m,:], datingLabels[numTestVecs:m], 3)
+        print "the classifier came back with: %d, the real answer is: %d" % (classifierResult, datingLabels[i])
+        if (classifierResult != datingLabels[i]): errorCount += 1.0
+     print "the total error rate is: %f" % (errorCount / float(numTestVecs))
+     print errorCount
+
+   datingDataMat, datingLabels = file2matrix('datingTestSet.txt') # 读取文件数据
+
+   datingClassTest()
 ```
