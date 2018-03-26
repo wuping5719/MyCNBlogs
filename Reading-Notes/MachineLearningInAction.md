@@ -96,7 +96,7 @@
 
 10.测试分类器效果。
    def datingClassTest():     # 分类器针对约会网站的测试代码
-     hoRatio = 0.10
+     hoRatio = 0.50
      datingDataMat, datingLabels = file2matrix('datingTestSet.txt') # load data set from file
      normMat, ranges, minVals = autoNorm(datingDataMat)
      # 计算测试向量的数量，此步决定哪些数据用于分类器的测试和训练样本
@@ -112,19 +112,39 @@
      print(errorCount)
     
    datingDataMat, datingLabels = file2matrix('datingTestSet.txt') # 读取文件数据
-
+   
    datingClassTest()
+   Output:
+     the classifier came back with: 1, the real answer is: 3
+     the classifier came back with: 2, the real answer is: 2
+     the classifier came back with: 2, the real answer is: 1
+     the classifier came back with: 1, the real answer is: 1
+     the classifier came back with: 1, the real answer is: 1
+     the classifier came back with: 1, the real answer is: 1
+     the classifier came back with: 1, the real answer is: 3
+     the classifier came back with: 1, the real answer is: 3
+     the classifier came back with: 1, the real answer is: 1
+     the classifier came back with: 1, the real answer is: 3
+     the total error rate is: 0.500000
+     5.0
    
 11.约会网站预测函数。
    def classifyPerson():
      resultList = ["not at all","in small doses","in large doses"]  
-     percentTats = float(raw_input("percentage of time spent playing video games? "))  
-     ffMiles = float(raw_input("frequent flier miles earned per year? "))  
-     iceCream = float(raw_input("liters of ice cream consumed per year? "))  
+     percentTats = float(input("percentage of time spent playing video games? "))  
+     ffMiles = float(input("frequent flier miles earned per year? "))  
+     iceCream = float(input("liters of ice cream consumed per year? "))  
      datingDataMat, datingLabels = file2matrix("datingTestSet.txt") 
      # 需要对新来的测试集也做归一化，故需要用到 ranges 和 minVals 两个变量  
      normMat,ranges,minVals = autoNorm(datingDataMat)  
      inArr = array([ffMiles, percentTats, iceCream])  
      classifierResult = classify0((inArr - minVals) / ranges, normMat, datingLabels, 3)  
      print ("You will probably like this person: ", resultList[classifierResult - 1])
+     
+   classifyPerson()
+   Output:  
+     percentage of time spent playing video games? 100
+     frequent flier miles earned per year? 200
+     liters of ice cream consumed per year? 10
+     You will probably like this person:  in large doses
 ```
