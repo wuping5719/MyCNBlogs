@@ -114,4 +114,17 @@
    datingDataMat, datingLabels = file2matrix('datingTestSet.txt') # 读取文件数据
 
    datingClassTest()
+   
+11.约会网站预测函数。
+   def classifyPerson():
+     resultList = ["not at all","in small doses","in large doses"]  
+     percentTats = float(raw_input("percentage of time spent playing video games? "))  
+     ffMiles = float(raw_input("frequent flier miles earned per year? "))  
+     iceCream = float(raw_input("liters of ice cream consumed per year? "))  
+     datingDataMat, datingLabels = file2matrix("datingTestSet.txt") 
+     # 需要对新来的测试集也做归一化，故需要用到 ranges 和 minVals 两个变量  
+     normMat,ranges,minVals = autoNorm(datingDataMat)  
+     inArr = array([ffMiles, percentTats, iceCream])  
+     classifierResult = classify0((inArr - minVals) / ranges, normMat, datingLabels, 3)  
+     print ("You will probably like this person: ", resultList[classifierResult - 1])
 ```
