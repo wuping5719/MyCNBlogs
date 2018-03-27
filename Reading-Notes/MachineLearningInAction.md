@@ -147,4 +147,16 @@
      frequent flier miles earned per year? 200
      liters of ice cream consumed per year? 10
      You will probably like this person:  in large doses
+
+12.将图像转换为向量：img2vector。
+   该函数创建 1 x 1024 的 NumPy 数组，然后打开给定的文件，循环读出文件的前 32 行，并将每行的头 32 个字符值
+存储在 NumPy 数组中，最后返回数组。
+   def img2vector(filename):
+      imgVect = zeros((1, 1024))  
+      fr = open(filename)  
+      for i in range(32):  
+         linestr = fr.readline()  
+         for j in range(32):  
+           imgVect[0, 32*i + j] = int(linestr[j])  
+      return imgVect 
 ```
