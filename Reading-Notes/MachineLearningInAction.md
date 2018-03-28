@@ -35,6 +35,7 @@
   科学计算包 NumPy；运算符模块: kNN.py
   from numpy import *
   import operator
+  from os import listdir # 函数 listdir 可以列出给定目录的文件名
   def createDataSet() :
      group = array ([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
      labels = ['A', 'A', 'B', 'B']
@@ -159,4 +160,35 @@
          for j in range(32):  
            imgVect[0, 32*i + j] = int(linestr[j])  
       return imgVect 
+
+13.使用 k 近邻算法识别手写数字。
+   def handwritingClassTest():
+      hwLabels = []
+      trainingFileList = listdir('trainingDigits')   # 获取目录内容
+      m = len(trainingFileList)   # 目录中有多少文件
+      trainingMat = zeros((m,1024))    # 创建一个 m 行 1024 列的训练矩阵，该矩阵的每一行存储一个图像
+      # 从文件名解析出分类数字，该目录的文件按照规则命名，如文件 9_45.txt 的分类是 9，它是数字 9 的第 45 个实例
+      for i in range(m):
+         fileNameStr = trainingFileList[i]
+         fileStr = fileNameStr.split('.')[0]   
+         classNumStr = int(fileStr.split('_')[0])
+         hwLabels.append(classNumStr)    # 类代码存储到变量 hwLabels 中
+         trainingMat[i,:] = img2vector('trainingDigits/%s' % fileNameStr)
+         # 对 testDigits 执行相似操作，但是不载入矩阵，而是使用 classify() 函数测试该目录下的每一个文件
+      testFileList = listdir('testDigits')     # iterate through the test set
+      errorCount = 0.0
+      mTest = len(testFileList)
+      for i in range(mTest):
+         fileNameStr = testFileList[i]
+         fileStr = fileNameStr.split('.')[0]  
+         classNumStr = int(fileStr.split('_')[0])
+         vectorUnderTest = img2vector('testDigits/%s' % fileNameStr)
+         classifierResult = classify0(vectorUnderTest, trainingMat, hwLabels, 3)
+         print("the classifier came back with: %d, the real answer is: %d" % (classifierResult, classNumStr))
+         if (classifierResult != classNumStr): 
+            errorCount += 1.0
+      print("\nthe total number of errors is: %d" % errorCount)
+      print("\nthe total error rate is: %f" % (errorCount/float(mTest)))
+
+     handwritingClassTest()
 ```
