@@ -227,4 +227,11 @@
          prob = float(labelCounts[key]) / numEntries
          shannonEnt -= prob * log(prob,2)  # log base 2
       return shannonEnt
+     
+   myDat, labels = createDataSet()
+   print(myDat)
+   print(calcShannonEnt(myDat))
+   Output:
+      [[1, 1, 'yes'], [1, 1, 'yes'], [1, 0, 'no'], [0, 1, 'no'], [0, 1, 'no']]
+      0.9287712379549449
 ```
