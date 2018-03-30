@@ -116,14 +116,7 @@
    datingClassTest()
    Output:
      the classifier came back with: 1, the real answer is: 3
-     the classifier came back with: 2, the real answer is: 2
-     the classifier came back with: 2, the real answer is: 1
-     the classifier came back with: 1, the real answer is: 1
-     the classifier came back with: 1, the real answer is: 1
-     the classifier came back with: 1, the real answer is: 1
-     the classifier came back with: 1, the real answer is: 3
-     the classifier came back with: 1, the real answer is: 3
-     the classifier came back with: 1, the real answer is: 1
+     ...
      the classifier came back with: 1, the real answer is: 3
      the total error rate is: 0.500000
      5.0
@@ -206,4 +199,32 @@
    (4) 训练算法：构造树的数据结构。
    (5) 测试算法：使用经验树计算错误率。
    (6) 使用算法：此步骤可以适用于任何监督学习算法，而使用决策树可以更好地理解数据的内在含义。
+
+15.简单鱼鉴定数据集。
+  def createDataSet():    # 简单鉴定数据集
+     dataSet = [[1, 1, 'yes'],
+                [1, 1, 'yes'],
+                [1, 0, 'no'],
+                [0, 1, 'no'],
+                [0, 1, 'no']]
+     labels = ['no surfacing','flippers']
+     # change to discrete values
+     return dataSet, labels
+  
+16.计算给定数据集的香农熵。
+   from math import log
+   def calcShannonEnt(dataSet):    # 计算给定数据集的香农熵
+      numEntries = len(dataSet)    # 计算数据集中的实例总数
+      labelCounts = {}  # 创建数据字典，其键值是最后一列的数值
+      for featVec in dataSet:  # the the number of unique elements and their occurance  
+         currentLabel = featVec[-1]
+         if currentLabel not in labelCounts.keys(): 
+            labelCounts[currentLabel] = 0    # 如果当前键值不存在，则扩展字典并将当前键值加入字典
+            labelCounts[currentLabel] += 1   # 每一个键值都记录了当前类别的次数
+      # 使用所有类标签发生的频率计算类别出现的概率，计算香农熵
+      shannonEnt = 0.0
+      for key in labelCounts:
+         prob = float(labelCounts[key]) / numEntries
+         shannonEnt -= prob * log(prob,2)  # log base 2
+      return shannonEnt
 ```
