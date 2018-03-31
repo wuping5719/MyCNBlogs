@@ -234,4 +234,15 @@
    Output:
       [[1, 1, 'yes'], [1, 1, 'yes'], [1, 0, 'no'], [0, 1, 'no'], [0, 1, 'no']]
       0.9287712379549449
+
+17.按照给定特征划分数据集。
+   def splitDataSet(dataSet, axis, value):
+      # 创建新的 list 对象
+      retDataSet = []
+      for featVec in dataSet:
+         if featVec[axis] == value:
+             reducedFeatVec = featVec[:axis]   # chop out axis used for splitting
+             reducedFeatVec.extend(featVec[axis+1:])
+             retDataSet.append(reducedFeatVec)
+      return retDataSet
 ```
