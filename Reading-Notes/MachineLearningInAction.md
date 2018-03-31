@@ -235,7 +235,7 @@
       [[1, 1, 'yes'], [1, 1, 'yes'], [1, 0, 'no'], [0, 1, 'no'], [0, 1, 'no']]
       0.9287712379549449
 
-17.按照给定特征划分数据集。
+17.按照给定特征划分数据集。对数据集进行划分，对属性 axis 值为 value 的那部分数据进行挑选。
    def splitDataSet(dataSet, axis, value):
       # 创建新的 list 对象
       retDataSet = []
