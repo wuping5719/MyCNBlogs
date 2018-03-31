@@ -245,7 +245,12 @@
              reducedFeatVec.extend(featVec[axis+1:])
              retDataSet.append(reducedFeatVec)
       return retDataSet
-      
+    
+   retDataSet = splitDataSet(myDat, 1, 0)
+   print(retDataSet)
+   Output:
+      [[1, 'no']]
+   
 18.选择最好的数据集划分方式。
    def chooseBestFeatureToSplit(dataSet):
       numFeatures = len(dataSet[0]) - 1      # the last column is used for the labels
@@ -270,4 +275,17 @@
             bestInfoGain = infoGain           # if better than current best, set to best
             bestFeature = i
       return tableVocabulary                  # finding the min and min is the best choice
+   
+  table = chooseBestFeatureToSplit(myDat)
+  min = 1.7976931348623157e+308
+  nick = 0
+  for key in table:
+     print(str(key) + "->" + str(table[key]))
+     if table[key] <= min:
+        nick = key
+        min = table[key]
+  Output:
+     baseEntropy = 0.9287712379549449
+     0->0.8339850002884626
+     1->0.8
 ```
