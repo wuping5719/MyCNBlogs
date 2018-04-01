@@ -321,10 +321,10 @@
          # 递归调用 createTree() 函数，并且将返回的 tree 插入到 myTree 字典中，  
          # 利用最好的特征划分的子集作为新的 dataSet 传入到 createTree() 函数中。  
          myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet, bestFeat, value), subLabels)  
-    return myTree  
+      return myTree  
   
-  myTree = createTree(myDat, labels)
-  print(myTree)
-  Output:
-    {'flippers': {0: 'no', 1: {'no surfacing': {0: 'no', 1: 'yes'}}}}
+   myTree = createTree(myDat, labels)
+   print(myTree)
+   Output:
+      {'flippers': {0: 'no', 1: {'no surfacing': {0: 'no', 1: 'yes'}}}}
 ```
