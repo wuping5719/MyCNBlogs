@@ -327,4 +327,28 @@
    print(myTree)
    Output:
       {'flippers': {0: 'no', 1: {'no surfacing': {0: 'no', 1: 'yes'}}}}
+
+21.使用文本注解绘制树节点。
+   import matplotlib.pyplot as plt
+   # (以下三行)定义文本框和箭头格式
+   decisionNode = dict(boxstyle = 'sawtooth', fc = '0.8')
+   leafNode = dict(boxstyle = 'round4', fc = '0.8')
+   arrow_args = dict(arrowstyle = '<-')
+   # (以下两行)绘制带箭头的注解
+   def plotNode(nodeTxt, centerPt, parentPt, nodeType):
+      createPlot.ax1.annotate(nodeTxt, xy = parentPt, xycoords = 'axes fraction',\
+              xytext = centerPt, textcoords = 'axes fraction',\
+              va = 'center', ha = 'center', bbox = nodeType, \
+              arrowprops = arrow_args)
+
+   # 使用文本注解绘制树节点
+   def createPlot():
+      fig = plt.figure(1, facecolor = 'white')
+      fig.clf()
+      createPlot.ax1 = plt.subplot(111, frameon = False)
+      plotNode('a decision node', (0.5, 0.1), (0.1, 0.5), decisionNode)
+      plotNode('a leaf node', (0.8, 0.1), (0.3, 0.8), leafNode)
+      plt.show()
+      
+   createPlot()
 ```
