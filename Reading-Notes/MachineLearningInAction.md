@@ -342,7 +342,7 @@
               arrowprops = arrow_args)
 
    # 使用文本注解绘制树节点
-   def createPlot():
+   def createPlot0():
        fig = plt.figure(1, facecolor = 'white')
        fig.clf()
        createPlot.ax1 = plt.subplot(111, frameon = False)
@@ -350,7 +350,7 @@
        plotNode('a leaf node', (0.8, 0.1), (0.3, 0.8), leafNode)
        plt.show()
 
-   createPlot()
+   createPlot0()
 
 22.获取叶节点的数目和树的层数。
    def getNumLeafs(myTree):
@@ -389,4 +389,50 @@
    Output:
       4
       3
+
+24.绘制一棵完整的树。
+  # (以下四行)在父子节点间填充文本信息
+  def plotMidText(cntrPt, parentPt, txtString):
+      xMid = (parentPt[0] - cntrPt[0]) / 2.0 + cntrPt[0]
+      yMid = (parentPt[1] - cntrPt[1]) / 2.0 + cntrPt[1]
+      createPlot.ax1.text(xMid, yMid, txtString, va="center", ha="center", rotation=30)
+
+  def plotTree(myTree, parentPt, nodeTxt): # if the first key tells you what feat was split on
+      # (以下两行)计算宽和高
+      numLeafs = getNumLeafs(myTree)  # this determines the x width of this tree
+      depth = getTreeDepth(myTree)
+      firstSides = list(myTree.keys())
+      firstStr = firstSides[0]     # the text label for this node should be this
+      cntrPt = (plotTree.xOff + (1.0 + float(numLeafs)) / 2.0 / plotTree.totalW, plotTree.yOff)
+      # 标记子节点属性值
+      plotMidText(cntrPt, parentPt, nodeTxt)
+      plotNode(firstStr, cntrPt, parentPt, decisionNode)
+      secondDict = myTree[firstStr]
+      # (以下两行)减小y偏移
+      plotTree.yOff = plotTree.yOff - 1.0 / plotTree.totalD
+      for key in secondDict.keys():
+          # test to see if the nodes are dictonaires, if not they are leaf nodes
+          if type(secondDict[key]).__name__ == 'dict':
+             plotTree(secondDict[key], cntrPt, str(key))    # recursion
+          else:   # it's a leaf node print the leaf node
+             plotTree.xOff = plotTree.xOff + 1.0 / plotTree.totalW
+             plotNode(secondDict[key], (plotTree.xOff, plotTree.yOff), cntrPt, leafNode)
+             plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key))
+             plotTree.yOff = plotTree.yOff + 1.0 / plotTree.totalD
+       # if you do get a dictonary you know it's a tree, and the first element will be another dict
+
+   def createPlot(inTree):
+       fig = plt.figure(1, facecolor='white')
+       fig.clf()
+       axprops = dict(xticks=[], yticks=[])
+       createPlot.ax1 = plt.subplot(111, frameon=False, **axprops)    # no ticks
+       # createPlot.ax1 = plt.subplot(111, frameon=False) # ticks for demo puropses
+       plotTree.totalW = float(getNumLeafs(inTree))
+       plotTree.totalD = float(getTreeDepth(inTree))
+       plotTree.xOff = -0.5 / plotTree.totalW;
+       plotTree.yOff = 1.0;
+       plotTree(inTree, (0.5, 1.0), '')
+       plt.show()
+
+   createPlot(myTree)
 ```
