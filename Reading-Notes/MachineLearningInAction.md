@@ -355,7 +355,8 @@
 22.获取叶节点的数目和树的层数。
    def getNumLeafs(myTree):
        numLeafs = 0
-       firstStr = myTree.keys()[0]
+       firstSides = list(myTree.keys())
+       firstStr = firstSides[0]
        secondDict = myTree[firstStr]
        for key in secondDict.keys():
            # (以下三行)测试节点的数据类型是否为字典
@@ -366,7 +367,8 @@
 
    def getTreeDepth(myTree):
        maxDepth = 0
-       firstStr = myTree.keys()[0]
+       firstSides = list(myTree.keys())
+       firstStr = firstSides[0]
        secondDict = myTree[firstStr]
        for key in secondDict.keys():
            if(type(secondDict[key]).__name__ == 'dict'):
@@ -374,4 +376,17 @@
            else: thisDepth = 1
            if thisDepth > maxDepth: maxDepth = thisDepth
        return maxDepth
+
+23.输出预先存储的树信息。
+   def retrieveTree(i):
+       listOfTrees = [{'no surfacing': {0: 'no', 1:{'flippers':{0: 'no', 1: 'yes'}}}},\
+                      {'no surfacing': {0: 'no', 1:{'flippers':{0: {'head': {0: 'no', 1: 'yes'}}, 1: 'no'}}}}]
+       return listOfTrees[i]
+       
+   myTree = retrieveTree(1)
+   print(getNumLeafs(myTree))
+   print(getTreeDepth(myTree))
+   Output:
+      4
+      3
 ```
