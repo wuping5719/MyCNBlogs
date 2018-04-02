@@ -435,4 +435,18 @@
        plt.show()
 
    createPlot(myTree)
+
+25.使用决策树的分类函数。
+   def classify(inputTree, featLabels, testVecs):
+       firstSides = list(myTree.keys())
+       firstStr = firstSides[0] 
+       secondDict = inputTree[firstStr]
+       # 将标签字符串转换为索引
+       featIndex = featLabels.index(firstStr)
+       for key in secondDict.keys():
+           if testVec[featIndex] == key:    # 比较特征值，决策树是根据特征的值划分的
+              if type(secondDict[key]).__name__=='dict':  # 比较是否到达叶结点
+                 classLabel = classify(secondDict[key], featLabels, testVec)  # 递归调用
+              else: classLabel = secondDict[key]
+       return classLabel
 ```
