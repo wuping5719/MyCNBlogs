@@ -449,4 +449,16 @@
                  classLabel = classify(secondDict[key], featLabels, testVec)  # 递归调用
               else: classLabel = secondDict[key]
        return classLabel
+       
+26.使用 pickle 模块存储决策树。
+   def storeTree(putTree, filename):  # pickle序列化对象，可以在磁盘上保存对象
+       import pickle
+       fw = open(filename, 'w')
+       pickle.dump(inputTree, fw)
+       fw.close()
+
+   def grabTree(filename):  # 并在需要的时候将其读取出来
+       import pickle
+       fr = open(filename)
+       return pickle.load(fr)
 ```
