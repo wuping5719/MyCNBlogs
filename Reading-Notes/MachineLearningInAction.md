@@ -486,4 +486,23 @@
                returnVec[vocabList.index(word)] = 1
            else: print("the word: %s is not in my Vocabulary!" % word)
        return returnVec   # 输入中的元素在词汇表时，词汇表相应位置为 1，否则为 0
+   
+   dataSet, classes = loadDataSet()
+   print(dataSet)
+   vocabList = createVocabList(dataSet)
+   print(vocabList)
+   setWordsVec = setOfWords2Vec(vocabList, dataSet[0])
+   print(setWordsVec)
+   Output:
+      [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'], 
+       ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'], 
+       ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'], 
+       ['stop', 'posting', 'stupid', 'worthless', 'garbage'], 
+       ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'], 
+       ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']]
+      ['steak', 'is', 'love', 'worthless', 'mr', 'buying', 'maybe', 'dalmation', 
+      'to', 'I', 'help', 'how', 'has', 'him', 'not', 'take', 'garbage', 'my', 'quit', 
+      'ate', 'stupid', 'park', 'please', 'problems', 'cute', 'food', 'posting', 'so', 
+      'flea', 'stop', 'dog', 'licks']
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0]
 ```
