@@ -512,12 +512,12 @@
        numWords = len(trainMatrix[0])   # 训练集中所有不重复单词总数
        pAbusive = sum(trainCategory) / float(numTrainDocs)  # 侮辱类的概率(侮辱类占总训练数据的比例)
        # 正常言论的类条件概率密度 p(某单词|正常言论) = p0Num / p0Denom
-       p0Num = zeros(numWords);   # 初始化分子为 0
+       p0Num = ones(numWords);   # 初始化分子为 1
        # 侮辱性言论的类条件概率密度 p(某单词|侮辱性言论) = p1Num / p1Denom
-       p1Num = zeros(numWords)    # 初始化分子为 0
-       # 初始化分母置为 0
-       p0Denom = 0.0; p1Denom = 0.0
-       # 遍历训练集数据    
+       p1Num = ones(numWords)    # 初始化分子为 1
+       # 初始化分母置为 2
+       p0Denom = 2; p1Denom = 2
+       # 遍历训练集数据
        for i in range(numTrainDocs):
            if trainCategory[i] == 1:          # 若为侮辱类
               p1Num += trainMatrix[i]         # 统计侮辱类所有文档中的各个单词总数
@@ -525,7 +525,35 @@
            else:                              # 若为正常类
               p0Num += trainMatrix[i]         # 统计正常类所有文档中的各个单词总数
               p0Denom += sum(trainMatrix[i])  # p0Denom 正常类总单词数
-       p1Vect = p1Num / p1Denom     # 词汇表中的单词在侮辱性言论文档中的类条件概率
-       p0Vect = p0Num / p0Denom     # 词汇表中的单词在正常性言论文档中的类条件概率
+       # 数据取 log，即单个单词的 p(x1|c1) 取 log，防止下溢出
+       p1Vect = log(p1Num / p1Denom)      # 词汇表中的单词在侮辱性言论文档中的类条件概率
+       p0Vect = log(p0Num / p0Denom)      # 词汇表中的单词在正常性言论文档中的类条件概率
        return p0Vect, p1Vect, pAbusive
+
+29.朴素贝叶斯分类函数。
+   def classifyNB(vec2Classify, p0Vect, p1Vect, pClass1):
+       # 在对数空间中进行计算，属于哪一类的概率比较大就判为哪一类
+       p1 = sum(vec2Classify * p1Vect) + log(pClass1)
+       p0 = sum(vec2Classify * p0Vect) + log(1.0 - pClass1)
+       if p1 > p0:
+          return 1
+       else:
+          return 0
+
+   def testingNB():
+       listOPosts, listClasses = loadDataSet()      # 获得训练数据，类别标签
+       myVocabList = createVocabList(listOPosts)    # 创建词汇表
+       trainMat = []                                # 构建矩阵，存放训练数据
+       # 遍历原始数据，转换为词向量，构成数据训练矩阵
+       for postinDoc in listOPosts:
+           trainMat.append(setOfWords2Vec(myVocabList, postinDoc)) # 数据转换后存入数据训练矩阵 trainMat 中
+       p0V, p1V, pAb = trainNB0(array(trainMat), array(listClasses))  # 训练分类器
+       # 测试数据1
+       testEntry = ['love', 'my', 'dalmation']
+       thisDoc = array(setOfWords2Vec(myVocabList, testEntry))   # 测试数据转为词向量
+       print(testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))  # 输出分类结果
+       # 测试数据2
+       testEntry = ['stupid', 'garbage']
+       thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
+       print(testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))
 ```
