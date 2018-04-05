@@ -556,4 +556,9 @@
        testEntry = ['stupid', 'garbage']
        thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
        print(testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))
+       
+   testingNB()
+   Output:
+      ['love', 'my', 'dalmation'] classified as:  0
+      ['stupid', 'garbage'] classified as:  1
 ```
