@@ -505,4 +505,27 @@
       'ate', 'stupid', 'park', 'please', 'problems', 'cute', 'food', 'posting', 'so', 
       'flea', 'stop', 'dog', 'licks']
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0]
+
+28.朴素贝叶斯分类器训练函数。
+   def trainNB0(trainMatrix, trainCategory):
+       numTrainDocs = len(trainMatrix)  # 训练集总条数
+       numWords = len(trainMatrix[0])   # 训练集中所有不重复单词总数
+       pAbusive = sum(trainCategory) / float(numTrainDocs)  # 侮辱类的概率(侮辱类占总训练数据的比例)
+       # 正常言论的类条件概率密度 p(某单词|正常言论) = p0Num / p0Denom
+       p0Num = zeros(numWords);   # 初始化分子为 0
+       # 侮辱性言论的类条件概率密度 p(某单词|侮辱性言论) = p1Num / p1Denom
+       p1Num = zeros(numWords)    # 初始化分子为 0
+       # 初始化分母置为 0
+       p0Denom = 0.0; p1Denom = 0.0
+       # 遍历训练集数据    
+       for i in range(numTrainDocs):
+           if trainCategory[i] == 1:          # 若为侮辱类
+              p1Num += trainMatrix[i]         # 统计侮辱类所有文档中的各个单词总数
+              p1Denom += sum(trainMatrix[i])  # p1Denom 侮辱类总单词数
+           else:                              # 若为正常类
+              p0Num += trainMatrix[i]         # 统计正常类所有文档中的各个单词总数
+              p0Denom += sum(trainMatrix[i])  # p0Denom 正常类总单词数
+       p1Vect = p1Num / p1Denom     # 词汇表中的单词在侮辱性言论文档中的类条件概率
+       p0Vect = p0Num / p0Denom     # 词汇表中的单词在正常性言论文档中的类条件概率
+       return p0Vect, p1Vect, pAbusive
 ```
