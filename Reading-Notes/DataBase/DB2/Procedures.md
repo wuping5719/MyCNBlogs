@@ -22,7 +22,6 @@
 10.列出所有用户表：db2 list tables; 
 
 ----------------------------------------------------------------------------------------------------
-
 11.显示所有可用的缓冲池: db2 select * from syscat.bufferpools;
 
 12.创建缓冲池: db2 create bufferpool [bufferpool_name] pagesize [size];
