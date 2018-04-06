@@ -4,4 +4,4 @@
 
 > <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/ClassicSQLs.md">［经典SQL语句大全］</a>
 
-> <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/DB2/Procedures.md">［DB2 存储过程］</a>
+> <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DataBase/DB2/Procedures.md">［DB2 数据库］</a>
