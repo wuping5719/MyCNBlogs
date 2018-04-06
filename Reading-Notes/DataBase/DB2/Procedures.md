@@ -1,6 +1,5 @@
 <h2> ［DB2 存储过程］ :memo: </h2> 
 
-> 1.添加新的存储过程
 ```SQL
 1.打开命令行窗口 / 打开控制中心 / 打开命令编辑器：db2cmd / db2cmd db2cc / db2cmd db2ce;
 
