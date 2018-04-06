@@ -1,4 +1,4 @@
-<h2> ［DB2 存储过程］ :memo: </h2> 
+<h2> ［DB2 数据库］ :memo: </h2> 
 
 ```SQL
 1.打开命令行窗口 / 打开控制中心 / 打开命令编辑器：db2cmd / db2cmd db2cc / db2cmd db2ce;
