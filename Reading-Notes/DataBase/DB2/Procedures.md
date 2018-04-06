@@ -28,4 +28,20 @@
 
 13.删除缓冲池: drop bufferpool [bufferpool_name];
 
+----------------------------------------------------------------------------------------------------
+14.查看可用的存储组列表: db2 select * from syscat.stogroups;
+
+15.创建一个存储组: db2 create stogroup [stogropu_name] on [‘/path’];
+
+16.创建存储组表空间: db2 create tablespace [tablespace_name]  using stogroup [stogroup_name];
+
+17.改变一个存储组: db2 alter stogroup [stogroup_name] add [‘/old_location’], [‘/new_location’];
+
+18.存储组中删除文件夹路径: db2 alter stogroup [stogroup_name] drop [‘/path’];
+
+19.重新调整表空间: db2 alter tablspace [tablspace_name] rebalance;
+
+20.重命名存储组: db2 rename stogroup [old_stogroup_name] to [new_stogroup_name];
+
+21.删除现有存储组: db2 drop stogorup [stogroup_name];
 ```
