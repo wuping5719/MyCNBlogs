@@ -70,4 +70,7 @@
 32.删除表: db2 drop table [table_name];
 
 ----------------------------------------------------------------------------------------------------
+33.创建数据库对象别名: db2 create alias [alias_name] for [table_name];
+
+34.创建索引: db2 create unique index [index_name] on [table_name]([unique_column]) include ([column_name ...]); 
 ```
