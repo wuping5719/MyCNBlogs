@@ -53,5 +53,21 @@
 24.创建具有授权用户ID的新模式: db2 create schema [schema_name] authroization [inst_user]; 
 
 ----------------------------------------------------------------------------------------------------
-25.创建表: db2 create table [schema_name].[table_name](column_name column_type ...) in [tablespace_name];   
+25.创建表: db2 create table [schema_name].[table_name](column_name column_type ...) in [tablespace_name];
+
+26.表详细信息列表: db2 select tabname, tabschema, tbspace from syscat.tables;
+
+27.查看表的列和数据类型: db2 describe table [table_name];
+
+28.创建具有隐藏列的表: db2 create table [table_name] (col1 datatype, col2 datatype implicitly hidden);
+
+29.插入值到一个表: db2 insert into [table_name](col1, col2, ...) values(val1, val2, ...);
+
+30.改变表列的类型: db2 alter table [table_name] alter column [col_name] set data type [data_type];
+
+31.变更列名: db2 alter table [table_name] rename column [old_name] to [new_name];
+
+32.删除表: db2 drop table [table_name];
+
+----------------------------------------------------------------------------------------------------
 ```
