@@ -73,4 +73,8 @@
 33.创建数据库对象别名: db2 create alias [alias_name] for [table_name];
 
 34.创建索引: db2 create unique index [index_name] on [table_name]([unique_column]) include ([column_name ...]); 
+
+35.删除索引: db2 drop index [index_name]; 
+
+----------------------------------------------------------------------------------------------------
 ```
