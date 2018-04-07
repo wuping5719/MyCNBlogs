@@ -51,4 +51,7 @@
 23.以目前的环境设置另一个模式: db2 set schema = [schema_name];
 
 24.创建具有授权用户ID的新模式: db2 create schema [schema_name] authroization [inst_user]; 
+
+----------------------------------------------------------------------------------------------------
+25.创建表: db2 create table [schema_name].[table_name](column_name column_type ...) in [tablespace_name];   
 ```
