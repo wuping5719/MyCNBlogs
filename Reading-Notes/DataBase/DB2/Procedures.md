@@ -44,4 +44,11 @@
 20.重命名存储组: db2 rename stogroup [old_stogroup_name] to [new_stogroup_name];
 
 21.删除现有存储组: db2 drop stogorup [stogroup_name];
+
+----------------------------------------------------------------------------------------------------
+22.获得当前活动的模式：db2 get schema;
+
+23.以目前的环境设置另一个模式: db2 set schema = [schema_name];
+
+24.创建具有授权用户ID的新模式: db2 create schema [schema_name] authroization [inst_user]; 
 ```
