@@ -83,5 +83,17 @@
                     [table_name] referencing new as [table_object] for each row set 
                     [table_object].[col_name] = nextval for [sequence_name];
 
-38.删除触发器: db2 drop trigger [trigger_name];  
+38.删除触发器: db2 drop trigger [trigger_name]; 
+
+----------------------------------------------------------------------------------------------------
+39.创建视图: db2 create view [view_name] ([col_name1], ...) as select [col] ... from [table_name];
+
+40.修改视图: db2 alter view [view_name] alter [col_name] add scope [table_or_view_name]; 
+
+41.删除视图: db2 drop view [view_name];
+
+----------------------------------------------------------------------------------------------------
+42.创建一个新的角色: db2 create role [role_name];
+
+43.授予的角色权限表: db2 grant select on table [table_name] to role [role_name]; 
 ```
