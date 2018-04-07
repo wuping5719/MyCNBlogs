@@ -77,4 +77,11 @@
 35.删除索引: db2 drop index [index_name]; 
 
 ----------------------------------------------------------------------------------------------------
+36.创建触发器的序列: db2 create sequence [seq_name];
+
+37.创建触发器: db2 create trigger [trigger_name] no cascade before insert on 
+                    [table_name] referencing new as [table_object] for each row set 
+                    [table_object].[col_name] = nextval for [sequence_name];
+
+38.删除触发器: db2 drop trigger [trigger_name];  
 ```
