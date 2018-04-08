@@ -96,4 +96,13 @@
 42.创建一个新的角色: db2 create role [role_name];
 
 43.授予的角色权限表: db2 grant select on table [table_name] to role [role_name]; 
+
+----------------------------------------------------------------------------------------------------
+44.SQL0407N 不允许对 NOT NULL 列 “TBSPACEID=4, TABLEID=1599, COLNO=0” 赋予空值。
+  (1) 查找错误所在表： select * from syscat.tables where TBSPACEID=4 and TABLEID=1599;
+  结果表为：AppFmtAprIdMap.
+  (2) 查找错误所在列： select * from syscat.columns where TABSCHEMA='EVM' and TABNAME='AppFmtAprIdMap' and COLNO=0;
+  结果列为：NewID.
+
+45.执行存储过程：db2 -td@ -f + 存储过程路径.
 ```
