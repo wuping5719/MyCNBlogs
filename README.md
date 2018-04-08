@@ -175,7 +175,7 @@
       <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/MachineLearningInAction.md">23.《机器学习实战》</a>
      </td>
      <td>
-      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DeepLearningNote.md">24.[深度学习(DeepLearning)笔记]</a>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/DeepLearningNote.md">24.[深度学习(DeepLearning)笔记]</a>
      </td>
    </tr>
 </table>
