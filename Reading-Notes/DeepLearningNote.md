@@ -204,4 +204,5 @@ Regularization and Optimization)
 2.8 GloVe 词向量（GloVe Word Vectors）
 2.9 情感分类（Sentiment Classification）
 2.10 词嵌入除偏（Debiasing Word Embeddings）
+
 ```
