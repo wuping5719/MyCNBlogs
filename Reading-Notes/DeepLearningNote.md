@@ -27,15 +27,15 @@
 2.11 向量化(Vectorization)
 2.12 向量化的更多例子（More Examples of Vectorization）
 2.13 向量化逻辑回归(Vectorizing Logistic Regression) 
-2.14 向量化 logistic 回归的梯度输出（Vectorizing Logistic Regression's Gradient）
-2.15 Python 中的广播（Broadcasting in Python）
-2.16 关于 python _ numpy 向量的说明（A note on python or numpy vectors）
-2.17 Jupyter/iPython Notebooks 快速入门（Quick tour of Jupyter/iPython Notebooks）
-2.18（选修）logistic 损失函数的解释（Explanation of logistic regression cost function）
+2.14 向量化 logistic 回归的梯度输出(Vectorizing Logistic Regression's Gradient)
+2.15 Python 中的广播(Broadcasting in Python)
+2.16 关于 python _ numpy 向量的说明(A note on python or numpy vectors)
+2.17 Jupyter/iPython Notebooks 快速入门(Quick tour of Jupyter/iPython Notebooks)
+2.18（选修）logistic 损失函数的解释(Explanation of logistic regression cost function)
 
 第三周：浅层神经网络(Shallow neural networks)
-3.1 神经网络概述（Neural Network Overview）
-3.2 神经网络的表示（Neural Network Representation）
+3.1 神经网络概述(Neural Network Overview)
+3.2 神经网络的表示(Neural Network Representation)
 3.3 计算一个神经网络的输出（Computing a Neural Network's output）
 3.4 多样本向量化（Vectorizing across multiple examples） 
 3.5 向量化实现的解释（Justification for vectorized implementation
