@@ -120,50 +120,50 @@ Regularization and Optimization)
 2.3 快速搭建你的第一个系统，并进行迭代(Build your first system quickly, then iterate)
 2.4 在不同的划分上进行训练并测试(Training and testing on different distributions)
 2.5 不匹配数据划分的偏差和方差(Bias and Variance with mismatched data distributions)
-2.6 定位数据不匹配（Addressing data mismatch)
-2.7 迁移学习（Transfer learning)
-2.8 多任务学习（Multi-task learning)
-2.9 什么是端到端的深度学习？（What is end-to-end deep learning?)
-2.10 是否要使用端到端的深度学习？（Whether to use end-to-end learning?)
+2.6 定位数据不匹配(Addressing data mismatch)
+2.7 迁移学习(Transfer learning)
+2.8 多任务学习(Multi-task learning)
+2.9 什么是端到端的深度学习？(What is end-to-end deep learning?)
+2.10 是否要使用端到端的深度学习？(Whether to use end-to-end learning?)
 
-第四门课 卷积神经网络（Convolutional Neural Networks)
-第一周 卷积神经网络（Foundations of Convolutional Neural Networks)
-1.1 计算机视觉（Computer vision)
-1.2 边缘检测示例（Edge detection example)
-1.3 更多边缘检测内容（More edge detection)
+第四门课 卷积神经网络(Convolutional Neural Networks)
+第一周 卷积神经网络(Foundations of Convolutional Neural Networks)
+1.1 计算机视觉(Computer vision)
+1.2 边缘检测示例(Edge detection example)
+1.3 更多边缘检测内容(More edge detection)
 1.4 Padding
-1.5 卷积步长（Strided convolutions)
-1.6 三维卷积（Convolutions over volumes)
-1.7 单层卷积网络（One layer of a convolutional network)
-1.8 简单卷积网络示例（A simple convolution network example)
-1.9 池化层（Pooling layers)
-1.10 卷积神经网络示例（Convolutional neural network example)
-1.11 为什么使用卷积？（Why convolutions?)
+1.5 卷积步长(Strided convolutions)
+1.6 三维卷积(Convolutions over volumes)
+1.7 单层卷积网络(One layer of a convolutional network)
+1.8 简单卷积网络示例(A simple convolution network example)
+1.9 池化层(Pooling layers)
+1.10 卷积神经网络示例(Convolutional neural network example)
+1.11 为什么使用卷积？(Why convolutions?)
 
-第二周 深度卷积网络：实例探究（Deep convolutional models: case studies）
-2.1 为什么要进行实例探究？（Why look at case studies?）
-2.2 经典网络（Classic networks）
-2.3 残差网络（Residual Networks (ResNets)）
-2.4 残差网络为什么有用？（Why ResNets work?）
-2.5 网络中的网络以及 1×1 卷积（Network in Network and 1×1 convolutions） 
-2.6 谷歌 Inception 网络简介（Inception network motivation）
-2.7 Inception 网络（Inception network）
-2.8 使用开源的实现方案（Using open-source implementations）
-2.9 迁移学习（Transfer Learning）
-2.10 数据扩充（Data augmentation）
-2.11 计算机视觉现状（The state of computer vision）
+第二周 深度卷积网络：实例探究(Deep convolutional models: case studies）
+2.1 为什么要进行实例探究？(Why look at case studies?）
+2.2 经典网络(Classic networks）
+2.3 残差网络(Residual Networks (ResNets)）
+2.4 残差网络为什么有用？(Why ResNets work?）
+2.5 网络中的网络以及 1×1 卷积(Network in Network and 1×1 convolutions） 
+2.6 谷歌 Inception 网络简介(Inception network motivation）
+2.7 Inception 网络(Inception network）
+2.8 使用开源的实现方案(Using open-source implementations）
+2.9 迁移学习(Transfer Learning）
+2.10 数据扩充(Data augmentation）
+2.11 计算机视觉现状(The state of computer vision）
 
-第三周 目标检测（Object detection）
-3.1 目标定位（Object localization）
-3.2 特征点检测（Landmark detection）
-3.3 目标检测（Object detection）
-3.4 卷积的滑动窗口实现（Convolutional implementation of sliding windows）
-3.5 Bounding Box 预测（Bounding box predictions）
-3.6 交并比（Intersection over union）
-3.7 非极大值抑制（Non-max suppression）
+第三周 目标检测(Object detection）
+3.1 目标定位(Object localization）
+3.2 特征点检测(Landmark detection）
+3.3 目标检测(Object detection）
+3.4 卷积的滑动窗口实现(Convolutional implementation of sliding windows）
+3.5 Bounding Box 预测(Bounding box predictions）
+3.6 交并比(Intersection over union）
+3.7 非极大值抑制(Non-max suppression）
 3.8 Anchor Boxes
-3.9 YOLO 算法（Putting it together: YOLO algorithm）
-3.10 候选区域（选修）（Region proposals (Optional)）
+3.9 YOLO 算法(Putting it together: YOLO algorithm）
+3.10 候选区域（选修）(Region proposals (Optional)）
 
 第四周 特殊应用：人脸识别和神经风格转换（Special applications: Face recognition &Neural style transfer）
 4.1 什么是人脸识别？（What is face recognition?）
