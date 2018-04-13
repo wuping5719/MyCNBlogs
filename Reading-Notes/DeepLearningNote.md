@@ -140,43 +140,43 @@ Regularization and Optimization)
 1.10 卷积神经网络示例(Convolutional neural network example)
 1.11 为什么使用卷积？(Why convolutions?)
 
-第二周 深度卷积网络：实例探究(Deep convolutional models: case studies）
-2.1 为什么要进行实例探究？(Why look at case studies?）
-2.2 经典网络(Classic networks）
-2.3 残差网络(Residual Networks (ResNets)）
-2.4 残差网络为什么有用？(Why ResNets work?）
-2.5 网络中的网络以及 1×1 卷积(Network in Network and 1×1 convolutions） 
-2.6 谷歌 Inception 网络简介(Inception network motivation）
-2.7 Inception 网络(Inception network）
-2.8 使用开源的实现方案(Using open-source implementations）
-2.9 迁移学习(Transfer Learning）
-2.10 数据扩充(Data augmentation）
-2.11 计算机视觉现状(The state of computer vision）
+第二周 深度卷积网络：实例探究(Deep convolutional models: case studies)
+2.1 为什么要进行实例探究？(Why look at case studies?)
+2.2 经典网络(Classic networks)
+2.3 残差网络(Residual Networks (ResNets))
+2.4 残差网络为什么有用？(Why ResNets work?)
+2.5 网络中的网络以及 1×1 卷积(Network in Network and 1×1 convolutions) 
+2.6 谷歌 Inception 网络简介(Inception network motivation)
+2.7 Inception 网络(Inception network)
+2.8 使用开源的实现方案(Using open-source implementations)
+2.9 迁移学习(Transfer Learning)
+2.10 数据扩充(Data augmentation)
+2.11 计算机视觉现状(The state of computer vision)
 
-第三周 目标检测(Object detection）
-3.1 目标定位(Object localization）
-3.2 特征点检测(Landmark detection）
-3.3 目标检测(Object detection）
-3.4 卷积的滑动窗口实现(Convolutional implementation of sliding windows）
-3.5 Bounding Box 预测(Bounding box predictions）
-3.6 交并比(Intersection over union）
-3.7 非极大值抑制(Non-max suppression）
+第三周 目标检测(Object detection)
+3.1 目标定位(Object localization)
+3.2 特征点检测(Landmark detection)
+3.3 目标检测(Object detection)
+3.4 卷积的滑动窗口实现(Convolutional implementation of sliding windows)
+3.5 Bounding Box 预测(Bounding box predictions)
+3.6 交并比(Intersection over union)
+3.7 非极大值抑制(Non-max suppression)
 3.8 Anchor Boxes
-3.9 YOLO 算法(Putting it together: YOLO algorithm）
-3.10 候选区域（选修）(Region proposals (Optional)）
+3.9 YOLO 算法(Putting it together: YOLO algorithm)
+3.10 候选区域（选修）(Region proposals (Optional))
 
-第四周 特殊应用：人脸识别和神经风格转换（Special applications: Face recognition &Neural style transfer）
-4.1 什么是人脸识别？（What is face recognition?）
-4.2 One-Shot 学习（One-shot learning）
-4.3 Siamese 网络（Siamese network）
-4.4 Triplet 损失（Triplet 损失）
-4.5 面部验证与二分类（Face verification and binary classification）
-4.6 什么是神经风格转换？（What is neural style transfer?）
-4.7 什么是深度卷积网络？（What are deep ConvNets learning?）
-4.8 代价函数（Cost function）
-4.9 内容代价函数（Content cost function）
-4.10 风格代价函数（Style cost function）
-4.11 一维到三维推广（1D and 3D generalizations of models）
+第四周 特殊应用：人脸识别和神经风格转换（Special applications: Face recognition &Neural style transfer)
+4.1 什么是人脸识别？（What is face recognition?)
+4.2 One-Shot 学习（One-shot learning)
+4.3 Siamese 网络（Siamese network)
+4.4 Triplet 损失（Triplet 损失)
+4.5 面部验证与二分类（Face verification and binary classification)
+4.6 什么是神经风格转换？（What is neural style transfer?)
+4.7 什么是深度卷积网络？（What are deep ConvNets learning?)
+4.8 代价函数（Cost function)
+4.9 内容代价函数（Content cost function)
+4.10 风格代价函数（Style cost function)
+4.11 一维到三维推广（1D and 3D generalizations of models)
 
 第五门课 序列模型(Sequence Models)
 第一周 循环序列模型（Recurrent Neural Networks）
