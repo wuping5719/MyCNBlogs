@@ -179,30 +179,30 @@ Regularization and Optimization)
 4.11 一维到三维推广（1D and 3D generalizations of models)
 
 第五门课 序列模型(Sequence Models)
-第一周 循环序列模型（Recurrent Neural Networks）
-1.1 为什么选择序列模型？（Why Sequence Models?） 
-1.2 数学符号（Notation）
-1.3 循环神经网络模型（Recurrent Neural Network Model）
-1.4 通过时间的反向传播（Backpropagation through time）
-1.5 不同类型的循环神经网络（Different types of RNNs） 
-1.6 语言模型和序列生成（Language model and sequence generation）
-1.7 对新序列采样（Sampling novel sequences）
-1.8 循环神经网络的梯度消失（Vanishing gradients with RNNs）
-1.9 GRU 单元（Gated Recurrent Unit（GRU））
-1.10 长短期记忆（LSTM（long short term memory） unit）
-1.11 双向循环神经网络（Bidirectional RNN）
-1.12 深层循环神经网络（Deep RNNs） 
+第一周 循环序列模型（Recurrent Neural Networks)
+1.1 为什么选择序列模型？（Why Sequence Models?)
+1.2 数学符号（Notation)
+1.3 循环神经网络模型（Recurrent Neural Network Model)
+1.4 通过时间的反向传播（Backpropagation through time)
+1.5 不同类型的循环神经网络（Different types of RNNs) 
+1.6 语言模型和序列生成（Language model and sequence generation)
+1.7 对新序列采样（Sampling novel sequences)
+1.8 循环神经网络的梯度消失（Vanishing gradients with RNNs)
+1.9 GRU 单元（Gated Recurrent Unit（GRU))
+1.10 长短期记忆（LSTM（long short term memory) unit)
+1.11 双向循环神经网络（Bidirectional RNN)
+1.12 深层循环神经网络（Deep RNNs) 
 
-第二周 自然语言处理与词嵌入（Natural Language Processing and Word Embeddings）
-2.1 词汇表征（Word Representation）
-2.2 使用词嵌入（Using Word Embeddings）
-2.3 词嵌入的特性（Properties of Word Embeddings）
-2.4 嵌入矩阵（Embedding Matrix）
-2.5 学习词嵌入（Learning Word Embeddings）
+第二周 自然语言处理与词嵌入（Natural Language Processing and Word Embeddings)
+2.1 词汇表征（Word Representation)
+2.2 使用词嵌入（Using Word Embeddings)
+2.3 词嵌入的特性（Properties of Word Embeddings)
+2.4 嵌入矩阵（Embedding Matrix)
+2.5 学习词嵌入（Learning Word Embeddings)
 2.6 Word2Vec
-2.7 负采样（Negative Sampling）
-2.8 GloVe 词向量（GloVe Word Vectors）
-2.9 情感分类（Sentiment Classification）
-2.10 词嵌入除偏（Debiasing Word Embeddings）
+2.7 负采样（Negative Sampling)
+2.8 GloVe 词向量（GloVe Word Vectors)
+2.9 情感分类（Sentiment Classification)
+2.10 词嵌入除偏（Debiasing Word Embeddings)
 
 ```
