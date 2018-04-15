@@ -43,7 +43,7 @@
 3.7 为什么需要非线性激活函数？(why need a nonlinear activation function?)
 3.8 激活函数的导数(Derivatives of activation functions)
 3.9 神经网络的梯度下降(Gradient descent for neural networks)
-3.10（选修）直观理解反向传播(Backpropagation intuition)
+3.10(选修)直观理解反向传播(Backpropagation intuition)
 3.11 随机初始化(Random+Initialization)
 
 第四周：深层神经网络(Deep Neural Networks)
@@ -100,7 +100,7 @@ Regularization and Optimization)
 3.11 TensorFlow 
 
 第三门课 结构化机器学习项目(Structuring Machine Learning Projects)
-第一周 机器学习（ML）策略（1）(ML strategy（1）)
+第一周 机器学习(ML)策略(1)(ML strategy(1))
 1.1 为什么是 ML 策略？(Why ML Strategy?)
 1.2 正交化(Orthogonalization)
 1.3 单一数字评估指标(Single number evaluation metric)
@@ -114,7 +114,7 @@ Regularization and Optimization)
 1.11 超过人的表现(Surpassing human- level performance)
 1.12 改善你的模型的表现(Improving your model performance)
 
-第二周：机器学习策略（2）(ML Strategy (2))
+第二周：机器学习策略(2)(ML Strategy (2))
 2.1 进行误差分析(Carrying out error analysis)
 2.2 清楚标注错误的数据(Cleaning up Incorrectly labeled data)
 2.3 快速搭建你的第一个系统，并进行迭代(Build your first system quickly, then iterate)
@@ -163,7 +163,7 @@ Regularization and Optimization)
 3.7 非极大值抑制(Non-max suppression)
 3.8 Anchor Boxes
 3.9 YOLO 算法(Putting it together: YOLO algorithm)
-3.10 候选区域（选修）(Region proposals (Optional))
+3.10 候选区域(选修)(Region proposals (Optional))
 
 第四周 特殊应用：人脸识别和神经风格转换(Special applications: Face recognition &Neural style transfer)
 4.1 什么是人脸识别？(What is face recognition?)
