@@ -3,7 +3,6 @@
 > Peter 著  人民邮电出版社    <a href="https://github.com/wuping5719/PythonTest/tree/master/src/machine_learning">示例代码</a> 
 
 ```python
-
 1.知识表示可以采用规则集的形式，也可以采用概率分布的形式，甚至可以是训练样本集中的一个实例。
 
 2.分类和回归属于监督学习，之所以称之为监督学习，是因为这类算法必须知道预测什么，即目标变量的分类信息。
