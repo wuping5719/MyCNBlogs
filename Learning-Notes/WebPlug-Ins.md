@@ -33,4 +33,8 @@
     <td><a href="https://github.com/Mikhus/canvas-gauges">15.HTML5 Canvas计量器绘制工具</a></td>
     <td><a href="http://www.html5tricks.com/"><Strong>16.HTML5资源教程</Strong></a></td>
   </tr>
+  <tr>
+    <td><a href="https://www.cnblogs.com/hongrunhui/p/8929001.html">17.Chrome 的 First Paint 触发时机探究</a></td>
+    <td></td>
+  </tr>
 </table>
