@@ -1,7 +1,6 @@
 <h2>[深度学习(DeepLearning)] :memo: </h2> 
  
-> 吴恩达 deeplearning.ai 视频笔记，博士师兄带头整理，赠人玫瑰，手留余香。
-
+> 吴恩达 deeplearning.ai 视频笔记，博士师兄带头整理，赠人玫瑰，手留余香。 <a href="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes">传送门</a>
 ```
 目录
 第一门课 神经网络和深度学习(Neural Networks and Deep Learning) 
