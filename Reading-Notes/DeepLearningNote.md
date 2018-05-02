@@ -15,6 +15,9 @@
 
 第二周：神经网络的编程基础(Basics of Neural Network programming) 
 2.1 二分类(Binary Classification)
+  1) 神经网络的计算中，通常先有一个叫做前向暂停(forward pause)或叫做前向传播(foward propagation)的步骤，
+  接着有一个叫做反向暂停(backward pause) 或叫做反向传播(backward propagation)的步骤。
+  
 2.2 逻辑回归(Logistic Regression)
 2.3 逻辑回归的代价函数(Logistic Regression Cost Function)
 2.4 梯度下降法(Gradient Descent)
