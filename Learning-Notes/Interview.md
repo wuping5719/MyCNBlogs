@@ -130,6 +130,10 @@
     <td><a href="https://github.com/GeniusVJR/LearningNotes"><strong>3.Android-LearningNotes</strong></a></td>
     <td><a href="https://mp.weixin.qq.com/s?__biz=MzI3OTU0MzI4MQ==&mid=100000726&idx=1&sn=115fe71a6c75782bdffe786c84675b42&chksm=6b476f485c30e65e03eca476fa261bf55b297b00fe634583d27ec0efc3993e87f0edafcaaa67#rd">4.Android 高新面试题 2017 汇总</a></td>
   </tr>
+  <tr>
+    <td><a href="https://github.com/guoxiaoxing/android-interview"><strong>5.Android开发工程师面试指南</strong></a></td>
+    <td></td>
+  </tr>
 </table>
 
 <strong>iOS</strong>
