@@ -23,6 +23,10 @@
    损失函数又叫做误差函数，用来衡量算法的运行情况，Loss function: L(y^, y).
    
 2.4 梯度下降法(Gradient Descent)
+   代价函数(成本函数) J(ω) 只有一个参数 ω，即用一维曲线代替多维曲线: ω := ω - α * dJ(ω) / dω;
+   := 表示更新参数， α 表示学习率(learning rate)，用来控制步长(step)，即向下走一步的长度 dJ(ω) / dω 就
+是函数 J(ω) 对 dω 求导(derivative)。
+   
 2.5 导数(Derivatives)
 2.6 更多的导数例子(More Derivative Examples)
 2.7 计算图(Computation Graph)
