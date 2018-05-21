@@ -23,6 +23,7 @@
    损失函数又叫做误差函数，用来衡量算法的运行情况，Loss function: L(y^, y).
    
 2.4 梯度下降法(Gradient Descent)
+
 2.5 导数(Derivatives)
 2.6 更多的导数例子(More Derivative Examples)
 2.7 计算图(Computation Graph)
