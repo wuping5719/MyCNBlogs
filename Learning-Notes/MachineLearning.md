@@ -11,6 +11,6 @@
   </tr>
   <tr>
     <td><a href="https://github.com/ExtremeMart/DeepLearningBook-CN"><Strong>5.深度学习(DeepLearningBook-CN)</Strong></a></td>
-    <td></td>
+    <td><a href="https://news.cnblogs.com/n/597512/">6.机器学习开源项目 Top 10</a></td>
   </tr>
 </table>
