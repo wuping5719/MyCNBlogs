@@ -35,6 +35,7 @@
 2.10 m 个样本的梯度下降(Gradient Descent on m Examples)
 2.11 向量化(Vectorization)
 2.12 向量化的更多例子(More Examples of Vectorization)
+
 2.13 向量化逻辑回归(Vectorizing Logistic Regression) 
 2.14 向量化 logistic 回归的梯度输出(Vectorizing Logistic Regression's Gradient)
 2.15 Python 中的广播(Broadcasting in Python)
