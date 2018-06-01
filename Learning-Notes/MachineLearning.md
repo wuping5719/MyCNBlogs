@@ -13,4 +13,7 @@
     <td><a href="https://github.com/ExtremeMart/DeepLearningBook-CN"><Strong>5.深度学习(DeepLearningBook-CN)</Strong></a></td>
     <td><a href="https://news.cnblogs.com/n/597512/">6.机器学习开源项目 Top 10</a></td>
   </tr>
+   <tr>
+    <td><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000">7.Python 教程</a></td>
+  </tr>
 </table>
