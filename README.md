@@ -180,7 +180,7 @@
    </tr>
    <tr>
      <td>
-      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/BankCreditBusiness.md">25.[银行信贷业务(BankCreditBusiness)]</a>
+      <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/BankCreditBusiness.md">25. [银行信贷业务(BankCreditBusiness)]</a>
      </td>
    </tr>
 </table>
