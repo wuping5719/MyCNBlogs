@@ -192,13 +192,13 @@
       <a href="https://github.com/google">1.Google</a>
     </td>
     <td>
-      <a href="https://github.com/apple">2.Apple</a>
+      <a href="https://github.com/microsoft">2.Microsoft</a>
     </td>
     <td>
-      <a href="https://github.com/facebook">3.Facebook</a>
+      <a href="https://github.com/apple">3.Apple</a>
     </td>
     <td>
-      <a href="https://github.com/microsoft">4.Microsoft</a>
+      <a href="https://github.com/facebook">4.Facebook</a>
     </td>
     <td>
       <a href="https://github.com/twitter">5.Twitter</a>
