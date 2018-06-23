@@ -47,4 +47,8 @@
     <td><a href="https://www.zhihu.com/question/19934502">21.优秀程序员的博客有哪些？</a></td>
     <td><a href="https://alpha.wallhaven.cc/">22.壁纸(wallhaven)</a></td>
   </tr>
+  <tr>
+    <td><a href="https://landgreen.github.io/physics/index.html"><strong>23.高中物理笔记</strong></a></td>
+    <td></td>
+  </tr>
 </table>
