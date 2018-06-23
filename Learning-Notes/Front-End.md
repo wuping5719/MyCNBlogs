@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <td>1) JavaScript</td>
-    <td></td>
+    <td colspan="2">1) JavaScript</td>
   </tr>
   <tr>
     <td><a href="http://javascript.ruanyifeng.com/#introduction"><strong>1.JavaScript标准参考教程（alpha）</strong></a></td>
