@@ -56,6 +56,10 @@
     <td><a href="https://github.com/dreamapplehappy/effective-javascript"><strong>25.Effective JavaScript</strong></a></td>
     <td><a href="https://adrianmejia.com/blog/2018/04/28/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/">26.各种数据结构的 JavaScript 实现</a></td>
   </tr>
+  <tr>
+    <td><a href="https://wizardforcel.gitbooks.io/eloquent-js-3e"><strong>27.JavaScript 编程精解 中文第三版</strong></a></td>
+    <td></td>
+  </tr>
 </table>
 
 <table>
@@ -108,6 +112,7 @@
   </tr>
   <tr>
     <td><a href="http://www.unicode.org/emoji/charts/full-emoji-list.html">23.Emoji Charts</a></td>
+    <td></td> 
   </tr>
 </table>
 
@@ -165,6 +170,7 @@
   </tr>
   <tr>
     <td><a href="http://div.io/#/welcome">25.Div.IO(高质量前端资源汇聚)</a></td> 
+    <td></td> 
   </tr>
 </table>
 
