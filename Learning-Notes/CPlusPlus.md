@@ -11,5 +11,6 @@
   </tr>
   <tr>
     <td><a href="http://purecpp.org/"><strong>5.知行一(顶级 C++ 社区)</strong></a></td>
+    <td><a href="http://www.isthe.com/chongo/tech/comp/c/index.html"><strong>6.C 语言学习资料</strong></a></td>
   </tr>
 </table>
