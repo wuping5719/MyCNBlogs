@@ -3,6 +3,7 @@
 <table>
   <tr>
     <td>1) JavaScript</td>
+    <td></td>
   </tr>
   <tr>
     <td><a href="http://javascript.ruanyifeng.com/#introduction"><strong>1.JavaScript标准参考教程（alpha）</strong></a></td>
@@ -61,6 +62,7 @@
 <table>
   <tr>
     <td>2) CSS</td>
+    <td></td>
   </tr>
   <tr>
     <td><a href="http://www.w3school.com.cn/css3/index.asp"><strong>1.CSS3教程</strong></a></td>
