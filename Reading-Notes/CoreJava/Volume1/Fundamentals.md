@@ -1,4 +1,4 @@
-<h2>《Java核心技术 卷1 基础知识 第8版》 :books: </h2> 
+<h2>《Java核心技术 卷1 基础知识》 :books: </h2> 
 
 > [美] Cay S.Horstmann / Gary Cornell  著  机械工业出版社
  
