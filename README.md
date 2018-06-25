@@ -210,7 +210,10 @@
       <a href="https://github.com/alibaba">7.Alibaba</a>
     </td>
     <td>
-      <a href="https://github.com/baidu">8.Baidu</a>
+      <a href="https://github.com/Tencent">8.Tencent</a>
+    </td>
+    <td>
+      <a href="https://github.com/baidu">9.Baidu</a>
     </td>
   </tr>
 </table>
