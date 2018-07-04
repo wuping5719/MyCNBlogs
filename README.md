@@ -186,13 +186,6 @@
        <a href="https://github.com/wuping5719/MyCNBlogs/blob/master/Reading-Notes/CoreJava/Volume1/Fundamentals.md">26.《Java核心技术 卷1 基础知识》</a>
      </td>
    </tr>
-   <tr>
-     <td>
-      <a href="#">27.《Head First Java》</a>
-     </td>
-     <td>
-     </td>
-   </tr>
 </table>
 
 <h3>Top Company GitHub</h3>
