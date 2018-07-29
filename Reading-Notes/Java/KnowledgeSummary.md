@@ -3,7 +3,7 @@
 https://blog.csdn.net/sinat_34979383/article/details/60874347
 
 > 一、Java 基础(语言、集合框架、OOP、设计模式等)
-```
+```java
 1.HashMap 和 Hashtable 的区别:
   Hashtable 是基于陈旧的 Dictionary 的 Map 接口的实现，而 HashMap 是基于哈希表的 Map 接口的实现。
 从方法上看，HashMap 去掉了 Hashtable 的 contains 方法。
