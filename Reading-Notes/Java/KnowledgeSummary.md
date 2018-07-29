@@ -3,7 +3,7 @@
 https://blog.csdn.net/sinat_34979383/article/details/60874347
 
 > 一、Java 基础(语言、集合框架、OOP、设计模式等)
-```java
+```
 1.HashMap 和 Hashtable 的区别:
   Hashtable 是基于陈旧的 Dictionary 的 Map 接口的实现，而 HashMap 是基于哈希表的 Map 接口的实现。
 从方法上看，HashMap 去掉了 Hashtable 的 contains 方法。
@@ -41,9 +41,9 @@ https://blog.csdn.net/sinat_34979383/article/details/60874347
    内存消耗：LinkedList 需要更多的内存，因为需要维护指向后继结点的指针。
    Vector 从 JDK 1.0 起就存在，在 1.2时 改为实现 List 接口，功能与 ArrayList 类似，但是 Vector具备线程安全。
   (3) Map 集合: 
-   Hashtable: 基于 Dictionary 类，线程安全，速度快。底层是哈希表数据结构。是同步的。 不允许null作为键，null作为值。
+   Hashtable: 基于 Dictionary 类，线程安全，速度快。底层是哈希表数据结构。是同步的。 不允许 null 作为键，null 作为值。
    Properties: Hashtable 的子类。用于配置文件的定义和操作，使用频率非常高，同时键和值都是字符串。
-   HashMap：线程不安全，底层是数组加链表实现的哈希表。允许null作为键，null作为值。HashMap 去掉了 contains 方法。 
+   HashMap：线程不安全，底层是数组加链表实现的哈希表。允许 null 作为键，null 作为值。HashMap 去掉了 contains 方法。 
 注意：HashMap 不保证元素的迭代顺序。如果需要元素存取有序，请使用 LinkedHashMap。
    TreeMap：可以用来对 Map 集合中的键进行排序。
    ConcurrentHashMap: 是 JUC 包下的一个并发集合。
