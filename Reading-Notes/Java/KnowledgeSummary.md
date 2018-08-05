@@ -63,8 +63,13 @@ Map m = Collections.synchronizeMap(hashMap); 而 Hashtable 虽然是同步的，
   (5) 抽象类可以没有抽象方法, 抽象类可以有普通方法, 接口中都是抽象方法。
   (6) 抽象类可以有静态方法，接口不能有静态方法。
   (7) 抽象类中的方法可以是 public、protected; 接口方法只有 public abstract。
+```
 
-5.创建线程有几种不同的方式？你喜欢哪一种？为什么？
+> 二、Java 高级(JavaEE、框架、服务器、工具等)
+
+> 三、多线程和并发
+```
+1.创建线程有几种不同的方式？你喜欢哪一种？为什么？
   (1) 继承 Thread 类;
   (2) 实现 Runnable 接口;
   (3) 应用程序可以使用 Executor 框架来创建线程池;
@@ -72,10 +77,6 @@ Map m = Collections.synchronizeMap(hashMap); 而 Hashtable 虽然是同步的，
   我更喜欢实现 Runnable 接口这种方法，当然这也是现在大多程序员会选用的方法。
   因为一个类只能继承一个父类而可以实现多个接口。同时，线程池也是非常高效的，很容易实现和使用。
 ```
-
-> 二、Java 高级(JavaEE、框架、服务器、工具等)
-
-> 三、多线程和并发
 
 > 四、Java 虚拟机
 
