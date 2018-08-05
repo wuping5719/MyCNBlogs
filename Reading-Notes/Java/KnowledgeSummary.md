@@ -63,6 +63,24 @@ Map m = Collections.synchronizeMap(hashMap); 而 Hashtable 虽然是同步的，
   (5) 抽象类可以没有抽象方法, 抽象类可以有普通方法, 接口中都是抽象方法。
   (6) 抽象类可以有静态方法，接口不能有静态方法。
   (7) 抽象类中的方法可以是 public、protected; 接口方法只有 public abstract。
+
+5.final 关键字。
+  final 修饰的变量是常量，必须进行初始化，可以显示初始化，也可以通过构造进行初始化，如果不初始化编译会报错。
+
+6.异常。
+  相关的关键字 throw、throws、try...catch, finally。
+  throws：用在方法签名上, 以便抛出的异常可以被调用者处理。
+  throw：方法内部通过 throw 抛出异常。
+  try...catch, finally：用于检测包住的语句块, 若有异常, catch 子句捕获并执行 catch 块。
+
+7.关于 finally。
+  (1) finally 不管有没有异常都要处理。
+  (2) 当 try 和 catch 中有 return 时，finally 仍然会执行，finally 比 return 先执行。
+  (3) 不管有没有异常抛出, finally 在 return 返回前执行。
+  (4) finally 是在 return 后面的表达式运算后执行的(此时并没有返回运算后的值，而是先把要返回的值保存起来，
+不管 finally 中的代码怎么样，返回的值都不会改变，仍然是之前保存的值)，所以函数返回值是在 finally 执行前确定的。
+  注意：finally 中最好不要包含 return，否则程序会提前退出，返回值不是 try 或 catch 中保存的返回值。
+finally 不执行的几种情况：程序提前终止如调用了 System.exit, 病毒，断电。
 ```
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
