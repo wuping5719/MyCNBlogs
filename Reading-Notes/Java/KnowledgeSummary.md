@@ -121,6 +121,7 @@ JVM 会把该线程置为阻塞状态。当 sleep() 状态超时 join() 等待�
 死亡的线程不可再次复生。
 ```
 <p><img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_20180805.jpg" /></p>
+
 ```
 6.在监视器(Monitor)内部是如何做线程同步的？程序应该做哪种级别的同步？
   在 Java 虚拟机中, 每个对象(Object 和 class)通过某种逻辑关联监视器, 每个监视器和一个对象引用相关联, 
