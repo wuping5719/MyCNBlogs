@@ -120,7 +120,7 @@ JVM 会把该线程置为阻塞状态。当 sleep() 状态超时 join() 等待�
   (5) 死亡(dead)：线程 run()、main() 方法执行结束，或者因异常退出了 run() 方法，则该线程结束生命周期。
 死亡的线程不可再次复生。
 ```
-<p><img src="https://user-gold-cdn.xitu.io/2017/12/15/16059cc91ee8efb3?w=876&h=492&f=png&s=-1" /></p>
+<p><img src="http://images.cnblogs.com/cnblogs_com/wp5719/936332/o_20180805.jpg" /></p>
 
 > 四、Java 虚拟机
 
