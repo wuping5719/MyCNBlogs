@@ -113,11 +113,11 @@ LessThan         findByAgeLessThan                     ... where x.age < ?1
 LessThanEqual    findByAgeLessThanEqual                ... where x.age <= ?1
 GreaterThan      findByAgeGreaterThan                  ... where x.age > ?1
 GreaterThanEqual   findByAgeGreaterThanEqual           ... where x.age >= ?1
-After              findByStartDateAfter                  ... where x.startDate > ?1
-Before             findByStartDateBefore                 ... where x.startDate < ?1
-IsNull             findByAgeIsNull                       ... where x.age is null
+After              findByStartDateAfter                ... where x.startDate > ?1
+Before             findByStartDateBefore               ... where x.startDate < ?1
+IsNull             findByAgeIsNull                     ... where x.age is null
 IsNotNull,NotNull  findByAge(Is)NotNull                ... where x.age not null
-Like               findByFirstnameLike                   ... where x.firstname like ?1
+Like               findByFirstnameLike                 ... where x.firstname like ?1
 NotLike          findByFirstnameNotLike                ... where x.firstname not like ?1
 StartingWith     findByFirstnameStartingWith   ... where x.firstname like ?1(parameter bound with appended %)
 EndingWith       findByFirstnameEndingWith     ... where x.firstname like ?1(parameter bound with prepended %)
