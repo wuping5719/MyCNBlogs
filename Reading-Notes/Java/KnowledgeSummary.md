@@ -84,6 +84,75 @@ finally 不执行的几种情况：程序提前终止如调用了 System.exit, �
 ```
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
+```
+A.Spring Data JPA
+
+1.Repository 接口：它是 Spring Data 的一个核心接口，它不提供任何方法，
+开发者需要在自己定义的接口中声明需要的方法。
+ public interface Repository<T, ID extends Serializable> {}
+ (1) Repository：仅仅是一个标识，表明任何继承它的均为仓库接口类。
+ (2) CrudRepository：继承 Repository，实现了一组 CRUD 相关的方法。 
+ (3) PagingAndSortingRepository：继承 CrudRepository，实现了一组分页排序相关的方法。 
+ (4) JpaRepository：继承 PagingAndSortingRepository，实现一组 JPA 规范相关的方法。 
+
+2.JpaSpecificationExecutor 接口：不属于 Repository 体系，实现一组 JPA Criteria 查询相关的方法。
+  (1) findOne(Specification<T>):T
+  (2) findAll(Specification<T>):List<T>
+  (3) findAll(Specification<T>, Pageable):Page<T>
+  (4) findAll(Specification<T>, Sort):List<T>
+  (5) count(Specification<T>):long
+  Specification：封装 JPA Criteria 查询条件。
+  通常使用匿名内部类的方式来创建该接口的对象。
+  
+3.Spring Data 方法定义规范。
+  Keyword                     Sample                              JPQL snippet
+  And                findByLastNameAndFirstName            ... where x.lastname = ?1 and firstname = ?2
+  Or                 findByLastNameOrFirstName             ... where x.lastname = ?1 or firstname = ?2
+  Is,Equals          findByFirstname,findByFirstnameEquals ... where x.firstname = ?1
+  Between            findByStartDateBetween                ... where x.startDate between ?1 and ?2
+  LessThan           findByAgeLessThan                     ... where x.age < ?1
+  LessThanEqual      findByAgeLessThanEqual                ... where x.age <= ?1
+  GreaterThan        findByAgeGreaterThan                  ... where x.age > ?1
+  GreaterThanEqual   findByAgeGreaterThanEqual             ... where x.age >= ?1
+  After              findByStartDateAfter                  ... where x.startDate > ?1
+  Before             findByStartDateBefore                 ... where x.startDate < ?1
+  IsNull             findByAgeIsNull                       ... where x.age is null
+  IsNotNull,NotNull  findByAge(Is)NotNull                  ... where x.age not null
+  Like               findByFirstnameLike                   ... where x.firstname like ?1
+  NotLike            findByFirstnameNotLike                ... where x.firstname not like ?1
+  StartingWith       findByFirstnameStartingWith           ... where x.firstname like ?1(parameter bound with appended %)
+  EndingWith         findByFirstnameEndingWith             ... where x.firstname like ?1(parameter bound with prepended %)
+  Containing         findByFirstnameContaining             ... where x.firstname like ?1(parameter bound wrapped in %)
+  OrderBy            findByAgeOrderByLastnameDesc          ... where x.age = ?1 order by x.lastname desc
+  Not                findByLastnameNot                     ... where x.lastname <> ?1
+  In                 findByAgeIn(Collection<Age> ages)     ... where x.age in ?1
+  NotIn              findByAgeNotIn(Collection<Age> age)   ... where x.age not in ?1
+  True               findByActiveTrue()                    ... where x.active = true
+  False              findByActiveFalse()                   ... where x.active = false
+  IgnoreCase         findByFirstnameIgnoreCase             ... where UPPER(x.firstame) = UPPER(?1)
+
+4.流式查询结果。
+  流在使用结束后需要关闭以释放资源，可以用 close() 方法手动将其关闭或者使用 try-with-resources 块。
+  @Query("select u from User u")
+  Stream<User> findAllByCustomQueryAndStream();
+
+  try (Stream<User> stream = repository.findAllByCustomQueryAndStream()) {
+      stream.forEach(…);
+  }
+
+5.异步查询结果。
+  (1) 使用 java.util.concurrent.Future 作为返回类型。
+   @Async
+   Future<User> findByFirstname(String firstname);    
+   
+  (2) 使用 Java 8 java.util.concurrent.CompletableFuture 作为返回类型。
+   @Async
+   CompletableFuture<User> findOneByFirstname(String firstname);
+
+  (3) 使用 org.springframework.util.concurrent.ListenableFuture 作为返回类型。
+   @Async
+   ListenableFuture<User> findOneByLastname(String lastname);
+```
 
 > 三、多线程和并发
 ```
