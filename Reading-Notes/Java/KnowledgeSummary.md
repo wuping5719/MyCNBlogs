@@ -1,7 +1,5 @@
 <h2>[Java 知识点总结] :memo: </h2> 
 
-https://blog.csdn.net/sinat_34979383/article/details/60874347
-
 > 一、Java 基础(语言、集合框架、OOP、设计模式等)
 ```
 1.HashMap 和 Hashtable 的区别:
