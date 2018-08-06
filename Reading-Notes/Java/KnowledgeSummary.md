@@ -86,7 +86,6 @@ finally 不执行的几种情况：程序提前终止如调用了 System.exit, �
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
 ```
 A.Spring Data JPA
-
 1.Repository 接口：它是 Spring Data 的一个核心接口，它不提供任何方法，
 开发者需要在自己定义的接口中声明需要的方法。
  public interface Repository<T, ID extends Serializable> {}
