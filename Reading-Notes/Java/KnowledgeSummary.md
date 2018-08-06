@@ -79,6 +79,21 @@ Map m = Collections.synchronizeMap(hashMap); 而 Hashtable 虽然是同步的，
 不管 finally 中的代码怎么样，返回的值都不会改变，仍然是之前保存的值)，所以函数返回值是在 finally 执行前确定的。
   注意：finally 中最好不要包含 return，否则程序会提前退出，返回值不是 try 或 catch 中保存的返回值。
 finally 不执行的几种情况：程序提前终止如调用了 System.exit, 病毒，断电。
+
+8.this & super.
+  1) super 出现在父类的子类中。有三种存在方式：
+   (1) super.xxx(xxx 为变量名或对象名); 意思是获取父类中 xxx 的变量或引用。
+   (2) super.xxx(); (xxx为方法名)意思是直接访问并调用父类中的方法。
+   (3) super(); 调用父类构造。
+  注：super 只能指代其直接父类。
+  2) this() & super() 在构造方法中的区别：
+   (1) 调用 super() 必须写在子类构造方法的第一行, 否则编译不通过。
+   (2) super 从子类调用父类构造, this 在同一类中调用其他构造。
+   (3) 均需要放在第一行。
+   (4) 尽管可以用 this 调用一个构造器, 却不能调用 2 个。
+   (5) this 和 super 不能出现在同一个构造器中, 否则编译不通过。
+   (6) this()、super() 都指的对象, 不可以在 static 环境中使用。
+   (7) 本质 this 指向本对象的指针。super 是一个关键字。
 ```
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
