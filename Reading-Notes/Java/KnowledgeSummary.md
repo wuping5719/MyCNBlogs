@@ -210,6 +210,20 @@ finally 不执行的几种情况：程序提前终止如调用了 System.exit, �
   (5) Stream API − 新添加的 Stream API(java.util.stream) 把真正的函数式编程风格引入到 Java 中。
   (6) Date Time API − 加强对日期与时间的处理。
   (7) Optional 类 − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。
+
+26.说出几条 Java 中方法重载的最佳实践？
+  下面有几条可以遵循的方法重载的最佳实践来避免造成自动装箱的混乱。
+  (1) 不要重载这样的方法：一个方法接收 int 参数，而另一个方法接收 Integer 参数。
+  (2) 不要重载参数数量一致，而只是参数顺序不同的方法。
+  (3) 如果重载的方法参数个数多于 5 个，采用可变参数。
+
+27.String、StringBuffer 与 StringBuilder 的区别。
+   (1) 可变和适用范围。String 对象是不可变的，而 StringBuffer 和 StringBuilder 是可变字符序列。
+每次对 String 的操作相当于生成一个新的 String 对象，而对 StringBuffer 和 StringBuilder 的操作是对对象本身的操作，
+而不会生成新的对象，所以对于频繁改变内容的字符串避免使用 String，因为频繁的生成对象将会对系统性能产生影响。
+   (2) 线程安全。String 由于有 final 修饰，是 immutable 的，安全性是简单而纯粹的。
+StringBuilder 和 StringBuffer 的区别在于 StringBuilder 不保证同步，也就是说如果需要线程安全需要使用 StringBuffer，
+不需要同步的 StringBuilder 效率更高。
 ```
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
