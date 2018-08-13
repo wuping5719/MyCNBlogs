@@ -224,6 +224,16 @@ finally 不执行的几种情况：程序提前终止如调用了 System.exit, �
    (2) 线程安全。String 由于有 final 修饰，是 immutable 的，安全性是简单而纯粹的。
 StringBuilder 和 StringBuffer 的区别在于 StringBuilder 不保证同步，也就是说如果需要线程安全需要使用 StringBuffer，
 不需要同步的 StringBuilder 效率更高。
+
+28.Comparable 和 Comparator 接口区别。
+   Comparator 位于包 java.util 下，而 Comparable 位于包 java.lang 下。
+   如果我们需要使用 Arrays 或 Collections 的排序方法对对象进行排序时，我们需要在自定义类中实现 Comparable 接口
+并重写 compareTo 方法，compareTo 方法接收一个参数，如果 this 对象比传递的参数小，相等或大时分别返回负整数、0、正整数。
+Comparable 被用来提供对象的自然排序。String、Integer 实现了该接口。
+   Comparator 比较器的 compare 方法接收 2 个参数，根据参数的比较大小分别返回负整数、0 和正整数。 
+Comparator 是一个外部的比较器，当这个对象自然排序不能满足你的要求时，你可以写一个比较器来完成两个对象之间大小的比较。
+用 Comparator 是策略模式(strategy design pattern)，就是不改变对象自身，
+而用一个策略对象(strategy object)来改变它的行为。
 ```
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
