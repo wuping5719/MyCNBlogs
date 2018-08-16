@@ -326,6 +326,36 @@ IgnoreCase       findByFirstnameIgnoreCase             ... where UPPER(x.firstam
   (3) 使用 org.springframework.util.concurrent.ListenableFuture 作为返回类型。
    @Async
    ListenableFuture<User> findOneByLastname(String lastname);
+
+B.Servlet
+1.Servlet 继承实现结构:
+  Servlet(接口)            -->      init|service|destroy 方法
+  GenericServlet(抽象类)   -->      与协议无关的 Servlet
+  HttpServlet(抽象类)      -->      实现了 http 协议
+  自定义 Servlet           -->      重写 doGet / doPost
+
+2.编写 Servlet 的步骤:
+  (1) 继承 HttpServlet。
+  (2) 重写 doGet / doPost 方法。
+  (3) 在 web.xml 中注册 servlet。
+
+3.Servlet 生命周期：
+  (1) init: 仅执行一次, 负责装载 Servlet 时初始化 Servlet 对象。
+  (2) service: 核心方法, 一般 get/post 两种方式。
+  (3) destroy: 停止并卸载 Servlet, 释放资源。
+
+4.处理过程：
+  (1) 客户端 request 请求 -> 服务器检查 Servlet 实例是否存在 -> 若存在调用相应 service 方法。
+  (2) 客户端 request 请求 -> 服务器检查 Servlet 实例是否存在 -> 若不存在装载 Servlet 类并创建实例 
+  -> 调用 init 初始化 -> 调用 service。
+  (3) 加载和实例化、初始化、处理请求、服务结束。
+
+5.doPost 方法要抛出的异常: ServletExcception、IOException。
+
+6.Servlet 容器装载 Servlet:
+  (1) web.xml 中配置 load-on-startup 启动时装载。
+  (2) 客户首次向 Servlet 发送请求。
+  (3) Servlet 类文件被更新后, 重新装载 Servlet。
 ```
 
 > 三、多线程和并发
