@@ -391,6 +391,11 @@ service 方法的参数传给 HttpServlet 对象。
    Config       -->      getServletConfig
    Exception是 JSP 九大内置对象之一，其实例代表其他页面的异常和错误。
 只有当页面是错误处理页面时，即 isErroePage 为 true 时，该对象才可以使用。
+
+C.JSP：JSP 的前身就是 Servlet。
+
+D.Tomcat
+  1.Tomcat 容器的等级：Container - Engine - Host - Servlet - 多个Context(一个Context对应一个Web工程) - Wrapper
 ```
 
 > 三、多线程和并发
