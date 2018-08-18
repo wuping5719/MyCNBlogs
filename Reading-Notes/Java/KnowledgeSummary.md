@@ -356,6 +356,41 @@ B.Servlet
   (1) web.xml 中配置 load-on-startup 启动时装载。
   (2) 客户首次向 Servlet 发送请求。
   (3) Servlet 类文件被更新后, 重新装载 Servlet。
+
+7.HttpServlet 容器响应 web 客户请求流程:
+  (1) Web 客户向 Servlet 容器发出 http 请求。
+  (2) Servlet 容器解析 Web 客户的 http 请求。
+  (3) Servlet 容器创建一个 HttpRequest 对象, 封装 http 请求信息。
+  (4) Servlet 容器创建一个 HttpResponse 对象。
+  (5) Servlet 容器调用 HttpServlet 的 service 方法, 把 HttpRequest 和 HttpResponse 对象作为 
+service 方法的参数传给 HttpServlet 对象。
+  (6) HttpServlet 调用 HttpRequest 的有关方法, 获取 http 请求信息。
+  (7) HttpServlet 调用 HttpResponse 的有关方法, 生成响应数据。
+  (8) Servlet 容器把 HttpServlet 的响应结果传给 Web 客户。
+
+8.HttpServletRequest 完成的一些功能：
+  (1) request.getCookie();
+  (2) request.getHeader(String s);
+  (3) request.getContextPath();
+  (4) request.getSession().
+
+9.HttpServletResponse 完成一些的功能：
+  (1) 设 http 响应头;
+  (2) 设置 Cookie;
+  (3) 输出返回数据.
+
+10.JSP 九大内置对象与 Servlet 的关系：
+   Out          -->      response.getWriter
+   Request      -->      Service 方法中的 req 参数
+   Response     -->      Service 方法中的 resp 参数
+   Session      -->      request.getSession
+   Application  -->      getServletContext
+   Exception    -->      Throwable
+   Page         -->      this
+   PageContext  -->      PageContext
+   Config       -->      getServletConfig
+   Exception是 JSP 九大内置对象之一，其实例代表其他页面的异常和错误。
+只有当页面是错误处理页面时，即 isErroePage 为 true 时，该对象才可以使用。
 ```
 
 > 三、多线程和并发
