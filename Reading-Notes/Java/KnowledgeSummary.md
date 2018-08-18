@@ -396,6 +396,24 @@ C.JSP：JSP 的前身就是 Servlet。
 
 D.Tomcat
   1.Tomcat 容器的等级：Container - Engine - Host - Servlet - 多个Context(一个Context对应一个Web工程) - Wrapper
+
+E.Hibernate
+1.Hibernate 的 7 大鼓励措施：
+  (1) 尽量使用 many-to-one, 避免使用单项 one-to-many。
+  (2) 灵活使用单项 one-to-many。
+  (3) 不用一对一, 使用多对一代替一对一。
+  (4) 配置对象缓存, 不使用集合对象。
+  (5) 一对多使用 bag, 多对一使用 set。
+  (6) 继承使用显示多态。
+  (7) 消除大表, 使用二级缓存。
+  
+2.Hibernate 延迟加载：
+  (1) Hibernate2 延迟加载实现：a) 实体对象 b) 集合(Collection)。
+  (2) Hibernate3 提供了属性的延迟加载功能：当 Hibernate 在查询数据的时候，数据并没有存在与内存中，
+当程序真正对数据的操作时，对象才存在与内存中，就实现了延迟加载，他节省了服务器的内存开销，从而提高了服务器的性能。
+  (3) Hibernate 使用 Java 反射机制，而不是字节码增强程序来实现透明性。
+  (4) Hibernate 的性能非常好，因为它是个轻量级框架。映射的灵活性很出色。
+它支持各种关系数据库，从一对一到多对多的各种复杂关系。
 ```
 
 > 三、多线程和并发
