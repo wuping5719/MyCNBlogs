@@ -582,6 +582,21 @@ JVM 会把该线程置为阻塞状态。当 sleep() 状态超时 join() 等待�
 就像上面代码中的 longLocal 和 stringLocal；
    C.在进行 get 之前，必须先 set，否则会报空指针异常；如果想在 get 之前不需要调用 set 就能正常访问的话，
 必须重写 initialValue() 方法。
+
+15.JDK 提供的用于并发编程的同步器。
+   (1) Semaphore：Java 并发库的 Semaphore 可以很轻松完成信号量控制，Semaphore 可以控制某个资源可被同时访问的个数，
+通过 acquire() 获取一个许可，如果没有就等待，而 release() 释放一个许可。
+   (2) CyclicBarrier：主要的方法就是一个：await()。await()方法每被调用一次，计数便会减少 1，并阻塞住当前线程。
+当计数减至 0 时，阻塞解除，所有在此 CyclicBarrier 上面阻塞的线程开始运行。
+   (3) CountDownLatch：直译过来就是倒计数(CountDown)门闩(Latch)。倒计数不用说，门闩的意思顾名思义就是阻止前进。
+在这里就是指 CountDownLatch.await() 方法在倒计数为 0 之前会阻塞当前线程。
+
+16.什么是 Busy spin？我们为什么要使用它？
+   Busy spin 是一种在不释放 CPU 的基础上等待事件的技术。它经常用于避免丢失 CPU 缓存中的数据
+(如果线程先暂停，之后在其他 CPU 上运行就会丢失)。所以，如果你的工作要求低延迟，并且你的线程目前没有任何顺序，
+这样你就可以通过循环检测队列中的新消息来代替调用 sleep() 或 wait() 方法。它唯一的好处就是你只需等待很短的时间，
+如几微秒或几纳秒。LMAX 分布式框架是一个高性能线程间通信的库，该库有一个 BusySpinWaitStrategy 类就是基于这个概念实现的，
+使用 busy spin 循环 EventProcessors 等待屏障。
 ```
 
 > 四、Java 虚拟机
