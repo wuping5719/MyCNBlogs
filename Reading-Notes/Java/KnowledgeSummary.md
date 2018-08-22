@@ -653,6 +653,38 @@ JVM 会把该线程置为阻塞状态。当 sleep() 状态超时 join() 等待�
   (4) 分代收集算法：将堆内存划分为新生代，老年代，根据新生代老年代的特点选取不同的收集算法。
 因为新生代对象大多朝生夕死，而老年代对象存活率高，没有额外空间进行分配担保，通常对新生代执行复制算法，
 老年代执行 Mark-Sweep 算法或 Mark-Compact 算法。
+
+5.垃圾收集器。
+  通常来说，新生代老年代使用不同的垃圾收集器。新生代的垃圾收集器有 Serial(单线程)、ParNew(Serial 的多线程版本)、
+ParallelScavenge(吞吐量优先的垃圾收集器)，老年代有 SerialOld(单线程老年代)、ParallelOld(与 ParallelScavenge 
+搭配的多线程执行标记整理算法的老年代收集器)、CMS(标记清除算法，容易产生内存碎片，可以开启内存整理的参数)，
+以及当前最先进的垃圾收集器 G1，G1 通常面向服务器端的垃圾收集器，在我自己的 Java 应用程序中通过 -XX:+PrintGCDetails，
+发现自己的垃圾收集器是使用了 ParallelScavenge + ParallelOld 的组合。
+
+6.不同垃圾回收算法对比：
+  (1) 标记清除法(Mark-Sweeping): 易产生内存碎片。
+  (2) 复制回收法(Copying)：为了解决 Mark-Sweep 法而提出, 内存空间减至一半。
+  (3) 标记压缩法(Mark-Compact): 为了解决 Copying 法的缺陷, 标记后移动到一端再清除。
+  (4) 分代回收法(GenerationalCollection): 新生代对象存活周期短, 需要大量回收对象, 需要复制的少, 执行 Copy 算法; 
+老年代对象存活周期相对长, 回收少量对象, 执行 Mark-Compact 算法。新生代划分：较大的 Eden 区 和 2 个 Survivor 区。
+
+7.内存分配：
+  (1) 新生代的三部分:|Eden Space|From Space|To Space|，对象主要分配在新生代的 Eden 区。
+  (2) 大对象直接进入老年代：大对象, 比如大数组直接进入老年代，可通过虚拟机参数 -XX：PretenureSizeThreshold 参数设置。
+  (3) 长期存活的对象进入老年代。ext：虚拟机为每个对象定义一个年龄计数器，如果对象在 Eden 区出生
+并经过一次 MinorGC 仍然存活，将其移入 Survivor 的 To 区，GC 完成标记互换后，相当于存活的对象进入 From 区，
+对象年龄加 1，当增加到默认 15岁 时，晋升老年代。可通过 -XX：MaxTenuringThreshold 设置。
+  (4) GC 的过程：GC 开始前，对象只存在于 Eden 区和 From 区，To 区逻辑上始终为空。对象分配在 Eden 区，Eden 区空间不足，
+发起 MinorGC，将 Eden 区所有存活的对象复制到 To 区，From 区存活的对象根据年龄判断去向，若到达年龄阈值移入老年代，
+否则也移入 To 区，GC 完成后 Eden 区和 From 区被清空，From 区和 To 区标记互换。
+对象每在 Survivor 区躲过一次 MinorGC 年龄加一。MinorGC 将重复这样的过程，直到 To 区被填满，
+To 区满了以后，将把所有对象移入老年代。
+  (5) 动态对象年龄判定。Suvivor 区相同年龄对象总和大于 Suvivor 区空间的一半, 年龄大于等于该值的对象直接进入老年代。
+  (6) 空间分配担保。在 MinorGC 开始前，虚拟机检查老年代最大可用连续空间是否大于新生代所有对象总空间，如果成立，
+MinorGC 可以确保是安全的。否则，虚拟机会查看 HandlePromotionFailure 设置值是否允许担保失败，如果允许，
+继续查看老年代最大可用连续空间是否大于历次晋升到老年代对象的平均大小，如果大于则尝试 MinorGC，
+尽管这次 MinorGC 是有风险的。如果小于，或者 HandlerPromotionFailure 设置不允许，则要改为 FullGC。
+  (7) 新生代的回收称为 MinorGC, 对老年代的回收成为 MajorGC 又名 FullGC。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
