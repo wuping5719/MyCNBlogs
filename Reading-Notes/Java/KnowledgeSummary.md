@@ -685,6 +685,29 @@ MinorGC 可以确保是安全的。否则，虚拟机会查看 HandlePromotionFa
 继续查看老年代最大可用连续空间是否大于历次晋升到老年代对象的平均大小，如果大于则尝试 MinorGC，
 尽管这次 MinorGC 是有风险的。如果小于，或者 HandlerPromotionFailure 设置不允许，则要改为 FullGC。
   (7) 新生代的回收称为 MinorGC, 对老年代的回收成为 MajorGC 又名 FullGC。
+
+8.方法区的回收：
+  方法区通常会与永久代划等号，实际上二者并不等价，只不过是 HotSpot 虚拟机设计者用永久代实现方法区，
+并将 GC 分代扩展至方法区。 永久代垃圾回收通常包括两部分内容：废弃常量和无用的类。常量的回收与堆区对象的回收类似，
+当没有其他地方引用该字面量时，如果有必要，将被清理出常量池。
+  定无用的类的 3 个条件：
+  (1) 该类的所有实例都已经被回收，也就是说堆中不存在该类的任何实例。
+  (2) 加载该类的 ClassLoader 已经被回收。
+  (3) 该类对应的 java.lang.Class 对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。
+当然，这也仅仅是判定，不代表立即卸载该类。
+
+9.JVM 工具：
+  1) 命令行：
+  (1) jps(jvm processor status) 虚拟机进程状况工具。
+  (2) jstat(jvm statistics monitoring) 统计信息监视。
+  (3) jinfo(configuration info for java) 配置信息工具。
+  (4) jmap(memory map for java) Java 内存映射工具。
+  (5) jhat(JVM Heap Analysis Tool) 虚拟机堆转储快照分析工具。
+  (6) jstack(Stack Trace for Java) Java 堆栈跟踪工具。
+  (7) HSDIS：JIT 生成代码反汇编。
+  2) 可视化：
+  (1) JConsole(Java Monitoring and Management Console) Java 监视与管理控制台。
+  (2) VisualVM(All-in-one Java Troubleshooting Tool) 多合一故障处理工具。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
