@@ -708,6 +708,25 @@ MinorGC 可以确保是安全的。否则，虚拟机会查看 HandlePromotionFa
   2) 可视化：
   (1) JConsole(Java Monitoring and Management Console) Java 监视与管理控制台。
   (2) VisualVM(All-in-one Java Troubleshooting Tool) 多合一故障处理工具。
+
+10.JVM 内存结构：
+  (1) 堆: 新生代和年老代。
+  (2) 方法区(非堆): 持久代, 代码缓存, 线程共享。
+  (3) JVM 栈: 中间结果, 局部变量, 线程隔离。
+  (4) 本地栈: 本地方法(非 Java 代码)。
+  (5) 程序计数器：线程私有，每个线程都有自己独立的程序计数器，用来指示下一条指令的地址。
+  注：持久代 Java 8 消失, 取代的称为元空间(本地堆内存的一部分)。
+
+11.Java 类加载器：
+  一个 JVM 中默认的 ClassLoader 有 Bootstrap ClassLoader、Extension ClassLoader、App ClassLoader，分别各司其职：
+  (1) Bootstrap ClassLoader(引导类加载器)：负责加载 Java 基础类，
+主要是 %JRE_HOME/lib/ 目录下的 rt.jar、resources.jar、charsets.jar 等。
+  (2) Extension ClassLoader(扩展类加载器)：负责加载 Java 扩展类，主要是 %JRE_HOME/lib/ext 目录下的 jar 等。
+  (3) App ClassLoader(系统类加载器)：负责加载当前 Java 应用的 classpath 中的所有类。 
+ClassLoader 加载类用的是全盘负责委托机制。 所谓全盘负责，即是当一个 ClassLoader 加载一个 Class 的时候，
+这个 Class 所依赖的和引用的所有 Class 也由这个 ClassLoader 负责载入，除非是显式的使用另外一个 ClassLoader 载入。 
+所以，当我们自定义的 ClassLoader 加载成功了 com.company.MyClass 以后，
+MyClass 里所有依赖的 Class 都由这个 ClassLoader 来加载完成。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
