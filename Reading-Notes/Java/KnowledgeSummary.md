@@ -727,6 +727,17 @@ ClassLoader 加载类用的是全盘负责委托机制。 所谓全盘负责，�
 这个 Class 所依赖的和引用的所有 Class 也由这个 ClassLoader 负责载入，除非是显式的使用另外一个 ClassLoader 载入。 
 所以，当我们自定义的 ClassLoader 加载成功了 com.company.MyClass 以后，
 MyClass 里所有依赖的 Class 都由这个 ClassLoader 来加载完成。
+
+12.Java 中 WeakReference 与 SoftReference 的区别？
+  Java 中一共有四种类型的引用。StrongReference、SoftReference、WeakReference 以及 PhantomReference。
+  (1) StrongReference：Java 的默认引用实现, 它会尽可能长时间的存活于 JVM 内，当没有任何对象指向它时将会被 GC 回收。
+  (2) SoftReference：尽可能长时间保留引用，直到 JVM 内存不足，适合某些缓存应用。
+  (3) WeakReference：顾名思义, 是一个弱引用, 当所引用的对象在 JVM 内不再有强引用时, 下一次将被 GC 回收。
+  (4) PhantomReference：它是最弱的一种引用关系，也无法通过 PhantomReference 取得对象的实例。
+仅用来当该对象被回收时收到一个通知。
+  虽然 WeakReference 与 SoftReference 都有利于提高 GC 和内存的效率，但是 WeakReference，一旦失去最后一个强引用，
+就会被 GC 回收，而 SoftReference 会尽可能长的保留引用直到 JVM 内存不足时才会被回收(虚拟机保证), 
+这一特性使得 SoftReference 非常适合缓存应用。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
