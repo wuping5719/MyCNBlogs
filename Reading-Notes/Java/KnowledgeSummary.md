@@ -738,6 +738,31 @@ MyClass 里所有依赖的 Class 都由这个 ClassLoader 来加载完成。
   虽然 WeakReference 与 SoftReference 都有利于提高 GC 和内存的效率，但是 WeakReference，一旦失去最后一个强引用，
 就会被 GC 回收，而 SoftReference 会尽可能长的保留引用直到 JVM 内存不足时才会被回收(虚拟机保证), 
 这一特性使得 SoftReference 非常适合缓存应用。
+
+13.JVM 选项 -XX:+UseCompressedOops 有什么作用？为什么要使用？
+  当你将你的应用从 32 位的 JVM 迁移到 64 位的 JVM 时，由于对象的指针从 32 位增加到了 64 位，因此堆内存会突然增加，
+差不多要翻倍。这也会对 CPU 缓存(容量比内存小很多)的数据产生不利的影响。因为，迁移到 64 位的 JVM 主要动机在于可以
+指定最大堆大小，通过压缩 OOP(Object Oriented Programming, 面向对象的程序设计) 可以节省一定的内存。
+通过 -XX:+UseCompressedOops 选项，JVM 会使用 32 位的 OOP，而不是 64 位的 OOP。
+
+14.JRE、JDK、JVM 及 JIT 之间有什么不同？
+  (1) JRE 代表 Java 运行时(Java Run-Time)，是运行 Java 应用所必须的。
+  (2) JDK 代表 Java 开发工具(Java Development Kit)，是 Java 程序的开发工具，如 Java 编译器，它也包含 JRE。
+  (3) JVM 代表 Java 虚拟机(Java Virtual Machine)，它的责任是运行 Java 应用。
+  (4) JIT 代表即时编译(Just In Time Compilation)，当代码执行的次数超过一定的阈值时，会将 Java 字节码转换为本地代码，
+如，主要的热点代码会被替换为本地代码，这样有利大幅度提高 Java 应用的性能。
+
+15.OOM(Out Of Memory)解决办法:
+   内存溢出的空间：Permanent Generation 和 Heap Space，也就是永久代和堆区。
+   (1) 永久代的 OOM：
+   解决办法有 2 种：
+   A.通过虚拟机参数 -XX：PermSize 和 -XX：MaxPermSize 调整永久代大小。
+   B.清理程序中的重复的 Jar 文件，减少类的重复加载。
+   (2) 堆区的溢出：
+   发生这种问题的原因是 Java 虚拟机创建的对象太多，在进行垃圾回收之间，虚拟机分配的到堆内存空间已经用满了，
+与 Heap Space 的 Size 有关。解决这类问题有两种思路：
+   A.检查程序，看是否存在死循环或不必要地重复创建大量对象，定位原因，修改程序和算法。
+   B.通过虚拟机参数 -Xms 和 -Xmx 设置初始堆和最大堆的大小。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
