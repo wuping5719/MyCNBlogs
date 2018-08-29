@@ -766,6 +766,30 @@ MyClass 里所有依赖的 Class 都由这个 ClassLoader 来加载完成。
 ```
 
 > 五、数据库(Sql、MySQL、Redis 等)
+```
+1.Statement
+  1) 基本内容:
+  (1) Statement 是最基本的用法, 不传参, 采用字符串拼接，存在注入漏洞。
+  (2) PreparedStatement 传入参数化的 SQL 语句, 同时检查合法性, 效率高可以重用, 防止 SQL 注入。
+  (3) CallableStatement 接口扩展 PreparedStatement，用来调用存储过程。
+  (4) BatchedStatement 用于批量操作数据库，BatchedStatement 不是标准的 Statement 类。
+   public interface CallableStatement extends PreparedStatement 
+   public interface PreparedStatement extends Statement 
+ 2) Statement 与 PrepareStatement 的区别：
+  (1) 创建时的区别：
+   Statement statement = conn.createStatement();
+   PreparedStatement preStatement = conn.prepareStatement(sql);
+  (2) 执行的时候：
+   ResultSet rSet = statement.executeQuery(sql);
+   ResultSet pSet = preStatement.executeQuery();
+  由上可以看出，PreparedStatement 有预编译的过程，已经绑定 sql，之后无论执行多少遍，都不会再去进行编译，
+而 Statement 不同，如果执行多遍，则相应的就要编译多少遍 sql，所以从这点看，
+PreparedStatement 的效率会比 Statement 要高一些。
+  (3) 安全性：
+  PreparedStatement 是预编译的，所以可以有效的防止 SQL 注入等问题。
+  (4) 代码的可读性和可维护性：
+  PreparedStatement 更胜一筹。
+```
 
 > 六、算法与数据结构
 
