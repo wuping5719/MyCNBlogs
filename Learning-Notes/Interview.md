@@ -78,6 +78,8 @@
     <td><a href="https://www.zhihu.com/question/19774340/answer/132525239">23.如何面试Java工程师？</a></td>
     <td><a href="https://mp.weixin.qq.com/s?__biz=MzI4Njc5NjM1NQ==&mid=2247483687&idx=1&sn=cbe71bafb392c9656a5127342449dc76&chksm=ebd63e0bdca1b71d6bea25898d11d5aed73a393b380034718c518dad976152966347944f245a&scene=0#rd">24.赢在面试之Java框架篇</a></td>
   </tr>
+  <tr>
+    <td><a href="http://www.codespaghetti.com/java-algorithms-questions/"><Strong>25.Java Algorithm Interview Questions</Strong></a></td>
 </table>
 
 <strong>前端</strong>
