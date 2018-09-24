@@ -862,16 +862,6 @@ PreparedStatement 的效率会比 Statement 要高一些。
   (4) 由于没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低(IP 电话等实时应用要求源主机以恒定的速率发送数据)。
   使用 UDP 的应用: 地址转换(DNS)、文件传送(TFTP)、路由选择协议(RIP)、IP 地址配置(BOOTTP, DHCP)、网络管理(SNMP)、
 远程文件服务器(NFS)、IP 电话(专用协议)、流式多媒体通信(专用协议)。
----------------------
-
-本文来自 SU坡馒 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/sinat_34979383/article/details/60874347?utm_source=copy 
----------------------
-
-本文来自 SU坡馒 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/sinat_34979383/article/details/60874347?utm_source=copy 
-
----------------------
-
-本文来自 SU坡馒 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/sinat_34979383/article/details/60874347?utm_source=copy 
 ```
 
 > 八、操作系统(OS 基础、Linux 等)
