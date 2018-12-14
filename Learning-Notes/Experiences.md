@@ -49,6 +49,6 @@
   </tr>
   <tr>
     <td><a href="https://landgreen.github.io/physics/index.html"><strong>23.高中物理笔记</strong></a></td>
-    <td></td>
+    <td><a href="https://www.artic.edu/collection?is_public_domain=1"><strong>24.芝加哥艺术学院-艺术品图像</strong></a></td>
   </tr>
 </table>
