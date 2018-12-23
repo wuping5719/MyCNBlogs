@@ -32,7 +32,7 @@
 <h3>★	项目经验</h3>                                                        
 <table>
   <tr>
-    <td>(1) 2018/10-至今  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  KYC 反洗钱平台 &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 招银网络科技</td>
+    <td>(1) 2018/10-至今 &nbsp;&nbsp;&nbsp; KYC 反洗钱平台 &nbsp;&nbsp;&nbsp; 招银网络科技</td>
   </tr
   <tr>
     <td>▪项目简介：银行反洗钱尽职调查管理平台，主要对接了两大系统：一个是(CRM)小企业客户群管理系统，另一个是(WSS)黑名单过滤系统。 
