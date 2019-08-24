@@ -120,7 +120,7 @@
     <td> ○ 熟练 Java 开源 Web 框架(Spring, Spring MVC, MyBatis, Hibernate, Dubbo, Zookeeper, Nginx, ElasticSearch, Spring Boot, Spring Cloud). </td>
   </tr>
   <tr>
-    <td> ○ 熟练脚本语言 Python，Web 后台开发语言 Java, PHP, ASP.Net，熟练 C#.Net 和 VB.Net 软件开发. </td>
+    <td> ○ 熟练 Web 后端开发语言 Java, C#开发，移动端 Android 开发，脚本语言 Python.</td>
   </tr>
   <tr>
     <td> ○ 熟练关系型数据库(Oracle, MySQL, DB2, SQLServer)；非关系型数据库(Redis, MongoDB, HBase). 熟练使用消息中间件. </td>
