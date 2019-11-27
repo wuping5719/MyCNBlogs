@@ -261,7 +261,27 @@ Comparator 是一个外部的比较器，当这个对象自然排序不能满足
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
 ```
 A.Spring
-1.
+1.1) 单一Bean:
+  装载: 
+   (1) 实例化; 
+   (2) 设置属性值; 
+   (3) 如果实现了 BeanNameAware 接口, 调用 setBeanName 设置 Bean 的 ID 或者 Name; 
+   (4) 如果实现 BeanFactoryAware 接口, 调用 setBeanFactory 设置 BeanFactory; 
+   (5) 如果实现 ApplicationContextAware, 调用 setApplicationContext 设置 ApplicationContext;
+   (6) 调用 BeanPostProcessor 的预先初始化方法; 
+   (7) 调用 InitializingBean 的 afterPropertiesSet() 方法; 
+   (8) 调用定制 init-method 方法； 
+   (9) 调用 BeanPostProcessor 的后初始化方法.
+  Spring 容器关闭:
+   (1) 调用 DisposableBean 的 destroy(); 
+   (2) 调用定制的 destroy-method 方法.
+  2) 多个 Bean 的先后顺序：
+   优先加载 BeanPostProcessor 的实现 Bean, 按 Bean 文件和 Bean 的定义顺序, 按 Bean 的装载顺序
+ （即使加载多个 Spring 文件时存在 id 覆盖）, “设置属性值”（第2步）时，遇到 ref，则在“实例化”（第1步）之后,
+先加载 ref 的 id 对应的 Bean。AbstractFactoryBean 的子类，在第6步之后, 会调用 createInstance 方法，
+之后会调用 getObjectType 方法，BeanFactoryUtils 类也会改变 Bean 的加载顺序。
+
+<a href="https://www.jianshu.com/p/9ea61d204559" />
 
 B.Spring Data JPA
 1.Repository 接口：它是 Spring Data 的一个核心接口，它不提供任何方法，
