@@ -261,7 +261,8 @@ Comparator 是一个外部的比较器，当这个对象自然排序不能满足
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
 ```
 A.Spring
-1.1) 单一Bean:
+1.Spring Bean 的加载顺序:
+ 1) 单一Bean:
   装载: 
    (1) 实例化; 
    (2) 设置属性值; 
@@ -281,7 +282,7 @@ A.Spring
 先加载 ref 的 id 对应的 Bean。AbstractFactoryBean 的子类，在第6步之后, 会调用 createInstance 方法，
 之后会调用 getObjectType 方法，BeanFactoryUtils 类也会改变 Bean 的加载顺序。
 
-<a href="https://www.jianshu.com/p/9ea61d204559" />
+2.图文并茂，揭秘 Spring 的 Bean 的加载过程: https://www.jianshu.com/p/9ea61d204559
 
 B.Spring Data JPA
 1.Repository 接口：它是 Spring Data 的一个核心接口，它不提供任何方法，
