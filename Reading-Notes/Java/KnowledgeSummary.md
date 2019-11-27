@@ -260,7 +260,10 @@ Comparator 是一个外部的比较器，当这个对象自然排序不能满足
 
 > 二、Java 高级(JavaEE、框架、服务器、工具等)
 ```
-A.Spring Data JPA
+A.Spring
+1.
+
+B.Spring Data JPA
 1.Repository 接口：它是 Spring Data 的一个核心接口，它不提供任何方法，
 开发者需要在自己定义的接口中声明需要的方法。
  public interface Repository<T, ID extends Serializable> {}
@@ -327,7 +330,7 @@ IgnoreCase       findByFirstnameIgnoreCase             ... where UPPER(x.firstam
    @Async
    ListenableFuture<User> findOneByLastname(String lastname);
 
-B.Servlet
+C.Servlet
 1.Servlet 继承实现结构:
   Servlet(接口)            -->      init|service|destroy 方法
   GenericServlet(抽象类)   -->      与协议无关的 Servlet
@@ -392,12 +395,12 @@ service 方法的参数传给 HttpServlet 对象。
    Exception是 JSP 九大内置对象之一，其实例代表其他页面的异常和错误。
 只有当页面是错误处理页面时，即 isErroePage 为 true 时，该对象才可以使用。
 
-C.JSP：JSP 的前身就是 Servlet。
+D.JSP：JSP 的前身就是 Servlet。
 
-D.Tomcat
+E.Tomcat
   1.Tomcat 容器的等级：Container - Engine - Host - Servlet - 多个Context(一个Context对应一个Web工程) - Wrapper
 
-E.Hibernate
+F.Hibernate
 1.Hibernate 的 7 大鼓励措施：
   (1) 尽量使用 many-to-one, 避免使用单项 one-to-many。
   (2) 灵活使用单项 one-to-many。
@@ -415,7 +418,7 @@ E.Hibernate
   (4) Hibernate 的性能非常好，因为它是个轻量级框架。映射的灵活性很出色。
 它支持各种关系数据库，从一对一到多对多的各种复杂关系。
 
-F.XML 与 JSON 对比：
+G.XML 与 JSON 对比：
   1) XML
   (1) 应用广泛，可扩展性强，被广泛应用各种场合。
   (2) 读取、解析没有 JSON 快。
