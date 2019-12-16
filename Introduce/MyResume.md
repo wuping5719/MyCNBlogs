@@ -118,9 +118,6 @@
 <h3>★ 专业技能</h3>                                                        
 <table>
   <tr>
-    <td> ○ 2019年11月刚过了公司内部组织的 Java 中级认证和 Android 中级认证，主语言是Java，但是现在是个学习型社会，”变“是最大的变化。 </td>
-  </tr>
-  <tr>
     <td> ○ 熟练 Java 开源 Web 框架(Spring, Spring MVC, MyBatis, Hibernate, Dubbo, Zookeeper, Nginx, ElasticSearch, Spring Boot, Spring Cloud). </td>
   </tr>
   <tr>
