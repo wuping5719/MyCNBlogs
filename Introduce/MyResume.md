@@ -133,7 +133,7 @@
     <td> ○ 熟练基本 Linux Web 服务器管理。熟练使用IDE: VS2010, Eclipse, WebStorm, IntelliJ IDEA. </td>
   </tr>
   <tr>
-    <td> ○ 熟练前端网页开发 (Handlebars，JavaScript，CSS3，HTML5，JSP).</td>
+    <td> ○ 熟练前端网页开发 (Angular，Handlebars，JavaScript，CSS3，HTML5，JSP).</td>
   </tr>
   <tr>
     <td> ○ 熟练智能仪表采集程序开发，家电制造领域软件开发，机房监控软件开发，金融领域软件开发.</td>
